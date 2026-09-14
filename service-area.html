@@ -57,8 +57,17 @@
       grid-template-columns: 1fr;
       gap: var(--sp-5);
     }
-    @media (min-width: 700px) { .area-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1000px) { .area-grid { grid-template-columns: repeat(4, 1fr); } }
+    /* Five cards: Nassau pair on top, the three Suffolk cards below. */
+    @media (min-width: 700px) {
+      .area-grid { grid-template-columns: repeat(2, 1fr); }
+      .area-card:last-child { grid-column: 1 / -1; }
+    }
+    @media (min-width: 1000px) {
+      .area-grid { grid-template-columns: repeat(6, 1fr); }
+      .area-card { grid-column: span 2; }
+      .area-card:nth-child(-n+2) { grid-column: span 3; }
+      .area-card:last-child { grid-column: span 2; }
+    }
     .area-card {
       background: var(--warm-white);
       border: 1px solid rgba(26, 26, 31, 0.08);
@@ -116,7 +125,7 @@
 
       <div class="section-head">
         <span class="overline">By region</span>
-        <h2>Four regions, <em>one team.</em></h2>
+        <h2>Five regions, <em>one team.</em></h2>
         <p>If your town isn't listed, ask anyway. The honest answer is we probably work there.</p>
       </div>
 
@@ -124,22 +133,27 @@
 
         <article class="area-card">
           <h3>Nassau · North Shore</h3>
-          <p class="area-towns">Manhasset · Great Neck · Port Washington · Roslyn · Glen Cove · Locust Valley · Oyster Bay</p>
+          <p class="area-towns">Manhasset&nbsp;· Great&nbsp;Neck&nbsp;· Port&nbsp;Washington&nbsp;· Roslyn&nbsp;· Sea&nbsp;Cliff&nbsp;· Glen&nbsp;Cove&nbsp;· Locust&nbsp;Valley&nbsp;· Oyster&nbsp;Bay&nbsp;· New&nbsp;Hyde&nbsp;Park&nbsp;· Mineola&nbsp;· Westbury&nbsp;· Jericho&nbsp;· Woodbury&nbsp;· Old&nbsp;Bethpage</p>
         </article>
 
         <article class="area-card">
           <h3>Nassau · South Shore</h3>
-          <p class="area-towns">Garden City · Rockville Centre · Lynbrook · Valley Stream · Long Beach · Atlantic Beach · Massapequa · Wantagh · Bellmore · Merrick · Freeport · Hempstead</p>
+          <p class="area-towns">Garden&nbsp;City&nbsp;· Rockville&nbsp;Centre&nbsp;· Lynbrook&nbsp;· Valley&nbsp;Stream&nbsp;· Long&nbsp;Beach&nbsp;· Atlantic&nbsp;Beach&nbsp;· Massapequa&nbsp;· Wantagh&nbsp;· Bellmore&nbsp;· Merrick&nbsp;· Baldwin&nbsp;· Freeport&nbsp;· Hempstead</p>
         </article>
 
         <article class="area-card">
-          <h3>Western Suffolk</h3>
-          <p class="area-towns">Huntington · Cold Spring Harbor · Lloyd Harbor · Centerport · Northport · Melville · Dix Hills · Smithtown · Commack · Stony Brook · Setauket · Port Jefferson · Patchogue · Sayville · Bay Shore · Babylon · Lindenhurst · Selden · Centereach</p>
+          <h3>Suffolk · North Shore</h3>
+          <p class="area-towns">Huntington&nbsp;· Cold&nbsp;Spring&nbsp;Harbor&nbsp;· Lloyd&nbsp;Harbor&nbsp;· Centerport&nbsp;· Northport&nbsp;· Commack&nbsp;· Smithtown&nbsp;· St.&nbsp;James&nbsp;· Stony&nbsp;Brook&nbsp;· Setauket&nbsp;· Port&nbsp;Jefferson&nbsp;· Mount&nbsp;Sinai&nbsp;· Selden&nbsp;· Centereach</p>
+        </article>
+
+        <article class="area-card">
+          <h3>Suffolk · South Shore</h3>
+          <p class="area-towns">Melville&nbsp;· Dix&nbsp;Hills&nbsp;· Hauppauge&nbsp;· Brentwood&nbsp;· Lake&nbsp;Ronkonkoma&nbsp;· Babylon&nbsp;· Lindenhurst&nbsp;· Bay&nbsp;Shore&nbsp;· Great&nbsp;River&nbsp;· Sayville&nbsp;· Patchogue&nbsp;· Bellport</p>
         </article>
 
         <article class="area-card">
           <h3>East End · Hamptons &amp; North Fork</h3>
-          <p class="area-towns">Westhampton · Quogue · Hampton Bays · Southampton · Bridgehampton · East Hampton · Montauk · Sag Harbor · Riverhead · Mattituck · Cutchogue · Greenport · Shelter Island</p>
+          <p class="area-towns">Westhampton&nbsp;· Quogue&nbsp;· Hampton&nbsp;Bays&nbsp;· Southampton&nbsp;· Bridgehampton&nbsp;· East&nbsp;Hampton&nbsp;· Montauk&nbsp;· Sag&nbsp;Harbor&nbsp;· Riverhead&nbsp;· Mattituck&nbsp;· Cutchogue&nbsp;· Greenport&nbsp;· Shelter&nbsp;Island</p>
         </article>
 
       </div>

@@ -246,6 +246,8 @@ window.SERVICES_DATA = [
     category: 'Live Music',
     name: 'Jazz trio',
     shortDesc: 'Three-piece live combo, built around the sound you want.',
+    metaTitle: 'Live jazz trio on Long Island · Tommy\'s Tunes',
+    metaDescription: 'Live jazz trio for cocktail hour and dinner at Long Island weddings and events. We build the lineup around the sound you want, from classic to romantic.',
     photo: '',
     longBody: 'A three-piece live jazz combo for cocktail hour or a seated dinner, the kind of music that fills the room without taking it over. We build the trio around the sound you want: sax, guitar, and bass for a classic jazz feel, piano, percussion, and sax when you want more energy, or piano, percussion, and violin for something softer and more romantic. Tell us the vibe and we set the lineup to match.',
     demos: [

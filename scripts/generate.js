@@ -238,7 +238,7 @@ function genReviews(tpl, data) {
   const cards = data.map(reviewCard).join('') + '\n    ';
   let html = setMeta(tpl, {
     title: "Reviews · Tommy's Tunes",
-    description: '250 verified five-star reviews from real Long Island couples and families, sourced from The Knot, WeddingWire, Google, and Yelp.',
+    description: `${data.length} verified reviews from real Long Island couples and families, sourced from The Knot, WeddingWire, Google, and Yelp.`,
     url: SITE + '/reviews/',
   });
   html = fillByAttr(html, 'data-reviews-grid', cards);
