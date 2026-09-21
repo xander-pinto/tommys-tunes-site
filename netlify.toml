@@ -68,6 +68,26 @@
   to = "/packages.html"
   status = 301
 
+# The old Wix site's showcase page lived at /showcases (plural). Google still
+# has that URL indexed, so it was serving a 404 to anyone arriving from search
+# or an old link. Send it to the current page.
+[[redirects]]
+  from = "/showcases"
+  to = "/showcase.html"
+  status = 301
+
+# Two more old Wix URLs still sitting in Google's index and serving 404s:
+# the old venues page and the old unhyphenated music suggestions page.
+[[redirects]]
+  from = "/venue-affiliations"
+  to = "/venues.html"
+  status = 301
+
+[[redirects]]
+  from = "/musicsuggestions.html"
+  to = "/music-suggestions.html"
+  status = 301
+
 # Internal files that must stay in the repo but should never be served:
 # CLAUDE.md (read by Claude Code) and the build script. Return 404 publicly.
 [[redirects]]
