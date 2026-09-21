@@ -255,6 +255,13 @@
       .gallery-cta-snap.tilt-b,
       .gallery-cta-snap.tilt-c { display: none; }
     }
+    /* Full demos grid: the newest wedding demo leads full width, the rest pair up. */
+    .demo-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-6); }
+    @media (min-width: 800px) {
+      .demo-grid { grid-template-columns: repeat(2, 1fr); }
+      .demo-grid > .demo-item:first-child { grid-column: 1 / -1; }
+      .demo-grid > .demo-item:first-child .demo-embed { max-width: 900px; margin: 0 auto; }
+    }
   </style>
 </head>
 
@@ -296,6 +303,55 @@
           style="color: var(--electric-cyan);">YouTube @tommystunes</a>, the full library of weddings, mitzvahs, and Sweet
         16s.
       </p>
+    </div>
+  </section>
+
+  <!-- FULL DEMOS -->
+  <section class="section section-tinted" id="demos">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Full demos</span>
+        <h2>A full night, <em>start to finish.</em></h2>
+        <p>One demo for each kind of night we run. The shorter clips for each MC, DJ, and musician live on their own pages.</p>
+      </div>
+
+      <div class="demo-grid">
+        <div class="demo-item">
+          <div class="demo-embed">
+            <iframe src="https://www.youtube.com/embed/PF-G36jukFc" title="A wedding at Sunken Meadow, start to finish." loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="demo-caption">A wedding at Sunken Meadow, start to finish.</p>
+        </div>
+        <div class="demo-item">
+          <div class="demo-embed">
+            <iframe src="https://www.youtube.com/embed/qyRc-wBg8s0" title="A Sweet 16, from the entrance to the last song." loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="demo-caption">A Sweet 16, from the entrance to the last song.</p>
+        </div>
+        <div class="demo-item">
+          <div class="demo-embed">
+            <iframe src="https://www.youtube.com/embed/IYZ1Gf-01T4" title="A Bar Mitzvah, with Joe Cip. on the mic." loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="demo-caption">A Bar Mitzvah, with Joe Cip. on the mic.</p>
+        </div>
+        <div class="demo-item">
+          <div class="demo-embed">
+            <iframe src="https://www.youtube.com/embed/eWjwECUgGqY" title="A prom, with Joe Cip. and DJ Anderson." loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="demo-caption">A prom, with Joe Cip. and DJ Anderson.</p>
+        </div>
+        <div class="demo-item">
+          <div class="demo-embed">
+            <iframe src="https://www.youtube.com/embed/Dvq15l_PFgk" title="A night at East Wind, cut down to the highlights." loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="demo-caption">A night at East Wind, cut down to the highlights.</p>
+        </div>
+      </div>
     </div>
   </section>
 
