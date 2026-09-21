@@ -212,4 +212,22 @@ window.TIKTOK_DATA = [
   { id: '7662914765227937038', caption: 'We found John Summit\'s biggest fan at a wedding.', views: '417', people: [], services: ['weddings'] },
   { id: '7660286292332219661', caption: 'Tag that guy.', views: '415', people: [], services: ['weddings'] },
   { id: '7651328322592443661', caption: 'Knicks fans at a wedding during the finals.', views: '387', people: [], services: [], shelved: 'Knicks clip, quality is too poor' },
+
+  /* --- Third pass 2026-09-21: everything posted since the second pass. Two of
+     these came in squarish, with letterbox bars top and bottom. Per Xander they
+     keep the bars rather than being cropped to fill, so the posters stay the
+     whole frame. --- */
+  { id: '7684444976968699150', caption: 'Born just in time to cut the mozzarella.', views: '4478', people: [], services: ['weddings'] },
+  { id: '7686984150724775181', caption: 'Leo on intros, and a bouquet caught like a football.', views: '2370', people: ['leo'], services: ['weddings'] },
+  { id: '7685507295568006414', caption: 'Mike on the mic, Rich on the decks.', views: '2329', people: ['mike', 'richie'], services: ['weddings'] },
+  { id: '7684810501431266573', caption: 'Rich doing what he does behind the booth.', views: '2002', people: ['richie'], services: [] },
+  { id: '7686646219065642253', caption: 'Joe Cip. running the introductions.', views: '1622', people: ['joe-cip'], services: ['weddings'] },
+  { id: '7685058414761790734', caption: 'Curtis on the sax, trading off with the mic.', views: '1419', people: ['curtis'], services: ['weddings', 'saxophonist'] },
+  { id: '7683893069061590286', caption: 'A slow one, sung with feeling.', views: '1266', people: [], services: [], shelved: 'Xander passed on it' },
+  { id: '7685778370226933006', caption: 'A Jets chant at a wedding, pushups and all.', views: '797', people: [], services: ['weddings'] },
+  { id: '7687307160304258318', caption: 'Leo leading the Footloose line dance.', views: '658', people: ['leo'], services: ['weddings'] },
+  { id: '7687654499120401677', caption: 'A first dance on the cloud.', views: '616', people: [], services: ['weddings', 'dancing-on-cloud'] },
+  { id: '7686248739379399950', caption: 'Mike N. on intros, and the flowers got spiked.', views: '543', people: ['mike-n'], services: ['weddings'] },
+  { id: '7685889245600419086', caption: 'When the song you grew up on comes on.', views: '417', people: [], services: [], shelved: 'Xander passed on it' },
+  { id: '7687996919435545869', caption: 'Joe Cip. on the mic for a reception people swear is staged.', views: '2', people: ['joe-cip'], services: ['weddings'] },
 ];
