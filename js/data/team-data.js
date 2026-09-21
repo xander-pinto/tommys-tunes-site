@@ -44,6 +44,7 @@ window.TEAM_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/O2Tl1QHdeaE', caption: 'On the mic.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/3WQgZpfzxB4', caption: 'Hosting the night.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/eWjwECUgGqY', caption: 'A prom demo with DJ Anderson.' },
     ],
     gallery: [
       '/assets/images/team/mcs/joe-cip/joe_enthusiastic.jpg',
@@ -197,6 +198,7 @@ window.TEAM_DATA = [
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/oqZ0QnOVRf8?start=29', caption: 'DJing a prom.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/eWjwECUgGqY', caption: 'A prom demo with MC Joe Cip.' },
     ],
     gallery: [
       '/assets/images/team/djs/anderson/anderson_behind_booth.jpg',
@@ -319,6 +321,7 @@ window.TEAM_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/O5N2y_D_URg', caption: 'On the saxophone, right in the crowd.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'Playing a wedding with the band.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Featured in a full party set.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/hxnTOUZ6ARg', caption: 'On the sax, summer 2026.' },
     ],
     gallery: [
       '/assets/images/team/live-musicians/curtis/curtis_happy.jpg',
@@ -377,6 +380,7 @@ window.TEAM_DATA = [
       { type: 'video', url: '/assets/images/team/live-musicians/joe-i/joe_I_drumming.mp4', caption: 'On the drums.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/vNlwLu4T9Bs', caption: 'On the drums at an event.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/JHOJfSej0fc', caption: 'Playing a wedding with the crew.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/KpvTJKqM328', caption: 'A full percussion demo.' },
     ],
     gallery: [
       '/assets/images/team/live-musicians/joe-i/joei_in_action.jpg',

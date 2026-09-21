@@ -58,6 +58,7 @@ window.SERVICES_DATA = [
     longBody: '<p>We\'ve been a Long Island family business since 1985, and weddings have always been our specialty. By the time your day arrives, the planning is done, the timeline is locked, and the team knows exactly what you want. Tommy\'s sons run the weekend operation, and the team underneath them mixes 20+ year veterans with newer talent learning the trade. The team is growing. Whether your venue is Watermill or Irish Coffee Pub, the same family standard shows up. The DJ and MC who run your night will have your timeline memorized, your must-plays loaded, your do-not-plays clear, and the introduction your shy husband actually wants already rehearsed.</p><p>The planning lead-up is real, not a formality. You sit down with us at the Selden showroom or the Melville office, whichever\'s closer. Zoom works too if neither fits, though we prefer in person. We walk through every moment together: the ceremony music, cocktail hour, grand entrance, parent dances, the must-plays, the do-not-plays. The 2026 Wedding Protocol, the Ceremony Sheet, the Music Selections library, the Photo Montage and Party Games forms are all on our forms page, designed so nothing gets missed. You can fill them out together with us or take them home and send them back. We do as many meetings as you need. Some couples want one efficient session; others want to refine until the day before. Both are normal.</p><p>When the night actually starts, the planning shows. The most common refrain in our reviews, by a wide margin, is the dance floor staying full. &ldquo;Never empty.&rdquo; &ldquo;Packed all night.&rdquo; &ldquo;Everyone on the floor including the elderly and the husbands who never dance.&rdquo; That\'s not luck. It\'s the DJ reading the room in real time and the MC keeping the energy steady between formal moments. We play music for your guests, not a generic wedding playlist. Lisa from December 2024 put it best: &ldquo;I was so back and forth about the sax player but DO IT. Everyone loved it.&rdquo;</p><p>What couples tell us after the wedding, more than anything else, is that they didn\'t expect us to actually listen. Lisa Marie in 2025 wrote that her very shy husband didn\'t want a regular grand entrance, and the team simply respected that, no pushback, no upsell. Stephanie in early 2026 wrote that between John as DJ, PJ as MC, and Matt and Zach on the photobooth, every part of the night was covered by a real person who cared. Katie\'s review from late 2025 captures it in one line: Anderson &ldquo;really nailed exactly the vibe we wanted.&rdquo; The &ldquo;no pressure to upgrade&rdquo; line shows up across multiple reviews. Couples come for a DJ and stay because it doesn\'t feel transactional.</p><p>Forty years on Long Island means we know your venue. Every active Recommended Vendor partnership we have is on our venues page: Crest Hollow, Flowerfield, Fox Hollow, Sunken Meadow Pavilion, Watermill, Land\'s End, Lombardi\'s On The Bay, Villa Lombardis, Danford\'s, Hilton Garden Inn, Irish Coffee Pub, Port Jeff Country Club, Brecknock Hall. Beyond those, we\'ve worked just about every room from the North Shore down to the East End. We know the load-in doors, the maître d\'s, the rooms where the dance floor reads small until the sax player hits cocktail hour. If your venue isn\'t on the page, ask. Odds are we\'ve been there.</p><p>Tell us your date. We\'ll send back options that fit your budget, no upsell, no pressure. The conversation starts with a name and a number and goes wherever you want it to go.</p>',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/Dvq15l_PFgk', caption: 'A Tommy\'s Tunes wedding, start to finish.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'A full wedding demo, filmed at Sunken Meadow.' },
     ],
     gallery: [],
   },
@@ -130,6 +131,7 @@ window.SERVICES_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'Playing a wedding with the band.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/4T8rrU7YS7c', caption: 'Working the dance floor.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/gVdgmpTlu0I', caption: 'On the saxophone.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/hxnTOUZ6ARg', caption: 'Curtis on the sax, summer 2026.' },
     ],
     demo: null,
     gallery: [
@@ -204,6 +206,7 @@ window.SERVICES_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/fkCTcd3bbhs?start=4', caption: 'Drums over the DJ set.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/3Fn_9vQwrHg?start=24', caption: 'On the drum set.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/JHOJfSej0fc', caption: 'Playing a wedding with the crew.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/KpvTJKqM328', caption: 'Joe I. on a full percussion demo.' },
     ],
     demo: null,
     gallery: [
@@ -236,6 +239,7 @@ window.SERVICES_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/MUqtXqlYR7o', caption: 'Contemporary pop, played on strings.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/lH2FvAp2i0w', caption: 'Violin and cello, played as a duo.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/wypeTqYD-BA', caption: 'Violin and cello through a ceremony.' },
     ],
     gallery: [
       '/assets/images/services/live-music/string-quartet/cortet_action.jpg',
