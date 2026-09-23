@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900"
+     role="img" aria-label="Photo coming soon">
+  <defs>
+    <linearGradient id="tt-ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050D3C"/>
+      <stop offset="1" stop-color="#000005"/>
+    </linearGradient>
+    <radialGradient id="tt-glow" cx="0.5" cy="0.5" r="0.62">
+      <stop offset="0" stop-color="#0B5EDE" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#0B5EDE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#tt-ground)"/>
+  <rect width="1200" height="900" fill="url(#tt-glow)"/>
+
+  <!-- photo frame, centred -->
+  <rect x="400" y="300" width="400" height="300" rx="24"
+        fill="none" stroke="#31AAEF" stroke-opacity="0.55" stroke-width="8"/>
+  <!-- horizon + peaks -->
+  <path d="M420 552 L522 446 L590 514 L670 430 L780 552 Z"
+        fill="#31AAEF" fill-opacity="0.22"/>
+  <path d="M420 552 L522 446 L590 514 L670 430 L780 552"
+        fill="none" stroke="#31AAEF" stroke-opacity="0.75"
+        stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="722" cy="380" r="25" fill="#C9A55E" fill-opacity="0.85"/>
+</svg>
