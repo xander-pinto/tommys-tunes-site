@@ -68,6 +68,15 @@ window.SHOWCASES_DATA = [
     ticketUrl: 'https://foxhollowcatering.ticketspice.com/fall-2026-showcase',
   },
   {
+    date: '2026-10-28',
+    dateDisplay: 'October 28, 2026',
+    time: 'Doors open 6:00pm',
+    venue: 'The Watermill',
+    type: 'Bridal Showcase',
+    note: 'Fall showcase in Smithtown. See the setups live and ask us anything.',
+    ticketUrl: 'https://watermillcaterers.ticketspice.com/fall-2026-showcase',
+  },
+  {
     date: '2026-08-19',
     dateDisplay: 'August 19, 2026',
     time: 'Doors at 6:00pm',
