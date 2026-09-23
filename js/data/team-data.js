@@ -43,6 +43,7 @@ window.TEAM_DATA = [
     bio: 'The best-dressed guy in the room, usually in sunglasses, always with the most energy. Joe Cip has been on the mic since he was fifteen, and after twenty-six years he still treats every party like it\'s the only one that matters. Couples love him because he genuinely cares: he stays on top of the timeline, keeps the night running clean, and brings the kind of enthusiasm a whole room feeds off.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'On the mic at Sunken Meadow, 2026.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/O2Tl1QHdeaE', caption: 'On the mic.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/3WQgZpfzxB4', caption: 'Hosting the night.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/eWjwECUgGqY', caption: 'A prom demo with DJ Anderson.' },
@@ -175,6 +176,7 @@ window.TEAM_DATA = [
     bio: '"Everyone\'s favorite DJ," and he\'s earned the title. Rich might be the most requested name on the roster, with high-energy mixes and a music knowledge deep enough to handle any request the floor throws at him. Nobody brings more energy behind the booth. He\'s building a real following, and once you\'ve had a night with Rich, you get why. One of the best DJs on Long Island.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'On the decks at Sunken Meadow, 2026.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/EoTbENf2NhI', caption: 'MCing and DJing a night solo.' },
     ],
     gallery: [
@@ -328,6 +330,7 @@ window.TEAM_DATA = [
     bio: 'Curtis is a saxophone player who turns a set into a show. He\'s known for bold, out-there outfits and for stepping right off the stage to play in the middle of the crowd, dancing with them the whole time. The man brings the party with him. Pure energy, and a blast to watch.',
     socials: { instagram: 'https://www.instagram.com/mrsmoothnsaxy/', tiktok: '', youtube: '' },
     demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'The light-up sax at Sunken Meadow, 2026.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/O5N2y_D_URg', caption: 'On the saxophone, right in the crowd.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'Playing a wedding with the band.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Featured in a full party set.' },
@@ -374,6 +377,7 @@ window.TEAM_DATA = [
     bio: 'Pat is an old-school percussionist who plays the entire night, not just a song or two. Down to earth, genuinely kind, and a true professional. You feel every beat he adds to the room, and you walk away knowing you got your money\'s worth. Just a great guy to have at your event.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'On percussion at Sunken Meadow, 2026.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/fkCTcd3bbhs?start=4', caption: 'On the drums.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'Playing a wedding with the band.' },
     ],
