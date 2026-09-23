@@ -486,6 +486,7 @@ window.SERVICES_DATA = [
     longBody: 'Tommy\'s Tunes offers a full illuminated dance floor built from modular LED panels that cover the entire dance floor surface. The panels change color in real time and can be programmed to respond to the music. It is one of the more dramatic visual upgrades available, and it transforms the center of the room in a way no other single add-on does. Available for weddings, Sweet 16s, Bar and Bat Mitzvahs, and corporate events.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/F_XnCSwQraQ', caption: 'The illuminated dance floor in action.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'The floor through a full wedding at Sunken Meadow.' },
     ],
     gallery: [],
   },
