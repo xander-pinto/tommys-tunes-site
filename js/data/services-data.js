@@ -132,6 +132,7 @@ window.SERVICES_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/4T8rrU7YS7c', caption: 'Working the dance floor.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/gVdgmpTlu0I', caption: 'On the saxophone.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/hxnTOUZ6ARg', caption: 'Curtis on the sax, summer 2026.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/nqEVkoTLEOo', caption: 'Sax paired with a violin for a reception.' },
     ],
     demo: null,
     gallery: [
@@ -150,7 +151,9 @@ window.SERVICES_DATA = [
     shortDesc: 'Ceremony, cocktail hour, dinner.',
     photo: '/assets/images/services/live-music/pianist/pianist_pf.jpg',
     longBody: 'Live piano for the ceremony, cocktail hour, or dinner. This is the choice when you want the music to set a calm, classic tone in the background instead of pulling focus: the processional, a few standards over cocktails, a soft underlay while people find their seats. We match the song list to the moment so it never feels like filler.',
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/pEnF3ufyOJA', caption: 'Scott on the piano.' },
+    ],
     gallery: [],
   },
   {
@@ -160,7 +163,9 @@ window.SERVICES_DATA = [
     shortDesc: 'Instrumental. Sets a calmer tone for cocktail hour.',
     photo: '/assets/images/services/live-music/jazz-guitarist/jazz_guitarist_pf.jpg',
     longBody: 'Solo instrumental jazz guitar, the most understated live option we offer. It fills a cocktail hour or a seated dinner with real music without raising the volume of the room, so people can still hear each other talk. Pick this when you want live atmosphere, not a performance everyone has to stop and watch.',
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/YxL7aSTuJfY', caption: 'Luciano on the jazz guitar.' },
+    ],
     gallery: [],
   },
   {
@@ -170,7 +175,9 @@ window.SERVICES_DATA = [
     shortDesc: 'One-piece live music for ceremony or dinner.',
     photo: '/assets/images/services/live-music/guitarist-vocalist/vocalist_guitarist_pf.jpg',
     longBody: 'One musician on guitar and vocals, the most flexible one-piece live act we offer. It carries an outdoor ceremony on its own, fills a cocktail hour, or plays a relaxed dinner set, all from a single player. The easy pick when you want live music but the space or the budget calls for keeping it simple.',
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/iM0J0c1Mxmo', caption: 'Melody, singing and playing guitar.' },
+    ],
     gallery: [],
   },
   {
@@ -191,7 +198,10 @@ window.SERVICES_DATA = [
     shortDesc: 'Solo player or full reggae trio. Outdoor cocktail favorite.',
     photo: '/assets/images/services/live-music/steel-drum/steel_drum_pf.jpg',
     longBody: 'Solo steel pan player or a full three-piece reggae trio. The default outdoor-cocktail-hour pick when you want guests to stop and notice the music.',
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/nDOaX2yBOUM', caption: 'A steel drummer through cocktail hour.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/FjwJpxXiGNc', caption: 'A full solo set at Land’s End.' },
+    ],
     gallery: [],
   },
   {
@@ -240,6 +250,9 @@ window.SERVICES_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/MUqtXqlYR7o', caption: 'Contemporary pop, played on strings.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/lH2FvAp2i0w', caption: 'Violin and cello, played as a duo.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/wypeTqYD-BA', caption: 'Violin and cello through a ceremony.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/ibWdXrKrrSI', caption: 'Guitar and cello, played as a duo.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/WXePDe5r91A', caption: 'Guitar, cello, and violin as a trio.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/VO9wVX077-A', caption: 'A walk through the string lineups.' },
     ],
     gallery: [
       '/assets/images/services/live-music/string-quartet/cortet_action.jpg',
@@ -256,6 +269,8 @@ window.SERVICES_DATA = [
     longBody: 'A three-piece live jazz combo for cocktail hour or a seated dinner, the kind of music that fills the room without taking it over. We build the trio around the sound you want: sax, guitar, and bass for a classic jazz feel, piano, percussion, and sax when you want more energy, or piano, percussion, and violin for something softer and more romantic. Tell us the vibe and we set the lineup to match.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/M-TbIs-KV4I', caption: 'The jazz trio, live.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/SpwfnduiWsA', caption: 'Sax, guitar, and bass through a full set.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/d2WJIJX-HJ4', caption: 'The same idea with piano and percussion.' },
     ],
     gallery: [],
   },
@@ -286,7 +301,9 @@ window.SERVICES_DATA = [
     shortDesc: 'Energy boost on the dance floor, four hours.',
     photo: '/assets/images/services/live-music/party-dancer/party_dancer_pf.jpg',
     longBody: 'A professional dancer working the floor for four hours. The right add-on when you want guaranteed dance-floor energy without leaning on the bar to do it.',
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/Q8iUmzPENTk', caption: 'A full dance demo.' },
+    ],
     gallery: [],
   },
 
@@ -356,7 +373,9 @@ window.SERVICES_DATA = [
       'Choice of backdrop (28 designs)',
       'Flowerwall backdrop available as an upgrade',
     ],
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/tQyrXNg7uiM', caption: 'The open-air booth in use.' },
+    ],
     gallery: [
       '/assets/images/services/photo-booths/open-air-booth/open_air_booth.jpg',
       '/assets/images/services/photo-booths/open-air-booth/again_open_air.jpg',
@@ -597,6 +616,7 @@ window.SERVICES_DATA = [
     longBody: 'A CO2-powered machine produces a layered fog effect that sits at floor level and does not rise. It photographs extremely well, creates a distinct visual moment at the start of the reception, and clears quickly. Available as a standalone add-on.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/ZB-Dq5uPIAU', caption: 'Dancing on a cloud.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/G-nla0NyKwc', caption: 'The dry ice drop, up close.' },
     ],
     gallery: [
       '/assets/images/services/photo-video-effects/dancing-on-cloud/cloud_dance.jpg',
@@ -624,6 +644,7 @@ window.SERVICES_DATA = [
     longBody: 'This is the moment the whole room reaches for their phones. Cold sparklers fire a fountain of bright sparks into the air right on cue, and because they run cool instead of open flame, they are safe to set off indoors. Most venues that say no to real sparklers are happy to say yes to these. Save them for the big beats: your grand entrance, the cake cutting, the last dance, the send-off. A certified technician runs the whole show, you get unlimited blasts all night, and the shots come out looking like a music video. Want it even cleaner? We can set them inside glass enclosures for a polished, built-in look.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/pgPdS7O2g7E', caption: 'Cold sparklers running inside the glass enclosure.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/JzH9tZFUybA', caption: 'Indoor sparklers on the dance floor.' },
     ],
     gallery: [
       '/assets/images/services/photo-video-effects/cold-sparklers/sparklers_dip.jpg',

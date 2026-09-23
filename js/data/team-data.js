@@ -28,6 +28,7 @@ window.TEAM_DATA = [
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'On the mic at a wedding, with the band.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/76l3Bpn4kCM', caption: 'A Sweet 16 at Flowerfield.' },
     ],
     gallery: [
       '/assets/images/team/mcs/pj/PJ_portrait.jpg',
@@ -160,7 +161,9 @@ window.TEAM_DATA = [
     photo: '/assets/images/team/mcs/max/max_pf.jpg',
     bio: 'A likable, fun presence with a clear voice and plenty of parties behind him. Max knows how to work a room when he\'s on the schedule.',
     socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/iRK-VVmC6j0', caption: 'On the mic.' },
+    ],
     gallery: [],
   },
   {
@@ -199,6 +202,7 @@ window.TEAM_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/oqZ0QnOVRf8?start=29', caption: 'DJing a prom.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/eWjwECUgGqY', caption: 'A prom demo with MC Joe Cip.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/5vw9sdANqAg', caption: 'MCing in English and Spanish.' },
     ],
     gallery: [
       '/assets/images/team/djs/anderson/anderson_behind_booth.jpg',
@@ -277,7 +281,9 @@ window.TEAM_DATA = [
     photo: '/assets/images/team/djs/gio/gio_pf.jpg',
     bio: 'Gio is a DJ first, an MC when the night calls for it, and bilingual English and Spanish either way. He\'s serious about the craft and pours real care into the details, the kind of focus that comes from years behind the decks. He produces his own music too, so his ear runs deeper than most. Quietly excellent at what he does.',
     socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/cE23xYn59LE', caption: 'A wedding at East Wind, with DJ Steven.' },
+    ],
     gallery: [],
   },
   {
@@ -322,6 +328,8 @@ window.TEAM_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'Playing a wedding with the band.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Featured in a full party set.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/hxnTOUZ6ARg', caption: 'On the sax, summer 2026.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/nCB8A5etAhE', caption: 'One minute on the sax.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/jXFs42irwGQ', caption: 'On the steel drums.' },
     ],
     gallery: [
       '/assets/images/team/live-musicians/curtis/curtis_happy.jpg',
@@ -433,7 +441,9 @@ window.TEAM_DATA = [
     photo: '/assets/images/team/live-musicians/melody/melody_pf.jpg',
     bio: 'A guitarist and vocalist on the Tommy\'s Tunes roster. Melody sings while she plays, a warm acoustic fit for ceremonies, cocktail hours, and dinner sets.',
     socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/iM0J0c1Mxmo', caption: 'Singing and playing guitar.' },
+    ],
     gallery: [
       '/assets/images/team/live-musicians/melody/melody_playing.jpg',
     ],
@@ -447,6 +457,7 @@ window.TEAM_DATA = [
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/M0j7ZiJ1jfo', caption: 'On the jazz guitar.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/YxL7aSTuJfY', caption: 'A jazz guitar set.' },
     ],
     gallery: [],
   },
@@ -502,6 +513,8 @@ window.TEAM_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/MlKJWvkBOGQ', caption: 'Dancing with the guests.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/FpvXSr9OEKs', caption: 'A routine with dancer Sally.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/Q8iUmzPENTk', caption: 'A full dance demo.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/N1Dv_yBbrKs', caption: 'Getting the crowd going.' },
     ],
     gallery: [
       '/assets/images/team/specialty/shad/shad_hand.jpg',
