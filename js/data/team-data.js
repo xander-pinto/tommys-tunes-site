@@ -67,6 +67,7 @@ window.TEAM_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/DfGghNZqJNQ', caption: 'On the mic.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Running a full party with DJ Dom.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/JHOJfSej0fc', caption: 'Hosting a wedding with the crew.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/rwZ7LyD-afQ', caption: 'On the mic with DJ Dominick.' },
     ],
     gallery: [
       '/assets/images/team/mcs/mike/mike_on_mic.jpg',
@@ -173,7 +174,9 @@ window.TEAM_DATA = [
     photo: '/assets/images/team/djs/richie/rich_pf.JPG',
     bio: '"Everyone\'s favorite DJ," and he\'s earned the title. Rich might be the most requested name on the roster, with high-energy mixes and a music knowledge deep enough to handle any request the floor throws at him. Nobody brings more energy behind the booth. He\'s building a real following, and once you\'ve had a night with Rich, you get why. One of the best DJs on Long Island.',
     socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/EoTbENf2NhI', caption: 'MCing and DJing a night solo.' },
+    ],
     gallery: [
       '/assets/images/team/djs/richie/richie_arms_out.jpg',
       '/assets/images/team/djs/richie/richie_glasses.jpg',
@@ -189,6 +192,7 @@ window.TEAM_DATA = [
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Running a full party with MC Mike.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/rwZ7LyD-afQ', caption: 'On the decks with MC Mike.' },
     ],
     gallery: [],
   },
@@ -389,6 +393,7 @@ window.TEAM_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/vNlwLu4T9Bs', caption: 'On the drums at an event.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/JHOJfSej0fc', caption: 'Playing a wedding with the crew.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/KpvTJKqM328', caption: 'A full percussion demo.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/ktWprOQismE', caption: 'An earlier percussion demo.' },
     ],
     gallery: [
       '/assets/images/team/live-musicians/joe-i/joei_in_action.jpg',
