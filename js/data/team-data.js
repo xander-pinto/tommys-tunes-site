@@ -47,6 +47,8 @@ window.TEAM_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/O2Tl1QHdeaE', caption: 'On the mic.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/3WQgZpfzxB4', caption: 'Hosting the night.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/eWjwECUgGqY', caption: 'A prom demo with DJ Anderson.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/IYZ1Gf-01T4', caption: 'Hosting a Bar Mitzvah.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/6sxBipgCVH0', caption: 'On a demo with DJ Steven.' },
     ],
     gallery: [
       '/assets/images/team/mcs/joe-cip/joe_enthusiastic.jpg',
@@ -107,9 +109,7 @@ window.TEAM_DATA = [
     bio: 'If you want time-tested, you want Joe. He\'s been on the mic since he was a teenager and has run more parties than he could count, and it shows in how easy he is to be around. Professional, genuinely kind, the guy who\'ll do whatever it takes to make sure your night lands. A veteran in the truest sense.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
-      { type: 'youtube', url: 'https://www.youtube.com/embed/IYZ1Gf-01T4', caption: 'Hosting a Bar Mitzvah.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/vAmu35AwUrM', caption: 'Demo reel.' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/6sxBipgCVH0', caption: 'On a demo with DJ Steven.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/PsBrel-K-SE', caption: 'Working a night with DJ Steven.' },
     ],
     gallery: [
@@ -236,7 +236,7 @@ window.TEAM_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'Behind the decks at a wedding.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/JHOJfSej0fc', caption: 'DJing a wedding with the crew.' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/6sxBipgCVH0', caption: 'On a demo with Joe Costa.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/6sxBipgCVH0', caption: 'On a demo with Joe Cip.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/PsBrel-K-SE', caption: 'Working a night with Joe Costa.' },
     ],
     gallery: [
