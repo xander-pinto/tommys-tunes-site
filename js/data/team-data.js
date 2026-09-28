@@ -98,7 +98,9 @@ window.TEAM_DATA = [
     photo: '/assets/images/team/mcs/mike-n/mike_n_pf.jpg',
     bio: 'Old school in the best way. Mike is an older Italian gentleman who has been doing this his whole life, and it shows in every word. He\'ll give it to you straight, no fluff, and treat your night like he\'s done a thousand of them, because he has. When you picture a classic Long Island MC, you picture Mike.',
     socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/coeKryVyKEU', caption: 'On the mic at Larkfield, 2026.' },
+    ],
     gallery: [],
   },
   {
@@ -195,6 +197,7 @@ window.TEAM_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Running a full party with MC Mike.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/rwZ7LyD-afQ', caption: 'On the decks with MC Mike.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/coeKryVyKEU', caption: 'On the decks at Larkfield, 2026.' },
     ],
     gallery: [],
   },
@@ -337,6 +340,7 @@ window.TEAM_DATA = [
       { type: 'youtube', url: 'https://www.youtube.com/embed/hxnTOUZ6ARg', caption: 'On the sax, summer 2026.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/nCB8A5etAhE', caption: 'One minute on the sax.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/jXFs42irwGQ', caption: 'On the steel drums.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/coeKryVyKEU', caption: 'On the sax at Larkfield, 2026.' },
     ],
     gallery: [
       '/assets/images/team/live-musicians/curtis/curtis_happy.jpg',

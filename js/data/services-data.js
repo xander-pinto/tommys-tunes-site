@@ -59,6 +59,7 @@ window.SERVICES_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/Dvq15l_PFgk', caption: 'A Tommy\'s Tunes wedding, start to finish.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'A full wedding demo, filmed at Sunken Meadow.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/coeKryVyKEU', caption: 'A full wedding demo, filmed at Larkfield.' },
     ],
     gallery: [],
   },
@@ -646,6 +647,7 @@ window.SERVICES_DATA = [
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/pgPdS7O2g7E', caption: 'Cold sparklers running inside the glass enclosure.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/JzH9tZFUybA', caption: 'Indoor sparklers on the dance floor.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/coeKryVyKEU', caption: 'A sparkler wedding at Larkfield.' },
     ],
     gallery: [
       '/assets/images/services/photo-video-effects/cold-sparklers/sparklers_dip.jpg',

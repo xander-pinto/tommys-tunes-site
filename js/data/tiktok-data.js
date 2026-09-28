@@ -230,4 +230,14 @@ window.TIKTOK_DATA = [
   { id: '7686248739379399950', caption: 'Mike N. on intros, and the flowers got spiked.', views: '543', people: ['mike-n'], services: ['weddings'] },
   { id: '7685889245600419086', caption: 'When the song you grew up on comes on.', views: '417', people: [], services: [], shelved: 'Xander passed on it' },
   { id: '7687996919435545869', caption: 'Joe Cip. on the mic for a reception people swear is staged.', views: '2', people: ['joe-cip'], services: ['weddings'] },
+  /* --- Fourth pass 2026-09-28: everything posted since the third pass. All six
+     are wedding clips; Xander tagged the people and asked for weddings on every
+     one regardless. Sources came in 9:16 already, so the posters are straight
+     resizes with no crop. --- */
+  { id: '7689668261520215310', caption: 'Leo on the mic, and the shoes came off.', views: '2969', people: ['leo'], services: ['weddings'] },
+  { id: '7689887658453093645', caption: 'Joe Cip. on a wedding classic.', views: '2519', people: ['joe-cip'], services: ['weddings'] },
+  { id: '7690283553145343245', caption: 'Leo singing a piece of it himself.', views: '1845', people: ['leo'], services: ['weddings'] },
+  { id: '7688812641141165326', caption: 'Joe Cip. spinning through an introduction.', views: '735', people: ['joe-cip'], services: ['weddings', 'dance-floor'] },
+  { id: '7689167609094229261', caption: 'Curtis on the sax, out over the floor.', views: '697', people: ['curtis'], services: ['weddings', 'dance-floor'] },
+  { id: '7688524244094962958', caption: 'A bride and groom having a blast.', views: '669', people: [], services: ['weddings'] },
 ];
