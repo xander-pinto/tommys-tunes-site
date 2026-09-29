@@ -879,7 +879,78 @@ document.addEventListener('DOMContentLoaded', async () => {
   shuffleShowcase();
   renderVenueMarquee();
   setupReviewClamps();
+  setupSectionRail();
 });
+
+
+/* --- Homepage section rail ---
+   A fixed marker per band so a reader part-way down a long page can see
+   where they are and jump. Built from the DOM rather than a hardcoded
+   list, so adding or removing a band keeps the rail in sync.
+   Homepage only, and only wide enough screens to have a gutter for it. --- */
+function setupSectionRail() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  if (!window.matchMedia('(min-width: 1400px)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  if (!hero.id) hero.id = 'home-top';
+  const stops = [{ el: hero, label: 'Top' }];
+
+  document.querySelectorAll('.section, .final-cta').forEach((section) => {
+    const overline = section.querySelector('.overline');
+    if (!overline) return;
+    if (!section.id) {
+      section.id = 'sec-' + overline.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    }
+    stops.push({ el: section, label: overline.textContent.trim() });
+  });
+  if (stops.length < 3) return;
+
+  const rail = document.createElement('nav');
+  rail.className = 'section-rail';
+  rail.setAttribute('aria-label', 'Page sections');
+  const list = document.createElement('ol');
+
+  stops.forEach((stop) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + stop.el.id;
+    a.setAttribute('aria-label', stop.label);
+    const label = document.createElement('span');
+    label.className = 'section-rail-label';
+    label.textContent = stop.label;
+    a.appendChild(label);
+    li.appendChild(a);
+    list.appendChild(li);
+    stop.link = a;
+  });
+
+  rail.appendChild(list);
+  document.body.appendChild(rail);
+
+  /* Dark grounds: the rail sits over these, so it flips palette. */
+  const isDark = (el) => el.classList.contains('hero') || el.classList.contains('final-cta');
+
+  const setActive = (stop) => {
+    stops.forEach((s) => s.link.removeAttribute('aria-current'));
+    stop.link.setAttribute('aria-current', 'true');
+    rail.classList.toggle('on-dark', isDark(stop.el));
+  };
+
+  setActive(stops[0]);
+
+  /* Fires as a band crosses the middle of the viewport. */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const stop = stops.find((s) => s.el === entry.target);
+      if (stop) setActive(stop);
+    });
+  }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+
+  stops.forEach((s) => observer.observe(s.el));
+}
 
 
 /* --- Homepage featured reviews: clamp long quotes, add a See more toggle.
