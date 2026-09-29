@@ -880,7 +880,84 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderVenueMarquee();
   setupReviewClamps();
   setupSectionRail();
+  renderPackageTable();
 });
+
+
+/* --- Packages comparison table ---
+   Six tiers whose differences were buried in six 787px cards. Built
+   from PACKAGES_DATA so it stays in sync, and derived ONLY from what
+   each tier's `included` list actually says — a tier that doesn't
+   mention a feature gets a blank, not a tick. Several blanks in the
+   last two rows are a gap in the data, not a gap in the package. --- */
+function renderPackageTable() {
+  const slot = document.querySelector('[data-package-table]');
+  if (!slot) return;
+  const data = (typeof window !== 'undefined' && Array.isArray(window.PACKAGES_DATA))
+    ? window.PACKAGES_DATA : [];
+  if (!data.length) return;
+
+  const has = (pkg, re) => (pkg.included || []).some((line) => re.test(line));
+  const valueFrom = (pkg, re, group) => {
+    const line = (pkg.included || []).find((l) => re.test(l));
+    if (!line) return '';
+    const m = line.match(re);
+    return m ? (m[group] || '').trim() : '';
+  };
+
+  const ROWS = [
+    { label: 'Hours of music', value: (p) => valueFrom(p, /^([^]+?)\s+hours of music/i, 1) },
+    { label: 'Team', value: (p) => valueFrom(p, /(\d-man team:\s*)([^]+)/i, 2) },
+    { label: 'Ceremony music', test: /ceremony/i },
+    { label: 'Cocktail-hour music', test: /cocktail/i },
+    { label: 'Illuminated DJ front board', test: /front board/i },
+    { label: 'Mac lights on illuminated towers', test: /mac lights/i },
+    { label: '60" LCD TVs with Zap Shots photographer', test: /LCD TVs/i },
+    { label: 'Live sax player or percussionist', test: /sax player|percussionist/i },
+    { label: 'Custom playlist consultation', test: /playlist consultation/i },
+    { label: 'Setup & breakdown', test: /setup & breakdown/i },
+  ];
+
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  const headCells = data.map((p) => `
+    <th scope="col" class="pkg-col${p.slug === 'deluxe' ? ' is-featured' : ''}">
+      <a class="pkg-col-link" href="/package/${esc(p.slug)}/">
+        <span class="pkg-col-photo" style="background-image: url('${esc(p.photo)}');" aria-hidden="true"></span>
+        <span class="pkg-col-name">${esc(p.name.replace(/ Entertainment$/, ''))}</span>
+      </a>
+    </th>`).join('');
+
+  const bodyRows = ROWS.map((row) => {
+    const cells = data.map((p) => {
+      if (row.value) {
+        const v = row.value(p);
+        return `<td class="pkg-cell${p.slug === 'deluxe' ? ' is-featured' : ''}">${v ? esc(v) : '<span class="pkg-none">&mdash;</span>'}</td>`;
+      }
+      const yes = has(p, row.test);
+      return `<td class="pkg-cell${p.slug === 'deluxe' ? ' is-featured' : ''}">${
+        yes ? '<span class="pkg-yes" role="img" aria-label="Included">&#10003;</span>'
+            : '<span class="pkg-none" role="img" aria-label="Not listed">&mdash;</span>'
+      }</td>`;
+    }).join('');
+    return `<tr><th scope="row" class="pkg-rowhead">${esc(row.label)}</th>${cells}</tr>`;
+  }).join('');
+
+  const footCells = data.map((p) => `
+    <td class="pkg-cell${p.slug === 'deluxe' ? ' is-featured' : ''}">
+      <a class="btn btn-secondary pkg-col-cta" href="/package/${esc(p.slug)}/">See details</a>
+    </td>`).join('');
+
+  slot.innerHTML = `
+    <div class="pkg-table-scroll">
+      <table class="pkg-table">
+        <caption class="sr-only">What each package includes</caption>
+        <thead><tr><td class="pkg-corner"></td>${headCells}</tr></thead>
+        <tbody>${bodyRows}</tbody>
+        <tfoot><tr><td class="pkg-corner"></td>${footCells}</tr></tfoot>
+      </table>
+    </div>`;
+}
 
 
 /* --- Homepage section rail ---

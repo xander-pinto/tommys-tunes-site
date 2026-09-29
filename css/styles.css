@@ -1793,6 +1793,108 @@ p {
   }
 }
 
+/* Packages comparison table. Six 787px cards became one table so the
+   differences between tiers are visible instead of reconstructed.
+   Photos stay in the column heads — the page is meant to be looked at,
+   not just read. */
+.pkg-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pkg-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pkg-corner {
+  border: none;
+  background: transparent;
+}
+
+.pkg-col,
+.pkg-cell {
+  vertical-align: middle;
+  text-align: center;
+  padding: var(--sp-3);
+  border-bottom: 1px solid rgba(26, 26, 31, 0.08);
+  font-size: var(--fs-sm);
+}
+
+.pkg-col {
+  vertical-align: bottom;
+  padding-bottom: var(--sp-4);
+  border-bottom: 2px solid rgba(11, 94, 222, 0.18);
+}
+
+.pkg-col-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.pkg-col-photo {
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-md);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--sp-3);
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.pkg-col-link:hover .pkg-col-photo {
+  transform: translateY(-2px);
+}
+
+.pkg-col-name {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  display: block;
+}
+
+.pkg-rowhead {
+  text-align: left;
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  color: var(--text-on-light-soft);
+  padding: var(--sp-3) var(--sp-4) var(--sp-3) 0;
+  border-bottom: 1px solid rgba(26, 26, 31, 0.08);
+  width: 240px;
+}
+
+.pkg-yes {
+  color: var(--royal-blue);
+  font-size: var(--fs-md);
+}
+
+.pkg-none {
+  color: rgba(26, 26, 31, 0.28);
+}
+
+/* The tier we lead with. */
+.pkg-col.is-featured,
+.pkg-cell.is-featured {
+  background: var(--bg-light-alt);
+}
+
+.pkg-col.is-featured {
+  border-bottom-color: var(--royal-blue);
+}
+
+.pkg-table tfoot .pkg-cell {
+  border-bottom: none;
+  padding-top: var(--sp-4);
+}
+
+.pkg-col-cta {
+  width: 100%;
+  justify-content: center;
+}
+
 /* --- 12. Inner-page hero bar --- */
 
 .page-hero {

@@ -53,101 +53,7 @@
   <section class="section section-light">
     <div class="container">
 
-      <div class="package-stack">
-
-        <!-- 1. Basic -->
-        <a class="card-link package-card" href="/package/basic/">
-          <div class="card-photo" style="background-image: url('/assets/images/packages/basic/basic_pf.jpg');"></div>
-          <h3>Basic Entertainment</h3>
-          <p class="package-tagline">For intimate weddings and small gatherings of 75 or fewer.</p>
-          <ul class="package-specs">
-            <li>4 hours of music &amp; entertainment</li>
-            <li>1-man team: DJ/MC in professional attire</li>
-            <li>Custom playlist consultation</li>
-            <li>Setup &amp; breakdown included</li>
-          </ul>
-          <span class="btn btn-primary">See details</span>
-        </a>
-
-        <!-- 2. Deluxe — Most Popular -->
-        <a class="card-link package-card is-featured" href="/package/deluxe/">
-          <div class="card-photo" style="background-image: url('/assets/images/packages/deluxe/deluxe_pf.jpg');"></div>
-          <span class="package-tag">Most popular</span>
-          <h3>Deluxe Entertainment</h3>
-          <p class="package-tagline">The Long Island wedding standard. DJ on the music, MC working the room.</p>
-          <ul class="package-specs">
-            <li>4 hours of music &amp; entertainment</li>
-            <li>2-man team: DJ + MC in professional attire</li>
-            <li>Custom playlist consultation</li>
-            <li>Setup &amp; breakdown included</li>
-          </ul>
-          <span class="btn btn-primary">See details</span>
-        </a>
-
-        <!-- 3. Super Deluxe -->
-        <a class="card-link package-card" href="/package/super-deluxe/">
-          <div class="card-photo" style="background-image: url('/assets/images/packages/super-deluxe/super_deluxe_pf.jpg');"></div>
-          <h3>Super Deluxe Entertainment</h3>
-          <p class="package-tagline">Same team from ceremony through last dance, with the illuminated DJ booth.</p>
-          <ul class="package-specs">
-            <li>5½ hours of music &amp; entertainment</li>
-            <li>DJ music for ceremony + cocktail hour</li>
-            <li>Illuminated DJ front board (your color palette)</li>
-            <li>2-man team: DJ + MC</li>
-          </ul>
-          <span class="btn btn-primary">See details</span>
-        </a>
-
-        <!-- 4. Premiere -->
-        <a class="card-link package-card" href="/package/premiere/">
-          <div class="card-photo" style="background-image: url('/assets/images/packages/premiere/premeire_pf.jpg');"></div>
-          <h3>Premiere Entertainment</h3>
-          <p class="package-tagline">When you want the room to look as good as it sounds. Towers, intelligent lights, dedicated tech.</p>
-          <ul class="package-specs">
-            <li>5 hours of music &amp; entertainment</li>
-            <li>DJ music for cocktail hour</li>
-            <li>Illuminated DJ front board</li>
-            <li>2 Mac Lights on 2 illuminated towers</li>
-            <li>3-man team: DJ + MC + Light Tech</li>
-          </ul>
-          <span class="btn btn-primary">See details</span>
-        </a>
-
-        <!-- 5. Supreme -->
-        <a class="card-link package-card" href="/package/supreme/">
-          <div class="card-photo" style="background-image: url('/assets/images/packages/supreme/supreme_pf.jpg');"></div>
-          <h3>Supreme Entertainment</h3>
-          <p class="package-tagline">Adds live event photography on screens throughout the night.</p>
-          <ul class="package-specs">
-            <li>5 hours of music &amp; entertainment</li>
-            <li>DJ music for cocktail hour</li>
-            <li>2 × 60" LCD TVs with photographer displaying Zap Shots (live digital photos)</li>
-            <li>Illuminated DJ front board</li>
-            <li>2 Mac Lights on 2 illuminated towers</li>
-            <li>4-man team: DJ + MC + Photographer + TV Tech</li>
-          </ul>
-          <span class="btn btn-primary">See details</span>
-        </a>
-
-        <!-- 6. Grand — Ultimate -->
-        <a class="card-link package-card" href="/package/grand/">
-          <div class="card-photo" style="background-image: url('/assets/images/packages/grand/grand_pf.jpg');"></div>
-          <span class="package-tag">Ultimate</span>
-          <h3>Grand Entertainment</h3>
-          <p class="package-tagline">The full production, plus a live sax or percussionist on the reception.</p>
-          <ul class="package-specs">
-            <li>5 hours of music &amp; entertainment</li>
-            <li>DJ music for cocktail hour</li>
-            <li>2 × 60" LCD TVs with photographer (Zap Shots + digital gallery)</li>
-            <li>Illuminated DJ front board</li>
-            <li>2 Mac Lights on 2 illuminated towers</li>
-            <li>Your choice: live Sax Player OR Percussionist for reception</li>
-            <li>5-man team: DJ + MC + Photographer + TV/Light Tech + Musician</li>
-          </ul>
-          <span class="btn btn-primary">See details</span>
-        </a>
-
-      </div>
+      <div data-package-table></div>
 
       <p class="text-center mt-7" style="font-size: var(--fs-md); color: var(--text-on-light-soft); max-width: 56ch; margin-left:auto; margin-right:auto;">
         All packages are customizable. Add live musicians, photo booths, uplighting, or any of our specialty add-ons à la carte.
@@ -235,6 +141,7 @@
   <div data-component="footer"></div>
   <div data-component="modal"></div>
 
+  <script src="/js/data/packages-data.js" defer></script>
   <script src="/js/main.js" defer></script>
 </body>
 </html>
