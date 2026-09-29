@@ -1793,6 +1793,73 @@ p {
   }
 }
 
+/* --- 11b. Flat page head ---
+   An inner page whose heading belongs with its content instead of in a
+   separate dark bar. The bar it replaces was 478px tall to hold 255px of
+   centred text, so it was mostly padding. Two consequences: the fixed nav
+   loses the dark backdrop it was relying on, so it goes solid from the
+   top, and the first section has to clear the nav itself. --- */
+
+body.has-solid-nav .nav {
+  background: rgba(0, 0, 5, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: rgba(49, 170, 239, 0.12);
+}
+
+.section-flush {
+  padding-top: calc(var(--nav-height) + var(--sp-6));
+}
+
+.page-band .section-head {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+.page-band .section-head h1 {
+  margin: 0 0 var(--sp-4);
+  max-width: 18ch;
+}
+
+.page-band .section-head p {
+  max-width: 52ch;
+  margin: 0;
+}
+
+/* Laptop and up: the lead sits beside the heading rather than under it,
+   so the head row uses the width instead of stacking down the middle. */
+@media (min-width: 900px) {
+  .page-band > .container {
+    max-width: 1320px;
+  }
+
+  .page-band .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    column-gap: var(--sp-7);
+    align-items: end;
+  }
+
+  .page-band .section-head .overline {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .page-band .section-head h1 {
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 0;
+  }
+
+  .page-band .section-head p {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+
 /* --- 12. Inner-page hero bar --- */
 
 .page-hero {
