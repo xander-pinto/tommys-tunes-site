@@ -90,6 +90,7 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'grand',
+    tag: 'Ultimate',
     name: 'Grand Entertainment',
     tagline: 'The full production, plus a live sax or percussionist on the reception.',
     photo: '/assets/images/packages/grand/grand_pf.jpg',
