@@ -40,12 +40,15 @@
     .about-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: var(--sp-7);
+      gap: var(--sp-6);
       align-items: center;
     }
-    @media (min-width: 800px) {
-      .about-grid { grid-template-columns: 1.1fr 1fr; gap: var(--sp-9); }
+    @media (min-width: 900px) {
+      .about-grid { grid-template-columns: 1.15fr 1fr; gap: var(--sp-8); }
     }
+    .about-grid h2 { margin-bottom: var(--sp-5); }
+    .about-grid p + p { margin-top: var(--sp-4); }
+
     .about-portrait {
       aspect-ratio: 4 / 5;
       background: linear-gradient(160deg, var(--deep-navy), var(--near-black));
@@ -53,108 +56,113 @@
       border: 1px solid rgba(49, 170, 239, 0.2);
       overflow: hidden;
       position: relative;
-      max-width: 480px;
       width: 100%;
-      margin: 0 auto;
+      margin: 0;
     }
-    .about-portrait img {
-      width: 100%; height: 100%; object-fit: cover;
-    }
+    .about-portrait img { width: 100%; height: 100%; object-fit: cover; }
     .about-portrait::after {
       content: "";
       position: absolute; inset: 0;
       background: linear-gradient(180deg, transparent 50%, rgba(0,0,5,0.55) 100%);
       pointer-events: none;
     }
+
+    /* Royal blue, not electric cyan. At 80-176px these are still only
+       2.2:1 on a light background, under the 3:1 large-text minimum. */
     .big-number {
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: clamp(5rem, 4rem + 8vw, 11rem);
+      font-size: clamp(4.5rem, 3.5rem + 7vw, 9rem);
       line-height: 0.9;
-      color: var(--electric-cyan);
+      color: var(--royal-blue);
       letter-spacing: -0.04em;
-      margin-bottom: var(--sp-5);
+      margin-bottom: var(--sp-4);
     }
+
+    /* Shared frame for the two archive photos. */
+    .about-figure {
+      margin: 0;
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(26, 26, 31, 0.12);
+      overflow: hidden;
+      background: var(--deep-navy);
+    }
+    .about-figure img { width: 100%; height: auto; display: block; }
+    .about-figure figcaption {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: var(--fs-sm);
+      color: var(--text-on-light-soft);
+      background: var(--bg-light-alt);
+      padding: var(--sp-3) var(--sp-4);
+    }
+
+    /* The 1985 print ran 420px wide in a 1120px band, marooned in white
+       space. Now it anchors its own row beside the paragraph that sets it up. */
+    .archive-split {
+      display: grid;
+      gap: var(--sp-6);
+      margin-top: var(--sp-8);
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .archive-split { grid-template-columns: 1.4fr 1fr; gap: var(--sp-8); }
+    }
+    .archive-split .about-figure { box-shadow: 0 12px 34px rgba(0, 0, 5, 0.14); }
+    /* Set as a pull quote rather than body copy, so it carries its half of
+       the row instead of floating in the middle of an empty column. */
+    .archive-note {
+      font-family: var(--font-serif);
+      font-size: clamp(1.125rem, 1rem + 0.55vw, 1.5rem);
+      line-height: 1.55;
+      max-width: 40ch;
+    }
+
     .sons-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--sp-5);
+      margin-top: var(--sp-8);
     }
     @media (min-width: 700px) { .sons-grid { grid-template-columns: repeat(3, 1fr); } }
     .son-card {
       background: var(--warm-white);
       border: 1px solid rgba(26, 26, 31, 0.08);
       border-radius: var(--r-lg);
-      padding: var(--sp-6);
+      padding: var(--sp-5);
     }
-    .son-card .team-card-photo { aspect-ratio: 1 / 1; max-width: 140px; }
-    .son-card h3 { font-size: var(--fs-md); margin-bottom: var(--sp-3); }
+    /* Was capped at 140px, so three brothers sat as thumbnails in a
+       1120px row. Full card width now. */
+    .son-card .team-card-photo {
+      aspect-ratio: 4 / 5;
+      max-width: none;
+      margin-bottom: var(--sp-4);
+    }
+    .son-card h3 { font-size: var(--fs-md); margin-bottom: var(--sp-2); }
     .son-card p { font-size: var(--fs-sm); }
-
-    .about-feature {
-      aspect-ratio: 3 / 2;
-      max-width: 760px;
-      width: 100%;
-      margin: 0 auto var(--sp-3);
-      border-radius: var(--r-lg);
-      border: 1px solid rgba(26, 26, 31, 0.1);
-      overflow: hidden;
-      background: var(--deep-navy);
-    }
-    .about-feature img { width: 100%; height: 100%; object-fit: cover; }
-
-    .archive-photo {
-      aspect-ratio: 3 / 2;
-      max-width: 420px;
-      width: 100%;
-      margin: var(--sp-7) auto 0;
-      border-radius: var(--r-md);
-      border: 1px solid rgba(26, 26, 31, 0.12);
-      box-shadow: 0 10px 30px rgba(0, 0, 5, 0.12);
-      overflow: hidden;
-      background: var(--deep-navy);
-    }
-    .archive-photo img {
-      width: 100%; height: 100%; object-fit: cover;
-      transform: scale(1.4);
-      transform-origin: 62% 62%;
-    }
-
-    .photo-caption {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: var(--fs-sm);
-      color: var(--charcoal);
-      opacity: 0.65;
-      text-align: center;
-      margin-top: var(--sp-3);
-    }
   </style>
 </head>
-<body>
+<body class="has-solid-nav">
 
   <div data-component="nav"></div>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="starfield"></div>
+  <!-- ACT 1 - THE START (1985). The page heading opens this section rather
+       than sitting in its own 448px dark bar. -->
+  <section class="section section-light section-flush page-band">
     <div class="container">
-      <span class="kicker">About</span>
-      <h1>One family. <em>40+ years on Long Island.</em></h1>
-      <p>Tommy started Tommy's Tunes in 1985. Four decades later, his three sons run it with him.</p>
-    </div>
-  </section>
+      <div class="section-head">
+        <span class="overline">About</span>
+        <h1>One family. <em>40+ years on Long Island.</em></h1>
+        <p>Tommy started Tommy's Tunes in 1985. Four decades later, his three sons run it with him.</p>
+      </div>
 
-  <!-- ACT 1 - THE START (1985) -->
-  <section class="section section-light">
-    <div class="container">
       <div class="about-grid">
         <div>
           <!-- EDIT: Founding year -->
           <div class="big-number">1985</div>
-          <h2 style="margin-bottom: var(--sp-5);">It started with one DJ and <em>a lot of Saturdays.</em></h2>
-          <!-- EDIT: Founding story - Tommy to confirm the real early details -->
-          <p style="margin-bottom: var(--sp-4);">
+          <h2>It started with one DJ and <em>a lot of Saturdays.</em></h2>
+          <p>
             In 1985, Tommy Masino loaded a car with records and gear and started booking Long Island weddings one Saturday at a time. No showroom. No team. Just a guy who could read a room and keep a dance floor full.
           </p>
           <p>
@@ -164,38 +172,43 @@
         <div>
           <!-- EDIT: Young Tommy portrait - /assets/images/about/young_tommy.jpg -->
           <div class="about-portrait">
-            <img src="/assets/images/about/young_tommy.jpg" alt="Tommy Masino in the 1980s, the early years of Tommy's Tunes" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(181,212,244,0.55);font-style:italic;font-family:var(--font-serif);font-size:var(--fs-md);text-align:center;padding:var(--sp-5);\'>Young Tommy<br><span style=\'font-size:var(--fs-xs);font-style:normal;letter-spacing:0.1em;text-transform:uppercase;\'>Drop image at /assets/images/about/young_tommy.jpg</span></div>'">
+            <img src="/assets/images/about/young_tommy.jpg" alt="Tommy Masino in the 1980s, the early years of Tommy's Tunes" loading="lazy">
           </div>
         </div>
       </div>
 
-      <!-- EDIT: Archive photo - /assets/images/about/tommy_djing.JPG -->
-      <figure class="archive-photo">
-        <img src="/assets/images/about/tommy_djing.JPG" alt="A Tommy's Tunes DJ setup from the early years" loading="lazy" onerror="this.parentElement.style.display='none'">
-      </figure>
-      <p class="photo-caption">From the archives. A Tommy's Tunes setup from the early days.</p>
+      <div class="archive-split">
+        <!-- EDIT: Archive photo - cropped from /assets/images/about/tommy_djing.JPG -->
+        <figure class="about-figure">
+          <img src="/assets/images/about/tommy_djing_print.jpg" alt="A Tommy's Tunes DJ setup from the early years: two DJs in tuxedos behind a banner, JBL speakers either side, checkerboard floor" loading="lazy">
+          <figcaption>From the archives. A Tommy's Tunes setup from the early days.</figcaption>
+        </figure>
+        <p class="archive-note">
+          Tuxedos, a hand-painted banner and a pair of JBLs on stands. The gear has changed. The part where two guys in bow ties are the reason the room is full hasn't.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- ACT 2 - THE COMPANY TODAY -->
-  <section class="section section-tinted">
+  <section class="section section-tinted page-band">
     <div class="container">
       <div class="about-grid">
         <div>
           <!-- EDIT: Tommy today portrait - /assets/images/about/tommy.JPG -->
           <div class="about-portrait">
-            <img src="/assets/images/about/tommy.JPG" alt="Tommy Masino today" loading="lazy" onerror="this.parentElement.innerHTML='<div style=\'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(181,212,244,0.55);font-style:italic;font-family:var(--font-serif);font-size:var(--fs-md);text-align:center;padding:var(--sp-5);\'>Tommy today<br><span style=\'font-size:var(--fs-xs);font-style:normal;letter-spacing:0.1em;text-transform:uppercase;\'>Drop image at /assets/images/about/tommy.JPG</span></div>'">
+            <img src="/assets/images/about/tommy.JPG" alt="Tommy Masino today" loading="lazy">
           </div>
         </div>
         <div>
           <div class="big-number">40+</div>
-          <h2 style="margin-bottom: var(--sp-5);">40+ years on, <em>still on the road most weekends.</em></h2>
+          <h2>40+ years on, <em>still on the road most weekends.</em></h2>
           <!-- EDIT: Selden is the established home (10+ years), not new -->
-          <p style="margin-bottom: var(--sp-4);">
+          <p>
             These days the company runs out of its Selden showroom, the home it grew into years ago, where couples can see the setups, hear the sound, and meet the people who'll actually be at their event.
           </p>
-          <p style="margin-bottom: var(--sp-4);">
-            The team has grown from one DJ to more than thirty: MCs, DJs, live musicians, photo booth attendants, and the crew loading trucks before sunrise. Tommy's still out there most weekends. He's worked weddings for couples whose parents he DJ'd, MC'd four-generation Mitzvahs, and lost count of the Quinceañeras.
+          <p>
+            The team has grown from one DJ to nearly fifty: MCs, DJs, live musicians, photo booth attendants, and the crew loading trucks before sunrise. Tommy's still out there most weekends. He's worked weddings for couples whose parents he DJ'd, MC'd four-generation Mitzvahs, and lost count of the Quinceañeras.
           </p>
           <p>
             DJ companies are easy to start and most don't last five years. Tommy's Tunes has lasted forty for one reason: every event still goes out with someone whose name you can pronounce and whose face you've seen.
@@ -206,7 +219,7 @@
   </section>
 
   <!-- ACT 3 - MY THREE SONS -->
-  <section class="section section-light">
+  <section class="section section-light page-band">
     <div class="container">
       <div class="section-head">
         <span class="overline">The next chapter</span>
@@ -214,21 +227,22 @@
         <p>They grew up in the back of the truck. Now they run the company with their dad.</p>
       </div>
 
-      <!-- EDIT: The sons as kids - /assets/images/about/my_three_sons.jpg -->
-      <figure class="about-feature">
-        <img src="/assets/images/about/my_three_sons.jpg" alt="The Masino boys as kids on the back of the Tommy's Tunes box truck in 2001" loading="lazy" onerror="this.parentElement.style.display='none'">
-      </figure>
-      <p class="photo-caption">The Masino boys on the back of the Tommy's Tunes truck, 2001.</p>
-
-      <p style="max-width: 720px; margin: var(--sp-6) auto var(--sp-7); text-align: center; font-size: var(--fs-md);">
-        Joe, TJ, and Dom Masino grew up inside this business, riding along to load-ins and watching their dad work a room. They never really left. Today all three work alongside him, carrying Tommy's Tunes into its next forty years.
-      </p>
+      <div class="archive-split">
+        <!-- EDIT: The sons as kids - /assets/images/about/my_three_sons.jpg -->
+        <figure class="about-figure">
+          <img src="/assets/images/about/my_three_sons.jpg" alt="The Masino boys as kids on the back of the Tommy's Tunes box truck in 2001" loading="lazy">
+          <figcaption>The Masino boys on the back of the Tommy's Tunes truck, 2001.</figcaption>
+        </figure>
+        <p class="archive-note">
+          Joe, TJ, and Dom Masino grew up inside this business, riding along to load-ins and watching their dad work a room. They never really left. Today all three work alongside him, carrying Tommy's Tunes into its next forty years.
+        </p>
+      </div>
 
       <div class="sons-grid">
 
         <article class="son-card">
           <div class="team-card-photo">
-            <img src="/assets/images/team/management/joe-masino/joe_masino_pf.jpg" alt="Joe Masino" style="object-position: center top;" onerror="this.style.display='none'">
+            <img src="/assets/images/team/management/joe-masino/joe_masino_pf.jpg" alt="Joe Masino" style="object-position: center top;">
           </div>
           <h3>Joe Masino</h3>
           <!-- EDIT: Son blurb - Joe (sales / consultations / showcases) -->
@@ -237,7 +251,7 @@
 
         <article class="son-card">
           <div class="team-card-photo">
-            <img src="/assets/images/team/management/tj-masino/Tj_Masino_pf.jpg" alt="TJ Masino" onerror="this.style.display='none'">
+            <img src="/assets/images/team/management/tj-masino/Tj_Masino_pf.jpg" alt="TJ Masino">
           </div>
           <h3>TJ Masino</h3>
           <!-- EDIT: Son blurb - TJ (scheduling / ops / equipment / staffing) -->
@@ -246,7 +260,7 @@
 
         <article class="son-card">
           <div class="team-card-photo">
-            <img src="/assets/images/team/management/dom-masino/dom_masino_pf.jpg" alt="Dom Masino" onerror="this.style.display='none'">
+            <img src="/assets/images/team/management/dom-masino/dom_masino_pf.jpg" alt="Dom Masino">
           </div>
           <h3>Dom Masino</h3>
           <!-- EDIT: Son blurb - Dom (front desk / first emails / a bit of everything) -->
