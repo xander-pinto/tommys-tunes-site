@@ -2731,12 +2731,39 @@ body.has-solid-nav .nav {
     width: auto;
     margin-inline: 0;
     padding-inline: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Both columns have to end on the same line. The heading is a fixed
+     height and the badge wall sets the band's height, so the photo takes
+     whatever is left over: a fixed 3:4 crop ran the left column 821px
+     against the wall's 555px and hung 266px below it. */
+  .awards-home {
+    align-items: stretch;
   }
 
   .awards-home .section-head {
     max-width: none;
     margin: 0;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  .awards-home .band-photo--tall {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 240px;
+    margin-top: var(--sp-6);
+  }
+
+  .awards-home .band-photo--tall img {
+    aspect-ratio: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
   }
 
   .awards-home .awards-wall,
