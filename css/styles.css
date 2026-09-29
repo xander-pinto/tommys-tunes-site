@@ -1974,11 +1974,11 @@ p {
   border-color: rgba(11, 94, 222, 0.3);
 }
 
-/* On a dark band the rows are the only light surface, which is what
+/* On the navy band the rows are the only light surface, which is what
    makes them read as clickable. Lift and arrow confirm it on hover.
    The name needs an explicit colour: the section sets text to
    warm-white, and the card underneath IS warm-white. */
-.section-dark .pkg-row {
+.section-navy .pkg-row {
   border-color: transparent;
   box-shadow: 0 1px 2px rgba(0, 0, 5, 0.35);
   transition:
@@ -1987,18 +1987,18 @@ p {
     border-color var(--t-fast) var(--ease-out);
 }
 
-.section-dark .pkg-row-name {
+.section-navy .pkg-row-name {
   color: var(--text-on-light);
 }
 
-.section-dark .pkg-row:hover {
+.section-navy .pkg-row:hover {
   transform: translateY(-2px);
   border-color: var(--royal-blue);
   box-shadow: 0 8px 22px -10px rgba(0, 0, 5, 0.7);
 }
 
 @media (min-width: 600px) {
-  .section-dark .pkg-row::after {
+  .section-navy .pkg-row::after {
     content: "\2192";
     color: var(--royal-blue);
     font-size: var(--fs-md);
@@ -2006,7 +2006,7 @@ p {
     transition: transform var(--t-fast) var(--ease-out);
   }
 
-  .section-dark .pkg-row:hover::after {
+  .section-navy .pkg-row:hover::after {
     transform: translateX(3px);
   }
 }
@@ -2041,7 +2041,9 @@ p {
 /* --- 18. Venue marquee --- */
 
 .marquee {
-  background: var(--deep-navy);
+  /* Near-black, not navy: it sits directly under the navy packages band
+     and the two merged into one slab when both were deep-navy. */
+  background: var(--near-black);
   padding: var(--sp-9) 0;
   overflow: hidden;
   position: relative;
