@@ -2036,6 +2036,99 @@ body.has-solid-nav .nav {
 }
 
 
+/* --- 11e. On price, and what happens next ---
+   The two things the homepage never said out loud: what it costs, and
+   what clicking the button actually starts. --- */
+
+.price-stat {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  line-height: 1.45;
+  max-width: 34ch;
+  margin: 0 0 var(--sp-6);
+}
+
+.price-stat strong {
+  font-weight: 500;
+  color: var(--royal-blue);
+}
+
+/* Pull quotes, not cards. The reviews band further down already uses
+   cards, and two card grids on one page read as the same section twice. */
+.price-quotes {
+  display: grid;
+  gap: var(--sp-5);
+}
+
+@media (min-width: 760px) {
+  .price-quotes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.price-quote {
+  margin: 0;
+  padding-left: var(--sp-5);
+  border-left: 3px solid var(--royal-blue);
+}
+
+.price-quote p {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 var(--sp-3);
+}
+
+.price-quote cite {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-size: var(--fs-sm);
+  color: var(--text-on-light-soft);
+}
+
+.price-quote cite span {
+  color: var(--royal-blue);
+}
+
+/* Three steps. Numbered so the sequence is the point. */
+.steps {
+  list-style: none;
+  display: grid;
+  gap: var(--sp-6);
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+@media (min-width: 760px) {
+  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.step {
+  position: relative;
+  padding-top: var(--sp-5);
+  border-top: 1px solid rgba(11, 94, 222, 0.2);
+}
+
+.step-num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
+  line-height: 1;
+  color: var(--royal-blue);
+  margin-bottom: var(--sp-3);
+}
+
+.step h3 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--sp-2);
+}
+
+.step p {
+  font-size: var(--fs-sm);
+  margin: 0;
+}
+
+
 /* --- 12. Inner-page hero bar --- */
 
 .page-hero {
