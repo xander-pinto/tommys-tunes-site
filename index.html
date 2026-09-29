@@ -182,28 +182,8 @@
   </section>
 
 
-  <!-- TEAM TEASER -->
-  <section class="section section-light home-band" id="home-team">
-    <div class="container">
-      <div class="section-head">
-        <span class="overline">Meet the crew</span>
-        <h2>Behind every event is a real team, <em>and we're proud to show ours.</em></h2>
-        <p>Joe Cip. on the mic. Dominick reading the room. Anderson and Ruben on Spanish-English weddings. Nearly fifty people
-          on the roster, all named.</p>
-      </div>
-
-      <!-- 4 random featured talent injected by main.js -->
-      <div class="team-grid" data-rotation="team" data-count="4"></div>
-
-      <div class="text-center mt-7">
-        <a class="btn btn-secondary" href="/team.html">See the full roster</a>
-      </div>
-      <p class="hiring-line">We're hiring too. <a href="/careers.html">See open roles &rarr;</a></p>
-    </div>
-  </section>
-
   <!-- SPECIALTIES -->
-  <section class="section section-tinted home-band">
+  <section class="section section-light home-band">
     <div class="container">
       <div class="section-head">
         <span class="overline">What we do</span>
@@ -257,7 +237,7 @@
   </section>
 
   <!-- PACKAGES PREVIEW -->
-  <section class="section section-light home-band">
+  <section class="section section-tinted home-band">
     <div class="container">
       <div class="section-head">
         <span class="overline">Packages</span>
@@ -277,57 +257,6 @@
     </div>
   </section>
 
-
-  <!-- VENUE MARQUEE -->
-  <div class="marquee" aria-label="Venues we've worked">
-    <div class="marquee-label">A few of the venues we know by heart</div>
-    <div class="marquee-track" data-venue-marquee>
-      <!-- EDIT: Venue list is populated by main.js from VENUE_POOL. Count controlled by data-count. -->
-    </div>
-  </div>
-
-
-  <!-- UPCOMING SHOWCASES (conditional — hides entirely when no upcoming events in showcases-data.js) -->
-  <section class="section section-light home-band" id="home-showcase-preview-section">
-    <div class="container">
-      <div class="section-head">
-        <span class="overline">See us in person</span>
-        <h2>Next stops <em>on the calendar.</em></h2>
-        <p>Bridal showcases at Long Island venues, every few weeks. Meet the team, see the lighting setups in person.</p>
-      </div>
-
-      <!-- Photo beside the dates: the band was three text rows and nothing
-           to look at, and a showcase is a thing you go and SEE. -->
-      <div class="band-split">
-        <figure class="band-photo">
-          <img src="/assets/images/showcase/class_tt_pic.jpg"
-            alt="The Tommy's Tunes band playing live, sax and drums on stage" loading="lazy">
-          <figcaption>Live at a showcase. This is the setup you'll walk into.</figcaption>
-        </figure>
-        <div class="showcase-preview-grid" data-showcase-calendar-preview></div>
-      </div>
-
-      <div class="text-center mt-6">
-        <a class="btn btn-secondary" href="/showcase.html#showcase-calendar-section">See all upcoming showcases</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- AWARDS WALL (full year-badge wall — /components/awards-wall.html) -->
-  <section class="section section-tinted awards-home">
-    <div class="container">
-      <div class="section-head">
-        <span class="overline">Awards</span>
-        <h2>Thirty-three wins, <em>and counting.</em></h2>
-        <figure class="band-photo band-photo--tall">
-          <img src="/assets/images/showcase/event-14.jpg"
-            alt="A bride and groom playing the drums with the band at their reception" loading="lazy">
-        </figure>
-      </div>
-    </div>
-    <div data-component="awards-wall"></div>
-  </section>
 
   <!-- FEATURED REVIEWS (static — 4 hand-picked from /js/data/reviews-data.js)
        EDIT: To swap in different reviews, replace the four <article> cards below.
@@ -406,6 +335,77 @@
   </section>
 
 
+
+
+  <!-- AWARDS WALL (full year-badge wall — /components/awards-wall.html) -->
+  <section class="section section-light awards-home">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Awards</span>
+        <h2>Thirty-three wins, <em>and counting.</em></h2>
+        <figure class="band-photo band-photo--tall">
+          <img src="/assets/images/showcase/event-14.jpg"
+            alt="A bride and groom playing the drums with the band at their reception" loading="lazy">
+        </figure>
+      </div>
+    </div>
+    <div data-component="awards-wall"></div>
+  </section>
+
+  <!-- VENUE MARQUEE -->
+  <div class="marquee" aria-label="Venues we've worked">
+    <div class="marquee-label">A few of the venues we know by heart</div>
+    <div class="marquee-track" data-venue-marquee>
+      <!-- EDIT: Venue list is populated by main.js from VENUE_POOL. Count controlled by data-count. -->
+    </div>
+  </div>
+
+
+  <!-- TEAM TEASER -->
+  <section class="section section-light home-band" id="home-team">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">Meet the crew</span>
+        <h2>Behind every event is a real team, <em>and we're proud to show ours.</em></h2>
+        <p>Joe Cip. on the mic. Dominick reading the room. Anderson and Ruben on Spanish-English weddings. Nearly fifty people
+          on the roster, all named.</p>
+      </div>
+
+      <!-- 4 random featured talent injected by main.js -->
+      <div class="team-grid" data-rotation="team" data-count="4"></div>
+
+      <div class="text-center mt-7">
+        <a class="btn btn-secondary" href="/team.html">See the full roster</a>
+      </div>
+      <p class="hiring-line">We're hiring too. <a href="/careers.html">See open roles &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- UPCOMING SHOWCASES (conditional — hides entirely when no upcoming events in showcases-data.js) -->
+  <section class="section section-tinted home-band" id="home-showcase-preview-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="overline">See us in person</span>
+        <h2>Next stops <em>on the calendar.</em></h2>
+        <p>Bridal showcases at Long Island venues, every few weeks. Meet the team, see the lighting setups in person.</p>
+      </div>
+
+      <!-- Photo beside the dates: the band was three text rows and nothing
+           to look at, and a showcase is a thing you go and SEE. -->
+      <div class="band-split">
+        <figure class="band-photo">
+          <img src="/assets/images/showcase/class_tt_pic.jpg"
+            alt="The Tommy's Tunes band playing live, sax and drums on stage" loading="lazy">
+          <figcaption>Live at a showcase. This is the setup you'll walk into.</figcaption>
+        </figure>
+        <div class="showcase-preview-grid" data-showcase-calendar-preview></div>
+      </div>
+
+      <div class="text-center mt-6">
+        <a class="btn btn-secondary" href="/showcase.html#showcase-calendar-section">See all upcoming showcases</a>
+      </div>
+    </div>
+  </section>
 
 
   <!-- ============================================================
