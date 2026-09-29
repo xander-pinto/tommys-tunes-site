@@ -1925,8 +1925,12 @@ body.has-solid-nav .nav {
   .fun-tile:focus-visible img { transform: none; }
 }
 
-/* The band's own head keeps the container; only the strip goes wide. */
+/* The band's own head keeps the container; only the strip goes wide.
+   It opens the page directly under the hero, so the top padding is cut
+   back from the standard section rhythm to get the photos into view
+   sooner. Nothing sits below the strip, so the bottom padding goes. */
 .fun-band {
+  padding-top: var(--sp-7);
   padding-bottom: 0;
 }
 
@@ -2337,13 +2341,22 @@ body.has-solid-nav .nav {
    30px of extra row height. */
 .pkg-row-photo {
   flex: 0 0 auto;
-  width: 84px;
-  height: 63px;
+  width: 120px;
+  height: 90px;
   border-radius: var(--r-sm);
   background: linear-gradient(160deg, var(--light-sky), #DCE5F4);
   background-size: cover;
   background-position: center;
   align-self: center;
+}
+
+/* Smaller on a phone, where the rows are already one per line and a
+   120px thumbnail pushed each one to 206px tall. */
+@media (max-width: 599px) {
+  .pkg-row-photo {
+    width: 84px;
+    height: 63px;
+  }
 }
 
 .pkg-row-tagline {
