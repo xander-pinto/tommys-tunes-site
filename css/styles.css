@@ -2718,11 +2718,15 @@ p {
     transform var(--t-med) var(--ease-out);
 }
 
-/* 3:2 rather than the default 4:3. Six tall cards were the reason this
-   page ran to 5,700px. */
+/* Full-bleed to the card edges, not inset by the padding. Buys ~50px of
+   width and a taller crop without cropping the source any harder, since
+   these photos are natively 4:3 and 3:2. */
 .package-card .card-photo {
-  aspect-ratio: 3 / 2;
-  margin-bottom: var(--sp-4);
+  aspect-ratio: 4 / 3;
+  margin: calc(-1 * var(--sp-5)) calc(-1 * var(--sp-5)) var(--sp-5);
+  width: auto;
+  border: none;
+  border-radius: calc(var(--r-lg) - 1px) calc(var(--r-lg) - 1px) 0 0;
 }
 
 .package-card .btn {
@@ -2743,8 +2747,8 @@ p {
 
 .package-tag {
   position: absolute;
-  top: calc(var(--sp-5) + 12px);
-  left: calc(var(--sp-5) + 12px);
+  top: var(--sp-4);
+  left: var(--sp-4);
   font-size: var(--fs-xs);
   font-weight: 600;
   letter-spacing: 0.14em;

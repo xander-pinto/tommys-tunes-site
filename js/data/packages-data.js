@@ -72,6 +72,9 @@ window.PACKAGES_DATA = [
     name: 'Supreme Entertainment',
     tagline: 'Adds live event photography on screens throughout the night.',
     photo: '/assets/images/packages/supreme/supreme_pf.jpg',
+    // Wide room shot: the booth and the two TV towers sit small in the
+    // middle with a lot of ceiling above. Zoom in on the setup instead.
+    photoStyle: 'background-size: 143%; background-position: 42% 100%;',
     longBody: 'Layers Zap Shots, our live event photography, on top of the Premiere production. A pro photographer works the crowd while two 60-inch LCD TVs show the photos as they happen. Guests see themselves on screen within minutes.',
     included: [
       '5 hours of music & entertainment',

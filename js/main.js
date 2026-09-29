@@ -904,7 +904,7 @@ function renderPackageCards() {
       .map((line) => `<li>${esc(line)}</li>`).join('');
     return `
       <a class="card-link package-card${pkg.featured ? ' is-featured' : ''}" href="/package/${esc(pkg.slug)}/">
-        <div class="card-photo" style="background-image: url('${esc(pkg.photo)}');"></div>
+        <div class="card-photo" style="background-image: url('${esc(pkg.photo)}');${esc(pkg.photoStyle || '')}"></div>
         ${tag ? `<span class="package-tag">${esc(tag)}</span>` : ''}
         <h3>${esc(pkg.name)}</h3>
         <p class="package-tagline">${esc(pkg.tagline)}</p>
