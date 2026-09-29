@@ -81,7 +81,7 @@ a {
   --fs-h3: clamp(1.375rem, 1.1rem + 1.4vw, 1.75rem);
   --fs-h2: clamp(1.875rem, 1.4rem + 2.4vw, 2.75rem);
   --fs-h1: clamp(2.5rem, 1.8rem + 3.6vw, 4.25rem);
-  --fs-display: clamp(3rem, 2rem + 5vw, 5.5rem);
+  --fs-display: clamp(2.75rem, 1.9rem + 5vw, 5.5rem);
 
   /* Spacing scale */
   --sp-1: 0.25rem;
@@ -1483,7 +1483,8 @@ p {
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  /* Not 100vh: the next section should peek, so the page reads as scrollable. */
+  min-height: min(88vh, 900px);
   background: var(--near-black);
   background-image:
     radial-gradient(ellipse 70% 50% at 18% 22%, rgba(5, 13, 60, 0.9) 0%, transparent 65%),
@@ -1530,6 +1531,7 @@ p {
 
 .hero h1 {
   margin-bottom: var(--sp-5);
+  text-wrap: balance;
 }
 
 .hero .lead {
@@ -1571,6 +1573,8 @@ p {
   font-weight: 400;
   color: var(--warm-white);
   line-height: 1;
+  /* "2026-28" must not break across two lines on a phone. */
+  white-space: nowrap;
 }
 
 .hero-stat-label {
@@ -1578,6 +1582,59 @@ p {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(181, 212, 244, 0.7);
+}
+
+
+/* Phones: tighten the vertical rhythm so the whole hero, stats included,
+   lands inside one screen and the next section still peeks. */
+@media (max-width: 899px) {
+  .hero {
+    padding-top: calc(var(--nav-height) + var(--sp-5));
+    padding-bottom: var(--sp-6);
+  }
+
+  .hero-stats {
+    margin-top: var(--sp-6);
+  }
+}
+
+/* Laptop and up: the hero stops being a narrow centred column. Content
+   anchors left so the video breathes on the right, and the stat row
+   spans the full container instead of a 760px stub. Phones keep the
+   centred stack below 900px. */
+@media (min-width: 900px) {
+  .hero {
+    text-align: left;
+  }
+
+  .hero-content,
+  .hero-stats {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  /* Block spans the container; the text inside stays readable. */
+  .hero-content > * {
+    max-width: 40rem;
+  }
+
+  .hero .lead {
+    margin-inline: 0;
+    max-width: 44ch;
+  }
+
+  .hero-ctas {
+    justify-content: flex-start;
+  }
+
+  .hero-stats {
+    max-width: 1200px;
+  }
+
+  .hero-stat {
+    align-items: flex-start;
+  }
 }
 
 
