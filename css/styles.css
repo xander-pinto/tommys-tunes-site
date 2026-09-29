@@ -2040,28 +2040,14 @@ body.has-solid-nav .nav {
    The two things the homepage never said out loud: what it costs, and
    what clicking the button actually starts. --- */
 
-.price-stat {
-  font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
-  line-height: 1.45;
-  max-width: 34ch;
-  margin: 0 0 var(--sp-6);
-}
-
-.price-stat strong {
-  font-weight: 500;
-  color: var(--royal-blue);
-}
-
 /* Pull quotes, not cards. The reviews band further down already uses
-   cards, and two card grids on one page read as the same section twice. */
+   cards, and two card grids on one page read as the same section twice.
+   They stack in one column beside the photo rather than running three
+   across, so the band reads left to right like the others. */
 .price-quotes {
   display: grid;
   gap: var(--sp-5);
-}
-
-@media (min-width: 760px) {
-  .price-quotes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  align-content: center;
 }
 
 .price-quote {
@@ -2089,23 +2075,29 @@ body.has-solid-nav .nav {
   color: var(--royal-blue);
 }
 
-/* The stat had the whole band's width to itself and used 34ch of it.
-   Photo fills the rest; the quotes still run three across underneath. */
 .price-split {
   display: grid;
   gap: var(--sp-6);
-  margin-bottom: var(--sp-7);
 }
 
 @media (min-width: 900px) {
   .price-split {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
-    align-items: center;
+    align-items: stretch;
     gap: var(--sp-8);
   }
 
-  .price-split .price-stat {
-    margin-bottom: 0;
+  /* Photo matches whatever the three stacked quotes come to, so the two
+     columns end on the same line. */
+  .price-split .band-photo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-split .band-photo img {
+    aspect-ratio: auto;
+    flex: 1 1 auto;
+    min-height: 260px;
   }
 }
 
@@ -2116,19 +2108,39 @@ body.has-solid-nav .nav {
   margin-top: var(--sp-8);
 }
 
+.closer-photos {
+  display: grid;
+  gap: var(--sp-5);
+}
+
 @media (min-width: 900px) {
   .closer-split {
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
-    align-items: start;
+    align-items: stretch;
     gap: var(--sp-7);
   }
 
-  /* The form runs ~1100px and the photo is 4:3, so stretching it to match
-     produced a 557x1300 crop. Sticky instead: normal proportions, and it
-     rides alongside the fields instead of leaving dead space below. */
-  .closer-split .band-photo {
-    position: sticky;
-    top: calc(var(--nav-height) + var(--sp-5));
+  /* Two photos sharing the column instead of one sticky photo. Stretching
+     a single 4:3 shot to the form's 1067px gave a 548x1300 crop; two of
+     them land near 4:3 each and give you something new to look at as you
+     work down the fields. */
+  .closer-photos {
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .closer-photos .band-photo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* flex-basis 0, not auto. "waters edge" is portrait (1295x1600), so on
+     auto its natural height became the basis and pushed the stack to
+     1470px against a 1067px form. At 0 the images only ever fill the
+     space the form defines. */
+  .closer-photos .band-photo img {
+    aspect-ratio: auto;
+    flex: 1 1 0;
+    min-height: 0;
   }
 }
 
