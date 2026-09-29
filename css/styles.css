@@ -49,13 +49,12 @@ a {
   --light-sky: #EEF3FD;
   --champagne: #C9A55E;
   --periwinkle: #B5D4F4;
-  --sky-deep: #DDE8F7;
 
   /* Functional aliases */
   --bg-dark: var(--near-black);
   --bg-dark-alt: var(--deep-navy);
   --bg-light: var(--warm-white);
-  --bg-light-alt: var(--sky-deep);
+  --bg-light-alt: var(--light-sky);
   --text-on-dark: var(--warm-white);
   --text-on-dark-soft: var(--periwinkle);
   --text-on-light: var(--charcoal);
