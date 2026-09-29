@@ -194,9 +194,14 @@ h3 em,
   color: var(--electric-cyan);
 }
 
+/* Same 2.3:1 problem as the overlines: cyan italics on the tinted
+   background fail even the 3:1 large-text threshold. */
 .section-light h1 em,
 .section-light h2 em,
-.section-light h3 em {
+.section-light h3 em,
+.section-tinted h1 em,
+.section-tinted h2 em,
+.section-tinted h3 em {
   color: var(--royal-blue);
 }
 
@@ -1862,6 +1867,70 @@ body.has-solid-nav .nav {
 }
 
 
+/* --- 11c. Homepage photo band ---
+   Twelve showcase shots, full-bleed past the container. The homepage had
+   three sections carrying no photography at all (packages preview,
+   showcase calendar, reviews), and this is the one place where the point
+   is the pictures, so the grid breaks the gutters. --- */
+
+.fun-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  margin-top: var(--sp-6);
+}
+
+@media (min-width: 600px) {
+  .fun-strip { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .fun-strip { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .fun-strip { grid-template-columns: repeat(6, 1fr); }
+}
+
+.fun-tile {
+  display: block;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--light-sky), #DCE5F4);
+}
+
+.fun-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--t-med) var(--ease-out),
+    filter var(--t-med) var(--ease-out);
+}
+
+.fun-tile:hover img,
+.fun-tile:focus-visible img {
+  transform: scale(1.06);
+}
+
+.fun-tile:focus-visible {
+  outline: 3px solid var(--royal-blue);
+  outline-offset: -3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fun-tile img { transition: none; }
+  .fun-tile:hover img,
+  .fun-tile:focus-visible img { transform: none; }
+}
+
+/* The band's own head keeps the container; only the strip goes wide. */
+.fun-band {
+  padding-bottom: 0;
+}
+
+
 /* --- 12. Inner-page hero bar --- */
 
 .page-hero {
@@ -2198,7 +2267,7 @@ body.has-solid-nav .nav {
 
 .pkg-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: var(--sp-4);
   padding: var(--sp-4) var(--sp-5);
@@ -2261,6 +2330,20 @@ body.has-solid-nav .nav {
   font-family: var(--font-serif);
   font-size: var(--fs-md);
   font-weight: 500;
+}
+
+/* The homepage packages block was 647px of pure text while /packages is
+   six photos. A thumbnail per row puts the setups back in view for about
+   30px of extra row height. */
+.pkg-row-photo {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 63px;
+  border-radius: var(--r-sm);
+  background: linear-gradient(160deg, var(--light-sky), #DCE5F4);
+  background-size: cover;
+  background-position: center;
+  align-self: center;
 }
 
 .pkg-row-tagline {
@@ -2603,8 +2686,13 @@ body.has-solid-nav .nav {
   }
 
   /* Keep the type readable even though the block is now wide. */
-  .home-band .section-head h2 {
-    max-width: 22ch;
+  /* The band headings ran at --fs-h2 (44px cap) against an 88px hero and
+     a 68px page heading on /packages, which is why they read small. Same
+     scale as the page headings now; the ch cap widens to match. */
+  .home-band .section-head h2,
+  .awards-home .section-head h2 {
+    font-size: var(--fs-h1);
+    max-width: 26ch;
   }
 
   .home-band .section-head p {
@@ -2647,7 +2735,7 @@ body.has-solid-nav .nav {
 @media (min-width: 900px) {
   .awards-home {
     display: grid;
-    grid-template-columns: minmax(240px, 320px) 1fr;
+    grid-template-columns: minmax(300px, 400px) 1fr;
     align-items: start;
     column-gap: var(--sp-8);
     padding-inline: max(var(--container-pad), calc((100% - 1320px) / 2));
