@@ -2296,6 +2296,67 @@ p {
   color: var(--text-on-light);
 }
 
+/* Laptop and up: the home content bands read left to right. The heading
+   block holds the left column and the section's "see all" link moves up
+   beside it, instead of sitting centred on its own row below the grid.
+   The grid then spans the full container width. Phones are untouched;
+   they keep the centred stack until that pass. */
+@media (min-width: 900px) {
+  .home-band > .container {
+    max-width: 1320px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: var(--sp-7);
+    align-items: end;
+  }
+
+  .home-band > .container > .section-head {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: none;
+    margin: 0 0 var(--sp-7);
+    text-align: left;
+  }
+
+  /* Keep the type readable even though the block is now wide. */
+  .home-band .section-head h2 {
+    max-width: 22ch;
+  }
+
+  .home-band .section-head p {
+    max-width: 58ch;
+  }
+
+  /* The "see all" button rides the head row, right-aligned and sitting
+     on the heading's baseline. */
+  .home-band > .container > .text-center {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0 0 var(--sp-7);
+    text-align: right;
+  }
+
+  /* Everything else — the grids — spans both columns. */
+  .home-band > .container > *:not(.section-head):not(.text-center) {
+    grid-column: 1 / -1;
+  }
+
+  /* These capped themselves below the container; let them fill it. */
+  .home-band .showcase-preview-grid,
+  .home-band .reviews-grid {
+    max-width: none;
+  }
+
+  /* Six tiers stacked in a 720px column left half the band empty.
+     Two columns fills it and halves the scroll. */
+  .home-band .packages-preview {
+    max-width: none;
+    margin: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-4);
+  }
+}
+
 /* Laptop and up: the home awards band reads left to right — the heading
    holds the left column, the badge wall fills the right, instead of a
    370px stack under a centred title with 277px of air above it. */
