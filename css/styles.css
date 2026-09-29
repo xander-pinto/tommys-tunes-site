@@ -2089,6 +2089,69 @@ body.has-solid-nav .nav {
   color: var(--royal-blue);
 }
 
+/* The stat had the whole band's width to itself and used 34ch of it.
+   Photo fills the rest; the quotes still run three across underneath. */
+.price-split {
+  display: grid;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-7);
+}
+
+@media (min-width: 900px) {
+  .price-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: var(--sp-8);
+  }
+
+  .price-split .price-stat {
+    margin-bottom: 0;
+  }
+}
+
+/* Photo on one side, the actual form on the other. */
+.closer-split {
+  display: grid;
+  gap: var(--sp-6);
+  margin-top: var(--sp-8);
+}
+
+@media (min-width: 900px) {
+  .closer-split {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--sp-7);
+  }
+
+  /* The form runs ~1100px and the photo is 4:3, so stretching it to match
+     produced a 557x1300 crop. Sticky instead: normal proportions, and it
+     rides alongside the fields instead of leaving dead space below. */
+  .closer-split .band-photo {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--sp-5));
+  }
+}
+
+/* Light blue panel, because a warm-white card on a warm-white section is
+   invisible and this is meant to be the most visible thing in the band. */
+.closer-form {
+  background: var(--bg-light-alt);
+  border: 1px solid rgba(11, 94, 222, 0.16);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+}
+
+.closer-form h3 {
+  font-size: var(--fs-h3);
+  margin-bottom: var(--sp-2);
+}
+
+.closer-form > p {
+  font-size: var(--fs-sm);
+  color: var(--text-on-light-soft);
+  margin-bottom: var(--sp-5);
+}
+
 /* Three steps. Numbered so the sequence is the point. */
 .steps {
   list-style: none;

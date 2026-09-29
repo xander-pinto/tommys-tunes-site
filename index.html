@@ -273,7 +273,13 @@
         <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
       </div>
 
-      <p class="price-stat">Price comes up unprompted in more than twenty of our 205 reviews. <strong>Every one of them is five stars.</strong></p>
+      <div class="price-split">
+        <p class="price-stat">Price comes up unprompted in more than twenty of our 205 reviews. <strong>Every one of them is five stars.</strong></p>
+        <figure class="band-photo">
+          <img src="/assets/images/showcase/dance_stage.jpg"
+            alt="Guests dancing on an illuminated stage under moving lights" loading="lazy">
+        </figure>
+      </div>
 
       <div class="price-quotes">
         <blockquote class="price-quote">
@@ -474,6 +480,150 @@
           <p>Come sit down with us, or do the whole thing over the phone. We walk through the night start to finish, then quote it from there.</p>
         </li>
       </ol>
+
+      <!-- The sheet itself rather than a button that opens one. Third copy of
+           this form (modal + /contact + here); main.js already scopes every
+           handler per-form, and the ids are re-keyed home- to stay unique. -->
+      <div class="closer-split">
+        <figure class="band-photo">
+          <img src="/assets/images/showcase/waters edge.jpg"
+            alt="A reception room set up and lit before the guests arrive" loading="lazy">
+          <figcaption>Every night gets built around your room, not a template.</figcaption>
+        </figure>
+
+        <div class="closer-form">
+          <h3 data-form-heading>Check your date.</h3>
+          <p data-form-intro>No obligation. We'll confirm we're free and come back with a quote inside one business day.</p>
+          <form name="check-your-date" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap: var(--sp-4);">
+            <input type="hidden" name="form-name" value="check-your-date">
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+            <div class="field">
+              <label for="home-name">Your name</label>
+              <input type="text" id="home-name" name="name" required autocomplete="name">
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="home-email">Email</label>
+                <input type="email" id="home-email" name="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="home-phone">Phone</label>
+                <input type="tel" id="home-phone" name="phone" required autocomplete="tel" pattern="[^0-9]*([0-9][^0-9]*){10,}" title="Please enter a full phone number, including area code.">
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Best way to reach you</label>
+              <div class="contact-pref">
+                <label class="field-checkbox"><input type="radio" name="contact_method" value="Call" required><span>Call</span></label>
+                <label class="field-checkbox"><input type="radio" name="contact_method" value="Text"><span>Text</span></label>
+                <label class="field-checkbox"><input type="radio" name="contact_method" value="Email"><span>Email</span></label>
+              </div>
+            </div>
+
+
+            <div class="field-row">
+              <div class="field">
+                <label for="home-date">Event date</label>
+                <input type="date" id="home-date" name="event_date">
+                <label class="field-checkbox">
+                  <input type="checkbox" name="no_date_yet" value="yes" onchange="document.getElementById('home-date').disabled = this.checked; if(this.checked) document.getElementById('home-date').value='';">
+                  <span>I don't know my date yet</span>
+                </label>
+              </div>
+              <div class="field">
+                <label for="home-type">Event type</label>
+                <select id="home-type" name="event_type" required>
+                  <option value="">Choose one</option>
+                  <option>Wedding</option>
+                  <option>Sweet 16</option>
+                  <option>Bar / Bat Mitzvah</option>
+                  <option>Quinceañera</option>
+                  <option>Corporate event</option>
+                  <option>Private party</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="home-venue">Venue or town (optional)</label>
+              <input type="text" id="home-venue" name="venue">
+            </div>
+
+            <div class="field">
+              <label for="home-referral">How did you hear about us?</label>
+              <!-- EDIT: Referral sources — keep these in sync with the modal form. -->
+              <select id="home-referral" name="referral_source" required>
+        <option value="">Choose one</option>
+        <option>Google search</option>
+        <option>Friend or family</option>
+        <option>Saw us at an event</option>
+        <option>Our venue recommended us</option>
+        <option>Another vendor recommended us</option>
+        <option>Instagram</option>
+        <option>Facebook</option>
+        <option>TikTok</option>
+        <option>YouTube</option>
+        <option>Bridal show or showcase</option>
+        <option>The Knot</option>
+        <option>WeddingWire</option>
+        <option>Booked us before</option>
+        <option>Other</option>
+                    </select>
+            </div>
+
+            <!-- Shown only when "Other" is selected (toggled by setupReferralOther in main.js). -->
+            <div class="field" data-referral-other hidden>
+              <label for="home-referral-other">Where did you hear about us?</label>
+              <input type="text" id="home-referral-other" name="referral_other" placeholder="Tell us where you heard about us">
+            </div>
+
+            <!-- Appointment request — keep in sync with the modal form. -->
+            <div class="appt-invite">
+              <label class="field-checkbox appt-invite-check">
+                <input type="checkbox" id="home-appt" name="appointment_requested" value="yes">
+                <span>I&rsquo;d like to book an appointment</span>
+              </label>
+              <p class="appt-invite-note">Sit down with us in person. It is the fastest way to get a real quote for your night.</p>
+            </div>
+
+            <div data-appointment-fields hidden>
+              <div class="field">
+                <label>Which location?</label>
+                <label class="field-checkbox">
+                  <input type="radio" name="appointment_location" value="Selden showroom">
+                  <span>Selden showroom &middot; Mon&ndash;Thu 10am&ndash;8pm, Fri 10am&ndash;5pm, Sat 9am&ndash;5pm</span>
+                </label>
+                <label class="field-checkbox">
+                  <input type="radio" name="appointment_location" value="Melville office">
+                  <span>Melville office &middot; Mon&ndash;Thu 12pm&ndash;8pm, Sat 11am&ndash;3pm</span>
+                </label>
+              </div>
+
+              <div class="field" data-appt-calendar-wrap hidden>
+                <label>Pick a day and time</label>
+                <div class="appt-cal" data-appt-calendar></div>
+                <div class="appt-slots" data-appt-slots hidden></div>
+                <p class="appt-selected" data-appt-selected hidden></p>
+                <input type="hidden" name="appointment_time" data-appt-times-input>
+                <p class="appt-error" data-appt-error hidden>Please pick a day and time for your appointment.</p>
+              </div>
+
+              <p class="form-fineprint" style="margin-top: 0;">Sending this form books your appointment. If the time doesn't work on our end, a member of our team will call you to reschedule.</p>
+            </div>
+
+            <div class="field">
+              <label for="home-notes">Tell us about your event</label>
+              <textarea id="home-notes" name="notes" required minlength="10" placeholder="Guest count, your venue, the vibe you're picturing, and anything you'd like a quote on."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send it</button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
