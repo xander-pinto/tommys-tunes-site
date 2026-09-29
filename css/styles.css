@@ -221,8 +221,12 @@ p {
   color: var(--electric-cyan);
 }
 
+/* Cyan on the tinted background is 2.3:1, well under AA for 12px type.
+   Royal blue on the same background is 5.1:1. */
 .section-light .kicker,
-.section-light .overline {
+.section-light .overline,
+.section-tinted .kicker,
+.section-tinted .overline {
   color: var(--royal-blue);
 }
 
@@ -1818,44 +1822,42 @@ body.has-solid-nav .nav {
   text-align: left;
 }
 
-.page-band .section-head h1 {
+/* No ch cap. At 68px the packages headline measures 801px on one line
+   and the band is 1320px wide, so uncapping it is what keeps
+   "Six tiers, intentionally clear." from breaking. */
+.page-band .section-head h1,
+.page-band .section-head h2 {
+  max-width: none;
   margin: 0 0 var(--sp-4);
-  max-width: 18ch;
+  text-wrap: balance;
 }
 
+/* Wide enough to land in two lines rather than three or four, and
+   text-wrap: pretty keeps a single word off the last one. */
 .page-band .section-head p {
-  max-width: 52ch;
+  max-width: 76ch;
   margin: 0;
+  text-wrap: pretty;
 }
 
-/* Laptop and up: the lead sits beside the heading rather than under it,
-   so the head row uses the width instead of stacking down the middle. */
 @media (min-width: 900px) {
   .page-band > .container {
     max-width: 1320px;
   }
+}
 
-  .page-band .section-head {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-    column-gap: var(--sp-7);
-    align-items: end;
+/* The four price quotes sat two-up in a 1100px column, so half of them
+   were below the fold of the section. One row across the full band puts
+   all four in view and drops a whole row of height. */
+@media (min-width: 1100px) {
+  .page-band .reviews-grid {
+    max-width: none;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--sp-5);
   }
 
-  .page-band .section-head .overline {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .page-band .section-head h1 {
-    grid-column: 1;
-    grid-row: 2;
-    margin-bottom: 0;
-  }
-
-  .page-band .section-head p {
-    grid-column: 2;
-    grid-row: 2;
+  .page-band .review-card {
+    padding: var(--sp-5);
   }
 }
 
