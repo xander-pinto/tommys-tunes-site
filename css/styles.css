@@ -49,12 +49,14 @@ a {
   --light-sky: #EEF3FD;
   --champagne: #C9A55E;
   --periwinkle: #B5D4F4;
+  --ocean: #14407F;
 
   /* Functional aliases */
   --bg-dark: var(--near-black);
   --bg-dark-alt: var(--deep-navy);
   --bg-light: var(--warm-white);
   --bg-light-alt: var(--light-sky);
+  --bg-blue: var(--ocean);
   --text-on-dark: var(--warm-white);
   --text-on-dark-soft: var(--periwinkle);
   --text-on-light: var(--charcoal);
@@ -267,6 +269,22 @@ p {
 
 .section-tinted p {
   color: var(--text-on-light-soft);
+}
+
+.section-blue {
+  background: var(--bg-blue);
+  color: var(--text-on-dark);
+}
+
+.section-blue p {
+  color: var(--periwinkle);
+}
+
+/* Electric cyan only clears 3.95:1 on this blue, which is fine for the
+   large italic headings but short of AA for a 12px overline. */
+.section-blue .overline,
+.section-blue .kicker {
+  color: var(--periwinkle);
 }
 
 .section-navy {
@@ -1974,11 +1992,11 @@ p {
   border-color: rgba(11, 94, 222, 0.3);
 }
 
-/* On the navy band the rows are the only light surface, which is what
+/* On the blue band the rows are the only light surface, which is what
    makes them read as clickable. Lift and arrow confirm it on hover.
    The name needs an explicit colour: the section sets text to
    warm-white, and the card underneath IS warm-white. */
-.section-navy .pkg-row {
+.section-blue .pkg-row {
   border-color: transparent;
   box-shadow: 0 1px 2px rgba(0, 0, 5, 0.35);
   transition:
@@ -1987,18 +2005,18 @@ p {
     border-color var(--t-fast) var(--ease-out);
 }
 
-.section-navy .pkg-row-name {
+.section-blue .pkg-row-name {
   color: var(--text-on-light);
 }
 
-.section-navy .pkg-row:hover {
+.section-blue .pkg-row:hover {
   transform: translateY(-2px);
   border-color: var(--royal-blue);
   box-shadow: 0 8px 22px -10px rgba(0, 0, 5, 0.7);
 }
 
 @media (min-width: 600px) {
-  .section-navy .pkg-row::after {
+  .section-blue .pkg-row::after {
     content: "\2192";
     color: var(--royal-blue);
     font-size: var(--fs-md);
@@ -2006,7 +2024,7 @@ p {
     transition: transform var(--t-fast) var(--ease-out);
   }
 
-  .section-navy .pkg-row:hover::after {
+  .section-blue .pkg-row:hover::after {
     transform: translateX(3px);
   }
 }
@@ -2041,9 +2059,9 @@ p {
 /* --- 18. Venue marquee --- */
 
 .marquee {
-  /* Near-black, not navy: it sits directly under the navy packages band
-     and the two merged into one slab when both were deep-navy. */
-  background: var(--near-black);
+  /* Same blue as the packages band above it, so the middle of the page
+     reads as one blue chapter rather than a stack of hard steps. */
+  background: var(--bg-blue);
   padding: var(--sp-9) 0;
   overflow: hidden;
   position: relative;
