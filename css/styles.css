@@ -2656,6 +2656,18 @@ body.has-solid-nav .nav {
   color: var(--text-on-light);
 }
 
+/* The 4.9 is the single strongest number on the page and it was set at
+   --fs-sm with 0.75 opacity, i.e. smaller and fainter than the badge
+   captions around it. Homepage only; the compact awards component on the
+   other pages keeps its original scale. */
+.awards-home .awards-row > span {
+  font-size: clamp(1.25rem, 1rem + 0.9vw, 1.75rem);
+  opacity: 1;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
 /* Laptop and up: the home content bands read left to right. The heading
    block holds the left column and the section's "see all" link moves up
    beside it, instead of sitting centred on its own row below the grid.
