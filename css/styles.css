@@ -49,14 +49,13 @@ a {
   --light-sky: #EEF3FD;
   --champagne: #C9A55E;
   --periwinkle: #B5D4F4;
-  --ocean: #14407F;
+  --sky-deep: #DDE8F7;
 
   /* Functional aliases */
   --bg-dark: var(--near-black);
   --bg-dark-alt: var(--deep-navy);
   --bg-light: var(--warm-white);
-  --bg-light-alt: var(--light-sky);
-  --bg-blue: var(--ocean);
+  --bg-light-alt: var(--sky-deep);
   --text-on-dark: var(--warm-white);
   --text-on-dark-soft: var(--periwinkle);
   --text-on-light: var(--charcoal);
@@ -269,22 +268,6 @@ p {
 
 .section-tinted p {
   color: var(--text-on-light-soft);
-}
-
-.section-blue {
-  background: var(--bg-blue);
-  color: var(--text-on-dark);
-}
-
-.section-blue p {
-  color: var(--periwinkle);
-}
-
-/* Electric cyan only clears 3.95:1 on this blue, which is fine for the
-   large italic headings but short of AA for a 12px overline. */
-.section-blue .overline,
-.section-blue .kicker {
-  color: var(--periwinkle);
 }
 
 .section-navy {
@@ -1982,30 +1965,38 @@ p {
   justify-content: space-between;
   gap: var(--sp-4);
   padding: var(--sp-4) var(--sp-5);
-  background: var(--warm-white);
-  border: 1px solid rgba(26, 26, 31, 0.08);
+  background: var(--bg-light-alt);
+  border: 1px solid rgba(11, 94, 222, 0.14);
   border-radius: var(--r-md);
-  transition: border-color var(--t-fast) var(--ease-out);
+  transition:
+    transform var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out),
+    background var(--t-fast) var(--ease-out);
 }
 
 .pkg-row:hover {
-  border-color: rgba(11, 94, 222, 0.3);
+  transform: translateY(-2px);
+  border-color: var(--royal-blue);
+  background: var(--warm-white);
 }
 
-/* On the blue band the rows are the only light surface, which is what
-   makes them read as clickable. Lift and arrow confirm it on hover.
-   The name needs an explicit colour: the section sets text to
-   warm-white, and the card underneath IS warm-white. */
-.section-blue .pkg-row {
-  border-color: transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 5, 0.35);
-  transition:
-    transform var(--t-fast) var(--ease-out),
-    box-shadow var(--t-fast) var(--ease-out),
-    border-color var(--t-fast) var(--ease-out);
+/* The arrow confirms the row is a link. Hidden below 600px, where the
+   row stacks to a column and the arrow would land on its own line. */
+@media (min-width: 600px) {
+  .pkg-row::after {
+    content: "\2192";
+    color: var(--royal-blue);
+    font-size: var(--fs-md);
+    line-height: 1;
+    transition: transform var(--t-fast) var(--ease-out);
+  }
+
+  .pkg-row:hover::after {
+    transform: translateX(3px);
+  }
 }
 
-.section-blue .pkg-row-name {
+.pkg-row-name {
   color: var(--text-on-light);
 }
 
@@ -2059,14 +2050,13 @@ p {
 /* --- 18. Venue marquee --- */
 
 .marquee {
-  /* Same blue as the packages band above it, so the middle of the page
-     reads as one blue chapter rather than a stack of hard steps. */
-  background: var(--bg-blue);
+  /* Counts as its own band in the white / light-blue alternation. */
+  background: var(--bg-light-alt);
   padding: var(--sp-9) 0;
   overflow: hidden;
   position: relative;
-  border-top: 1px solid rgba(49, 170, 239, 0.1);
-  border-bottom: 1px solid rgba(49, 170, 239, 0.1);
+  border-top: 1px solid rgba(11, 94, 222, 0.1);
+  border-bottom: 1px solid rgba(11, 94, 222, 0.1);
 }
 
 .marquee-label {
@@ -2074,7 +2064,7 @@ p {
   font-size: var(--fs-sm);
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--electric-cyan);
+  color: var(--royal-blue);
   margin-bottom: var(--sp-6);
 }
 
@@ -2087,7 +2077,7 @@ p {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: var(--fs-h2);
-  color: var(--warm-white);
+  color: var(--deep-navy);
 }
 
 .marquee-track span {
