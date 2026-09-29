@@ -266,39 +266,10 @@
           your venue, your guest count, and your budget.</p>
       </div>
 
-      <!-- EDIT: Package preview rows. Prices stay off the public site — confirm with Tommy. Each row links to /package/<slug>/. -->
-      <div class="packages-preview">
-        <a class="pkg-row-link pkg-row" href="/package/basic/">
-          <span class="pkg-row-photo" aria-hidden="true" style="background-image: url('/assets/images/packages/basic/basic_pf.jpg');"></span>
-          <span class="pkg-row-name">Basic</span>
-          <span class="pkg-row-tagline">For intimate weddings and gatherings of 75 or fewer.</span>
-        </a>
-        <a class="pkg-row-link pkg-row" href="/package/deluxe/">
-          <span class="pkg-row-photo" aria-hidden="true" style="background-image: url('/assets/images/packages/deluxe/deluxe_pf.jpg');"></span>
-          <span class="pkg-row-name">Deluxe</span>
-          <span class="pkg-row-tagline">The Long Island standard. DJ on the music, MC working the room.</span>
-        </a>
-        <a class="pkg-row-link pkg-row" href="/package/super-deluxe/">
-          <span class="pkg-row-photo" aria-hidden="true" style="background-image: url('/assets/images/packages/super-deluxe/super_deluxe_pf.jpg');"></span>
-          <span class="pkg-row-name">Super Deluxe</span>
-          <span class="pkg-row-tagline">Same team from ceremony through last dance, with the illuminated booth.</span>
-        </a>
-        <a class="pkg-row-link pkg-row" href="/package/premiere/">
-          <span class="pkg-row-photo" aria-hidden="true" style="background-image: url('/assets/images/packages/premiere/premeire_pf.jpg');"></span>
-          <span class="pkg-row-name">Premiere</span>
-          <span class="pkg-row-tagline">Towers, intelligent lights, dedicated tech.</span>
-        </a>
-        <a class="pkg-row-link pkg-row" href="/package/supreme/">
-          <span class="pkg-row-photo" aria-hidden="true" style="background-image: url('/assets/images/packages/supreme/supreme_pf.jpg');background-size: 200%; background-position: 41% 100%;"></span>
-          <span class="pkg-row-name">Supreme</span>
-          <span class="pkg-row-tagline">Adds live event photography on screens through the night.</span>
-        </a>
-        <a class="pkg-row-link pkg-row" href="/package/grand/">
-          <span class="pkg-row-photo" aria-hidden="true" style="background-image: url('/assets/images/packages/grand/grand_pf.jpg');"></span>
-          <span class="pkg-row-name">Grand</span>
-          <span class="pkg-row-tagline">Full production, plus a live sax or percussionist on the reception.</span>
-        </a>
-      </div>
+      <!-- Six package cards, same source as /packages.html. data-compact
+           drops the bullet list and the per-card button; the photo and
+           the one-line tagline are what belong on the homepage. -->
+      <div class="package-stack" data-package-cards data-compact></div>
 
       <div class="text-center mt-7">
         <a class="btn btn-primary" href="/packages.html">See what's included</a>
@@ -325,7 +296,16 @@
         <p>Bridal showcases at Long Island venues, every few weeks. Meet the team, see the lighting setups in person.</p>
       </div>
 
-      <div class="showcase-preview-grid" data-showcase-calendar-preview></div>
+      <!-- Photo beside the dates: the band was three text rows and nothing
+           to look at, and a showcase is a thing you go and SEE. -->
+      <div class="band-split">
+        <figure class="band-photo">
+          <img src="/assets/images/showcase/class_tt_pic.jpg"
+            alt="The Tommy's Tunes band playing live, sax and drums on stage" loading="lazy">
+          <figcaption>Live at a showcase. This is the setup you'll walk into.</figcaption>
+        </figure>
+        <div class="showcase-preview-grid" data-showcase-calendar-preview></div>
+      </div>
 
       <div class="text-center mt-6">
         <a class="btn btn-secondary" href="/showcase.html#showcase-calendar-section">See all upcoming showcases</a>
@@ -340,6 +320,10 @@
       <div class="section-head">
         <span class="overline">Awards</span>
         <h2>Thirty-three wins, <em>and counting.</em></h2>
+        <figure class="band-photo band-photo--tall">
+          <img src="/assets/images/showcase/event-12.jpg"
+            alt="A wedding party lined up and dancing on an illuminated floor" loading="lazy">
+        </figure>
       </div>
     </div>
     <div data-component="awards-wall"></div>
@@ -348,7 +332,7 @@
   <!-- FEATURED REVIEWS (static — 4 hand-picked from /js/data/reviews-data.js)
        EDIT: To swap in different reviews, replace the four <article> cards below.
        Source link in each card points to the platform where it was verified. -->
-  <section class="section section-light home-band">
+  <section class="section section-dark home-band reviews-photo">
     <div class="container">
       <div class="section-head">
         <span class="overline">What clients say</span>
@@ -445,6 +429,7 @@
   <div data-component="footer"></div>
   <div data-component="modal"></div>
 
+  <script src="/js/data/packages-data.js"></script>
   <script src="/js/data/team-data.js"></script>
   <script src="/js/data/testimonials-data.js"></script>
   <script src="/js/data/showcases-data.js"></script>

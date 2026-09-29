@@ -889,8 +889,6 @@ document.addEventListener('DOMContentLoaded', async () => {
    pages can never drift. Photo-led, three across on a laptop, and the
    bullet list is capped so one long tier can't stretch the whole row. */
 function renderPackageCards() {
-  const slot = document.querySelector('[data-package-cards]');
-  if (!slot) return;
   const data = (typeof window !== 'undefined' && Array.isArray(window.PACKAGES_DATA))
     ? window.PACKAGES_DATA : [];
   if (!data.length) return;
@@ -898,20 +896,26 @@ function renderPackageCards() {
   const esc = (s) => String(s == null ? '' : s)
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-  slot.innerHTML = data.map((pkg) => {
-    const tag = pkg.tag || (pkg.featured ? 'Most popular' : '');
-    const specs = (pkg.included || []).slice(0, 4)
-      .map((line) => `<li>${esc(line)}</li>`).join('');
-    return `
-      <a class="card-link package-card${pkg.featured ? ' is-featured' : ''}" href="/package/${esc(pkg.slug)}/">
+  /* The homepage slot asks for the compact form: photo, name, one line.
+     The bullets and the button belong on /packages, where someone is
+     actually comparing. Same data either way. */
+  document.querySelectorAll('[data-package-cards]').forEach((slot) => {
+    const compact = slot.hasAttribute('data-compact');
+    slot.innerHTML = data.map((pkg) => {
+      const tag = pkg.tag || (pkg.featured ? 'Most popular' : '');
+      const specs = (pkg.included || []).slice(0, 4)
+        .map((line) => `<li>${esc(line)}</li>`).join('');
+      return `
+      <a class="card-link package-card${pkg.featured ? ' is-featured' : ''}${compact ? ' is-compact' : ''}" href="/package/${esc(pkg.slug)}/">
         <div class="card-photo" style="background-image: url('${esc(pkg.photo)}');${esc(pkg.photoStyle || '')}"></div>
         ${tag ? `<span class="package-tag">${esc(tag)}</span>` : ''}
         <h3>${esc(pkg.name)}</h3>
         <p class="package-tagline">${esc(pkg.tagline)}</p>
-        <ul class="package-specs">${specs}</ul>
-        <span class="btn btn-primary">See details</span>
+        ${compact ? '' : `<ul class="package-specs">${specs}</ul>
+        <span class="btn btn-primary">See details</span>`}
       </a>`;
-  }).join('');
+    }).join('');
+  });
 }
 
 

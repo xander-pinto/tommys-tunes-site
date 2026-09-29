@@ -1935,6 +1935,107 @@ body.has-solid-nav .nav {
 }
 
 
+/* --- 11d. Photos in the text-only bands ---
+   The showcase calendar, the awards wall and the reviews were the three
+   homepage sections carrying no photography, which is exactly why they
+   read flat next to the bands that do. --- */
+
+.band-photo {
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--light-sky), #DCE5F4);
+}
+
+.band-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.band-photo figcaption {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-sm);
+  color: var(--text-on-light-soft);
+  padding: var(--sp-3) var(--sp-4);
+}
+
+.band-photo--tall {
+  margin-top: var(--sp-6);
+}
+
+.band-photo--tall img {
+  aspect-ratio: 3 / 4;
+}
+
+/* Dates on one side, something to look at on the other. Stacks on a
+   phone, photo first. */
+.band-split {
+  display: grid;
+  gap: var(--sp-5);
+}
+
+@media (min-width: 900px) {
+  .band-split {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--sp-7);
+  }
+
+  .band-split .showcase-preview-grid {
+    max-width: none;
+  }
+}
+
+/* Reviews over a real night rather than a white page. The overlay is
+   what keeps the quotes readable; the photo is deliberately dark to
+   start with so the overlay can stay light enough to see through. */
+.reviews-photo {
+  position: relative;
+  background-image: url('/assets/images/showcase/dancing_on_dark_cloud.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  isolation: isolate;
+}
+
+.reviews-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 5, 0.78) 0%,
+    rgba(0, 0, 5, 0.55) 45%,
+    rgba(0, 0, 5, 0.82) 100%
+  );
+  z-index: -1;
+}
+
+.reviews-photo > .container {
+  position: relative;
+}
+
+/* The cards stay light on the dark band, so they need their own text
+   colours back: .section-dark p would otherwise win on specificity and
+   put pale blue quotes on a white card. */
+.reviews-photo .review-card {
+  color: var(--text-on-light);
+}
+
+.reviews-photo .review-card p,
+.reviews-photo .review-quote {
+  color: var(--charcoal);
+}
+
+.reviews-photo .review-byline span {
+  color: var(--text-on-light-soft);
+}
+
+
 /* --- 12. Inner-page hero bar --- */
 
 .page-hero {
@@ -2258,127 +2359,6 @@ body.has-solid-nav .nav {
   color: var(--royal-blue);
   flex-shrink: 0;
 }
-
-/* --- 17. Package preview (homepage) --- */
-
-.packages-preview {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-3);
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.pkg-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--sp-4);
-  padding: var(--sp-4) var(--sp-5);
-  background: var(--bg-light-alt);
-  border: 1px solid rgba(11, 94, 222, 0.14);
-  border-radius: var(--r-md);
-  transition:
-    transform var(--t-fast) var(--ease-out),
-    border-color var(--t-fast) var(--ease-out),
-    background var(--t-fast) var(--ease-out);
-}
-
-.pkg-row:hover {
-  transform: translateY(-2px);
-  border-color: var(--royal-blue);
-  background: var(--warm-white);
-}
-
-/* The arrow confirms the row is a link. Hidden below 600px, where the
-   row stacks to a column and the arrow would land on its own line. */
-@media (min-width: 600px) {
-  .pkg-row::after {
-    content: "\2192";
-    color: var(--royal-blue);
-    font-size: var(--fs-md);
-    line-height: 1;
-    transition: transform var(--t-fast) var(--ease-out);
-  }
-
-  .pkg-row:hover::after {
-    transform: translateX(3px);
-  }
-}
-
-.pkg-row-name {
-  color: var(--text-on-light);
-}
-
-.section-blue .pkg-row:hover {
-  transform: translateY(-2px);
-  border-color: var(--royal-blue);
-  box-shadow: 0 8px 22px -10px rgba(0, 0, 5, 0.7);
-}
-
-@media (min-width: 600px) {
-  .section-blue .pkg-row::after {
-    content: "\2192";
-    color: var(--royal-blue);
-    font-size: var(--fs-md);
-    line-height: 1;
-    transition: transform var(--t-fast) var(--ease-out);
-  }
-
-  .section-blue .pkg-row:hover::after {
-    transform: translateX(3px);
-  }
-}
-
-.pkg-row-name {
-  font-family: var(--font-serif);
-  font-size: var(--fs-md);
-  font-weight: 500;
-}
-
-/* The homepage packages block was 647px of pure text while /packages is
-   six photos. A thumbnail per row puts the setups back in view for about
-   30px of extra row height. */
-.pkg-row-photo {
-  flex: 0 0 auto;
-  width: 120px;
-  height: 90px;
-  border-radius: var(--r-sm);
-  background: linear-gradient(160deg, var(--light-sky), #DCE5F4);
-  background-size: cover;
-  background-position: center;
-  align-self: center;
-}
-
-/* Smaller on a phone, where the rows are already one per line and a
-   120px thumbnail pushed each one to 206px tall. */
-@media (max-width: 599px) {
-  .pkg-row-photo {
-    width: 84px;
-    height: 63px;
-  }
-}
-
-.pkg-row-tagline {
-  font-size: var(--fs-sm);
-  color: var(--text-on-light-soft);
-  flex: 1;
-  margin-left: var(--sp-3);
-  text-align: left;
-}
-
-@media (max-width: 599px) {
-  .pkg-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-
-  .pkg-row-tagline {
-    margin-left: 0;
-  }
-}
-
 
 /* --- 18. Venue marquee --- */
 
@@ -2731,15 +2711,6 @@ body.has-solid-nav .nav {
   .home-band .reviews-grid {
     max-width: none;
   }
-
-  /* Six tiers stacked in a 720px column left half the band empty.
-     Two columns fills it and halves the scroll. */
-  .home-band .packages-preview {
-    max-width: none;
-    margin: 0;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--sp-4);
-  }
 }
 
 /* Laptop and up: the home awards band reads left to right — the heading
@@ -2934,6 +2905,10 @@ body.has-solid-nav .nav {
   font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
   margin-bottom: var(--sp-2);
   line-height: 1.2;
+}
+
+.package-card.is-compact .package-tagline {
+  margin-bottom: 0;
 }
 
 .package-tagline {
@@ -3340,7 +3315,7 @@ body.has-solid-nav .nav {
 /* Block-level anchor that wraps a card without changing its layout.
    Inherits text color, removes underline, adds a subtle hover lift.
    `display` uses :where() so any wrapped class (.service-item flex,
-   .pkg-row flex, etc.) keeps its own layout. */
+   .package-card flex, etc.) keeps its own layout. */
 :where(.card-link) {
   display: block;
 }
@@ -3367,15 +3342,6 @@ body.has-solid-nav .nav {
   text-decoration: none;
 }
 .roster-name-link:hover {
-  color: var(--royal-blue);
-}
-
-/* Package preview rows on the homepage — keep .pkg-row's flex layout. */
-.pkg-row-link {
-  color: inherit;
-  text-decoration: none;
-}
-.pkg-row-link:hover .pkg-row-name {
   color: var(--royal-blue);
 }
 
