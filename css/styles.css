@@ -1031,6 +1031,47 @@ p {
   gap: var(--sp-3);
 }
 
+/* Replaces the inline styles the Visit column used to carry. */
+.footer-loc strong {
+  color: var(--warm-white);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.footer-hours {
+  display: block;
+  margin-top: 6px;
+  font-size: var(--fs-xs);
+  color: rgba(181, 212, 244, 0.6);
+}
+
+/* Phone: the footer was four stacked blocks, 13 links and two addresses
+   deep. Explore and Resources pair up, and the two locations sit beside
+   each other, which halves it without dropping anything. */
+@media (max-width: 699px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--sp-5);
+    row-gap: var(--sp-7);
+  }
+
+  .footer-brand-block,
+  .footer-visit {
+    grid-column: 1 / -1;
+  }
+
+  .footer-visit ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--sp-5);
+    row-gap: var(--sp-5);
+  }
+
+  .footer-visit .footer-contact {
+    grid-column: 1 / -1;
+  }
+}
+
 .footer-col a {
   color: var(--text-on-dark-soft);
   font-size: var(--fs-sm);
