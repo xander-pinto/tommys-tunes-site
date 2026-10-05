@@ -35,26 +35,17 @@
   }
   </script>
 </head>
-<body>
+<body class="has-solid-nav">
 
   <div data-component="nav"></div>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="starfield"></div>
-    <div class="container">
-      <span class="kicker">Services</span>
-      <h1>Everything that goes into <em>a great night.</em></h1>
-      <p>Our DJs and MCs are the foundation. Live musicians, photo booths, intelligent lighting, and effects fill in the rest.</p>
-    </div>
-  </section>
-
-  <!-- FOUR SPECIALTIES -->
-  <section class="section section-light">
+  <section class="section section-light section-flush page-band">
     <div class="container">
       <div class="section-head">
-        <span class="overline">What we do best</span>
-        <h2>Every kind of night, <em>one team.</em></h2>
+        <span class="overline">Services</span>
+        <h1>Everything that goes into <em>a great night.</em></h1>
+        <p>Five kinds of event, and forty-seven things you can add to any of them. Start with what the night is, then pick what goes in the room.</p>
       </div>
 
       <!-- EDIT: Drop event-type photos at /assets/images/services/. Cards link to /service/<slug>/ (the 5 event types use keyword URLs, e.g. /wedding-dj-long-island/). Pages are generated from services-data.js by scripts/generate.js. -->
@@ -91,7 +82,7 @@
             </div>
           </div>
         </a>
-        <a class="card-link specialty-card specialty-card--center" href="/other-events/">
+        <a class="card-link specialty-card" href="/other-events/">
           <div class="card-photo" style="background-image: url('/assets/images/services/events/other-events/other_events_pf.jpg');">
             <div class="card-photo-text">
               <h3>Other events</h3>
@@ -104,15 +95,16 @@
   </section>
 
   <!-- LIVE MUSIC -->
-  <section id="live-music" class="section section-tinted">
+  <section id="live-music" class="section page-band section-tinted">
     <div class="container">
-      <div class="section-head">
+      <div class="svc-layout">
+        <div class="section-head svc-head">
         <span class="overline">Live Music</span>
         <h2>Add a live player <em>to any package.</em></h2>
         <p>For ceremony, cocktail hour, or reception. Pair with any tier. We'll match the right musician to your venue and vibe.</p>
-      </div>
+        </div>
 
-      <!-- EDIT: Live music add-ons (no prices). Drop photos at /assets/images/services/ — same filename as the slug below. -->
+        <!-- EDIT: Live music add-ons (no prices). Drop photos at /assets/images/services/ — same filename as the slug below. -->
       <div class="service-list">
         <a class="card-link service-item" href="/service/saxophonist/"><div class="card-photo" style="background-image: url('/assets/images/services/live-music/saxophonist/saxophonist_pf.jpg');"></div><span class="service-item-name">Saxophonist</span><span class="service-item-desc">Cocktail hour or reception. The Long Island wedding favorite.</span></a>
         <a class="card-link service-item" href="/service/pianist/"><div class="card-photo" style="background-image: url('/assets/images/services/live-music/pianist/pianist_pf.jpg');"></div><span class="service-item-name">Pianist or keyboard</span><span class="service-item-desc">Ceremony, cocktail hour, dinner.</span></a>
@@ -127,14 +119,16 @@
         <a class="card-link service-item" href="/service/ceremony-dj/"><div class="card-photo" style="background-image: url('/assets/images/services/live-music/ceremony-dj/ceremony_cocktail_dj_pf.jpg');"></div><span class="service-item-name">Ceremony or cocktail-hour DJ</span><span class="service-item-desc">A second DJ for a separate ceremony or cocktail space.</span></a>
         <a class="card-link service-item" href="/service/afterparty-dj/"><div class="card-photo" style="background-image: url('/assets/images/services/live-music/afterparty-dj/afterparty_dj_pf.jpg');"></div><span class="service-item-name">Afterparty DJ</span><span class="service-item-desc">A DJ for a separate afterparty room or venue.</span></a>
         <a class="card-link service-item" href="/service/party-dancer/"><div class="card-photo" style="background-image: url('/assets/images/services/live-music/party-dancer/party_dancer_pf.jpg'); background-position: 60% 15%;"></div><span class="service-item-name">Professional party dancer</span><span class="service-item-desc">Energy boost on the dance floor, four hours.</span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PHOTO BOOTHS -->
-  <section id="photo-booths" class="section section-light">
+  <section id="photo-booths" class="section page-band section-light">
     <div class="container">
-      <div class="section-head">
+      <div class="svc-layout">
+        <div class="section-head svc-head">
         <span class="overline">Photo Booths</span>
         <h2>Four kinds of booths. <em>One that fits your room.</em></h2>
         <p>Every booth includes unlimited prints, custom logo, your choice of backdrop, props, a digital link of all photos, and an attendant.</p>
@@ -145,14 +139,16 @@
         <a class="card-link service-item" href="/service/glam-booth/"><div class="card-photo" style="background-image: url('/assets/images/services/photo-booths/glam-booth/glam_booth_pf.jpg');"></div><span class="service-item-name">Glam booth</span><span class="service-item-desc">High-end black-and-white editorial photos. Magazine-style.</span></a>
         <a class="card-link service-item" href="/service/open-air-booth/"><div class="card-photo" style="background-image: url('/assets/images/services/photo-booths/open-air-booth/openair_booth_pf.jpg');"></div><span class="service-item-name">Open-air booth</span><span class="service-item-desc">Classic backdrop-and-props setup. Large group friendly.</span></a>
         <a class="card-link service-item" href="/service/360-booth/"><div class="card-photo" style="background-image: url('/assets/images/services/photo-booths/360-booth/360_booth_pf.jpg');"></div><span class="service-item-name">360 booth</span><span class="service-item-desc">Slow-motion video on a rotating platform. Pricing on request.</span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- AUDIO GUESTBOOK / PHONE BOOTH -->
-  <section id="audio-phone-booths" class="section section-tinted">
+  <section id="audio-phone-booths" class="section page-band section-tinted">
     <div class="container">
-      <div class="section-head">
+      <div class="svc-layout">
+        <div class="section-head svc-head">
         <span class="overline">Audio &amp; Phone Booths</span>
         <h2>For voice notes <em>that outlast the night.</em></h2>
       </div>
@@ -161,14 +157,16 @@
         <a class="card-link service-item" href="/service/audio-guestbook/"><div class="card-photo" style="background-image: url('/assets/images/services/audio-phone-booths/audio-guestbook/audio_guestbook_pf.jpg');"></div><span class="service-item-name">Audio guest book (phone)</span><span class="service-item-desc">A vintage phone receiver guests pick up to leave a message. You get the digital files plus a personalized mini turntable speaker.</span></a>
         <a class="card-link service-item" href="/service/phone-booth/"><div class="card-photo" style="background-image: url('/assets/images/services/audio-phone-booths/audio-guestbook/audio_guestbook_1.jpg'); background-position: center 42%;"></div><span class="service-item-name">White phone booth</span><span class="service-item-desc">Custom wedding-newspaper display, digital audio files, and a personalized mini turntable speaker.</span></a>
         <a class="card-link service-item" href="/service/video-phone-booth/"><div class="card-photo" style="background-image: url('/assets/images/services/audio-phone-booths/video-phone-booth/video_phone_booth_pf.jpg');"></div><span class="service-item-name">White video phone booth</span><span class="service-item-desc">Custom wedding-newspaper display with digital video messages from your guests.</span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- LIGHTING -->
-  <section id="intelligent-lighting" class="section section-light">
+  <section id="intelligent-lighting" class="section page-band section-light">
     <div class="container">
-      <div class="section-head">
+      <div class="svc-layout">
+        <div class="section-head svc-head">
         <span class="overline">Intelligent Lighting</span>
         <h2>Lights that <em>do something.</em></h2>
         <p>Programmed to follow your timeline: calm during dinner, full color when the floor opens.</p>
@@ -185,14 +183,16 @@
         <a class="card-link service-item" href="/service/love-letters/"><div class="card-photo" style="background-image: url('/assets/images/services/lights/love-letters/love_letters_pf.jpg');"></div><span class="service-item-name">Love letters</span><span class="service-item-desc">45-inch illuminated "LOVE" letters.</span></a>
         <a class="card-link service-item" href="/service/mr-mrs-letters/"><div class="card-photo" style="background-image: url('/assets/images/services/lights/mr-mrs-letters/mr_mrs_letters_pf.jpg');"></div><span class="service-item-name">Mr &amp; Mrs letters</span><span class="service-item-desc">45-inch illuminated "MR &amp; MRS" letters.</span></a>
         <a class="card-link service-item" href="/service/16-letters/"><div class="card-photo" style="background-image: url('/assets/images/services/lights/16-letters/16_letters_pf.jpg');"></div><span class="service-item-name">16 letters</span><span class="service-item-desc">45-inch illuminated "16" letters.</span></a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- PHOTO, VIDEO & EFFECTS -->
-  <section id="photo-video-effects" class="section section-tinted">
+  <section id="photo-video-effects" class="section page-band section-tinted">
     <div class="container">
-      <div class="section-head">
+      <div class="svc-layout">
+        <div class="section-head svc-head">
         <span class="overline">Photo, Video &amp; Effects</span>
         <h2>Everything else <em>that makes a night feel produced.</em></h2>
       </div>
@@ -210,6 +210,7 @@
         <a class="card-link service-item" href="/service/extra-speakers/"><div class="card-photo" style="background-image: url('/assets/images/services/photo-video-effects/extra-speakers/extra_speakers_pf.jpg');"></div><span class="service-item-name">Extra speaker setups</span><span class="service-item-desc">Tripod-mounted speakers for ceremonies, separate spaces, or larger rooms.</span></a>
         <a class="card-link service-item" href="/service/additional-tvs/"><div class="card-photo" style="background-image: url('/assets/images/services/photo-video-effects/additional-tvs/tvs_pf.jpg');"></div><span class="service-item-name">Additional LED TVs</span><span class="service-item-desc">60", 65", or 75" screens for visual displays around the room.</span></a>
         <a class="card-link service-item" href="/service/furniture/"><div class="card-photo" style="background-image: url('/assets/images/services/photo-video-effects/furniture/furniture_pf.jpg');"></div><span class="service-item-name">Event furniture</span><span class="service-item-desc">Lounge seating, cocktail tables, and specialty chairs. We source, deliver, and set up everything, matched to your space and color palette.</span></a>
+        </div>
       </div>
     </div>
   </section>
