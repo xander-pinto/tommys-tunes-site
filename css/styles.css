@@ -1869,6 +1869,39 @@ body.has-solid-nav .nav {
 }
 
 
+/* A page's own heading, for the inner pages whose first section already
+   carries its own head. Deliberately not .section-head: that class picks
+   up the band heading size inside a .page-band, and two headings at 68px
+   stacked on top of each other compete. */
+.page-intro {
+  margin-bottom: var(--sp-8);
+}
+
+.page-intro .overline {
+  display: block;
+  margin-bottom: var(--sp-3);
+}
+
+.page-intro h1 {
+  margin: 0 0 var(--sp-4);
+  text-wrap: balance;
+}
+
+.page-intro p {
+  max-width: 76ch;
+  margin: 0;
+  font-size: var(--fs-md);
+  color: var(--text-on-light-soft);
+  text-wrap: pretty;
+}
+
+/* The section's own head steps back down when a page intro sits above it. */
+.page-intro ~ .section-head h2,
+.page-intro ~ * .section-head h2 {
+  font-size: var(--fs-h2);
+}
+
+
 /* --- 11c. Homepage photo band ---
    Twelve showcase shots, full-bleed past the container. The homepage had
    three sections carrying no photography at all (packages preview,
