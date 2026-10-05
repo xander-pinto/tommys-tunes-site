@@ -52,6 +52,15 @@
       .reviews-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
     }
 
+    /* Three across in the wider band. Four put the quotes at roughly 37
+       characters a line, too tight for paragraph-length reviews. */
+    @media (min-width: 1100px) {
+      .reviews-grid {
+        max-width: none;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
     .review-card {
       background: var(--warm-white);
       border: 1px solid rgba(11, 94, 222, 0.12);
@@ -209,36 +218,119 @@
       text-transform: uppercase;
       color: var(--electric-cyan);
     }
+
+    /* Heading, lead and rating on one side, a photo on the other. The page
+       had no photography at all beyond the award badges. */
+    .reviews-intro { display: grid; gap: var(--sp-6); }
+
+    @media (min-width: 1000px) {
+      .reviews-intro {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: var(--sp-8);
+        align-items: center;
+      }
+    }
+
+    .reviews-intro-photo {
+      margin: 0;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      background: var(--deep-navy);
+      box-shadow: 0 18px 44px -18px rgba(0, 0, 5, 0.35);
+    }
+
+    .reviews-intro-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .reviews-aggregate {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-5);
+      flex-wrap: wrap;
+      margin-top: var(--sp-6);
+      padding-top: var(--sp-5);
+      border-top: 1px solid rgba(11, 94, 222, 0.2);
+    }
+
+    .reviews-score {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(3rem, 2.2rem + 2.6vw, 4.5rem);
+      line-height: 1;
+      color: var(--royal-blue);
+      white-space: nowrap;
+    }
+
+    /* The star glyph carries the serif's full em box, so at 72px it
+       dwarfed the number next to it. */
+    .reviews-score span {
+      font-size: 0.42em;
+      font-style: normal;
+      vertical-align: 0.42em;
+      margin-left: 0.12em;
+    }
+
+    /* Scoped past .page-band .section-head p, which sets margin 0 and the
+       md size. */
+    .reviews-intro .section-head .reviews-score-note {
+      flex: 1 1 260px;
+      font-size: var(--fs-sm);
+      margin: 0;
+    }
+
+    /* Full-bleed break between 250 reviews and the dark close. */
+    .reviews-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+    }
+
+    @media (min-width: 700px) {
+      .reviews-strip { grid-template-columns: repeat(5, 1fr); }
+    }
+
+    .reviews-strip img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
   </style>
 </head>
-<body>
+<body class="has-solid-nav">
 
   <div data-component="nav"></div>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="starfield"></div>
+  <!-- INTRO + AGGREGATE. The heading, the lead and the rating sit in one
+       band beside a photo, instead of a dark bar over a centred stat. -->
+  <section class="section section-light section-flush page-band">
     <div class="container">
-      <span class="kicker">Reviews</span>
-      <h1>40+ years of <em>five-star nights.</em></h1>
-      <p>Below are 250 of our most recent reviews, sourced from The Knot, WeddingWire, Google, and Yelp. We've collected well over a thousand more across every platform since 1985. Click any source link to verify any review on its original platform.</p>
-    </div>
-  </section>
+      <div class="reviews-intro">
+        <div class="section-head">
+          <span class="overline">Reviews</span>
+          <h1>40+ years of <em>five-star nights.</em></h1>
+          <p>Below are 250 of our most recent reviews, sourced from The Knot, WeddingWire, Google, and Yelp. We've collected well over a thousand more across every platform since 1985. Click any source link to verify a review on its original platform.</p>
 
-  <!-- AGGREGATE BANNER -->
-  <section class="section section-light" style="padding-top: var(--sp-7); padding-bottom: var(--sp-5);">
-    <div class="container">
-      <div class="text-center">
-        <div style="font-family: var(--font-serif); font-size: 64px; line-height: 1; color: var(--royal-blue); font-style: italic;">4.9★</div>
-        <p style="margin-top: var(--sp-3); font-size: var(--fs-md); color: var(--text-on-light-soft); max-width: 540px; margin-left: auto; margin-right: auto;">
-          Average rating across The Knot, WeddingWire, Google, and Yelp. The 250 reviews below go back to 2019, but we've been collecting them since 1985. Weddings, Sweet 16s, communions, and family parties.
-        </p>
+          <div class="reviews-aggregate">
+            <div class="reviews-score">4.9<span aria-hidden="true">&#9733;</span></div>
+            <p class="reviews-score-note">Average across all four platforms. The 250 below go back to 2019; we have been collecting them since 1985.</p>
+          </div>
+        </div>
+
+        <figure class="reviews-intro-photo">
+          <img src="/assets/images/showcase/event-06.jpg" alt="A couple on the dance floor surrounded by guests mid-celebration" loading="lazy">
+        </figure>
       </div>
     </div>
   </section>
 
   <!-- REVIEWS GRID (data-driven from window.REVIEWS_DATA via /js/reviews-render.js) -->
-  <section class="section section-light" style="padding-top: var(--sp-5);">
+  <section class="section section-light page-band" style="padding-top: var(--sp-5);">
     <div class="container">
 
       <!-- Filter bar -->
@@ -271,6 +363,15 @@
 
     </div>
   </section>
+
+  <!-- A look at the nights behind the reviews, before the dark close. -->
+  <div class="reviews-strip">
+    <img src="/assets/images/showcase/event-19.jpg" alt="Guests dancing shoulder to shoulder late in the night" loading="lazy">
+    <img src="/assets/images/showcase/event-29.jpg" alt="A packed floor with arms in the air" loading="lazy">
+    <img src="/assets/images/showcase/orange_couple.jpg" alt="A couple under warm reception lighting" loading="lazy">
+    <img src="/assets/images/showcase/event-34.jpg" alt="Guests celebrating with glow sticks" loading="lazy">
+    <img src="/assets/images/showcase/event-01.jpg" alt="A bride and groom dancing on an illuminated floor" loading="lazy">
+  </div>
 
   <!-- READ MORE ON PLATFORMS -->
   <section class="section section-dark">

@@ -1853,15 +1853,17 @@ body.has-solid-nav .nav {
 
 /* The four price quotes sat two-up in a 1100px column, so half of them
    were below the fold of the section. One row across the full band puts
-   all four in view and drops a whole row of height. */
+   all four in view and drops a whole row of height.
+   Scoped to #on-price: as a .page-band rule it also caught /reviews,
+   where it squeezed 250 paragraph-length reviews into 292px columns. */
 @media (min-width: 1100px) {
-  .page-band .reviews-grid {
+  #on-price .reviews-grid {
     max-width: none;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--sp-5);
   }
 
-  .page-band .review-card {
+  #on-price .review-card {
     padding: var(--sp-5);
   }
 }
