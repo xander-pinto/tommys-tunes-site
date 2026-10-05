@@ -54,80 +54,18 @@
       max-width: 680px;
     }
 
-    /* Roster to the right of a sticky category list, rather than eight
-       full-width headings stacked down the middle of the page. */
-    .roster-layout {
-      display: grid;
-      gap: var(--sp-6);
+    /* The category rail is fixed in the gutter (see setupRosterNav), so
+       the roster keeps the full band width and the cards stay large. */
+    .roster-rail {
+      display: none;
     }
 
-    @media (min-width: 1000px) {
-      .roster-layout {
-        grid-template-columns: minmax(190px, 230px) minmax(0, 1fr);
-        gap: var(--sp-7);
-        align-items: start;
-      }
-
-      .roster-nav {
-        position: sticky;
-        top: calc(var(--nav-height) + var(--sp-6));
-      }
+    /* The homepage rail waits for 1400px; the roster earns its place a
+       little earlier because the page is a long, flat list. */
+    @media (min-width: 1200px) {
+      .roster-rail { display: block; }
     }
 
-    /* Below 1000px the roster is one column and this would just repeat
-       the same eight words. */
-    @media (max-width: 999px) {
-      .roster-nav { display: none; }
-    }
-
-    .roster-nav-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      border-left: 1px solid rgba(11, 94, 222, 0.18);
-    }
-
-    .roster-nav-list a {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: var(--sp-3);
-      padding: 10px var(--sp-4);
-      margin-left: -1px;
-      border-left: 2px solid transparent;
-      font-size: var(--fs-sm);
-      color: var(--text-on-light-soft);
-      text-decoration: none;
-      transition: color var(--t-fast) var(--ease-out),
-        border-color var(--t-fast) var(--ease-out);
-    }
-
-    .roster-nav-list a:hover {
-      color: var(--royal-blue);
-    }
-
-    .roster-nav-list a.is-active {
-      color: var(--royal-blue);
-      border-left-color: var(--royal-blue);
-      font-weight: 600;
-    }
-
-    .roster-nav-count {
-      font-variant-numeric: tabular-nums;
-      font-size: var(--fs-xs);
-      opacity: 0.65;
-    }
-
-    /* Four across only once the roster column can carry it. Between
-       1000 and 1200 the nav leaves 666px, which made 149px cards. */
-    @media (min-width: 1000px) and (max-width: 1199px) {
-      .roster-main .team-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    /* First heading sits flush with the top of the nav beside it. */
-    .roster-main > .roster-category:first-child { margin-top: 0; }
   </style>
 
   <script type="application/ld+json">
@@ -158,10 +96,7 @@
       <!-- The category list on the left is built from these headings by
            setupRosterNav() in main.js, so adding a category here keeps it
            in sync. -->
-      <div class="roster-layout">
-        <nav class="roster-nav" data-roster-nav aria-label="Roster categories"></nav>
-
-        <div class="roster-main">
+      <nav data-roster-nav hidden></nav>
 
       <!-- EDIT: Add or remove cards within each category. Photo cards link to /person/<slug>/.
            For people without a profile page, use <div class="team-card"> instead of <a>.
@@ -480,8 +415,6 @@
         </div>
       </div>
 
-        </div>
-      </div>
     </div>
   </section>
 

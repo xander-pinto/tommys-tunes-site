@@ -920,12 +920,11 @@ function renderPackageCards() {
 }
 
 
-/* --- Roster category nav (team page) ---
-   49 people in 8 groups is a long scroll with no way back. Builds a
-   sticky category list from the roster headings themselves, so adding a
-   category to team.html keeps the nav in sync, and tracks which group
-   you are looking at. Laptop only; below 1000px the roster is one
-   column and the nav would just be a second list of the same words. --- */
+/* --- Roster category rail (team page) ---
+   49 people in 8 groups is a long scroll with no way back. Same fixed
+   gutter rail the homepage uses, so it costs the roster no width and the
+   cards stay full size. Built from the roster headings themselves, so
+   adding a category to team.html keeps the rail in sync. --- */
 function setupRosterNav() {
   const slot = document.querySelector('[data-roster-nav]');
   if (!slot) return;
@@ -934,29 +933,39 @@ function setupRosterNav() {
     .filter((c) => c.id && c.querySelector('.roster-category-heading'));
   if (!cats.length) return;
 
-  slot.innerHTML = '<ul class="roster-nav-list">' + cats.map((c) => {
+  /* Markup ships hidden so it never flashes as a bare list before JS
+     turns it into the rail. */
+  slot.removeAttribute('hidden');
+  slot.className = 'section-rail roster-rail';
+  slot.setAttribute('aria-label', 'Roster categories');
+  slot.innerHTML = '<ol>' + cats.map((c) => {
     const label = c.querySelector('.roster-category-heading').textContent.trim();
     const count = c.querySelectorAll('.team-card').length;
-    return `<li><a href="#${c.id}" data-roster-link="${c.id}">`
-      + `<span>${label}</span><span class="roster-nav-count">${count}</span></a></li>`;
-  }).join('') + '</ul>';
+    return `<li><a href="#${c.id}" data-roster-link="${c.id}" aria-current="false">`
+      + `<span class="section-rail-label">${label} &middot; ${count}</span></a></li>`;
+  }).join('') + '</ol>';
 
   const links = new Map(
     [...slot.querySelectorAll('[data-roster-link]')].map((a) => [a.dataset.rosterLink, a])
   );
-
   const setActive = (id) => {
-    links.forEach((a, key) => a.classList.toggle('is-active', key === id));
+    links.forEach((a, key) => a.setAttribute('aria-current', key === id ? 'true' : 'false'));
   };
   setActive(cats[0].id);
 
+  /* Track the set of categories crossing the band rather than reacting to
+     one entry, so a scroll that leaves every category still holds the
+     last good answer instead of clearing it. */
+  const inBand = new Set();
   const io = new IntersectionObserver((entries) => {
-    /* Whichever category currently crosses the upper third of the viewport
-       wins; ties go to the one furthest down the page. */
-    const hit = entries.filter((e) => e.isIntersecting);
-    if (!hit.length) return;
-    hit.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-    setActive(hit[hit.length - 1].target.id);
+    entries.forEach((e) => {
+      if (e.isIntersecting) inBand.add(e.target); else inBand.delete(e.target);
+    });
+    if (!inBand.size) return;
+    const sorted = [...inBand].sort(
+      (a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top
+    );
+    setActive(sorted[sorted.length - 1].id);
   }, { rootMargin: '-25% 0px -70% 0px', threshold: 0 });
 
   cats.forEach((c) => io.observe(c));
