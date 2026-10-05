@@ -2339,6 +2339,89 @@ body.has-solid-nav .nav {
 }
 
 
+/* --- 11g. Phone pass ---
+   Desktop composition held up; the phone was just long. Measured at
+   390px: the homepage ran 19,936px, with the package preview at 3,037px
+   and the closer at 3,016px doing most of the damage. Nothing here
+   changes the laptop layout. --- */
+
+@media (max-width: 599px) {
+  /* 64px top and bottom on every band is a laptop rhythm. Eleven bands
+     of it was 1,776px of padding on a phone. */
+  :root {
+    --section-pad-y: clamp(2.5rem, 9vw, 4rem);
+  }
+
+  /* The homepage preview goes two across. Six full-width cards with 4:3
+     photos was 3,037px for what is a teaser; the real ones are on
+     /packages. Scoped by the compact flag so that page is untouched. */
+  .package-stack[data-compact] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-3);
+  }
+
+  .package-stack[data-compact] .package-card {
+    padding: var(--sp-3);
+  }
+
+  .package-stack[data-compact] .package-card .card-photo {
+    margin: calc(-1 * var(--sp-3)) calc(-1 * var(--sp-3)) var(--sp-3);
+  }
+
+  .package-stack[data-compact] .package-card h3 {
+    font-size: var(--fs-base);
+  }
+
+  .package-stack[data-compact] .package-tagline {
+    font-size: var(--fs-xs);
+    line-height: 1.45;
+  }
+
+  .package-stack[data-compact] .package-tag {
+    top: var(--sp-3);
+    left: var(--sp-3);
+    font-size: 10px;
+    padding: 3px 7px;
+  }
+
+  /* The hero lead ran five lines at 22px over the video. */
+  .hero-content p {
+    font-size: var(--fs-md);
+  }
+
+  /* 47 add-ons one per row ran /services past 21,000px. Two across, same
+     trade as the package preview: each card still leads with its photo.
+     Scoped under .svc-layout because the base .service-list rules are
+     declared ~850 lines further down and would otherwise win on order. */
+  .svc-layout .service-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-3);
+  }
+
+  .svc-layout .service-item {
+    padding: var(--sp-3);
+  }
+
+  .svc-layout .service-item-name {
+    font-size: var(--fs-base);
+    line-height: 1.25;
+  }
+
+  .svc-layout .service-item-desc {
+    font-size: var(--fs-xs);
+    line-height: 1.45;
+  }
+}
+
+/* One photo beside the form on a phone, not two: the pair added 620px to
+   a band that is already the longest on the page. */
+@media (max-width: 899px) {
+  .closer-photos .band-photo:nth-child(2) {
+    display: none;
+  }
+}
+
+
 /* --- 12. Inner-page hero bar --- */
 
 .page-hero {

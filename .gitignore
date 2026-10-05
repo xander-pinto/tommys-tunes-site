@@ -24,3 +24,6 @@
 
 # Playwright MCP audit screenshots, local only
 .playwright-mcp/
+
+# Local-only phone preview harness, never deployed.
+/_preview.html

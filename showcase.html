@@ -266,8 +266,10 @@
     /* The gallery is the point of this page and it was living in a 1120px
        column inside a 1440px viewport. Full-bleed, six across, same
        treatment as the homepage band. */
+    /* Three across even on a phone: 52 photos two-up was 26 rows. 128px
+       tiles read as a wall rather than a list. */
     #gallery .showcase-masonry {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 4px;
       margin-top: var(--sp-6);
     }

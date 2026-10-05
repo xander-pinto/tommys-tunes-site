@@ -123,6 +123,11 @@
       margin-top: 4px;
       white-space: nowrap;
     }
+
+    /* 10px works as a badge on a laptop and is tight on a phone. */
+    @media (max-width: 599px) {
+      .recommended-badge { font-size: 11px; }
+    }
   </style>
 </head>
 
