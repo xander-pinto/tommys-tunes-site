@@ -881,6 +881,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupReviewClamps();
   setupSectionRail();
   renderPackageCards();
+  setupRosterNav();
 });
 
 
@@ -916,6 +917,49 @@ function renderPackageCards() {
       </a>`;
     }).join('');
   });
+}
+
+
+/* --- Roster category nav (team page) ---
+   49 people in 8 groups is a long scroll with no way back. Builds a
+   sticky category list from the roster headings themselves, so adding a
+   category to team.html keeps the nav in sync, and tracks which group
+   you are looking at. Laptop only; below 1000px the roster is one
+   column and the nav would just be a second list of the same words. --- */
+function setupRosterNav() {
+  const slot = document.querySelector('[data-roster-nav]');
+  if (!slot) return;
+
+  const cats = [...document.querySelectorAll('.roster-category')]
+    .filter((c) => c.id && c.querySelector('.roster-category-heading'));
+  if (!cats.length) return;
+
+  slot.innerHTML = '<ul class="roster-nav-list">' + cats.map((c) => {
+    const label = c.querySelector('.roster-category-heading').textContent.trim();
+    const count = c.querySelectorAll('.team-card').length;
+    return `<li><a href="#${c.id}" data-roster-link="${c.id}">`
+      + `<span>${label}</span><span class="roster-nav-count">${count}</span></a></li>`;
+  }).join('') + '</ul>';
+
+  const links = new Map(
+    [...slot.querySelectorAll('[data-roster-link]')].map((a) => [a.dataset.rosterLink, a])
+  );
+
+  const setActive = (id) => {
+    links.forEach((a, key) => a.classList.toggle('is-active', key === id));
+  };
+  setActive(cats[0].id);
+
+  const io = new IntersectionObserver((entries) => {
+    /* Whichever category currently crosses the upper third of the viewport
+       wins; ties go to the one furthest down the page. */
+    const hit = entries.filter((e) => e.isIntersecting);
+    if (!hit.length) return;
+    hit.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    setActive(hit[hit.length - 1].target.id);
+  }, { rootMargin: '-25% 0px -70% 0px', threshold: 0 });
+
+  cats.forEach((c) => io.observe(c));
 }
 
 
