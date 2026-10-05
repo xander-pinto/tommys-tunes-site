@@ -317,6 +317,34 @@
     }
 
     #featured-reel .reel-more a { color: var(--electric-cyan); }
+
+    /* The calendar sits beside a photo at laptop width, so the dates stop
+       being a bare list of text in a wide empty band. */
+    #showcase-calendar-section .band-split .showcase-calendar-grid {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 1100px) {
+      #showcase-calendar-section .band-split .showcase-calendar-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      /* Six dated cards run far taller than a 4:3 photo, so the photo
+         takes the column height rather than leaving 450px of empty band
+         beside them. Basis 0 so its natural height never sets the row. */
+      #showcase-calendar-section .band-split { align-items: stretch; }
+
+      #showcase-calendar-section .band-photo {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #showcase-calendar-section .band-photo img {
+        aspect-ratio: auto;
+        flex: 1 1 0;
+        min-height: 0;
+      }
+    }
   </style>
 </head>
 
@@ -576,7 +604,16 @@
         <p>We do bridal showcases at Long Island venues throughout the year. Come meet the team, see the lighting setups
           in person, and ask anything.</p>
       </div>
-      <div class="showcase-calendar-grid" data-showcase-calendar></div>
+      <!-- Photo beside the dates, same treatment as the homepage band: a
+           showcase is a thing you go and see, and this was a list of text. -->
+      <div class="band-split">
+        <figure class="band-photo">
+          <img src="/assets/images/showcase/class_tt_pic.jpg"
+            alt="The Tommy's Tunes band playing live at a showcase, sax and drums on stage" loading="lazy">
+          <figcaption>Live at a showcase. This is the setup you'll walk into.</figcaption>
+        </figure>
+        <div class="showcase-calendar-grid" data-showcase-calendar></div>
+      </div>
     </div>
   </section>
 
