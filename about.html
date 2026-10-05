@@ -37,73 +37,89 @@
   </script>
 
   <style>
-    /* One composition per act, not a stack of rows. Each column flows on
-       its own so the eye runs down a side instead of stopping at every
-       full-width edge, which is what made the page read as blocks. */
-    .about-spread {
-      display: grid;
-      gap: var(--sp-6);
+    /* The page is a chronology, so it is laid out as one: a spine down
+       the middle with dated moments alternating either side. Every other
+       page on the site is a grid of blocks; this one should not be. */
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
     }
-    @media (min-width: 900px) {
-      .about-spread {
-        grid-template-columns: 1.35fr 1fr;
-        gap: var(--sp-8);
-        align-items: start;
-      }
-      .about-spread--flip { grid-template-columns: 1fr 1.35fr; }
-      .about-spread--flip .spread-side { order: -1; }
-      /* Source order is heading then photo; on a laptop the photo takes the
-         wide left column and the heading sits beside it. */
-      .about-spread--media-left .spread-main { order: -1; }
-    }
-    .spread-main > * + *,
-    .spread-side > * + * { margin-top: var(--sp-5); }
-    .spread-main h2 { margin-bottom: 0; }
-    .spread-main p { max-width: 62ch; }
 
-    /* Overlaps the heading slightly so the year reads as part of the
-       sentence rather than one more block sitting on top of it. */
-    .big-number {
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 0;
+      left: 11px;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        var(--royal-blue) 0%,
+        rgba(11, 94, 222, 0.25) 85%,
+        transparent 100%
+      );
+    }
+
+    .tl-item {
+      position: relative;
+      padding-left: var(--sp-7);
+      padding-bottom: var(--sp-9);
+    }
+
+    .tl-item:last-child { padding-bottom: 0; }
+
+    /* The marker sits on the spine itself. */
+    .tl-year {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: clamp(4.5rem, 3.5rem + 7vw, 9rem);
-      line-height: 0.85;
-      /* Royal blue, not electric cyan: even at 83px cyan is 2.2:1 here,
-         under the 3:1 minimum for large text. */
+      font-size: var(--fs-md);
       color: var(--royal-blue);
-      letter-spacing: -0.04em;
-      margin: 0 0 calc(-1 * var(--sp-3));
+      white-space: nowrap;
     }
 
-    .about-portrait {
-      aspect-ratio: 4 / 5;
-      background: linear-gradient(160deg, var(--deep-navy), var(--near-black));
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      margin: 0;
-      box-shadow: 0 18px 44px -18px rgba(0, 0, 5, 0.35);
-    }
-    .about-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .about-portrait::after {
+    .tl-year::before {
       content: "";
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 60%, rgba(0,0,5,0.35) 100%);
-      pointer-events: none;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid var(--royal-blue);
+      background: var(--bg-light);
     }
 
-    /* Frames lose their hairline borders: eight hard-edged rectangles was
-       most of the choppiness. Shadow does the separating now. */
-    .about-figure {
-      margin: 0;
+    .tl-card { padding-top: var(--sp-7); }
+    .tl-card h2 { margin-bottom: var(--sp-4); }
+    .tl-card p + p { margin-top: var(--sp-4); }
+
+    .tl-figure {
+      margin: var(--sp-5) 0 0;
       border-radius: var(--r-lg);
       overflow: hidden;
       background: var(--deep-navy);
       box-shadow: 0 18px 44px -18px rgba(0, 0, 5, 0.35);
     }
-    .about-figure img { width: 100%; height: auto; display: block; }
-    .about-figure figcaption {
+
+    /* Capped so the one portrait in the set (young Tommy, 1177x1795)
+       doesn't run 848px tall and dominate the whole timeline. The
+       landscape shots sit well under this and are untouched. */
+    .tl-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 560px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .tl-figure figcaption {
       font-family: var(--font-serif);
       font-style: italic;
       font-size: var(--fs-sm);
@@ -112,38 +128,55 @@
       padding: var(--sp-3) var(--sp-4);
     }
 
-    /* Set as a pull quote so it carries its half of the column instead of
-       reading as a stray caption. */
-    .archive-note {
-      font-family: var(--font-serif);
-      font-size: clamp(1.125rem, 1rem + 0.55vw, 1.4375rem);
-      line-height: 1.55;
-      color: var(--charcoal);
-      padding-left: var(--sp-5);
-      border-left: 3px solid var(--royal-blue);
+    @media (min-width: 900px) {
+      .timeline::before { left: 50%; margin-left: -1px; }
+
+      .tl-item {
+        padding-left: 0;
+        padding-bottom: var(--sp-10);
+      }
+
+      .tl-year {
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        gap: var(--sp-2);
+        font-size: var(--fs-lg, 1.25rem);
+      }
+
+      /* Alternating sides, with a gutter either side of the spine so
+         nothing crowds the line. */
+      .tl-card {
+        width: calc(50% - var(--sp-8));
+        padding-top: var(--sp-8);
+      }
+
+      .tl-item:nth-child(even) .tl-card { margin-left: auto; }
     }
 
     .sons-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: var(--sp-5);
-      margin-top: var(--sp-8);
+      margin-top: var(--sp-7);
     }
+
     @media (min-width: 700px) { .sons-grid { grid-template-columns: repeat(3, 1fr); } }
+
     .son-card {
       background: var(--warm-white);
       border: 1px solid rgba(26, 26, 31, 0.08);
       border-radius: var(--r-lg);
       padding: var(--sp-5);
     }
-    /* Was capped at 140px, so three brothers sat as thumbnails in a
-       1120px row. Full card width now. */
+
     .son-card .team-card-photo {
       aspect-ratio: 4 / 5;
       max-width: none;
       border: none;
       margin-bottom: var(--sp-4);
     }
+
     .son-card h3 { font-size: var(--fs-md); margin-bottom: var(--sp-2); }
     .son-card p { font-size: var(--fs-sm); }
   </style>
@@ -153,8 +186,7 @@
   <div data-component="nav"></div>
 
   <!-- PAGE HERO -->
-  <!-- ACT 1 - THE START (1985). The page heading opens this section rather
-       than sitting in its own 448px dark bar. -->
+  <!-- THE STORY, AS A CHRONOLOGY -->
   <section class="section section-light section-flush page-band">
     <div class="container">
       <div class="section-head">
@@ -163,90 +195,88 @@
         <p>Tommy started Tommy's Tunes in 1985. Four decades later, his three sons run it with him.</p>
       </div>
 
-      <div class="about-spread">
-        <div class="spread-main">
-          <!-- EDIT: Founding year -->
-          <div class="big-number">1985</div>
-          <h2>It started with one DJ and <em>a lot of Saturdays.</em></h2>
-          <p>
-            In 1985, Tommy Masino loaded a car with records and gear and started booking Long Island weddings one Saturday at a time. No showroom. No team. Just a guy who could read a room and keep a dance floor full.
-          </p>
-          <p>
-            Word got around. One party became a referral, the referral became a calendar, and the calendar became a business that's still here forty years later.
-          </p>
-          <!-- EDIT: Archive photo - cropped from /assets/images/about/tommy_djing.JPG -->
-          <figure class="about-figure">
-            <img src="/assets/images/about/tommy_djing_print.jpg" alt="A Tommy's Tunes DJ setup from the early years: two DJs in tuxedos behind a banner, JBL speakers either side, checkerboard floor" loading="lazy">
-            <figcaption>From the archives. A Tommy's Tunes setup from the early days.</figcaption>
-          </figure>
-        </div>
+      <ol class="timeline">
 
-        <aside class="spread-side">
-          <!-- EDIT: Young Tommy portrait - /assets/images/about/young_tommy.jpg -->
-          <div class="about-portrait">
-            <img src="/assets/images/about/young_tommy.jpg" alt="Tommy Masino in the 1980s, the early years of Tommy's Tunes" loading="lazy">
+        <li class="tl-item">
+          <!-- EDIT: Founding year -->
+          <div class="tl-year">1985</div>
+          <div class="tl-card">
+            <h2>One DJ and <em>a lot of Saturdays.</em></h2>
+            <p>
+              Tommy Masino loaded a car with records and gear and started booking Long Island weddings one Saturday at a time. No showroom. No team. Just a guy who could read a room and keep a dance floor full.
+            </p>
+            <p>
+              Word got around. One party became a referral, the referral became a calendar, and the calendar became a business.
+            </p>
+            <!-- EDIT: Young Tommy portrait - /assets/images/about/young_tommy.jpg -->
+            <figure class="tl-figure">
+              <img src="/assets/images/about/young_tommy.jpg" alt="Tommy Masino in the 1980s, the early years of Tommy's Tunes" loading="lazy">
+            </figure>
           </div>
-          <p class="archive-note">
-            Tuxedos, a hand-painted banner and a pair of JBLs on stands. The gear has changed. The part where two guys in bow ties are the reason the room is full hasn't.
-          </p>
-        </aside>
-      </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-year">The early years</div>
+          <div class="tl-card">
+            <h2>Tuxedos, a hand-painted banner, <em>and a pair of JBLs.</em></h2>
+            <p>
+              The gear has changed. The part where two guys in bow ties are the reason the room is full hasn't.
+            </p>
+            <!-- EDIT: Archive photo - cropped from /assets/images/about/tommy_djing.JPG -->
+            <figure class="tl-figure">
+              <img src="/assets/images/about/tommy_djing_print.jpg" alt="A Tommy's Tunes DJ setup from the early years: two DJs in tuxedos behind a banner, JBL speakers either side, checkerboard floor" loading="lazy">
+              <figcaption>From the archives. A Tommy's Tunes setup from the early days.</figcaption>
+            </figure>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-year">2001</div>
+          <div class="tl-card">
+            <h2>Three kids <em>on the back of the truck.</em></h2>
+            <p>
+              Joe, TJ, and Dom grew up inside this business, riding along to load-ins and watching their dad work a room. They never really left.
+            </p>
+            <!-- EDIT: The sons as kids - /assets/images/about/my_three_sons.jpg -->
+            <figure class="tl-figure">
+              <img src="/assets/images/about/my_three_sons.jpg" alt="The Masino boys as kids on the back of the Tommy's Tunes box truck in 2001" loading="lazy">
+              <figcaption>Same seven digits on the door as the number at the top of this page. The area code split in 1999; the number didn't.</figcaption>
+            </figure>
+          </div>
+        </li>
+
+        <li class="tl-item">
+          <div class="tl-year">Today</div>
+          <div class="tl-card">
+            <h2>40+ years on, <em>still on the road most weekends.</em></h2>
+            <!-- EDIT: Selden is the established home (10+ years), not new -->
+            <p>
+              The company runs out of its Selden showroom, the home it grew into years ago, where couples can see the setups, hear the sound, and meet the people who'll actually be at their event.
+            </p>
+            <p>
+              The team has grown from one DJ to nearly fifty. Tommy's still out there most weekends. He has worked weddings for couples whose parents he DJ'd for, MC'd four-generation Mitzvahs, and lost count of the Quinceañeras.
+            </p>
+            <p>
+              DJ companies are easy to start and most don't last five years. Tommy's Tunes has lasted forty for one reason: every event still goes out with someone whose name you can pronounce and whose face you've seen.
+            </p>
+            <!-- EDIT: Tommy today portrait - /assets/images/about/tommy.JPG -->
+            <figure class="tl-figure">
+              <img src="/assets/images/about/tommy.JPG" alt="Tommy Masino today" loading="lazy">
+            </figure>
+          </div>
+        </li>
+
+      </ol>
     </div>
   </section>
 
-  <!-- ACT 2 - THE COMPANY TODAY -->
+  <!-- THE NEXT CHAPTER -->
   <section class="section section-tinted page-band">
     <div class="container">
-      <div class="about-spread about-spread--flip">
-        <div class="spread-main">
-          <div class="big-number">40+</div>
-          <h2>40+ years on, <em>still on the road most weekends.</em></h2>
-          <!-- EDIT: Selden is the established home (10+ years), not new -->
-          <p>
-            These days the company runs out of its Selden showroom, the home it grew into years ago, where couples can see the setups, hear the sound, and meet the people who'll actually be at their event.
-          </p>
-          <p>
-            The team has grown from one DJ to nearly fifty: MCs, DJs, live musicians, photo booth attendants, and the crew loading trucks before sunrise. Tommy's still out there most weekends. He's MC'd four-generation Mitzvahs and lost count of the Quinceañeras.
-          </p>
-          <p>
-            DJ companies are easy to start and most don't last five years. Tommy's Tunes has lasted forty for one reason: every event still goes out with someone whose name you can pronounce and whose face you've seen.
-          </p>
-        </div>
-
-        <aside class="spread-side">
-          <!-- EDIT: Tommy today portrait - /assets/images/about/tommy.JPG -->
-          <div class="about-portrait">
-            <img src="/assets/images/about/tommy.JPG" alt="Tommy Masino today" loading="lazy">
-          </div>
-          <p class="archive-note">
-            He has worked weddings for couples whose parents he DJ'd for.
-          </p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACT 3 - MY THREE SONS -->
-  <section class="section section-light page-band">
-    <div class="container">
-      <!-- Heading first in source so a phone doesn't open the section with a
-           photo before its own title; the grid puts the photo left at 900px. -->
-      <div class="about-spread about-spread--media-left">
-        <aside class="spread-side">
-          <span class="overline">The next chapter</span>
-          <h2>My three sons.</h2>
-          <p>
-            Joe, TJ, and Dom Masino grew up inside this business, riding along to load-ins and watching their dad work a room. They never really left. Today all three work alongside him, carrying Tommy's Tunes into its next forty years.
-          </p>
-        </aside>
-
-        <div class="spread-main">
-          <!-- EDIT: The sons as kids - /assets/images/about/my_three_sons.jpg -->
-          <figure class="about-figure">
-            <img src="/assets/images/about/my_three_sons.jpg" alt="The Masino boys as kids on the back of the Tommy's Tunes box truck in 2001" loading="lazy">
-            <figcaption>The Masino boys on the back of the Tommy's Tunes truck, 2001. Same seven digits on the door as the number at the top of this page.</figcaption>
-          </figure>
-        </div>
+      <div class="section-head">
+        <span class="overline">The next chapter</span>
+        <h2>My three sons.</h2>
+        <p>All three work alongside their dad now, carrying Tommy's Tunes into its next forty years.</p>
       </div>
 
       <div class="sons-grid">
