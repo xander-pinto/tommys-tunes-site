@@ -927,6 +927,13 @@ p {
   flex-direction: column;
 }
 
+/* The author display:flex below outranks the browser's [hidden] rule, so
+   the collapsed sections stayed on screen. Same trap the inquiry form
+   hit. */
+.nav-mobile-sub[hidden] {
+  display: none;
+}
+
 .nav-mobile-sub {
   display: flex;
   flex-direction: column;
@@ -1633,17 +1640,19 @@ p {
 }
 
 
-/* Scroll hint. The hero is a full screen of video, so on a laptop there
-   is nothing to suggest a page exists below it. Phones don't need it —
-   their hero already runs past the fold — and it would crowd the stats
-   there, so it only appears at 900px and up. */
+/* Scroll hint. The hero is a full screen of video, so there is nothing to
+   suggest a page exists below it. It was laptop-only on the assumption a
+   phone hero already runs past the fold, but it doesn't: the hero is
+   887px against an 844px viewport, so a phone sees a full screen of
+   video and no sign of anything under it. Shown everywhere now, smaller
+   on a phone and tucked under the stats row. */
 .hero-scroll {
   position: absolute;
   left: 50%;
   bottom: var(--sp-4);
   transform: translateX(-50%);
   z-index: 2;
-  display: none;
+  display: flex;
   width: 44px;
   height: 44px;
   align-items: center;
@@ -1653,9 +1662,19 @@ p {
   transition: color var(--t-fast) var(--ease-out);
 }
 
-@media (min-width: 900px) {
+@media (max-width: 899px) {
+  /* 192px of top padding plus the flex gaps made the hero 887px against
+     an 844px viewport, which pushed the hint 3px below the fold: the one
+     place it is useless. Trimming the top padding lets min-height govern,
+     so the hero is exactly one screen and the hint sits inside it. */
+  .hero {
+    padding-top: calc(var(--nav-height) + var(--sp-6));
+  }
+
   .hero-scroll {
-    display: flex;
+    width: 32px;
+    height: 32px;
+    bottom: var(--sp-3);
   }
 }
 
@@ -2480,6 +2499,56 @@ body.has-solid-nav .nav {
     font-size: var(--fs-h3);
   }
 }
+
+/* Phone menu disclosure. The parent stays a link; the chevron beside it
+   opens that section's sub-links. */
+.nav-mobile-grouphead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+
+.nav-mobile-grouphead .nav-link {
+  flex: 1 1 auto;
+}
+
+.nav-mobile-toggle {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: 1px solid rgba(250, 250, 247, 0.16);
+  border-radius: var(--r-sm, 6px);
+  color: rgba(250, 250, 247, 0.7);
+  cursor: pointer;
+  transition: color var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out);
+}
+
+.nav-mobile-toggle:hover,
+.nav-mobile-toggle:focus-visible {
+  color: var(--electric-cyan);
+  border-color: rgba(49, 170, 239, 0.4);
+}
+
+.nav-mobile-toggle svg {
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.nav-mobile-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-mobile-toggle svg { transition: none; }
+}
+
 
 /* --- phone spacing fixes --- */
 @media (max-width: 899px) {

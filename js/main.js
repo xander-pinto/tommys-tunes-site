@@ -64,6 +64,21 @@ function setupNav() {
   window.addEventListener('scroll', onScroll, { passive: true });
 
   // Mobile burger toggle.
+  /* Collapsible sections in the phone menu. Flat, the menu is 28 rows and
+     1,506px tall in an 844px viewport, so it opens mid-list and has to be
+     scrolled. Collapsed, the seven top-level destinations fit on screen
+     and the 18 sub-links are one tap away. The parent stays a real link;
+     the chevron beside it does the expanding. */
+  nav.querySelectorAll('.nav-mobile-toggle').forEach((btn) => {
+    const sub = nav.querySelector('#' + btn.getAttribute('aria-controls'));
+    if (!sub) return;
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      sub.hidden = open;
+    });
+  });
+
   const burger = nav.querySelector('.nav-burger');
   if (burger) {
     burger.addEventListener('click', () => {
