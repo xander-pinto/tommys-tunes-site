@@ -2260,24 +2260,24 @@ body.has-solid-nav .nav {
    A mosaic instead: weddings takes a double square, the other four fill
    the block beside it. */
 @media (min-width: 1000px) {
-  .page-band .specialty-grid {
+  .specialty-grid.specialty-grid--mosaic {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-auto-rows: 1fr;
   }
 
-  .page-band .specialty-grid > :first-child {
+  .specialty-grid.specialty-grid--mosaic > :first-child {
     grid-column: span 2;
     grid-row: span 2;
   }
 
-  .page-band .specialty-card {
+  .specialty-grid.specialty-grid--mosaic .specialty-card {
     display: flex;
     flex-direction: column;
   }
 
   /* Basis 0 so a tall card's photo fills the cell instead of its natural
      16:9 height setting the row. */
-  .page-band .specialty-card .card-photo {
+  .specialty-grid.specialty-grid--mosaic .card-photo {
     aspect-ratio: auto;
     flex: 1 1 0;
     min-height: 236px;
@@ -2286,7 +2286,7 @@ body.has-solid-nav .nav {
   /* The stock scrim is tuned for a 16:9 banner. On a 298px tile a title
      plus three lines of copy reaches well past it and lands on lit
      photo, so the mosaic carries its own. */
-  .page-band .specialty-grid > :not(:first-child) .card-photo::after {
+  .specialty-grid.specialty-grid--mosaic > :not(:first-child) .card-photo::after {
     background: linear-gradient(to top,
       rgba(0, 0, 0, 0.92) 0%,
       rgba(0, 0, 0, 0.72) 42%,
@@ -2294,11 +2294,11 @@ body.has-solid-nav .nav {
       transparent 100%);
   }
 
-  .page-band .specialty-grid > :not(:first-child) .card-photo-text {
+  .specialty-grid.specialty-grid--mosaic > :not(:first-child) .card-photo-text {
     padding: var(--sp-4) var(--sp-4) var(--sp-5);
   }
 
-  .page-band .specialty-grid > :first-child .card-photo-text h3 {
+  .specialty-grid.specialty-grid--mosaic > :first-child .card-photo-text h3 {
     font-size: var(--fs-h3);
   }
 }
@@ -2539,15 +2539,6 @@ body.has-solid-nav .nav {
 }
 
 /* A lone trailing specialty card (e.g. "Other events" as a 5th) centered under the 2x2 grid. */
-@media (min-width: 600px) {
-  .specialty-card--center {
-    grid-column: 1 / -1;
-    max-width: calc(50% - (var(--sp-4) / 2));
-    margin-inline: auto;
-    width: 100%;
-  }
-}
-
 .specialty-card {
   padding: 0;
   background: var(--warm-white);
