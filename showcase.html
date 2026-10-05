@@ -262,31 +262,82 @@
       .demo-grid > .demo-item:first-child { grid-column: 1 / -1; }
       .demo-grid > .demo-item:first-child .demo-embed { max-width: 900px; margin: 0 auto; }
     }
+
+    /* The gallery is the point of this page and it was living in a 1120px
+       column inside a 1440px viewport. Full-bleed, six across, same
+       treatment as the homepage band. */
+    #gallery .showcase-masonry {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+      margin-top: var(--sp-6);
+    }
+
+    @media (min-width: 600px) {
+      #gallery .showcase-masonry { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 900px) {
+      #gallery .showcase-masonry { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (min-width: 1200px) {
+      #gallery .showcase-masonry { grid-template-columns: repeat(6, 1fr); }
+    }
+
+    #gallery .showcase-tile {
+      border-radius: 0;
+      border: none;
+    }
+
+    /* The reel band opens the page now, so it clears the fixed nav itself
+       and the starfield sits behind the content rather than over it. */
+    #featured-reel { overflow: hidden; }
+    #featured-reel > .container { position: relative; }
+
+    /* Heading beside the reel rather than stacked above it, so the page
+       opens reading across. */
+    .reel-split { display: grid; gap: var(--sp-6); }
+
+    @media (min-width: 1000px) {
+      .reel-split {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: var(--sp-8);
+        align-items: center;
+      }
+      .reel-split .section-head { margin-bottom: 0; }
+      #featured-reel .reel-wrap { max-width: none; margin: 0; }
+    }
+
+    /* Scoped by id: the shared rule .page-band .section-head p sets
+       margin 0 and the md size, and a bare .reel-more loses to it. */
+    #featured-reel .section-head .reel-more {
+      font-size: var(--fs-sm);
+      color: var(--text-on-dark-soft);
+      margin-top: var(--sp-5);
+    }
+
+    #featured-reel .reel-more a { color: var(--electric-cyan); }
   </style>
 </head>
 
-<body>
+<body class="has-solid-nav">
 
   <div data-component="nav"></div>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
+  <!-- FEATURED REEL -->
+  <section class="section section-dark section-flush page-band" id="featured-reel">
     <div class="starfield"></div>
     <div class="container">
-      <span class="kicker">Showcase</span>
-      <h1>Real reels. <em>Real Long Island nights.</em></h1>
-      <p>No stock footage. Every clip and every photo on this page was shot at an actual Tommy's Tunes event.</p>
-    </div>
-  </section>
-
-  <!-- FEATURED REEL -->
-  <section class="section section-dark" id="featured-reel">
-    <div class="container">
-      <div class="section-head">
-        <span class="overline">Featured reel</span>
-        <h2>The 60-second cut.</h2>
-        <p>A taste of what a packed dance floor looks like.</p>
-      </div>
+      <div class="reel-split">
+        <div class="section-head">
+          <span class="overline">Showcase</span>
+          <h1>Real reels. <em>Real Long Island nights.</em></h1>
+          <p>No stock footage. Every clip and every photo on this page was shot at an actual Tommy's Tunes event. Start with the 60-second cut.</p>
+          <p class="reel-more">
+            More on <a href="https://www.youtube.com/@tommystunes" target="_blank" rel="noopener">YouTube @tommystunes</a>, the full library of weddings, mitzvahs, and Sweet 16s.
+          </p>
+        </div>
 
       <!-- EDIT: Featured reel video lives at /assets/videos/tommy-tunes-2025.mp4.
            Controls are visible so visitors choose when to play with sound. -->
@@ -297,17 +348,12 @@
             rel="noopener">Watch on YouTube instead.</a>
         </video>
       </div>
-
-      <p class="text-center mt-5" style="font-size: var(--fs-sm); color: var(--text-on-dark-soft);">
-        More on <a href="https://www.youtube.com/@tommystunes" target="_blank" rel="noopener"
-          style="color: var(--electric-cyan);">YouTube @tommystunes</a>, the full library of weddings, mitzvahs, and Sweet
-        16s.
-      </p>
+      </div>
     </div>
   </section>
 
   <!-- FULL DEMOS -->
-  <section class="section section-tinted" id="demos">
+  <section class="section page-band section-tinted" id="demos">
     <div class="container">
       <div class="section-head">
         <span class="overline">Full demos</span>
@@ -356,7 +402,7 @@
   </section>
 
   <!-- PHOTO GRID -->
-  <section class="section section-light" id="gallery">
+  <section class="section page-band section-light" id="gallery">
     <div class="container">
       <div class="section-head">
         <span class="overline">Event photography</span>
@@ -368,7 +414,9 @@
            Each tile: <a class="showcase-tile" data-lightbox="..."><img src="..." alt="..."></a>
            Click any tile to open it full-size in the lightbox.
            Images keep their natural aspect ratio — no cropping. -->
-      <div class="showcase-masonry">
+    </div>
+
+    <div class="showcase-masonry">
         <a class="showcase-tile" data-lightbox="/assets/images/showcase/confetti.jpg">
           <img src="/assets/images/showcase/confetti.jpg" alt="Groom celebrating in a confetti shower on the dance floor" loading="lazy">
         </a>
@@ -490,8 +538,9 @@
             src="/assets/images/showcase/event-35.jpg" alt="Tommy's Tunes event moment 35" loading="lazy"></a>
         <a class="showcase-tile" data-lightbox="/assets/images/showcase/event-36.jpg"><img
             src="/assets/images/showcase/event-36.jpg" alt="Tommy's Tunes event moment 36" loading="lazy"></a>
-      </div>
+    </div>
 
+    <div class="container">
       <p class="text-center mt-7" style="font-size: var(--fs-sm); color: var(--text-on-light-soft);">
         More on <a href="https://instagram.com/djtommystunes" target="_blank" rel="noopener"
           style="color: var(--royal-blue); text-decoration: underline;">Instagram @djtommystunes</a>.
@@ -519,7 +568,7 @@
        Events are managed in /js/data/showcases-data.js.
        Empty array shows a "coming soon" fallback card.
        Past events automatically render into the section below. -->
-  <section class="section section-tinted" id="showcase-calendar-section">
+  <section class="section page-band section-tinted" id="showcase-calendar-section">
     <div class="container">
       <div class="section-head">
         <span class="overline">See us live</span>
@@ -532,7 +581,7 @@
   </section>
 
   <!-- PAST SHOWCASES (auto-populated from past dates in showcases-data.js, newest first; section hides if empty) -->
-  <section class="section section-dark" id="showcase-past-section" hidden>
+  <section class="section page-band section-dark" id="showcase-past-section" hidden>
     <div class="container">
       <div class="section-head">
         <span class="overline">Where we've been</span>
