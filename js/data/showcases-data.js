@@ -68,6 +68,14 @@ window.SHOWCASES_DATA = [
     ticketUrl: 'https://foxhollowcatering.ticketspice.com/fall-2026-showcase',
   },
   {
+    date: '2027-01-24',
+    dateDisplay: 'January 24, 2027',
+    time: '11:00am – 2:00pm',
+    venue: 'Opus Steakhouse',
+    type: 'Bridal Showcase',
+    note: 'Sunday showcase. Meet the team, see the setups, and talk through your night.',
+  },
+  {
     date: '2026-10-28',
     dateDisplay: 'October 28, 2026',
     time: 'Doors open 6:00pm',

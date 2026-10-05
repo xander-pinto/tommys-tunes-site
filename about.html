@@ -129,29 +129,32 @@
     }
 
     @media (min-width: 900px) {
-      .timeline::before { left: 50%; margin-left: -1px; }
-
+      /* Spine stays at the left edge and every moment uses the whole band
+         beside it. Centring the spine left half the page empty at any one
+         point in the scroll, which is what made the page read thin. */
       .tl-item {
-        padding-left: 0;
+        padding-left: 170px;
         padding-bottom: var(--sp-10);
       }
 
       .tl-year {
-        left: 50%;
-        transform: translateX(-50%);
-        flex-direction: column;
-        gap: var(--sp-2);
-        font-size: var(--fs-lg, 1.25rem);
+        font-size: var(--fs-md);
+        top: var(--sp-7);
       }
 
-      /* Alternating sides, with a gutter either side of the spine so
-         nothing crowds the line. */
       .tl-card {
-        width: calc(50% - var(--sp-8));
-        padding-top: var(--sp-8);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: var(--sp-7);
+        align-items: start;
+        padding-top: var(--sp-7);
       }
 
-      .tl-item:nth-child(even) .tl-card { margin-left: auto; }
+      .tl-figure { margin-top: 0; }
+
+      /* Photo swaps sides down the list so the full-width rows still have
+         a rhythm. */
+      .tl-item:nth-child(even) .tl-figure { order: -1; }
     }
 
     .sons-grid {
@@ -201,6 +204,7 @@
           <!-- EDIT: Founding year -->
           <div class="tl-year">1985</div>
           <div class="tl-card">
+            <div class="tl-text">
             <h2>One DJ and <em>a lot of Saturdays.</em></h2>
             <p>
               Tommy Masino loaded a car with records and gear and started booking Long Island weddings one Saturday at a time. No showroom. No team. Just a guy who could read a room and keep a dance floor full.
@@ -208,6 +212,8 @@
             <p>
               Word got around. One party became a referral, the referral became a calendar, and the calendar became a business.
             </p>
+            </div>
+
             <!-- EDIT: Young Tommy portrait - /assets/images/about/young_tommy.jpg -->
             <figure class="tl-figure">
               <img src="/assets/images/about/young_tommy.jpg" alt="Tommy Masino in the 1980s, the early years of Tommy's Tunes" loading="lazy">
@@ -216,12 +222,15 @@
         </li>
 
         <li class="tl-item">
-          <div class="tl-year">The early years</div>
+          <div class="tl-year">Early years</div>
           <div class="tl-card">
+            <div class="tl-text">
             <h2>Tuxedos, a hand-painted banner, <em>and a pair of JBLs.</em></h2>
             <p>
               The gear has changed. The part where two guys in bow ties are the reason the room is full hasn't.
             </p>
+            </div>
+
             <!-- EDIT: Archive photo - cropped from /assets/images/about/tommy_djing.JPG -->
             <figure class="tl-figure">
               <img src="/assets/images/about/tommy_djing_print.jpg" alt="A Tommy's Tunes DJ setup from the early years: two DJs in tuxedos behind a banner, JBL speakers either side, checkerboard floor" loading="lazy">
@@ -233,10 +242,13 @@
         <li class="tl-item">
           <div class="tl-year">2001</div>
           <div class="tl-card">
+            <div class="tl-text">
             <h2>Three kids <em>on the back of the truck.</em></h2>
             <p>
               Joe, TJ, and Dom grew up inside this business, riding along to load-ins and watching their dad work a room. They never really left.
             </p>
+            </div>
+
             <!-- EDIT: The sons as kids - /assets/images/about/my_three_sons.jpg -->
             <figure class="tl-figure">
               <img src="/assets/images/about/my_three_sons.jpg" alt="The Masino boys as kids on the back of the Tommy's Tunes box truck in 2001" loading="lazy">
@@ -248,6 +260,7 @@
         <li class="tl-item">
           <div class="tl-year">Today</div>
           <div class="tl-card">
+            <div class="tl-text">
             <h2>40+ years on, <em>still on the road most weekends.</em></h2>
             <!-- EDIT: Selden is the established home (10+ years), not new -->
             <p>
@@ -259,6 +272,8 @@
             <p>
               DJ companies are easy to start and most don't last five years. Tommy's Tunes has lasted forty for one reason: every event still goes out with someone whose name you can pronounce and whose face you've seen.
             </p>
+            </div>
+
             <!-- EDIT: Tommy today portrait - /assets/images/about/tommy.JPG -->
             <figure class="tl-figure">
               <img src="/assets/images/about/tommy.JPG" alt="Tommy Masino today" loading="lazy">
