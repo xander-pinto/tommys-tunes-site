@@ -2411,6 +2411,74 @@ body.has-solid-nav .nav {
     font-size: var(--fs-xs);
     line-height: 1.45;
   }
+
+  /* --- second phone pass: the homepage was still a 17,493px scroll --- */
+
+  /* 12 shots two-up was six rows. Three keeps every photo and loses two. */
+  .fun-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Five event tiles stacked one per row. Two across keeps all five and
+     halves the rows; the feature tile stays double-width on its own row. */
+  .specialty-grid.specialty-grid--mosaic {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .specialty-grid.specialty-grid--mosaic > :first-child {
+    grid-column: span 2;
+  }
+
+  .specialty-grid.specialty-grid--mosaic .card-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .specialty-grid.specialty-grid--mosaic .card-photo-text h3 {
+    font-size: var(--fs-base);
+  }
+
+  .specialty-grid.specialty-grid--mosaic > :not(:first-child) .card-photo-text p {
+    display: none;
+  }
+
+  /* Supporting photos go wide rather than tall. A 3:4 portrait at 350px
+     wide is 467px of column on a phone. */
+  .band-photo img,
+  .band-photo--tall img {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* Leads were 18px. 16px is the body size and costs a line per section. */
+  .section-head p,
+  .page-intro p {
+    font-size: var(--fs-base);
+  }
+
+  /* A one-line marquee carrying 96px of padding each side. */
+  .marquee {
+    padding-top: var(--sp-5);
+    padding-bottom: var(--sp-5);
+  }
+
+  .closer-form form {
+    gap: var(--sp-3) !important;
+  }
+
+  /* 96px of padding each side of a single scrolling line. Scoped past
+     body because the base .marquee rule is declared further down and
+     a bare .marquee ties with it and loses on order. */
+  body .marquee {
+    padding-top: var(--sp-6);
+    padding-bottom: var(--sp-6);
+  }
+
+  body .marquee-label {
+    margin-bottom: var(--sp-4);
+  }
+
+  body .marquee-track {
+    font-size: var(--fs-h3);
+  }
 }
 
 /* One photo beside the form on a phone, not two: the pair added 620px to
