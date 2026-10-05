@@ -2481,6 +2481,33 @@ body.has-solid-nav .nav {
   }
 }
 
+/* --- phone spacing fixes --- */
+@media (max-width: 899px) {
+  /* .awards is a padding shorthand declared after .container, so it
+     zeroes the side padding its own container set. On a laptop the
+     awards band re-adds padding-inline itself and hides this; on a phone
+     the badges and captions ran flush to the screen edge. Applies to the
+     compact strip in every page's closing CTA too, not just the homepage
+     awards band. */
+  .container.awards,
+  .awards-home > .container.awards {
+    padding-inline: var(--container-pad);
+  }
+
+  /* The band CTA only gets its margins inside the 900px grid rule, so on
+     a phone it sat flush against whatever followed it: no gap at all
+     between the button and the grid or the quotes below. */
+  .home-band > .container > .text-center,
+  .page-band > .container > .text-center {
+    margin-bottom: var(--sp-6);
+  }
+
+  /* Pull quotes need room off the thing above them. */
+  .price-quotes {
+    margin-top: var(--sp-4);
+  }
+}
+
 /* One photo beside the form on a phone, not two: the pair added 620px to
    a band that is already the longest on the page. */
 @media (max-width: 899px) {
