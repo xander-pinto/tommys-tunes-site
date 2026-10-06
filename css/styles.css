@@ -1566,6 +1566,20 @@ p {
   object-fit: cover;
   object-position: center;
   z-index: 0;
+  /* The still rides on the element's background rather than the poster
+     attribute, so the correct aspect shows on the first paint instead of
+     waiting for setupHeroVideo() to choose a source. It also stays put for
+     anyone on reduced-motion or data saver, who never loads the video. */
+  background: var(--near-black) url("/assets/videos/hero_poster.jpg") center / cover no-repeat;
+}
+
+/* Below 900px the hero box is portrait, where a 16:9 frame shows about a
+   quarter of its width. Both the still and the video switch to the 9:16
+   cut at the same breakpoint the headline stops being left-aligned. */
+@media (max-width: 899px) {
+  .hero-bg-video {
+    background-image: url("/assets/videos/hero_poster_tall.jpg");
+  }
 }
 
 .hero-bg-overlay {
@@ -1574,6 +1588,28 @@ p {
   background:
     linear-gradient(180deg, rgba(0, 0, 5, 0.55) 0%, rgba(0, 0, 5, 0.85) 100%);
   z-index: 0;
+}
+
+/* From 900px the headline is left-aligned, so the scrim can be too: heavy
+   behind the text, light over the right half where the footage actually
+   shows. A flat wash has to be dark everywhere to protect text that only
+   occupies the left, which is why the old one buried the video.
+
+   Measured against the hero loop, sampling the real frames under each text
+   block: worst-case contrast goes kicker 3.32 -> 5.32, h1 8.39 -> 12.89,
+   lead 6.10 -> 8.66, stat 5.65 -> 6.08. The kicker was failing WCAG AA at
+   3.32:1 and now passes. Overlay density on the right drops 70% -> 50%.
+   Phones keep the flat version, since the text centres below 900px. */
+@media (min-width: 900px) {
+  .hero-bg-overlay {
+    background:
+      linear-gradient(90deg,
+        rgba(0, 0, 5, 0.80) 0%,
+        rgba(0, 0, 5, 0.72) 35%,
+        rgba(0, 0, 5, 0.38) 65%,
+        rgba(0, 0, 5, 0.30) 100%),
+      linear-gradient(180deg, rgba(0, 0, 5, 0.10) 0%, rgba(0, 0, 5, 0.40) 100%);
+  }
 }
 
 .hero-content {

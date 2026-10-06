@@ -115,10 +115,14 @@
          frame 0 of this same clip, so it appears instantly and the video
          streams in behind it without a visible swap. On "auto" every visit
          pulled all 3MB before anything rendered. -->
-    <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata"
-      poster="/assets/videos/hero_poster.jpg" aria-hidden="true">
-      <source src="/assets/videos/hero_video.mp4" type="video/mp4">
-    </video>
+    <!-- EDIT: Two cuts of the same footage. The hero box is landscape on a
+         laptop and portrait on a phone, so one 16:9 file cannot serve both.
+         setupHeroVideo() in main.js picks the src; the still behind it is a
+         CSS background (see .hero-bg-video) rather than a poster attribute,
+         so the right one shows immediately without waiting on JS. -->
+    <video class="hero-bg-video" muted loop playsinline preload="auto" aria-hidden="true"
+      data-src-wide="/assets/videos/hero_video.mp4"
+      data-src-tall="/assets/videos/hero_tall.mp4"></video>
     <div class="hero-bg-overlay" aria-hidden="true"></div>
     <div class="starfield"></div>
 

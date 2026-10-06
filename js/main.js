@@ -941,6 +941,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setupAppointmentValidation();
   setupFormSuccess();
   renderFeaturedTalent();
+  setupHeroVideo();
   renderTestimonial();
   renderShowcaseCalendar();
   renderShowcaseHomePreview();
@@ -1037,6 +1038,45 @@ function setupRosterNav() {
   }, { rootMargin: '-25% 0px -70% 0px', threshold: 0 });
 
   cats.forEach((c) => io.observe(c));
+}
+
+
+/* --- Hero video source ---
+   The hero box is landscape on a laptop and portrait on a phone, so one
+   16:9 file cannot serve both: measured, a 16:9 frame shows 23-26% of its
+   width on a phone, a 9:16 cut of the same footage shows 74-82%.
+
+   The media attribute on <source> would do this declaratively and Chrome
+   does honour it (verified three ways), but Safari and Firefox could not
+   be checked here, and a browser that ignores it hands phones the desktop
+   file, which is the exact thing this exists to prevent. So choose here.
+
+   No src ships in the HTML, so nothing downloads until this runs and
+   nothing is wasted. The still is a CSS background on the element, so the
+   hero looks finished on the first paint either way. --- */
+function setupHeroVideo() {
+  const video = document.querySelector('.hero-bg-video');
+  if (!video) return;
+
+  /* Reduced motion is a stated preference, and data saver is a stated
+     budget. Both get the still, which is already on screen, and neither
+     pays for a download they did not ask for. */
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const saveData = navigator.connection && navigator.connection.saveData;
+  if (reduced || saveData) return;
+
+  const tall = window.matchMedia('(max-width: 899px)').matches;
+  const src = tall ? video.dataset.srcTall : video.dataset.srcWide;
+  if (!src) return;
+
+  video.src = src;
+  /* autoplay is set here rather than in the markup: with no src attribute
+     the browser has nothing to autoplay on parse, and muted + playsInline
+     have to be true before play() to satisfy the autoplay policy. */
+  video.muted = true;
+  const start = () => video.play().catch(() => { /* policy said no; still shows */ });
+  if (video.readyState >= 2) start();
+  else video.addEventListener('loadeddata', start, { once: true });
 }
 
 
