@@ -64,7 +64,39 @@
     ],
     "founder": "Tommy Masino",
     "foundingDate": "1985",
-    "areaServed": "Long Island, NY"
+    "areaServed": "Long Island, NY",
+    "sameAs": [
+      "https://www.facebook.com/djtommystunes",
+      "https://www.instagram.com/djtommystunes",
+      "https://www.youtube.com/@tommystunes",
+      "https://www.tiktok.com/@tommystunes"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "10:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "10:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "250",
+      "bestRating": "5"
+    }
   }
   </script>
 </head>
@@ -79,7 +111,12 @@
   <section class="hero">
     <!-- EDIT: Hero video lives at /assets/videos/hero_video.mp4.
          Muted + autoplay + loop = ambient background. Falls back to gradient if it fails to load. -->
-    <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <!-- preload="metadata" with a poster, not preload="auto": the poster is
+         frame 0 of this same clip, so it appears instantly and the video
+         streams in behind it without a visible swap. On "auto" every visit
+         pulled all 3MB before anything rendered. -->
+    <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata"
+      poster="/assets/videos/hero_poster.jpg" aria-hidden="true">
       <source src="/assets/videos/hero_video.mp4" type="video/mp4">
     </video>
     <div class="hero-bg-overlay" aria-hidden="true"></div>
@@ -143,40 +180,40 @@
 
     <div class="fun-strip">
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/confetti.jpg" alt="Guest celebrating under a confetti shower on the dance floor" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/confetti.jpg" alt="Guest celebrating under a confetti shower on the dance floor" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-08.jpg" alt="Groom lifted by his friends in the middle of the dance floor" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-08.jpg" alt="Groom lifted by his friends in the middle of the dance floor" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-22.jpg" alt="Guests laughing and dancing together late in the night" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-22.jpg" alt="Guests laughing and dancing together late in the night" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-25.jpg" alt="Bandleader and a guest cracking up on the floor" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-25.jpg" alt="Bandleader and a guest cracking up on the floor" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-07.jpg" alt="A packed floor with every hand in the air" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-07.jpg" alt="A packed floor with every hand in the air" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-31.jpg" alt="Wedding party dancing shoulder to shoulder" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-31.jpg" alt="Wedding party dancing shoulder to shoulder" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-16.jpg" alt="Guests jumping with their arms up under the lights" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-16.jpg" alt="Guests jumping with their arms up under the lights" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-33.jpg" alt="Crowd dancing with glow sticks" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-33.jpg" alt="Crowd dancing with glow sticks" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-36.jpg" alt="Live sax player in the middle of the crowd with two guests" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-36.jpg" alt="Live sax player in the middle of the crowd with two guests" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-30.jpg" alt="Two guests mid-celebration, arms around each other" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-30.jpg" alt="Two guests mid-celebration, arms around each other" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-23.jpg" alt="Guest spinning on the dance floor, hair flying" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-23.jpg" alt="Guest spinning on the dance floor, hair flying" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/event-32.jpg" alt="Bride lifted in a chair while the room cheers" loading="lazy">
+          <img src="/assets/images/showcase/thumbs/event-32.jpg" alt="Bride lifted in a chair while the room cheers" loading="lazy">
         </a>
     </div>
   </section>

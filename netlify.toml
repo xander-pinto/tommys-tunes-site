@@ -16,6 +16,33 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
+# Caching. Netlify's default for everything here was
+# "public, max-age=0, must-revalidate", so a returning visitor revalidated
+# every image, script and the 3MB hero video on every single page view.
+#
+# Assets get a week. Deliberately not a year: filenames here are stable
+# (basic_pf.jpg stays basic_pf.jpg when the photo behind it is replaced), so
+# a long cache would leave people looking at the old picture. If you swap a
+# photo and need it live immediately, change the filename and update the
+# reference — otherwise it propagates within seven days.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# CSS and JS are not fingerprinted, so they get an hour rather than a week.
+# Long enough to skip the round trip on a browsing session, short enough that
+# a deploy reaches people the same morning.
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
 # Client forms (including the confidential credit card authorization form)
 # stay downloadable for the office workflow, but should never appear in
 # search results on their own.

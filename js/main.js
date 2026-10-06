@@ -413,6 +413,57 @@ function renderTestimonial() {
    Reads window.SHOWCASES_DATA, filters out past events, sorts by date,
    then renders cards into [data-showcase-calendar]. Hides the section
    entirely if there are no upcoming events. */
+/* --- Event structured data for the showcases ---
+   These are dated, public, mostly ticketed events, which is exactly what
+   schema.org/Event describes, and marking them up is what lets them show
+   as events in search rather than as a line of text on a page.
+   Built from the same SHOWCASES_DATA the cards render from, so the two can
+   never disagree. Injected rather than hand-written into showcase.html
+   because that page is not generated, and a static copy would go stale the
+   moment a date is added. --- */
+function emitShowcaseEventSchema(upcoming) {
+  if (!upcoming || !upcoming.length) return;
+  document.querySelectorAll('[data-showcase-schema]').forEach((n) => n.remove());
+
+  const events = upcoming.map((ev) => {
+    const e = {
+      '@context': 'https://schema.org',
+      '@type': 'Event',
+      name: `${ev.type} at ${ev.venue}`,
+      startDate: ev.date,
+      eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+      eventStatus: 'https://schema.org/EventScheduled',
+      location: {
+        '@type': 'Place',
+        name: ev.venue,
+        address: { '@type': 'PostalAddress', addressRegion: 'NY', addressCountry: 'US' },
+      },
+      organizer: {
+        '@type': 'Organization',
+        name: "Tommy's Tunes DJ Entertainment",
+        url: 'https://tommystunes.com',
+      },
+      image: 'https://tommystunes.com/assets/images/og-default.jpg',
+    };
+    if (ev.note) e.description = ev.note;
+    if (ev.ticketUrl) {
+      e.offers = {
+        '@type': 'Offer',
+        url: ev.ticketUrl,
+        availability: 'https://schema.org/InStock',
+      };
+    }
+    return e;
+  });
+
+  const tag = document.createElement('script');
+  tag.type = 'application/ld+json';
+  tag.setAttribute('data-showcase-schema', '');
+  tag.textContent = JSON.stringify(events);
+  document.head.appendChild(tag);
+}
+
+
 function renderShowcaseCalendar() {
   const section = document.getElementById('showcase-calendar-section');
   const container = document.querySelector('[data-showcase-calendar]');
@@ -427,6 +478,8 @@ function renderShowcaseCalendar() {
   const upcoming = data
     .filter((ev) => new Date(ev.date + 'T00:00:00') >= today)
     .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  emitShowcaseEventSchema(upcoming);
 
   if (!upcoming.length) {
     container.innerHTML = `

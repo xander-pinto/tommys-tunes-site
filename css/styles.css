@@ -2591,6 +2591,112 @@ body.has-solid-nav .nav {
 }
 
 
+/* Tap targets. 33 links and buttons rendered under 36px tall on a phone,
+   against the 44px that Apple and WCAG 2.5.5 both ask for. These grow
+   vertically through padding, so nothing moves horizontally and the
+   desktop layout is untouched. */
+@media (max-width: 899px) {
+  .nav-burger {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-hiring,
+  .review-more,
+  .review-source,
+  .hiring-line a,
+  .footer-bottom a,
+  .footer-socials a,
+  .footer-col ul a {
+    display: inline-block;
+    padding-block: 12px;
+  }
+
+  /* The arrow itself stays 32px; the hit area around it does not. */
+  .hero-scroll {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+/* FAQ. <details> so answers are collapsed by default: ten open answers is a
+   wall of text, and a question someone is scanning for is easier to find in
+   a list of ten headings than in three screens of prose. Works without JS. */
+.faq-list {
+  display: grid;
+  gap: var(--sp-3);
+  max-width: 76ch;
+}
+
+.faq-item {
+  border-top: 1px solid rgba(11, 94, 222, 0.18);
+  padding-bottom: var(--sp-3);
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid rgba(11, 94, 222, 0.18);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-5) 0 var(--sp-3);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary h2 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+/* The marker is drawn rather than a glyph so it can rotate on open. */
+.faq-item summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  border-right: 2px solid var(--royal-blue);
+  border-bottom: 2px solid var(--royal-blue);
+  transform: rotate(45deg);
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.faq-item summary:hover h2,
+.faq-item summary:focus-visible h2 {
+  color: var(--royal-blue);
+}
+
+.faq-item > p {
+  margin: 0 0 var(--sp-4);
+  max-width: 68ch;
+}
+
+.faq-item > p:last-child { margin-bottom: var(--sp-2); }
+
+.faq-item a {
+  color: var(--royal-blue);
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item summary::after { transition: none; }
+}
+
+
 /* --- phone spacing fixes --- */
 @media (max-width: 899px) {
   /* .awards is a padding shorthand declared after .container, so it

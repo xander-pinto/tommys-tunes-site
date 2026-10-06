@@ -419,7 +419,7 @@ window.SERVICES_DATA = [
     category: 'Audio & Phone Booths',
     name: 'White phone booth',
     shortDesc: 'Custom wedding-newspaper display + audio messages.',
-    photo: '/assets/images/services/audio-phone-booths/audio-guestbook/audio_guestbook_1.jpg',
+    photo: '/assets/images/services/audio-phone-booths/phone-booth/phonebooth_pf.jpg',
     longBody: 'A standalone white phone booth with a custom wedding-newspaper display, digital audio recordings of every message, and a personalized mini turntable speaker. A polished, photographable take on the audio guestbook.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/HbNsWOaxlx0', caption: 'How the white phone booth works.' },
