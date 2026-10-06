@@ -109,7 +109,7 @@
        ACT 1 — DARK CINEMATIC HERO
        ============================================================ -->
   <section class="hero">
-    <!-- EDIT: Hero video lives at /assets/videos/hero_video.mp4.
+    <!-- EDIT: Hero video lives at /assets/videos/hero-wide-2026-10.mp4.
          Muted + autoplay + loop = ambient background. Falls back to gradient if it fails to load. -->
     <!-- preload="metadata" with a poster, not preload="auto": the poster is
          frame 0 of this same clip, so it appears instantly and the video
@@ -119,10 +119,16 @@
          laptop and portrait on a phone, so one 16:9 file cannot serve both.
          setupHeroVideo() in main.js picks the src; the still behind it is a
          CSS background (see .hero-bg-video) rather than a poster attribute,
-         so the right one shows immediately without waiting on JS. -->
+         so the right one shows immediately without waiting on JS.
+
+         The filenames carry the month of the cut because netlify.toml
+         caches /assets/* for seven days. Replacing a file in place leaves
+         returning visitors on the old one until that expires, so a new cut
+         gets a new name here and in .hero-bg-video, and the old pair is
+         deleted. Do not reuse a filename. -->
     <video class="hero-bg-video" muted loop playsinline preload="auto" aria-hidden="true"
-      data-src-wide="/assets/videos/hero_video.mp4"
-      data-src-tall="/assets/videos/hero_tall.mp4"></video>
+      data-src-wide="/assets/videos/hero-wide-2026-10.mp4"
+      data-src-tall="/assets/videos/hero-tall-2026-10.mp4"></video>
     <div class="hero-bg-overlay" aria-hidden="true"></div>
     <div class="starfield"></div>
 

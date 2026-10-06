@@ -1555,7 +1555,8 @@ p {
   overflow: hidden;
 }
 
-/* Hero background video. File at /assets/videos/hero_video.mov.
+/* Hero background video. Files at /assets/videos/hero-wide-2026-10.mp4
+   and hero-tall-2026-10.mp4 (see the note in index.html about the names).
    Muted + autoplay + loop = ambient background. Overlay sits above it
    to keep headline text legible. */
 .hero-bg-video {
@@ -1570,7 +1571,7 @@ p {
      attribute, so the correct aspect shows on the first paint instead of
      waiting for setupHeroVideo() to choose a source. It also stays put for
      anyone on reduced-motion or data saver, who never loads the video. */
-  background: var(--near-black) url("/assets/videos/hero_poster.jpg") center / cover no-repeat;
+  background: var(--near-black) url("/assets/videos/hero-still-2026-10.jpg") center / cover no-repeat;
 }
 
 /* Below 900px the hero box is portrait, where a 16:9 frame shows about a
@@ -1578,7 +1579,7 @@ p {
    cut at the same breakpoint the headline stops being left-aligned. */
 @media (max-width: 899px) {
   .hero-bg-video {
-    background-image: url("/assets/videos/hero_poster_tall.jpg");
+    background-image: url("/assets/videos/hero-still-tall-2026-10.jpg");
   }
 }
 
