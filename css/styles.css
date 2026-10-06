@@ -2650,7 +2650,19 @@ body.has-solid-nav .nav {
 
 .faq-item summary::-webkit-details-marker { display: none; }
 
-.faq-item summary h2 {
+.faq-group {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--royal-blue);
+  margin: var(--sp-8) 0 var(--sp-4);
+}
+
+.faq-group:first-of-type { margin-top: 0; }
+
+.faq-item summary h3 {
   font-family: var(--font-serif);
   font-size: var(--fs-h3);
   font-weight: 500;
@@ -2675,8 +2687,8 @@ body.has-solid-nav .nav {
   transform: rotate(-135deg);
 }
 
-.faq-item summary:hover h2,
-.faq-item summary:focus-visible h2 {
+.faq-item summary:hover h3,
+.faq-item summary:focus-visible h3 {
   color: var(--royal-blue);
 }
 
