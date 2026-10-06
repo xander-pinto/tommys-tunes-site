@@ -962,7 +962,8 @@ p {
 
 /* Scroll offset so fixed nav doesn't cover jumped-to sections */
 .section,
-.roster-category {
+.roster-category,
+[data-rail] {
   scroll-margin-top: calc(var(--nav-height) + 24px);
 }
 
@@ -1753,10 +1754,11 @@ p {
   }
 }
 
-/* Section rail. A fixed marker per band so the reader can see where
-   they are on a long homepage and jump between sections. It lives in
-   the gutter outside the 1320px container, so it only appears once
-   there is gutter to live in. */
+/* Section rail. A fixed dot per band so the reader can see where they
+   are on a long page and jump between sections. Runs on every page with
+   at least three stops (see setupSectionRail), except the team page,
+   whose roster rail owns the same gutter. It lives in the gutter outside
+   the 1320px container, so it only appears once there is gutter for it. */
 .section-rail {
   position: fixed;
   right: var(--sp-4);
@@ -1766,7 +1768,10 @@ p {
   display: none;
 }
 
-@media (min-width: 1400px) {
+/* 1430px, not 1400: the container caps at 1320px, so at 1400 the dots
+   clear its edge by 2px and read as touching the content. 1430 buys
+   17px, and the laptops this matters on are 1440 and wider. */
+@media (min-width: 1430px) {
   .section-rail {
     display: block;
   }

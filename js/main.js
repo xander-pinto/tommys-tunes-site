@@ -1040,28 +1040,50 @@ function setupRosterNav() {
 }
 
 
-/* --- Homepage section rail ---
-   A fixed marker per band so a reader part-way down a long page can see
+/* --- Section rail ---
+   A fixed dot per band so a reader part-way down a long page can see
    where they are and jump. Built from the DOM rather than a hardcoded
    list, so adding or removing a band keeps the rail in sync.
-   Homepage only, and only wide enough screens to have a gutter for it. --- */
+
+   Stops come from two places, merged in document order:
+     - a .section or .final-cta that carries an .overline (its label)
+     - any element marked [data-rail], for pages whose structure lives in
+       headings inside one long band rather than in separate sections
+       (the FAQ's five groups, the venue regions). The attribute value
+       overrides the label if it is set.
+
+   Every page, not just the homepage, but only where it earns its place:
+   three stops minimum, and only screens wide enough to have a gutter
+   outside the 1320px container for it to sit in. The team page is the
+   one exception, since its roster rail already owns that gutter. --- */
 function setupSectionRail() {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-  if (!window.matchMedia('(min-width: 1400px)').matches) return;
+  if (!window.matchMedia('(min-width: 1430px)').matches) return;
   if (!('IntersectionObserver' in window)) return;
+  if (document.querySelector('[data-roster-nav]')) return;
 
-  if (!hero.id) hero.id = 'home-top';
-  const stops = [{ el: hero, label: 'Top' }];
+  const slug = (s) => 'sec-' + s.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-  document.querySelectorAll('.section, .final-cta').forEach((section) => {
-    const overline = section.querySelector('.overline');
-    if (!overline) return;
-    if (!section.id) {
-      section.id = 'sec-' + overline.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    }
-    stops.push({ el: section, label: overline.textContent.trim() });
+  const stops = [];
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    if (!hero.id) hero.id = 'home-top';
+    stops.push({ el: hero, label: 'Top' });
+  }
+
+  document.querySelectorAll('.section, .final-cta, [data-rail]').forEach((el) => {
+    if (el === hero) return;
+    /* A [data-rail] heading nested in a section that already stops here
+       would double up, so the attribute wins and the section is skipped
+       only when it has no overline of its own. */
+    const marked = el.hasAttribute('data-rail');
+    const label = marked
+      ? (el.getAttribute('data-rail').trim() || el.textContent.trim())
+      : (el.querySelector('.overline') || {}).textContent;
+    if (!label) return;
+    if (!el.id) el.id = slug(label);
+    stops.push({ el, label: label.trim() });
   });
+
   if (stops.length < 3) return;
 
   const rail = document.createElement('nav');
@@ -1086,8 +1108,10 @@ function setupSectionRail() {
   rail.appendChild(list);
   document.body.appendChild(rail);
 
-  /* Dark grounds: the rail sits over these, so it flips palette. */
-  const isDark = (el) => el.classList.contains('hero') || el.classList.contains('final-cta');
+  /* Dark grounds: the rail sits over these, so it flips palette. A
+     [data-rail] heading inherits the ground of the band it sits in. */
+  const isDark = (el) =>
+    !!el.closest('.hero, .final-cta, .section-dark');
 
   const setActive = (stop) => {
     stops.forEach((s) => s.link.removeAttribute('aria-current'));
