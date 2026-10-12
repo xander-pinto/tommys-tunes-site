@@ -121,6 +121,14 @@ window.SHOWCASES_DATA = [
     ticketUrl: 'https://www.portjeffersoncountryclub.com/event-registration',
   },
   {
+    date: '2026-11-11',
+    dateDisplay: 'November 11, 2026',
+    time: '6:00pm – 9:00pm',
+    venue: 'Crest Hollow Country Club',
+    type: 'Bridal Showcase',
+    note: 'Woodbury. Meet the team, see the setups live, and talk through your night.',
+  },
+  {
     date: '2026-11-15',
     dateDisplay: 'November 15, 2026',
     time: '6:30pm – 9:00pm',
