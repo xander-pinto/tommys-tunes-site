@@ -240,4 +240,21 @@ window.TIKTOK_DATA = [
   { id: '7688812641141165326', caption: 'Joe Cip. spinning through an introduction.', views: '735', people: ['joe-cip'], services: ['weddings', 'dance-floor'] },
   { id: '7689167609094229261', caption: 'Curtis on the sax, out over the floor.', views: '697', people: ['curtis'], services: ['weddings', 'dance-floor'] },
   { id: '7688524244094962958', caption: 'A bride and groom having a blast.', views: '669', people: [], services: ['weddings'] },
+  /* --- Fifth pass 2026-10-12: everything posted since the fourth pass, 13
+     clips from Sep 28 to Oct 11. Xander watched each one and assigned them.
+     Several are the same live-music lineup (Pat on percussion with Rich and
+     Joe Cip.), so the captions carry what each clip actually shows. --- */
+  { id: '7690696825270963469', caption: 'What the right lighting does to a room.', views: '2979', people: [], services: ['weddings'] },
+  { id: '7691136837280091405', caption: 'Pat on live percussion, and the floor went up.', views: '1183', people: ['pat', 'richie', 'joe-cip'], services: ['percussionist', 'weddings'] },
+  { id: '7691489099076717837', caption: 'Mike N. running a reception entrance.', views: '3243', people: ['mike-n'], services: [] },
+  { id: '7691810196493978893', caption: 'A first dance on a cloud, with sparklers.', views: '689', people: [], services: ['dancing-on-cloud', 'cold-sparklers', 'weddings'] },
+  { id: '7692140704289541390', caption: 'Dom keeping the floor full all night.', views: '907', people: ['dominick'], services: [] },
+  { id: '7692465753743691022', caption: 'Sax and live percussion layered over the set.', views: '1044', people: ['pat', 'richie', 'joe-cip', 'curtis'], services: ['percussionist', 'saxophonist', 'weddings'] },
+  { id: '7692834943772282126', caption: 'The song the whole room sings, every time.', views: '876', people: ['leo'], services: ['weddings'] },
+  { id: '7693234516789366030', caption: 'Leo on the mic for the entrance.', views: '1124', people: ['leo'], services: [] },
+  { id: '7693729799893683469', caption: 'Hitting every note.', views: '1269', people: [], services: ['weddings'] },
+  { id: '7694000109209636110', caption: 'The kind of reception you keep replaying.', views: '1055', people: ['pat', 'richie', 'joe-cip'], services: ['percussionist', 'weddings'] },
+  { id: '7694449733930208526', caption: 'A ten out of ten night, start to finish.', views: '4281', people: ['pat', 'richie', 'joe-cip'], services: ['percussionist', 'weddings'] },
+  { id: '7695059815692815629', caption: 'Clean mixes from Dom.', views: '522', people: ['dominick'], services: [] },
+  { id: '7695552203465035022', caption: 'Curtis on the sax.', views: '356', people: ['curtis'], services: [] },
 ];
