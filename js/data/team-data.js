@@ -607,19 +607,6 @@ window.TEAM_DATA = [
     gallery: [],
   },
   {
-    slug: 'ct',
-    name: 'CT',
-    role: 'Technician',
-    photo: '/assets/images/team/technicians/CT/CT_pf.jpg',
-    photoStyle: 'transform: scale(1.4); object-position: 70% 25%;',
-    bio: 'One of the most positive people you\'ll meet. CT is a spiritual, deeply kind guy who\'s always looking to lift the people around him and leave a room better than he found it. Warm, friendly, and easy to be around, the kind of presence every event is better for having.',
-    socials: { instagram: '', tiktok: '', youtube: '' },
-    demo: null,
-    gallery: [
-      '/assets/images/team/technicians/CT/CT_with_Dom.jpg',
-    ],
-  },
-  {
     slug: 'goose',
     name: 'Goose',
     role: 'Technician',

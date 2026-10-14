@@ -88,6 +88,11 @@
   to = "/team.html"
   status = 301
 
+[[redirects]]
+  from = "/person/ct/*"
+  to = "/team.html"
+  status = 301
+
 # The old Wix site had a packages brochure at /brochure; printed matter and
 # old links still point there. Send them to the packages page.
 [[redirects]]
