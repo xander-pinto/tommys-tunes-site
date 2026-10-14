@@ -51,6 +51,41 @@
   [headers.values]
     X-Robots-Tag = "noindex"
 
+# Old domains -> this one, as 301s.
+#
+# Netlify serves a domain alias as the site rather than redirecting it, so
+# tommytunes.com and djtommystunes.com were answering 200 with a full copy of
+# the site. Three domains serving identical pages is duplicate content, and it
+# consolidates none of the ~1,850 referring domains those two carry, which was
+# the entire reason for pointing them here. Only the www-of-the-primary case
+# redirects on its own.
+#
+# An absolute URL in `from` is how Netlify scopes a rule to one hostname.
+# force = true so these beat the static files that would otherwise be served.
+[[redirects]]
+  from = "https://tommytunes.com/*"
+  to = "https://tommystunes.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.tommytunes.com/*"
+  to = "https://tommystunes.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://djtommystunes.com/*"
+  to = "https://tommystunes.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.djtommystunes.com/*"
+  to = "https://tommystunes.com/:splat"
+  status = 301
+  force = true
+
 # Retired services: send old URLs to the services page.
 [[redirects]]
   from = "/service/sax-violin-duo/*"
