@@ -188,6 +188,29 @@
       .review-platforms { grid-template-columns: 1fr 1fr 1fr; }
     }
 
+    /* Review ask. Lives in this page's style block rather than styles.css
+       because .review-platforms above does too, and a page block loads after
+       the stylesheet. Sits on section-dark, so the palette is the light set. */
+    .review-ask {
+      max-width: 720px;
+      margin: var(--sp-7) auto 0;
+      padding-top: var(--sp-6);
+      border-top: 1px solid rgba(49, 170, 239, 0.18);
+      text-align: center;
+    }
+    .review-ask p {
+      color: var(--text-on-dark-soft);
+      margin-bottom: var(--sp-4);
+    }
+    .review-ask-alt {
+      display: block;
+      margin-top: var(--sp-4);
+      font-size: var(--fs-sm);
+      color: var(--electric-cyan);
+      text-decoration: none;
+    }
+    .review-ask-alt:hover { text-decoration: underline; }
+
     .platform-card {
       display: flex;
       flex-direction: column;
@@ -396,8 +419,9 @@
           <strong>Brides of Long Island</strong>
           <span>Open profile →</span>
         </a>
-        <!-- EDIT: Replace href with the real Google Business Profile URL once Tommy confirms it. -->
-        <a class="platform-card" href="https://www.google.com/search?q=Tommy%27s+Tunes+DJ+Entertainment+Selden+NY" target="_blank" rel="noopener">
+        <!-- EDIT: Selden Business Profile (219 reviews). The cid number is the
+             profile's own id, so this link survives a name or address edit. -->
+        <a class="platform-card" href="https://maps.google.com/?cid=2176934820324778171" target="_blank" rel="noopener">
           <strong>Google</strong>
           <span>Open profile →</span>
         </a>
@@ -406,6 +430,16 @@
           <strong>Yelp</strong>
           <span>Open profile →</span>
         </a>
+      </div>
+
+      <!-- EDIT: Review links. These g.page URLs open Google's review box
+           directly rather than dropping someone on the listing to hunt for
+           it, which matters when you are asking days after an event.
+           Selden carries 219 reviews to Melville's 84, so it leads. -->
+      <div class="review-ask">
+        <p>Worked with us? A review helps the next couple decide.</p>
+        <a class="btn btn-secondary" href="https://g.page/r/Cbsgo2ivBjYeEBM/review" target="_blank" rel="noopener">Review the Selden showroom</a>
+        <a class="review-ask-alt" href="https://g.page/r/CQnnOrX6BmVfEBM/review" target="_blank" rel="noopener">Booked through Melville? Review here instead →</a>
       </div>
     </div>
   </section>
