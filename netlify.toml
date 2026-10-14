@@ -93,6 +93,18 @@
   to = "/team.html"
   status = 301
 
+# The old domain, tommytunes.com, carries about 858 referring domains from
+# twenty years of listings, including bestoflongisland.com at DR 60 on its
+# "Best Wedding DJ on Long Island" page. Those point at the old site's
+# /main.html, which no longer exists. Once tommytunes.com's DNS points here,
+# Netlify 301s the alias to this domain and keeps the path, so without this
+# those links would land on a 404 and pass nothing.
+# Add more old paths here as Search Console surfaces them.
+[[redirects]]
+  from = "/main.html"
+  to = "/"
+  status = 301
+
 # The old Wix site had a packages brochure at /brochure; printed matter and
 # old links still point there. Send them to the packages page.
 [[redirects]]
