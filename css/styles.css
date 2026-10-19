@@ -972,7 +972,9 @@ p {
 .footer {
   background: var(--near-black);
   color: var(--text-on-dark-soft);
-  padding: var(--sp-9) 0 var(--sp-6);
+  /* sp-7 top, not sp-9: 96px of empty dark band above the columns was the
+     single biggest thing making the footer feel stretched. */
+  padding: var(--sp-7) 0 var(--sp-6);
   font-size: var(--fs-sm);
   position: relative;
   overflow: hidden;
@@ -994,14 +996,39 @@ p {
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--sp-7);
-  margin-bottom: var(--sp-8);
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-6);
 }
 
 @media (min-width: 700px) {
   .footer-grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    /* Resources carries nine links against Explore's six, and Visit carries
+       two addresses, so both get wider tracks and run two-up. The grid
+       stretches every column to the tallest, so the only way the footer gets
+       shorter is making the tallest column shorter. */
+    grid-template-columns: 1fr 0.7fr 1.35fr 1.65fr;
   }
+
+  .footer-col ul.footer-links--split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--sp-4);
+    row-gap: var(--sp-2);
+  }
+
+  /* The two locations side by side rather than stacked. Visit was the tallest
+     column at 321px and therefore set the height of all four. */
+  .footer-col.footer-visit ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--sp-5);
+    row-gap: var(--sp-4);
+  }
+
+  .footer-visit .footer-contact {
+    grid-column: 1 / -1;
+  }
+
 }
 
 .footer-brand-block .nav-wordmark {
@@ -1029,7 +1056,7 @@ p {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: var(--sp-2);
 }
 
 /* Replaces the inline styles the Visit column used to carry. */
