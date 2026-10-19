@@ -41,6 +41,7 @@ const STATIC_PAGES = [
   { loc: '/contact.html', priority: '0.7', changefreq: 'monthly' },
   { loc: '/faq.html', priority: '0.7', changefreq: 'monthly' },
   { loc: '/venues.html', priority: '0.7', changefreq: 'monthly' },
+  { loc: '/vendors.html', priority: '0.6', changefreq: 'monthly' },
   { loc: '/service-area.html', priority: '0.6', changefreq: 'monthly' },
   { loc: '/careers.html', priority: '0.6', changefreq: 'monthly' },
   { loc: '/forms.html', priority: '0.5', changefreq: 'monthly' },
