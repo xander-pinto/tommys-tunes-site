@@ -28,3 +28,7 @@
 # Local-only phone preview harness, never deployed.
 /_preview.html
 /_seo-preview.html
+
+# Research notes and reports, local only, never deployed
+/research_notes/
+/reports/
