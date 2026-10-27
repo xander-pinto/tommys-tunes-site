@@ -272,14 +272,16 @@ window.SERVICES_DATA = [
     shortDesc: 'Three-piece live combo, built around the sound you want.',
     metaTitle: 'Live jazz trio on Long Island · Tommy\'s Tunes',
     metaDescription: 'Live jazz trio for cocktail hour and dinner at Long Island weddings and events. We build the lineup around the sound you want, from classic to romantic.',
-    photo: '',
-    longBody: 'A three-piece live jazz combo for cocktail hour or a seated dinner, the kind of music that fills the room without taking it over. We build the trio around the sound you want: sax, guitar, and bass for a classic jazz feel, piano, percussion, and sax when you want more energy, or piano, percussion, and violin for something softer and more romantic. Tell us the vibe and we set the lineup to match.',
+    photo: '/assets/images/services/live-music/jazz-trio/jazz_trio_pf.jpg',
+    longBody: '<p>A three-piece live combo for cocktail hour or a seated dinner. The thing a trio does that a bigger band can\'t is fill a room without taking it over, so people can still hear each other across a table while the music works underneath.</p><p>We build the lineup around the sound you want instead of sending the same three players to every job. Sax, guitar and bass is the classic version, warm and easy, and it\'s what most couples picture when they say jazz trio. Trade the bass for piano and percussion and you get noticeably more drive, which is the right call when cocktail hour is its own party rather than the wait before dinner. Piano, percussion and violin goes the other direction, softer and more romantic, and it\'s what we usually suggest for an outdoor cocktail hour or a tented reception where there\'s nothing for the sound to bounce off.</p><p>Three pieces isn\'t always the answer. A jazz duo carries a small room or a shorter cocktail hour without crowding it, and we\'ve put a quartet in a ballroom where a trio would have disappeared. If you aren\'t sure, tell us the room and the headcount and we\'ll tell you honestly which one you need. We\'d rather send two players who fit than three who don\'t.</p><p>Here\'s the part that\'s hard to get when you book a trio on its own: the handoff. Live music has to end and the DJ has to start, and that transition is where a cocktail hour either flows or stalls. Our musicians and our DJs work for the same company, run off the same timeline, and share the same sound system. No second contract, no second point of contact, and nobody standing around at 6:40 wondering whose cue it is.</p><p>Repertoire is standards by default, the Sinatra and Ella end of it, with room to go wherever you want. If there\'s a song that matters to you, send it over and we\'ll work it out for whichever lineup you\'ve picked.</p><p>We\'ve played cocktail hours at country clubs on the North Shore, ballrooms across Suffolk, and backyards with a tent and a generator. The lineup changes with the room. Tell us the venue and the hour you want covered, and we\'ll put the right three people in it.</p>',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/M-TbIs-KV4I', caption: 'The jazz trio, live.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/SpwfnduiWsA', caption: 'Sax, guitar, and bass through a full set.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/d2WJIJX-HJ4', caption: 'The same idea with piano and percussion.' },
     ],
-    gallery: [],
+    gallery: [
+      '/assets/images/services/live-music/jazz-trio/jazz_trio_guitar_bass.jpg',
+    ],
   },
   {
     slug: 'ceremony-dj',
