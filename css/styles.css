@@ -2380,8 +2380,13 @@ body.has-solid-nav .nav {
 }
 
 @media (min-width: 1000px) {
+  /* 240 rather than 300: on a 1440 laptop the band can't grow (the section
+     rail owns the right margin), so the only width left to give the cards is
+     the head's own. 60px moves each of the three photos from 237 to 257 wide.
+     Not a big gain, but it is the whole gain available at that size, and on a
+     wider screen it compounds with the band widening below. */
   .svc-layout {
-    grid-template-columns: minmax(230px, 300px) minmax(0, 1fr);
+    grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
     gap: var(--sp-7);
     align-items: start;
   }
@@ -2395,9 +2400,11 @@ body.has-solid-nav .nav {
     text-align: left;
   }
 
-  /* Sized for a 320px column, not for a full-width banner. */
+  /* Sized for a 240px column, not for a full-width banner. The old 2.125rem
+     cap was set against a 300px column; at 240 it pushed every head to four
+     lines. 1.875rem holds them to three. */
   .svc-head h2 {
-    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem);
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.875rem);
     margin-bottom: var(--sp-4);
   }
 
@@ -2417,6 +2424,35 @@ body.has-solid-nav .nav {
 @media (min-width: 1300px) {
   .svc-layout .service-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* The add-on photos were 237x177 inside a 1320px band that left 180px of
+   dead gutter on each side of a 1680px screen. The cards are the point of
+   this page, so /services takes the gutter back: the band grows, the sticky
+   head slides left with it, and the three columns absorb all of the gained
+   width. Each term of the clamp is doing a job, so none of them is loose:
+
+     calc(100% - 8rem)  the 64px gutter the section rail needs. The rail is
+                        22px wide and sits 38px off the right edge, so a
+                        thinner gutter puts the cards within 2px of the dots
+                        anywhere between 1430 (where the rail turns on) and
+                        1680. 64px leaves 26px of air.
+     max(1320px, ...)   never narrower than the band already is. Without it a
+                        1280px laptop would lose 128px it currently has,
+                        because the gutter would bite before the cap does.
+     min(1600px, ...)   stop there. Past 1600 a three-card row stretches
+                        rather than reads, and a 2560 monitor would pull the
+                        head a third of a screen away from its own list.
+
+   Higher specificity than the .page-band > .container rule ~450 lines up, so
+   source order can't undo it. Scoped to .page-services, which only
+   services.html carries, and applied to the whole band set rather than the
+   svc sections alone so the mosaic at the top stays the same width as the
+   lists below it. */
+@media (min-width: 1000px) {
+  .page-services .page-band > .container {
+    max-width: min(1600px, max(1320px, calc(100% - 8rem)));
   }
 }
 
