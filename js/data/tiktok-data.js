@@ -257,4 +257,21 @@ window.TIKTOK_DATA = [
   { id: '7694449733930208526', caption: 'A ten out of ten night, start to finish.', views: '4281', people: ['pat', 'richie', 'joe-cip'], services: ['percussionist', 'weddings'] },
   { id: '7695059815692815629', caption: 'Clean mixes from Dom.', views: '522', people: ['dominick'], services: [] },
   { id: '7695552203465035022', caption: 'Curtis on the sax.', views: '356', people: ['curtis'], services: [] },
+  /* --- Sixth pass 2026-10-27: everything posted since the fifth pass, 11 clips
+     from Oct 12 to Oct 26. Xander watched each one and assigned them. "Mike L"
+     in his notes is the roster's `mike`, the only MC Mike who isn't Mike N.
+     Curtis shows up on five of these; where Xander named him without also
+     asking for the sax service, he's tagged as a person only. Sources were all
+     native 9:16, so the posters are straight resizes with no crop. --- */
+  { id: '7699268832589876494', caption: 'Mike setting the stage for the newlyweds.', views: '7027', people: ['mike'], services: ['weddings'], pinned: true },
+  { id: '7696668379653967118', caption: 'Mr. Brightside, never a miss.', views: '2714', people: [], services: ['weddings'] },
+  { id: '7695905838518619406', caption: 'Leo on the mic, Curtis on the sax.', views: '1867', people: ['leo', 'curtis'], services: ['weddings'] },
+  { id: '7699617600455707918', caption: 'Mike leading the cheers, Curtis on the sax.', views: '1478', people: ['mike', 'curtis'], services: [] },
+  { id: '7701098124122574093', caption: 'Lifting the bride and groom clean off the floor.', views: '1127', people: [], services: ['weddings'] },
+  { id: '7698767062218378510', caption: 'Curtis on the sax, and the whole room felt it.', views: '854', people: ['curtis'], services: ['weddings'] },
+  { id: '7696254258953456910', caption: 'Dom on the decks, and the energy never dropped.', views: '841', people: ['dominick'], services: [] },
+  { id: '7700014417408183565', caption: 'Curtis on the sax for I Wanna Dance With Somebody.', views: '695', people: ['curtis'], services: ['saxophonist', 'weddings'] },
+  { id: '7697398305357057293', caption: 'Joe Cip. on the mic for a slow one.', views: '633', people: ['joe-cip'], services: [] },
+  { id: '7698099159483649294', caption: 'Shout, and it lands every time.', views: '1012', people: [], services: [], shelved: 'Xander passed on it' },
+  { id: '7700345862802705677', caption: 'Another wedding, start to finish.', views: '965', people: [], services: [], shelved: 'Xander passed on it' },
 ];
