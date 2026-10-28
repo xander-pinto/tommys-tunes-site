@@ -76,6 +76,14 @@ window.SHOWCASES_DATA = [
     note: 'Sunday showcase. Meet the team, see the setups, and talk through your night.',
   },
   {
+    date: '2027-01-24',
+    dateDisplay: 'January 24, 2027',
+    time: '12:00pm – 2:30pm',
+    venue: 'Fox Hollow',
+    type: 'Bridal Showcase',
+    note: 'Winter showcase in Woodbury. See the setups live and talk through your night.',
+  },
+  {
     date: '2026-10-28',
     dateDisplay: 'October 28, 2026',
     time: 'Doors open 6:00pm',
