@@ -428,16 +428,56 @@
      the service record; there is no way to infer it, and the one source that
      looked promising (people tagged on TikTok clips) only covers three
      services. Hidden entirely until that array exists. */
+  /* Anyone who works in front of the guests. Weddings, corporate and other
+     events are run by most of the roster rather than a short bench, so those
+     three pass the string 'all-performers' instead of 32 hand-listed slugs
+     repeated three times. A new MC then appears on all three the day they are
+     added to the roster, with nobody remembering to update a list.
+     Photographers, technicians, dancers, the directors and the mascot are out:
+     real staff, but not what someone choosing a DJ is looking for. */
+  var PERFORMER_ROLE = /\b(MC|DJ)\b|Saxophonist|Percussionist|Pianist|Guitarist|Vocalist|Violinist/;
+
+  /* Six cards, then the rest behind a native <details>. 32 photo cards is a
+     page of its own, and <details> keeps every link in the DOM where a
+     crawler still counts it, rather than building them on click. */
+  var CREW_CARD_LIMIT = 6;
+
   function renderCrew(record) {
     const team = Array.isArray(window.TEAM_DATA) ? window.TEAM_DATA : [];
-    const picks = (record.crew || []).map((sl) => team.find((p) => p.slug === sl)).filter(Boolean);
+    let picks;
+    if (record.crew === 'all-performers') {
+      picks = team.filter((p) => PERFORMER_ROLE.test(p.role || ''));
+    } else {
+      picks = (record.crew || []).map((sl) => team.find((p) => p.slug === sl)).filter(Boolean);
+    }
     if (!picks.length) { hideSection('[data-slot="crew-section"]'); return; }
-    setHTML('[data-slot="crew"]', picks.map((p) => `
+
+    const card = (p) => `
       <a class="related-card" href="/person/${escapeHTML(p.slug)}/">
         <span class="related-card-photo"${p.photo ? ` style="background-image:url('${escapeHTML(p.photo)}')"` : ''} aria-hidden="true"></span>
         <span class="related-card-name">${escapeHTML(p.name)}</span>
         <span class="related-card-desc">${escapeHTML(p.role || '')}</span>
-      </a>`).join(''));
+      </a>`;
+
+    setHTML('[data-slot="crew"]', picks.slice(0, CREW_CARD_LIMIT).map(card).join(''));
+
+    const restWrap = document.querySelector('[data-slot="crew-more"]');
+    const rest = picks.slice(CREW_CARD_LIMIT);
+    if (restWrap) {
+      if (!rest.length) {
+        restWrap.hidden = true;
+        restWrap.innerHTML = '';
+      } else {
+        restWrap.hidden = false;
+        restWrap.innerHTML =
+          `<details class="crew-more">` +
+          `<summary>And ${rest.length} more MCs, DJs and musicians</summary>` +
+          `<div class="crew-more-list">` +
+          rest.map((p) => `<a href="/person/${escapeHTML(p.slug)}/">${escapeHTML(p.name)}` +
+            `<span>${escapeHTML(p.role || '')}</span></a>`).join('') +
+          `</div></details>`;
+      }
+    }
     showSection('[data-slot="crew-section"]');
   }
 

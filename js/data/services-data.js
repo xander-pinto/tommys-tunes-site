@@ -49,6 +49,7 @@ window.SERVICES_DATA = [
   /* --- Four specialties (event types, not add-ons) --- */
   {
     slug: 'weddings',
+    crew: 'all-performers',
     pairsWith: ['phone-booth', 'mirror-booth', 'dance-floor', 'saxophonist', 'dancing-on-cloud', 'cold-sparklers'],
     category: 'Specialty',
     name: 'Weddings',
@@ -100,6 +101,7 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'corporate',
+    crew: 'all-performers',
     pairsWith: ['uplighting', 'additional-tvs', 'extra-speakers', 'photo-montage', 'open-air-booth', 'furniture'],
     category: 'Specialty',
     name: 'Corporate events',
@@ -113,6 +115,7 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'other-events',
+    crew: 'all-performers',
     pairsWith: ['basic-lights', 'mirror-booth', 'dance-floor', 'zap-shots', 'uplighting', 'cold-sparklers'],
     category: 'Specialty',
     name: 'Other events',

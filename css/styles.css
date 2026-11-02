@@ -4750,3 +4750,54 @@ body.has-solid-nav .nav {
     width: 170px;
   }
 }
+
+/* The rest of the roster, behind a native <details>. Text links rather than
+   more cards: six photo cards is a section, thirty-two is a page. The markup
+   stays in the DOM whether or not it is open, so every name is a real link a
+   crawler can follow. */
+.crew-more-wrap {
+  margin-top: var(--sp-5);
+  text-align: center;
+}
+
+.crew-more > summary {
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--fs-sm);
+  color: var(--royal-blue);
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid rgba(11, 94, 222, 0.25);
+  border-radius: var(--r-sm, 8px);
+  list-style: none;
+}
+
+.crew-more > summary::-webkit-details-marker { display: none; }
+.crew-more > summary::after { content: ' ↓'; }
+.crew-more[open] > summary::after { content: ' ↑'; }
+.crew-more > summary:hover { border-color: var(--royal-blue); }
+
+.crew-more-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-2) var(--sp-4);
+  margin-top: var(--sp-5);
+  text-align: left;
+}
+
+@media (min-width: 700px) {
+  .crew-more-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.crew-more-list a {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: 6px 0;
+  font-size: var(--fs-sm);
+  color: var(--near-black);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(10, 10, 20, 0.08);
+}
+
+.crew-more-list a:hover { color: var(--royal-blue); }
+.crew-more-list a span { color: var(--text-on-light-soft); font-size: var(--fs-xs); }
