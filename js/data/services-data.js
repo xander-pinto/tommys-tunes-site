@@ -98,7 +98,7 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'corporate',
-    pairsWith: ['uplighting', 'additional-tvs', 'extra-speakers', 'photo-montage', 'open-air-booth', 'audio-guestbook'],
+    pairsWith: ['uplighting', 'additional-tvs', 'extra-speakers', 'photo-montage', 'open-air-booth', 'furniture'],
     category: 'Specialty',
     name: 'Corporate events',
     shortDesc: 'Fundraisers, awards dinners, product launches. Audio that lands cleanly.',
