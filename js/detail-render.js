@@ -403,6 +403,13 @@
     let picks = [];
     if (Array.isArray(record.pairsWith) && record.pairsWith.length) {
       picks = record.pairsWith.map((sl) => all.find((s) => s.slug === sl)).filter(Boolean);
+    } else if (record.category === 'Specialty') {
+      /* The five Specialty siblings are mutually exclusive event types, so the
+         category rule would offer a wedding to someone planning a Sweet 16.
+         These pages carry a hand-picked pairsWith of actual add-ons instead,
+         and show nothing at all rather than something wrong. */
+      hideSection('[data-slot="related-section"]');
+      return;
     } else {
       picks = all.filter((s) => s.category === record.category && s.slug !== record.slug);
     }
