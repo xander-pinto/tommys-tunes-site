@@ -4670,18 +4670,24 @@ body.has-solid-nav .nav {
   gap: var(--sp-3);
 }
 
-/* Four, not three. These lists run 4 to 6 items, and 4 in a 3-column grid
-   drops a single orphan onto its own row. Four across seats the common case
-   exactly and leaves a balanced 4+2 for the six-item lists. */
+/* Three across, which is a size decision before it is a layout one. Six
+   across put the photo at 173px on a 1280 screen, small enough that a photo
+   booth and a dance floor read as the same grey rectangle. Three puts it at
+   363px, and 46 of the 53 pages carry exactly six cards, so 3+3 fills both
+   rows with nothing hanging.
+   Flex rather than grid so a short list centres: the three Audio & Phone
+   Booth pages only have two siblings each, and grid would pin them left. */
 @media (min-width: 700px) {
   .related-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--sp-4);
   }
-}
 
-@media (min-width: 1100px) {
-  .related-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .related-grid .related-card {
+    width: calc((100% - 2 * var(--sp-4)) / 3);
+  }
 }
 
 .related-card {
