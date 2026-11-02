@@ -75,15 +75,6 @@
     </section>
 
     <!-- GALLERY (hidden if empty) -->
-    <section class="section section-tinted" data-slot="gallery-section" data-toc="Photos" hidden>
-      <div class="container">
-        <div class="section-head">
-          <span class="overline">From the floor</span>
-          <h2>Real nights, <em>real photos.</em></h2>
-        </div>
-        <div class="gallery-grid" data-slot="gallery"></div>
-      </div>
-    </section>
 
     <!-- BACKDROPS (photo booths only — hidden if empty) -->
     <section class="section section-light" data-slot="backdrops-section" data-toc="Backdrops" hidden>
@@ -122,6 +113,8 @@
     </section>
 
     <!-- DEMO (hidden if empty) -->
+
+
     <section class="section section-light" data-slot="demo-section" data-toc="Video" hidden>
       <div class="container">
         <div class="section-head">
@@ -144,6 +137,39 @@
       </div>
     </section>
 
+    <section class="section section-tinted" data-slot="gallery-section" data-toc="Photos" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">From the floor</span>
+          <h2>Real nights, <em>real photos.</em></h2>
+        </div>
+        <div class="gallery-grid" data-slot="gallery"></div>
+      </div>
+    </section>
+
+    <!-- Built from the service category, no per-service data needed. The 15
+         service pages with no video, no gallery and no TikToks had nothing
+         below the intro paragraph; this gives every page somewhere to go and
+         puts real internal links on all 47. -->
+    <section class="section section-light" data-slot="related-section" data-toc="Pairs with" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">Often booked together</span>
+          <h2>Frequently paired <em>with this.</em></h2>
+        </div>
+        <div class="related-grid" data-slot="related"></div>
+      </div>
+    </section>
+
+    <section class="section section-tinted" data-slot="crew-section" data-toc="Who runs it" hidden>
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">Your team</span>
+          <h2>Who usually <em>runs these.</em></h2>
+        </div>
+        <div class="related-grid" data-slot="crew"></div>
+      </div>
+    </section>
 
     <!-- FINAL CTA -->
     <section class="final-cta">
@@ -163,6 +189,8 @@
   <div data-component="modal"></div>
 
   <script src="/js/data/services-data.js"></script>
+  <!-- Needed by the crew module; without it renderCrew silently finds nobody. -->
+  <script src="/js/data/team-data.js"></script>
   <script src="/js/main.js" defer></script>
   <script src="/js/data/tiktok-data.js"></script>
   <script src="/js/detail-render.js" defer></script>

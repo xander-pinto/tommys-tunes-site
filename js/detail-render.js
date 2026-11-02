@@ -380,6 +380,60 @@
     buildTOC();
   }
 
+  /* Sibling services from the same category. Deliberately derived rather than
+     hand-listed: 47 service pages would be 47 lists to maintain and they would
+     rot the first time a service is added. A `pairsWith` array on the record
+     overrides the category when a hand-picked set is better, which it usually
+     is (uplighting belongs next to monogram and dance floor, not next to
+     every other lighting SKU). Capped at 6 so it stays a suggestion. */
+  /* Mirrors EVENT_URLS in scripts/generate.js. The five Specialty services are
+     published at keyword URLs rather than /service/<slug>/, so a link built
+     from the slug alone would 404 on exactly the five pages that matter most. */
+  var SERVICE_PATHS = {
+    'weddings': '/wedding-dj-long-island/',
+    'sweet-16-quinces': '/sweet-16-dj/',
+    'mitzvahs': '/bar-bat-mitzvah-dj/',
+    'corporate': '/corporate-event-dj/',
+    'other-events': '/other-events/',
+  };
+
+  function renderRelated(record) {
+    const all = Array.isArray(window.SERVICES_DATA) ? window.SERVICES_DATA : [];
+    const pathFor = (s) => SERVICE_PATHS[s.slug] || ('/service/' + s.slug + '/');
+    let picks = [];
+    if (Array.isArray(record.pairsWith) && record.pairsWith.length) {
+      picks = record.pairsWith.map((sl) => all.find((s) => s.slug === sl)).filter(Boolean);
+    } else {
+      picks = all.filter((s) => s.category === record.category && s.slug !== record.slug);
+    }
+    picks = picks.slice(0, 6);
+    if (!picks.length) { hideSection('[data-slot="related-section"]'); return; }
+    setHTML('[data-slot="related"]', picks.map((s) => `
+      <a class="related-card" href="${escapeHTML(pathFor(s))}">
+        <span class="related-card-photo"${s.photo ? ` style="background-image:url('${escapeHTML(s.photo)}')"` : ''} aria-hidden="true"></span>
+        <span class="related-card-name">${escapeHTML(s.name)}</span>
+        <span class="related-card-desc">${escapeHTML(s.shortDesc || '')}</span>
+      </a>`).join(''));
+    showSection('[data-slot="related-section"]');
+  }
+
+  /* Named crew for this kind of night. Needs a `crew` array of team slugs on
+     the service record; there is no way to infer it, and the one source that
+     looked promising (people tagged on TikTok clips) only covers three
+     services. Hidden entirely until that array exists. */
+  function renderCrew(record) {
+    const team = Array.isArray(window.TEAM_DATA) ? window.TEAM_DATA : [];
+    const picks = (record.crew || []).map((sl) => team.find((p) => p.slug === sl)).filter(Boolean);
+    if (!picks.length) { hideSection('[data-slot="crew-section"]'); return; }
+    setHTML('[data-slot="crew"]', picks.map((p) => `
+      <a class="related-card" href="/person/${escapeHTML(p.slug)}/">
+        <span class="related-card-photo"${p.photo ? ` style="background-image:url('${escapeHTML(p.photo)}')"` : ''} aria-hidden="true"></span>
+        <span class="related-card-name">${escapeHTML(p.name)}</span>
+        <span class="related-card-desc">${escapeHTML(p.role || '')}</span>
+      </a>`).join(''));
+    showSection('[data-slot="crew-section"]');
+  }
+
   function renderService(record) {
     document.title = `${record.name} · Tommy's Tunes`;
     setText('[data-slot="kicker"]', record.category || 'Services');
@@ -402,6 +456,8 @@
     renderTikToks(record, 'services');
     renderGallery(record.gallery);
     renderBackdrops(record.backdrops);
+    renderRelated(record);
+    renderCrew(record);
     hideSection('[data-slot="socials-section"]');
     buildTOC();
   }
@@ -422,6 +478,8 @@
     }
     renderDemo(record);
     renderGallery(record.gallery);
+    renderCrew(record);
+    hideSection('[data-slot="related-section"]');
     hideSection('[data-slot="socials-section"]');
     hideSection('[data-slot="tiktok-section"]');
     buildTOC();

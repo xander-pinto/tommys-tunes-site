@@ -4202,6 +4202,13 @@ body.has-solid-nav .nav {
   padding: var(--sp-9) 0 var(--sp-7);
 }
 
+/* Full opacity on purpose. This used to sit at 0.55 underneath an overlay
+   that reached 0.85 black at the bottom, so the photo rendered at roughly 36%
+   visibility at the top of the hero and about 8% behind the headline. Two
+   separate dimmers stacked on one image. These pages are landing pages: 35% of
+   all site impressions arrive on a /service/, /package/ or event page without
+   ever seeing the homepage, so the first screen is the whole first impression.
+   One dimmer is enough, and it lives in the overlay below. */
 .detail-hero-photo {
   position: absolute;
   inset: 0;
@@ -4209,13 +4216,22 @@ body.has-solid-nav .nav {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
-  opacity: 0.55;
+  opacity: 1;
 }
 
+/* Four stops rather than two, because the hero has three jobs at once and a
+   straight top-to-bottom ramp can only serve one. 0.62 for the first 130px
+   keeps the nav logo legible over a bright photo; it eases to 0.30 right after,
+   which is the band where the picture actually gets to be a picture; 0.84 at
+   the base carries white headline text at full contrast. */
 .detail-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,5,0.35) 0%, rgba(0,0,5,0.85) 100%);
+  background: linear-gradient(180deg,
+    rgba(0,0,5,0.62) 0px,
+    rgba(0,0,5,0.30) 130px,
+    rgba(0,0,5,0.40) 48%,
+    rgba(0,0,5,0.84) 100%);
   z-index: 1;
 }
 
@@ -4643,3 +4659,66 @@ body.has-solid-nav .nav {
 }
 /* Anchor jumps land below the fixed nav + sticky toc */
 [data-toc] { scroll-margin-top: calc(var(--nav-height) + 64px); }
+/* --- Related / crew cards (service + package detail pages) --------------
+   Same card for "frequently paired with" and "who usually runs these", so
+   the two blocks read as one idea: here is where to go next. Sized smaller
+   than a service-list card on purpose; this is a signpost at the bottom of
+   a page, not the content of one. */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-3);
+}
+
+@media (min-width: 700px) {
+  .related-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--sp-4);
+  }
+}
+
+@media (min-width: 1100px) {
+  .related-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+.related-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.related-card-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-sm, 8px);
+  background: linear-gradient(160deg, var(--light-sky), #DCE5F4);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: var(--sp-2);
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.related-card:hover .related-card-photo { transform: translateY(-2px); }
+
+.related-card-name {
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  line-height: 1.25;
+}
+
+.related-card:hover .related-card-name { color: var(--royal-blue); }
+
+.related-card-desc {
+  font-size: var(--fs-xs);
+  line-height: 1.4;
+  color: var(--text-on-light-soft);
+}
+
+.section-tinted .related-card-photo {
+  background: linear-gradient(160deg, var(--light-sky), #DCE5F4);
+  background-size: cover;
+  background-position: center;
+}
