@@ -21,6 +21,7 @@
 window.TEAM_DATA = [
   {
     slug: 'pj',
+    featured: true,
     name: 'PJ',
     role: 'MC',
     photo: '/assets/images/team/mcs/pj/pj_pf.jpg',
@@ -37,6 +38,7 @@ window.TEAM_DATA = [
   },
   {
     slug: 'joe-cip',
+    featured: true,
     name: 'Joe Cip.',
     role: 'MC · DJ',
     photo: '/assets/images/team/mcs/joe-cip/joe_cip_pf.jpg',
@@ -61,6 +63,7 @@ window.TEAM_DATA = [
   },
   {
     slug: 'mike',
+    featured: true,
     name: 'Mike',
     role: 'MC',
     photo: '/assets/images/team/mcs/mike/mike_pf.jpg',
@@ -80,6 +83,7 @@ window.TEAM_DATA = [
   },
   {
     slug: 'leo',
+    featured: true,
     name: 'Leo',
     role: 'MC · DJ · EN/ES',
     photo: '/assets/images/team/mcs/leo/leo_pf.avif',
@@ -172,6 +176,7 @@ window.TEAM_DATA = [
   },
   {
     slug: 'richie',
+    featured: true,
     name: 'Rich',
     role: 'DJ',
     photo: '/assets/images/team/djs/richie/rich_pf.JPG',
@@ -189,6 +194,7 @@ window.TEAM_DATA = [
   },
   {
     slug: 'dominick',
+    featured: true,
     name: 'Dominick',
     role: 'DJ',
     photo: '/assets/images/team/djs/dominick/dom_pf.JPG',
@@ -203,6 +209,7 @@ window.TEAM_DATA = [
   },
   {
     slug: 'anderson',
+    featured: true,
     name: 'Anderson',
     role: 'DJ · MC · EN/ES',
     photo: '/assets/images/team/djs/anderson/anderson_pf.jpg',
@@ -219,6 +226,7 @@ window.TEAM_DATA = [
   },
   {
     slug: 'jon',
+    featured: true,
     name: 'Jon',
     role: 'DJ · MC',
     photo: '/assets/images/team/djs/jon/jon_pf.jpg',

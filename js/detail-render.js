@@ -444,9 +444,25 @@
 
   function renderCrew(record) {
     const team = Array.isArray(window.TEAM_DATA) ? window.TEAM_DATA : [];
-    let picks;
+    let picks, cards;
     if (record.crew === 'all-performers') {
       picks = team.filter((p) => PERFORMER_ROLE.test(p.role || ''));
+      /* The eight carrying `featured` are the front row of MCs and the front
+         row of DJs on /team.html, the ones we actively promote. Six of the
+         eight get the photo cards and which six rotates per load, so all
+         eight collect roughly equal exposure instead of the same two always
+         losing out to document order. The other 24 are never dropped, they
+         move into the dropdown, so the link set is identical either way and
+         only the photos change. */
+      const top = picks.filter((p) => p.featured);
+      const pool = top.length ? top.slice() : picks.slice();
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const t = pool[i]; pool[i] = pool[j]; pool[j] = t;
+      }
+      cards = pool.slice(0, CREW_CARD_LIMIT);
+      const shown = new Set(cards.map((p) => p.slug));
+      picks = cards.concat(picks.filter((p) => !shown.has(p.slug)));
     } else {
       picks = (record.crew || []).map((sl) => team.find((p) => p.slug === sl)).filter(Boolean);
     }
