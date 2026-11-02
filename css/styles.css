@@ -4816,3 +4816,112 @@ body.has-solid-nav .nav {
   aspect-ratio: 4 / 5;
   background-position: center 22%;
 }
+
+/* --- Demo videos: grid of posters, not a stack of players ---------------
+   Six 900px-wide 16:9 players in a single column ran the saxophonist demo
+   section to 3,689px, just over four screens, for one service. Two across
+   roughly halves it and still shows each clip bigger than a thumbnail.
+   A lone video keeps the full width; splitting one item into a half-width
+   column would look like a mistake. */
+.detail-demo {
+  max-width: 1100px;
+}
+
+.detail-demo:has(.demo-item + .demo-item) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+}
+
+@media (min-width: 760px) {
+  .detail-demo:has(.demo-item + .demo-item) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-6);
+  }
+}
+
+/* The stacking margin belonged to the single-column layout. */
+.detail-demo:has(.demo-item + .demo-item) .demo-item + .demo-item {
+  margin-top: 0;
+}
+
+/* The poster itself is a button, so it needs the embed's shape plus the
+   affordances a button does not inherit. */
+.demo-facade {
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  background-color: var(--near-black);
+  transition: transform var(--t-fast) var(--ease-out);
+}
+
+.demo-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.demo-facade:hover { transform: translateY(-2px); }
+
+.demo-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 5, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  transition: background var(--t-fast) var(--ease-out);
+}
+
+/* Play triangle, drawn rather than shipped as an asset. */
+.demo-play::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.demo-facade:hover .demo-play { background: var(--royal-blue); }
+
+.demo-caption {
+  text-align: center;
+}
+
+/* --- Long body copy: a lead, a readable measure, and a fold -------------
+   The weddings overview is 582 words in six paragraphs at 78 characters a
+   line. 78 is past the point where the eye reliably finds the next line,
+   and six paragraphs of identical grey is the first thing a cold visitor
+   meets. A narrower column, a larger opening paragraph and a fold after the
+   second fixes all three without touching a word of the copy. */
+.detail-page [data-slot="bio"],
+[data-slot="bio"] {
+  max-width: 62ch;
+}
+
+.bio-lead {
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  color: var(--near-black);
+}
+
+.bio-toggle {
+  margin-top: var(--sp-4);
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-sm);
+  color: var(--royal-blue);
+  background: none;
+  border: 1px solid rgba(11, 94, 222, 0.25);
+  border-radius: var(--r-sm, 8px);
+  cursor: pointer;
+  transition: border-color var(--t-fast) var(--ease-out);
+}
+
+.bio-toggle:hover { border-color: var(--royal-blue); }

@@ -106,13 +106,68 @@
     showSection('[data-slot="backdrops-section"]');
   }
 
+  /* A YouTube embed costs roughly half a megabyte and a pile of script before
+     anyone presses play, and the sax page carries six of them. They now render
+     as a poster and a play button, exactly as the TikTok grid already does,
+     and the real player is built on click. The page also stops wearing
+     YouTube's title bar and "Watch on YouTube" chrome by default. */
+  function youtubeId(url) {
+    const m = String(url || '').match(/(?:embed\/|v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+    return m ? m[1] : '';
+  }
+
+  /* Long bodies get a lead paragraph and a fold. The weddings page runs 582
+     words across six undifferentiated paragraphs, which is a wall of grey on
+     the one page a cold visitor lands on most. The first two paragraphs carry
+     the pitch; the rest stay in the DOM behind a toggle, so Google still reads
+     every word and the reader is not asked to commit to six paragraphs before
+     seeing a photograph. Short bodies are left alone. */
+  var BIO_VISIBLE_PARAS = 2;
+
+  function foldLongBio() {
+    const bio = document.querySelector('[data-slot="bio"]');
+    if (!bio) return;
+    const paras = [...bio.children].filter((el) => el.tagName === 'P');
+    if (paras.length <= BIO_VISIBLE_PARAS + 1) return;
+    paras[0].classList.add('bio-lead');
+    const rest = paras.slice(BIO_VISIBLE_PARAS);
+    const wrap = document.createElement('div');
+    wrap.className = 'bio-rest';
+    wrap.hidden = true;
+    rest[0].before(wrap);
+    rest.forEach((el) => wrap.appendChild(el));
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'bio-toggle';
+    btn.textContent = 'Read more';
+    btn.addEventListener('click', () => {
+      const open = !wrap.hidden;
+      wrap.hidden = open;
+      btn.textContent = open ? 'Read more' : 'Read less';
+    });
+    wrap.after(btn);
+  }
+
   function renderOneDemo(demo) {
     if (!demo || !demo.url) return '';
     let media = '';
     if (demo.type === 'youtube') {
-      media = `<div class="demo-embed"><iframe src="${escapeHTML(demo.url)}" title="Demo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+      const id = youtubeId(demo.url);
+      /* maxresdefault is 1280x720 and sharp, but YouTube only generates it for
+         videos uploaded above 720p: 34 of our 43 demos have one, 9 return 404.
+         An <img> rather than a CSS background so the 9 can fall back to
+         hqdefault on error instead of showing an empty box. */
+      media = id
+        ? `<button type="button" class="demo-embed demo-facade" data-demo-id="${escapeHTML(id)}"
+             aria-label="Play video${demo.caption ? ': ' + escapeHTML(demo.caption) : ''}">
+             <img src="https://i.ytimg.com/vi/${escapeHTML(id)}/maxresdefault.jpg"
+                  data-fallback="https://i.ytimg.com/vi/${escapeHTML(id)}/hqdefault.jpg"
+                  alt="" loading="lazy">
+             <span class="demo-play" aria-hidden="true"></span>
+           </button>`
+        : `<div class="demo-embed"><iframe src="${escapeHTML(demo.url)}" title="Demo" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
     } else if (demo.type === 'instagram') {
-      media = `<div class="demo-embed"><iframe src="${escapeHTML(demo.url)}" title="Instagram" allowfullscreen></iframe></div>`;
+      media = `<div class="demo-embed"><iframe src="${escapeHTML(demo.url)}" title="Instagram" loading="lazy" allowfullscreen></iframe></div>`;
     } else if (demo.type === 'video') {
       media = `<video controls preload="metadata" playsinline><source src="${escapeHTML(demo.url)}"></video>`;
     }
@@ -120,6 +175,23 @@
     const caption = demo.caption ? `<p class="demo-caption">${escapeHTML(demo.caption)}</p>` : '';
     return `<div class="demo-item">${media}${caption}</div>`;
   }
+
+  /* Swap a poster for the real player. One at a time, same as the TikTok grid. */
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest && e.target.closest('.demo-facade');
+    if (!btn) return;
+    const id = btn.getAttribute('data-demo-id');
+    if (!id) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'demo-embed';
+    const frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube.com/embed/' + encodeURIComponent(id) + '?autoplay=1';
+    frame.title = 'Demo';
+    frame.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+    frame.setAttribute('allowfullscreen', '');
+    wrap.appendChild(frame);
+    btn.replaceWith(wrap);
+  });
 
   // Accepts either a single `demo` object or a `demos` array (preferred).
   function renderDemo(record) {
@@ -132,6 +204,22 @@
       return;
     }
     setHTML('[data-slot="demo"]', html);
+    /* Fall back on size, not on error. A missing maxresdefault does not 404:
+       i.ytimg.com answers 200 with a 120x90 grey placeholder, so an error
+       handler never fires and the card renders a blank stretched to 534px.
+       Anything that narrow is the placeholder, so swap it for hqdefault. */
+    document.querySelectorAll('.demo-facade img[data-fallback]').forEach((img) => {
+      const swap = () => {
+        const fb = img.getAttribute('data-fallback');
+        if (!fb || img.src === fb) return;
+        img.removeAttribute('data-fallback');
+        img.src = fb;
+      };
+      const check = () => { if (img.naturalWidth && img.naturalWidth <= 120) swap(); };
+      img.addEventListener('error', swap);
+      img.addEventListener('load', check);
+      if (img.complete) check();
+    });
     showSection('[data-slot="demo-section"]');
   }
 
@@ -521,6 +609,7 @@
     renderBackdrops(record.backdrops);
     renderRelated(record);
     renderCrew(record);
+    foldLongBio();
     hideSection('[data-slot="socials-section"]');
     buildTOC();
   }
@@ -543,6 +632,7 @@
     renderGallery(record.gallery);
     renderRelated(record);
     renderCrew(record);
+    foldLongBio();
     hideSection('[data-slot="socials-section"]');
     hideSection('[data-slot="tiktok-section"]');
     buildTOC();
