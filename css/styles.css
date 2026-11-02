@@ -4670,9 +4670,12 @@ body.has-solid-nav .nav {
   gap: var(--sp-3);
 }
 
+/* Four, not three. These lists run 4 to 6 items, and 4 in a 3-column grid
+   drops a single orphan onto its own row. Four across seats the common case
+   exactly and leaves a balanced 4+2 for the six-item lists. */
 @media (min-width: 700px) {
   .related-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--sp-4);
   }
 }

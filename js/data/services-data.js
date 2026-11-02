@@ -49,7 +49,8 @@ window.SERVICES_DATA = [
   /* --- Four specialties (event types, not add-ons) --- */
   {
     slug: 'weddings',
-    pairsWith: ['dancing-on-cloud', 'cold-sparklers', 'mr-mrs-letters', 'saxophonist', 'uplighting', 'mirror-booth'],
+    crew: ['joe-cip', 'leo', 'richie', 'curtis', 'pat', 'robert'],
+    pairsWith: ['phone-booth', 'mirror-booth', 'dance-floor', 'saxophonist', 'dancing-on-cloud', 'cold-sparklers'],
     category: 'Specialty',
     name: 'Weddings',
     shortDesc: 'A family-owned Long Island wedding DJ since 1985.',
@@ -66,7 +67,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'sweet-16-quinces',
-    pairsWith: ['16-letters', '360-booth', 'co2-guns', 'party-dancer', 'glam-booth', 'dance-floor'],
+    crew: ['zach', 'david', 'johnny-munroe', 'anderson'],
+    pairsWith: ['16-letters', 'mirror-booth', 'co2-guns', 'party-dancer', 'dance-floor', 'zap-shots'],
     category: 'Specialty',
     name: 'Sweet 16s & Quinceañeras',
     shortDesc: 'A different room than a wedding. The same family team runs it.',
@@ -82,7 +84,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'mitzvahs',
-    pairsWith: ['party-dancer', 'co2-guns', '360-booth', 'dance-floor', 'lawn-games', 'mac-towers'],
+    crew: ['zach', 'david', 'johnny-munroe', 'anderson', 'joe-cip'],
+    pairsWith: ['mirror-booth', 'party-dancer', 'zap-shots', 'lawn-games', 'co2-guns', 'mac-towers'],
     category: 'Specialty',
     name: 'Mitzvahs',
     shortDesc: 'The Hora, the candle lighting, the after-party.',
@@ -111,7 +114,7 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'other-events',
-    pairsWith: ['open-air-booth', 'lawn-games', 'extra-speakers', 'basic-lights', 'photo-montage', 'furniture'],
+    pairsWith: ['basic-lights', 'open-air-booth', 'dance-floor', 'zap-shots'],
     category: 'Specialty',
     name: 'Other events',
     shortDesc: 'If you have a party, we\'ll do it. Forty years of every kind.',
