@@ -485,8 +485,8 @@
     }
     renderDemo(record);
     renderGallery(record.gallery);
+    renderRelated(record);
     renderCrew(record);
-    hideSection('[data-slot="related-section"]');
     hideSection('[data-slot="socials-section"]');
     hideSection('[data-slot="tiktok-section"]');
     buildTOC();

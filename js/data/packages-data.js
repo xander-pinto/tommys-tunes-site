@@ -7,6 +7,7 @@
 window.PACKAGES_DATA = [
   {
     slug: 'basic',
+    pairsWith: ['audio-guestbook', 'illuminated-booth', 'mirror-booth', 'pianist', 'mac-towers', 'uplighting'],
     name: 'Basic Entertainment',
     tagline: 'For intimate weddings and small gatherings of 75 or fewer.',
     photo: '/assets/images/packages/basic/basic_pf.jpg',
@@ -22,6 +23,7 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'deluxe',
+    pairsWith: ['illuminated-booth', 'mirror-booth', 'pianist', 'phone-booth', 'uplighting', 'zap-shots'],
     name: 'Deluxe Entertainment',
     tagline: 'The Long Island wedding standard. DJ on the music, MC working the room.',
     photo: '/assets/images/packages/deluxe/deluxe_pf.jpg',
@@ -38,6 +40,7 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'super-deluxe',
+    pairsWith: ['mac-towers', 'mirror-booth', 'saxophonist', 'uplighting', 'phone-booth', 'dance-floor'],
     name: 'Super Deluxe Entertainment',
     tagline: 'Same team from ceremony through last dance, with the illuminated DJ booth.',
     photo: '/assets/images/packages/super-deluxe/super_deluxe_pf.jpg',
@@ -53,6 +56,7 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'premiere',
+    pairsWith: ['mac-towers', 'mirror-booth', 'saxophonist', 'uplighting', 'phone-booth', 'dance-stages'],
     name: 'Premiere Entertainment',
     tagline: 'When you want the room to look as good as it sounds.',
     photo: '/assets/images/packages/premiere/premeire_pf.jpg',
@@ -69,6 +73,7 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'supreme',
+    pairsWith: ['dancing-on-cloud', 'mirror-booth', 'saxophonist', 'uplighting', 'phone-booth', 'monogram'],
     name: 'Supreme Entertainment',
     tagline: 'Adds live event photography on screens throughout the night.',
     photo: '/assets/images/packages/supreme/supreme_pf.jpg',
@@ -93,6 +98,7 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'grand',
+    pairsWith: ['dancing-on-cloud', 'mirror-booth', 'cold-sparklers', 'co2-guns', 'phone-booth', 'monogram'],
     tag: 'Ultimate',
     name: 'Grand Entertainment',
     tagline: 'The full production, plus a live sax or percussionist on the reception.',
