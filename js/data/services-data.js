@@ -113,7 +113,7 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'other-events',
-    pairsWith: ['basic-lights', 'mirror-booth', 'dance-floor', 'zap-shots'],
+    pairsWith: ['basic-lights', 'mirror-booth', 'dance-floor', 'zap-shots', 'uplighting', 'cold-sparklers'],
     category: 'Specialty',
     name: 'Other events',
     shortDesc: 'If you have a party, we\'ll do it. Forty years of every kind.',

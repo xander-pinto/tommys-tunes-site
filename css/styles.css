@@ -4725,3 +4725,28 @@ body.has-solid-nav .nav {
   background-size: cover;
   background-position: center;
 }
+
+/* Crew cards centre, rather than packing to the left edge.
+   Flex, not grid, and that is the whole point of the rule. Grid centres the
+   track set but cannot centre a short final row: the mitzvah list is five
+   names, so the fifth card sat alone against the left edge while the block
+   around it measured perfectly centred. Flex wrapping centres every row it
+   produces, last one included. Fixed 170px keeps a four-name list card-sized
+   instead of stretched across the band.
+   Scoped to the crew slot: the pairs list is usually a full six and reads
+   better aligned with the headline above it. */
+.related-grid[data-slot="crew"] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.related-grid[data-slot="crew"] .related-card {
+  width: calc(50% - var(--sp-3) / 2);
+}
+
+@media (min-width: 700px) {
+  .related-grid[data-slot="crew"] .related-card {
+    width: 170px;
+  }
+}
