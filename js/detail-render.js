@@ -194,11 +194,21 @@
   });
 
   // Accepts either a single `demo` object or a `demos` array (preferred).
+  /* Two, then a button, for the same reason the TikTok grid opens at three:
+     six 16:9 posters is three rows of video on a page selling a saxophonist.
+     Only seven pages carry more than two demos and none carries more than
+     six, so one press reveals the remainder rather than batching. */
+  var MAX_DEMOS = 2;
+
   function renderDemo(record) {
     const list = Array.isArray(record.demos)
       ? record.demos
       : (record.demo ? [record.demo] : []);
-    const html = list.map(renderOneDemo).filter(Boolean).join('');
+    const html = list.map((d, i) => {
+      const item = renderOneDemo(d);
+      if (!item) return '';
+      return i < MAX_DEMOS ? item : item.replace('<div class="demo-item">', '<div class="demo-item" data-demo-extra hidden>');
+    }).filter(Boolean).join('');
     if (!html) {
       hideSection('[data-slot="demo-section"]');
       return;
@@ -220,8 +230,29 @@
       img.addEventListener('load', check);
       if (img.complete) check();
     });
+    const demoMore = document.querySelector('[data-slot="demo-more"]');
+    if (demoMore) {
+      const hidden = document.querySelectorAll('[data-demo-extra][hidden]').length;
+      if (hidden > 0) {
+        demoMore.innerHTML =
+          `<button type="button" class="btn btn-secondary" data-demo-more>Show ${hidden} more</button>` +
+          `<span class="tiktok-count">${MAX_DEMOS} of ${MAX_DEMOS + hidden}</span>`;
+        demoMore.hidden = false;
+      } else {
+        demoMore.hidden = true;
+        demoMore.innerHTML = '';
+      }
+    }
     showSection('[data-slot="demo-section"]');
   }
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest && e.target.closest('[data-demo-more]');
+    if (!btn) return;
+    document.querySelectorAll('[data-demo-extra][hidden]').forEach((el) => { el.hidden = false; });
+    const wrap = btn.closest('[data-slot="demo-more"]');
+    if (wrap) { wrap.hidden = true; wrap.innerHTML = ''; }
+  });
 
   /* A page leads with its best-performing clips rather than everything tagged
      to it, so the library can be tagged liberally without a page opening as a
