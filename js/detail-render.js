@@ -227,12 +227,17 @@
      to it, so the library can be tagged liberally without a page opening as a
      wall. The rest are one press away, not thrown out.
 
-     Phones get three instead of nine: the grid collapses to a single column
-     there, so nine stacked 9:16 clips is about five thousand pixels of scroll
-     before you reach the button. Read once at load, not per render, so the
-     count stays consistent between the first paint and later presses. */
-  const MAX_TIKTOKS =
-    window.matchMedia && window.matchMedia('(max-width: 640px)').matches ? 3 : 9;
+     Three everywhere. This used to be nine on desktop and three on phones,
+     but nine 9:16 cards is a full screen of TikTok on a page that is meant to
+     sell a service, and the section was running longer than the demo videos
+     above it. Three is enough to show the clips are real; anyone who wants the
+     other sixty-nine presses the button. */
+  const MAX_TIKTOKS = 3;
+
+  /* Opening at three and revealing three would be 23 presses to walk the 72
+     clips tagged to weddings. The opening count is the page-length decision;
+     the batch size is a patience decision, and they do not have to match. */
+  const TIKTOK_BATCH = 9;
 
   function viewCount(v) {
     const m = String(v || '').trim().match(/^([\d.]+)\s*([KM]?)$/i);
@@ -284,7 +289,7 @@
       if (hidden > 0) {
         moreWrap.innerHTML =
           `<button type="button" class="btn btn-secondary" data-tiktok-more>` +
-          `Show ${Math.min(hidden, MAX_TIKTOKS)} more</button>` +
+          `Show ${Math.min(hidden, TIKTOK_BATCH)} more</button>` +
           `<span class="tiktok-count">${MAX_TIKTOKS} of ${picks.length}</span>`;
         moreWrap.hidden = false;
       } else {
@@ -300,12 +305,12 @@
     const btn = e.target.closest && e.target.closest('[data-tiktok-more]');
     if (!btn) return;
     const still = [...document.querySelectorAll('[data-tiktok-extra][hidden]')];
-    still.slice(0, MAX_TIKTOKS).forEach((el) => { el.hidden = false; });
-    const left = still.length - MAX_TIKTOKS;
+    still.slice(0, TIKTOK_BATCH).forEach((el) => { el.hidden = false; });
+    const left = still.length - TIKTOK_BATCH;
     const count = document.querySelector('.tiktok-count');
     const total = document.querySelectorAll('.tiktok-card').length;
     if (left > 0) {
-      btn.textContent = `Show ${Math.min(left, MAX_TIKTOKS)} more`;
+      btn.textContent = `Show ${Math.min(left, TIKTOK_BATCH)} more`;
       if (count) count.textContent = `${total - left} of ${total}`;
     } else {
       if (count) count.remove();
