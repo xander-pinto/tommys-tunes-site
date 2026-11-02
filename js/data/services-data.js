@@ -49,7 +49,6 @@ window.SERVICES_DATA = [
   /* --- Four specialties (event types, not add-ons) --- */
   {
     slug: 'weddings',
-    crew: ['joe-cip', 'leo', 'richie', 'curtis', 'pat', 'robert'],
     pairsWith: ['phone-booth', 'mirror-booth', 'dance-floor', 'saxophonist', 'dancing-on-cloud', 'cold-sparklers'],
     category: 'Specialty',
     name: 'Weddings',
@@ -114,7 +113,7 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'other-events',
-    pairsWith: ['basic-lights', 'open-air-booth', 'dance-floor', 'zap-shots'],
+    pairsWith: ['basic-lights', 'mirror-booth', 'dance-floor', 'zap-shots'],
     category: 'Specialty',
     name: 'Other events',
     shortDesc: 'If you have a party, we\'ll do it. Forty years of every kind.',
