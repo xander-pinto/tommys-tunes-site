@@ -4801,3 +4801,12 @@ body.has-solid-nav .nav {
 
 .crew-more-list a:hover { color: var(--royal-blue); }
 .crew-more-list a span { color: var(--text-on-light-soft); font-size: var(--fs-xs); }
+
+/* Crew photos are headshots, so they get the portrait crop the person pages
+   already use: 4/5 with the frame biased upward, because a centred crop on a
+   standing shot lands on the chest and takes the top of the head off. The
+   pairs module keeps 4/3, which is right for a room or a piece of gear. */
+.related-grid[data-slot="crew"] .related-card-photo {
+  aspect-ratio: 4 / 5;
+  background-position: center 22%;
+}
