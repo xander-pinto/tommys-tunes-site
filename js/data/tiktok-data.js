@@ -274,4 +274,14 @@ window.TIKTOK_DATA = [
   { id: '7697398305357057293', caption: 'Joe Cip. on the mic for a slow one.', views: '633', people: ['joe-cip'], services: [] },
   { id: '7698099159483649294', caption: 'Shout, and it lands every time.', views: '1012', people: [], services: [], shelved: 'Xander passed on it' },
   { id: '7700345862802705677', caption: 'Another wedding, start to finish.', views: '965', people: [], services: [], shelved: 'Xander passed on it' },
+  /* --- Seventh pass 2026-11-02: five clips from Oct 27 to Nov 1. The captions
+     on the account now carry the venue and the MC, so these needed almost no
+     guessing; "MC Joe C" was the one ambiguity and Xander confirmed Joe Cip.
+     The Lego guestbook clip is a guest's idea rather than our work, so it is
+     shelved despite doing 6,291. --- */
+  { id: '7701495803122076941', caption: "The bride walked in and couldn't find her husband.", views: '26.7K', people: ['mike'], services: [] },
+  { id: '7702880360287292686', caption: 'Joe Cip. counts it down and the room lets go.', views: '1429', people: ['joe-cip'], services: [] },
+  { id: '7701840486775983373', caption: 'A full night at the Watermill, first entrance to last song.', views: '589', people: [], services: ['weddings'] },
+  { id: '7703316830697360654', caption: 'PJ on the mic, and the foam sticks turned it into a concert.', views: '498', people: ['pj'], services: [] },
+  { id: '7702255036939717902', caption: 'A wedding guestbook built out of Lego, one mini-fig per guest.', views: '6291', people: [], services: [], shelved: 'Xander passed on it' },
 ];
