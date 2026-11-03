@@ -970,6 +970,11 @@ const FORM_VARIANTS = {
        this replaced, so the nav keeps the spacing it was designed with. */
     ctaNav: 'Appointment',
     heading: "Let's make an appointment.",
+    /* The scheduler is the point of this variant, so it is not opt-in.
+       Someone who clicked "Let's Make An Appointment" has already told us
+       their intention; asking them to tick a box to confirm it is a step
+       that only loses people. */
+    appointmentAlwaysOn: true,
     /* Each entry says which control to find and how much to take with it.
        `field` lifts the whole .field wrapper, which is right for a label and
        its input. `check` takes only the one checkbox row, because
@@ -1006,6 +1011,27 @@ function applyFormVariant() {
       if (wrap) { wrap.remove(); } else { input.removeAttribute('required'); input.remove(); }
     });
   });
+
+  if (v.appointmentAlwaysOn) {
+    /* Three things, because the checkbox was doing three jobs: it revealed
+       the fields, it made the location required, and it was what told the
+       submission an appointment was wanted. Remove it and all three have to
+       be done here instead. */
+    document.querySelectorAll('.appt-invite-check').forEach((el) => el.remove());
+    document.querySelectorAll('[data-appointment-fields]').forEach((wrap) => {
+      wrap.hidden = false;
+      wrap.querySelectorAll('input[name="appointment_location"]').forEach((r) => { r.required = true; });
+    });
+    document.querySelectorAll('form[name="check-your-date"]').forEach((form) => {
+      if (!form.querySelector('[data-appointment-fields]')) return;
+      if (form.querySelector('[name="appointment_requested"]')) return;
+      const flag = document.createElement('input');
+      flag.type = 'hidden';
+      flag.name = 'appointment_requested';
+      flag.value = 'yes';
+      form.appendChild(flag);
+    });
+  }
 
   document.querySelectorAll('form[name="check-your-date"]').forEach((form) => {
     if (form.querySelector('[name="form_variant"]')) return;

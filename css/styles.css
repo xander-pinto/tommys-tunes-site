@@ -4925,3 +4925,14 @@ body.has-solid-nav .nav {
 }
 
 .bio-toggle:hover { border-color: var(--royal-blue); }
+
+/* The appointment block spaces its own children. The forms lay their fields
+   out with flex `gap` rather than margins, and this wrapper is a plain div,
+   so its children inherited no spacing at all. It never showed while the
+   block was hidden behind the opt-in checkbox; with the scheduler always
+   visible, "Pick a day and time" sat flush against the location radios. */
+[data-appointment-fields] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
