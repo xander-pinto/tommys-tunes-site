@@ -109,7 +109,6 @@ const services = {
     overview: [
       "Live piano sets a calm, classic tone in the background instead of pulling focus. It is the choice for the processional, a few standards over cocktails, or a soft underlay while people find their seats.",
       "We match the song list to the moment, so it never feels like filler. That goes for the ceremony, cocktail hour and dinner alike.",
-      "When the night moves on to dancing, your DJ takes it from there, and it all comes from one company.",
     ],
     questions: [
       ['When does a pianist play?', 'The ceremony, cocktail hour or dinner. It suits any part of the night where you want live music in the background.'],
@@ -227,7 +226,7 @@ const services = {
     overview: [
       "A three-piece live jazz combo for cocktail hour or a seated dinner is the kind of music that fills the room without taking it over.",
       "We build the trio around the sound you want. Sax, guitar and bass gives you a classic jazz feel. Piano, percussion and sax brings more energy. Piano, percussion and violin is softer and more romantic.",
-      "Tell us the vibe and we set the lineup to match. When the dancing starts, your DJ takes over, and it all comes from one company.",
+      "Tell us the vibe and we set the lineup to match.",
     ],
     questions: [
       ['What instruments are in the trio?', 'You choose the feel: sax, guitar and bass for classic jazz, piano, percussion and sax for more energy, or piano, percussion and violin for something softer.'],
