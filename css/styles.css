@@ -4936,3 +4936,55 @@ body.has-solid-nav .nav {
   flex-direction: column;
   gap: var(--sp-4);
 }
+
+/* --- Detail hero: a CTA and proof, not just a label --------------------
+   The homepage hero sells (headline, lead, two buttons, three stats). The
+   detail hero only labelled: a category, a name, one italic line and
+   nothing to click. That matters because 35% of impressions land on these
+   pages cold and never see the homepage, so this screen is the whole
+   first impression.
+
+   Same classes as the homepage stats so the two cannot drift apart
+   visually; only the alignment and the top margin change, because this
+   hero is bottom-aligned and left-aligned where the homepage is centred. */
+.detail-hero-actions {
+  margin-top: var(--sp-5);
+}
+
+.detail-hero-stats {
+  margin-top: var(--sp-6);
+  /* The homepage centres its stats with margin-inline:auto at 900px up,
+     which here pushed them 300px right of the headline they belong under. */
+  margin-inline: 0;
+  /* 680, not 520: three columns of 520 give each label ~160px and "Years on
+     Long Island" wrapped to two lines and collided with the row beneath. */
+  max-width: 680px;
+  padding-top: var(--sp-4);
+}
+
+.detail-hero-stats .hero-stat {
+  align-items: flex-start;
+}
+
+.detail-hero-stats .hero-stat-num {
+  font-size: var(--fs-h4);
+}
+
+/* The portrait-photo variant reserves the right-hand side for the panel,
+   so the stats sit in the remaining column rather than running under it. */
+.detail-hero--tall-photo .detail-hero-stats {
+  max-width: 520px;
+}
+
+@media (max-width: 599px) {
+  /* Three columns of stats under a wrapped headline is a squeeze on a
+     phone, and the button is the thing we actually want pressed. */
+  .detail-hero-stats {
+    gap: var(--sp-3);
+    margin-top: var(--sp-5);
+  }
+
+  .detail-hero-stats .hero-stat-label {
+    letter-spacing: 0.06em;
+  }
+}
