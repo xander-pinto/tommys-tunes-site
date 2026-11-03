@@ -138,6 +138,8 @@ window.SERVICES_DATA = [
   /* --- Live Music --- */
   {
     slug: 'saxophonist',
+    metaTitle: 'Wedding saxophonist on Long Island · Tommy\'s Tunes',
+    metaDescription: 'Live sax over the DJ for cocktail hour or the reception. The Long Island wedding favorite, booked as an add-on to any package. Tell us your date.',
     category: 'Live Music',
     name: 'Saxophonist',
     shortDesc: 'Cocktail hour or reception. The Long Island wedding favorite.',
@@ -163,6 +165,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'pianist',
+    metaTitle: 'Wedding pianist & keyboard player · Long Island',
+    metaDescription: 'Live piano for a Long Island ceremony, cocktail hour or dinner. Classic, unobtrusive, and matched to the room. Pairs with any DJ package we run.',
     category: 'Live Music',
     name: 'Pianist or keyboard',
     shortDesc: 'Ceremony, cocktail hour, dinner.',
@@ -175,6 +179,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'jazz-guitarist',
+    metaTitle: 'Jazz guitarist for weddings · Long Island',
+    metaDescription: 'Instrumental jazz guitar for cocktail hour, when you want a calmer room. A single player who fills the space without taking it over. Check your date.',
     category: 'Live Music',
     name: 'Jazz guitarist',
     shortDesc: 'Instrumental. Sets a calmer tone for cocktail hour.',
@@ -187,6 +193,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'guitarist-vocalist',
+    metaTitle: 'Guitarist and vocalist for weddings · Long Island',
+    metaDescription: 'One live player who sings and plays, for a Long Island ceremony or dinner. The smallest live act that still feels like live music. Add to any package.',
     category: 'Live Music',
     name: 'Guitarist / vocalist',
     shortDesc: 'One-piece live music for ceremony or dinner.',
@@ -199,6 +207,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'vocalist',
+    metaTitle: 'Live wedding vocalist on Long Island · Tommy\'s Tunes',
+    metaDescription: 'A live singer for cocktail hour or the reception, layered over our DJ. Pick the sound and we match the voice to the room. Booked as an add-on.',
     category: 'Live Music',
     name: 'Vocalist',
     shortDesc: 'Live vocals for cocktail hour or reception.',
@@ -210,6 +220,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'steel-drum',
+    metaTitle: 'Steel drum player & reggae trio · Long Island',
+    metaDescription: 'A solo steel drum player or the full three-piece, built for an outdoor cocktail hour. A Long Island summer favorite. Pairs with any DJ package.',
     category: 'Live Music',
     name: 'Steel drum (1-pc or 3-pc)',
     shortDesc: 'Solo player or full reggae trio. Outdoor cocktail favorite.',
@@ -223,6 +235,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'percussionist',
+    metaTitle: 'Live percussionist for wedding receptions · Long Island',
+    metaDescription: 'Live drums layered over the DJ for a high-energy Long Island reception. The add-on that turns a good dance floor into a loud one. Check your date.',
     category: 'Live Music',
     name: 'Percussionist',
     shortDesc: 'Live drums layered over the DJ, best for high-energy receptions.',
@@ -244,6 +258,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'electric-violinist',
+    metaTitle: 'Electric violinist for weddings · Long Island',
+    metaDescription: 'Four hours of electric violin over the DJ set. Built for receptions that want a show, not background music. Added to any Tommy\'s Tunes package.',
     category: 'Live Music',
     name: 'Electric violinist',
     shortDesc: 'High-energy reception, four hours.',
@@ -258,6 +274,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'string-quartet',
+    metaTitle: 'String quartet, trio or duo · Long Island weddings',
+    metaDescription: 'Classical strings for a Long Island ceremony or a formal cocktail hour. Book two, three or four players depending on the room. Tell us your date.',
     category: 'Live Music',
     name: 'String duo, trio, or quartet',
     shortDesc: 'Classical strings for ceremony or formal cocktail hour.',
@@ -295,6 +313,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'ceremony-dj',
+    metaTitle: 'Ceremony and cocktail hour DJ · Long Island',
+    metaDescription: 'A second DJ and sound system for a separate ceremony or cocktail space, so the music never stops while the main room is being turned over for dinner.',
     category: 'Live Music',
     name: 'Ceremony or cocktail-hour DJ',
     shortDesc: 'A second DJ for a separate ceremony or cocktail space.',
@@ -305,6 +325,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'afterparty-dj',
+    metaTitle: 'Afterparty DJ on Long Island · Tommy\'s Tunes',
+    metaDescription: 'A separate DJ for the afterparty room or a second venue, so the night keeps going after the reception ends. Added to any Long Island booking.',
     category: 'Live Music',
     name: 'Afterparty DJ',
     shortDesc: 'A DJ for a separate afterparty room or venue.',
@@ -315,6 +337,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'party-dancer',
+    metaTitle: 'Professional party dancers for hire · Long Island',
+    metaDescription: 'A professional dancer working your floor for four hours. The add-on for guaranteed dance-floor energy without leaning on the bar to create it.',
     category: 'Live Music',
     name: 'Professional party dancer',
     shortDesc: 'Energy boost on the dance floor, four hours.',
@@ -329,6 +353,8 @@ window.SERVICES_DATA = [
   /* --- Photo Booths --- */
   {
     slug: 'mirror-booth',
+    metaTitle: 'Mirror photo booth rental · Long Island',
+    metaDescription: 'Guests print, text or email their photos on the spot. Choose from 28 backdrops. The general-purpose booth for Long Island weddings and parties.',
     category: 'Photo Booths',
     name: 'Mirror booth',
     shortDesc: 'Guests print, text, or email their photos on the spot.',
@@ -354,6 +380,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'glam-booth',
+    metaTitle: 'Glam photo booth rental · Long Island',
+    metaDescription: 'High-end black-and-white editorial portraits, the magazine-style booth. For Long Island weddings and Sweet 16s that want the photos to look styled.',
     category: 'Photo Booths',
     name: 'Glam booth',
     shortDesc: 'High-end black-and-white editorial photos. Magazine-style.',
@@ -377,6 +405,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'open-air-booth',
+    metaTitle: 'Open-air photo booth rental · Long Island',
+    metaDescription: 'An 8x8 backdrop with room for the whole table to squeeze in. The booth for big group shots at Long Island weddings and corporate events. 28 backdrops.',
     category: 'Photo Booths',
     name: 'Open-air booth',
     shortDesc: 'An 8x8 backdrop built for the whole table to squeeze into.',
@@ -403,6 +433,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: '360-booth',
+    metaTitle: '360 photo booth rental · Long Island',
+    metaDescription: 'Thirty seconds of spinning video sent straight to your guests\' phones. The booth people queue for at Long Island Sweet 16s, mitzvahs and weddings.',
     category: 'Photo Booths',
     name: '360 booth',
     shortDesc: 'Thirty seconds of video, sent directly to your phone.',
@@ -415,6 +447,8 @@ window.SERVICES_DATA = [
   /* --- Audio Guestbook / Phone Booth --- */
   {
     slug: 'audio-guestbook',
+    metaTitle: 'Audio guest book phone rental · Long Island',
+    metaDescription: 'A vintage phone receiver your guests pick up to leave a message. The guest book you can actually listen to afterwards. Add it to any package.',
     category: 'Audio & Phone Booths',
     name: 'Audio guest book (phone)',
     shortDesc: 'A vintage phone receiver guests pick up to leave a message.',
@@ -428,6 +462,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'phone-booth',
+    metaTitle: 'White phone booth with audio messages · Long Island',
+    metaDescription: 'A white phone booth with a custom wedding-newspaper display, where guests step in and record a message for you. For Long Island weddings and parties.',
     category: 'Audio & Phone Booths',
     name: 'White phone booth',
     shortDesc: 'Custom wedding-newspaper display + audio messages.',
@@ -443,6 +479,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'video-phone-booth',
+    metaTitle: 'Video phone booth rental · Long Island weddings',
+    metaDescription: 'A white phone booth with a custom newspaper display that records video messages, not just audio, so you can see and hear your guests afterwards.',
     category: 'Audio & Phone Booths',
     name: 'White video phone booth',
     shortDesc: 'Custom wedding-newspaper display with video messages.',
@@ -455,6 +493,8 @@ window.SERVICES_DATA = [
   /* --- Lighting --- */
   {
     slug: 'basic-lights',
+    metaTitle: 'Basic uplighting and dance floor lights · Long Island',
+    metaDescription: 'Two lights on stands giving clean, even coverage of the floor. The simplest lighting we run, included in our entry package or added to any other room.',
     category: 'Intelligent Lighting',
     name: 'Basic lights',
     shortDesc: 'Two lights on stands. Clean, even coverage.',
@@ -465,6 +505,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'illuminated-booth',
+    metaTitle: 'Illuminated DJ booth · Long Island weddings',
+    metaDescription: 'Five frontboard options, from a clean black setup to a fully lit white booth. The DJ booth is in every photo of your dance floor, so it should look right.',
     category: 'Intelligent Lighting',
     name: 'Illuminated DJ booth',
     shortDesc: 'Five frontboard options, from a clean black setup to a fully lit white booth.',
@@ -478,6 +520,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'mac-towers',
+    metaTitle: 'Martin Mac 250 moving light towers · Long Island',
+    metaDescription: 'Two or four moving heads on illuminated truss towers. Intelligent lighting that moves with the music, for Long Island weddings, Sweet 16s and mitzvahs.',
     category: 'Intelligent Lighting',
     name: 'Martin Mac 250 towers',
     shortDesc: 'Two or four moving lights on illuminated truss towers.',
@@ -488,6 +532,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'uplighting',
+    metaTitle: 'Wedding uplighting on Long Island · Tommy\'s Tunes',
+    metaDescription: 'Color-changing wall lights that wash the room in your palette. The cheapest change that makes the biggest difference to how a room photographs.',
     category: 'Intelligent Lighting',
     name: 'Uplighting',
     shortDesc: 'Color-changing wall lights that wash the room in your palette.',
@@ -498,6 +544,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'dance-floor',
+    metaTitle: 'Illuminated LED dance floor rental · Long Island',
+    metaDescription: 'LED panels that pulse with the music under your guests\' feet. The centerpiece of the room at Long Island weddings and Sweet 16s. Check your date.',
     category: 'Intelligent Lighting',
     name: 'Illuminated dance floor',
     shortDesc: 'LED panels that pulse to the music.',
@@ -511,6 +559,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'dance-stages',
+    metaTitle: 'Illuminated dance stages · Long Island weddings',
+    metaDescription: 'Two-by-two lit platforms that give the first dance a focal point, or raise the party above the floor. Added to any Tommy\'s Tunes Long Island package.',
     category: 'Intelligent Lighting',
     name: 'Illuminated dance stages',
     shortDesc: '2-by-2 lit platforms, great for first-dance focal points.',
@@ -525,6 +575,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'monogram',
+    metaTitle: 'Custom monogram and name in lights · Long Island',
+    metaDescription: 'Your initials, new last name or corporate logo projected on the wall or the floor. A custom gobo for Long Island weddings and company events.',
     category: 'Intelligent Lighting',
     name: 'Custom monogram or name in lights',
     shortDesc: 'Your initials or corporate logo projected on the wall or floor.',
@@ -542,6 +594,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'love-letters',
+    metaTitle: 'LOVE marquee letters rental · Long Island',
+    metaDescription: 'Forty-five inch illuminated LOVE letters that work as a backdrop all night and photograph well from across the room. For Long Island weddings.',
     category: 'Intelligent Lighting',
     name: 'LOVE marquee letters',
     shortDesc: '45-inch illuminated "LOVE" letters. A natural backdrop all night.',
@@ -557,6 +611,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'mr-mrs-letters',
+    metaTitle: 'MR & MRS marquee letters rental · Long Island',
+    metaDescription: 'Forty-five inch illuminated MR & MRS letters for the dais or the dance floor. The backdrop every guest photographs at a Long Island wedding.',
     category: 'Intelligent Lighting',
     name: 'MR & MRS marquee letters',
     shortDesc: '45-inch illuminated "MR & MRS" letters for the dais or the dance floor.',
@@ -571,6 +627,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: '16-letters',
+    metaTitle: '16 marquee letters for Sweet 16s · Long Island',
+    metaDescription: 'Forty-five inch illuminated 16 letters for a Long Island Sweet 16 or Quinceanera. The photo backdrop the birthday girl\'s friends line up for.',
     category: 'Intelligent Lighting',
     name: '16 marquee letters',
     shortDesc: '45-inch illuminated "16" for Sweet 16s and Quinceañeras.',
@@ -589,6 +647,8 @@ window.SERVICES_DATA = [
   /* --- Photo, Video & Effects --- */
   {
     slug: 'zap-shots',
+    metaTitle: 'Digital Zap Shots photographer and screens · Long Island',
+    metaDescription: 'A pro photographer working the room with two LCD screens showing the photos live as they happen, so your guests watch themselves all night long.',
     category: 'Photo, Video & Effects',
     name: 'Digital Zap Shots',
     shortDesc: 'Two LCD TVs, a pro photographer, and live photos on screen.',
@@ -599,6 +659,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'zap-photographer',
+    metaTitle: 'Event photographer for weddings · Long Island',
+    metaDescription: 'A professional photographer working your room all night, without the on-screen display. Added to any Tommy\'s Tunes Long Island wedding or event booking.',
     category: 'Photo, Video & Effects',
     name: 'Zap Shot photographer',
     shortDesc: 'Pro photographer working the room, without the screens.',
@@ -609,6 +671,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'photo-montage',
+    metaTitle: 'Custom wedding photo montage · Long Island',
+    metaDescription: 'Fifty of your photos cut into a montage and played on two LCD screens during the reception. Send us the pictures and we build it before the day.',
     category: 'Photo, Video & Effects',
     name: 'Custom photo montage',
     shortDesc: '50 photos cut into a montage on two LCD TVs.',
@@ -619,6 +683,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'video-package',
+    metaTitle: 'Wedding videography packages · Long Island',
+    metaDescription: 'Four hours, six hours, or church plus reception. Three wedding videography packages for Long Island, run by the same team that runs your music.',
     category: 'Photo, Video & Effects',
     name: 'Take I / II / III video packages',
     shortDesc: 'Wedding videography. Four hours, six hours, or church-plus-reception.',
@@ -629,6 +695,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'dancing-on-cloud',
+    metaTitle: 'Dancing on a cloud for the first dance · Long Island',
+    metaDescription: 'Low-lying dry-ice fog that makes the first dance look like it is happening on a cloud. The most photographed thirty seconds of a Long Island wedding.',
     category: 'Photo, Video & Effects',
     name: 'Dancing on a cloud',
     shortDesc: 'Low-lying dry-ice fog for the first dance.',
@@ -645,6 +713,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'co2-guns',
+    metaTitle: 'CO2 guns for weddings and Sweet 16s · Long Island',
+    metaDescription: 'A one or two gun setup firing on the beat. Pure energy for the peak of a Long Island reception, Sweet 16 or mitzvah. Added to any of our packages.',
     category: 'Photo, Video & Effects',
     name: 'CO2 guns',
     shortDesc: 'One- or two-gun setup. Pure energy moments.',
@@ -657,6 +727,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'cold-sparklers',
+    metaTitle: 'Indoor cold sparklers · Long Island weddings',
+    metaDescription: 'Indoor-safe sparkler fountains run by a certified technician, for the entrance, the first dance or the last song. Venue-approved across Long Island.',
     category: 'Photo, Video & Effects',
     name: 'Cold sparklers',
     shortDesc: 'Indoor-safe sparkler effects with a certified technician.',
@@ -676,6 +748,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'flower-walls',
+    metaTitle: 'Flower wall backdrop rental · Long Island',
+    metaDescription: 'A full wall of flowers that works as a photo backdrop for the whole night. For Long Island weddings, bridal showers, Sweet 16s and corporate events.',
     category: 'Photo, Video & Effects',
     name: 'Flower walls',
     shortDesc: 'Photo-backdrop wall of flowers.',
@@ -688,6 +762,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'lawn-games',
+    metaTitle: 'Lawn games for outdoor events · Long Island',
+    metaDescription: 'Games for an outdoor cocktail hour or a company picnic, so guests have something to do before the room opens. Added to any Long Island booking.',
     category: 'Photo, Video & Effects',
     name: 'Lawn games',
     shortDesc: 'For outdoor cocktails and corporate events.',
@@ -698,6 +774,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'extra-speakers',
+    metaTitle: 'Extra speaker setups and ceremony sound · Long Island',
+    metaDescription: 'Tripod-mounted speakers for a separate ceremony space or a room too big for one system. Nobody should have to strain to hear your vows or the toasts.',
     category: 'Photo, Video & Effects',
     name: 'Extra speaker setups',
     shortDesc: 'Tripod-mounted speakers for ceremonies or larger rooms.',
@@ -708,6 +786,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'additional-tvs',
+    metaTitle: 'Additional LED TV screens for events · Long Island',
+    metaDescription: 'Sixty, 65 or 75 inch screens for montages, logos or live photos. For Long Island weddings and corporate events that need the room to see something.',
     category: 'Photo, Video & Effects',
     name: 'Additional LED TVs',
     shortDesc: '60", 65", or 75" screens for visual displays.',
@@ -720,6 +800,8 @@ window.SERVICES_DATA = [
   },
   {
     slug: 'furniture',
+    metaTitle: 'Event furniture and lounge rental · Long Island',
+    metaDescription: 'Lounge seating, cocktail tables and LED-lit pieces to shape the room. For Long Island weddings and corporate events that need somewhere to sit.',
     category: 'Photo, Video & Effects',
     name: 'Event furniture',
     shortDesc: 'Lounge seating, cocktail tables, and LED-lit pieces to shape your space.',

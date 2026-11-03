@@ -170,7 +170,9 @@ function genServices(tpl, data) {
 
 function genPackages(tpl, data) {
   data.forEach((r) => {
-    const title = `${r.name} · Tommy's Tunes`;
+    /* Was hardcoded to the name, which silently threw away any metaTitle on a
+       package record. genServices has always honoured it; this did not. */
+    const title = r.metaTitle || `${r.name} · Tommy's Tunes`;
     const desc = r.metaDescription || r.tagline || "A specific Tommy's Tunes package tier.";
     const url = SITE + '/package/' + r.slug + '/';
     let html = setMeta(tpl, { title, description: desc, url });

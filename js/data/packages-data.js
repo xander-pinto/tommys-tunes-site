@@ -7,6 +7,8 @@
 window.PACKAGES_DATA = [
   {
     slug: 'basic',
+    metaTitle: 'Basic wedding DJ package · Long Island',
+    metaDescription: 'One named DJ and MC running your whole night, for intimate Long Island weddings and gatherings of 75 or fewer. The straightforward version. Check your date.',
     pairsWith: ['audio-guestbook', 'illuminated-booth', 'mirror-booth', 'pianist', 'mac-towers', 'uplighting'],
     name: 'Basic Entertainment',
     tagline: 'For intimate weddings and small gatherings of 75 or fewer.',
@@ -23,6 +25,8 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'deluxe',
+    metaTitle: 'Deluxe wedding DJ and MC package · Long Island',
+    metaDescription: 'The Long Island wedding standard: a DJ on the music and a separate MC working the room, so neither job gets half the attention. Tell us your date.',
     pairsWith: ['illuminated-booth', 'mirror-booth', 'pianist', 'phone-booth', 'uplighting', 'zap-shots'],
     name: 'Deluxe Entertainment',
     tagline: 'The Long Island wedding standard. DJ on the music, MC working the room.',
@@ -40,6 +44,8 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'super-deluxe',
+    metaTitle: 'Super Deluxe wedding package · Long Island',
+    metaDescription: 'The same team from ceremony through last dance, with the illuminated DJ booth. Our most-booked Long Island wedding package. Check your date.',
     pairsWith: ['mac-towers', 'mirror-booth', 'saxophonist', 'uplighting', 'phone-booth', 'dance-floor'],
     name: 'Super Deluxe Entertainment',
     tagline: 'Same team from ceremony through last dance, with the illuminated DJ booth.',
@@ -56,6 +62,8 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'premiere',
+    metaTitle: 'Premiere wedding package with lighting · Long Island',
+    metaDescription: 'For when you want the room to look as good as it sounds. Intelligent lighting and illuminated dance stages on top of the full DJ and MC team.',
     pairsWith: ['mac-towers', 'mirror-booth', 'saxophonist', 'uplighting', 'phone-booth', 'dance-stages'],
     name: 'Premiere Entertainment',
     tagline: 'When you want the room to look as good as it sounds.',
@@ -73,6 +81,8 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'supreme',
+    metaTitle: 'Supreme wedding package with photography · Long Island',
+    metaDescription: 'Adds live event photography on screens through the night, so guests see themselves as it happens. The full Long Island production with pictures.',
     pairsWith: ['dancing-on-cloud', 'mirror-booth', 'saxophonist', 'uplighting', 'phone-booth', 'monogram'],
     name: 'Supreme Entertainment',
     tagline: 'Adds live event photography on screens throughout the night.',
@@ -98,6 +108,8 @@ window.PACKAGES_DATA = [
   },
   {
     slug: 'grand',
+    metaTitle: 'Grand wedding package with live music · Long Island',
+    metaDescription: 'Our full production plus a live saxophonist or percussionist on the reception. The biggest package we run on Long Island. Tell us your date.',
     pairsWith: ['dancing-on-cloud', 'mirror-booth', 'cold-sparklers', 'co2-guns', 'phone-booth', 'monogram'],
     tag: 'Ultimate',
     name: 'Grand Entertainment',
