@@ -57,7 +57,7 @@ window.SERVICES_DATA = [
     metaTitle: 'Wedding DJ on Long Island · Tommy\'s Tunes',
     metaDescription: 'Family-owned Long Island wedding DJ and MC since 1985. Packed dance floors, locked timelines, no upsell. Tell us your date and we\'ll send options that fit your budget.',
     photo: '/assets/images/services/events/weddings/weddings_pf.jpg',
-    longBody: '<p>We\'ve been a Long Island family business since 1985, and weddings have always been our specialty. By the time your day arrives, the planning is done, the timeline is locked, and the team knows exactly what you want. Tommy\'s sons run the weekend operation, and the team underneath them mixes 20+ year veterans with newer talent learning the trade. The team is growing. Whether your venue is Watermill or Irish Coffee Pub, the same family standard shows up. The DJ and MC who run your night will have your timeline memorized, your must-plays loaded, your do-not-plays clear, and the introduction your shy husband actually wants already rehearsed.</p><p>The planning lead-up is real, not a formality. You sit down with us at the Selden showroom or the Melville office, whichever\'s closer. Zoom works too if neither fits, though we prefer in person. We walk through every moment together: the ceremony music, cocktail hour, grand entrance, parent dances, the must-plays, the do-not-plays. The 2026 Wedding Protocol, the Ceremony Sheet, the Music Selections library, the Photo Montage and Party Games forms are all on our forms page, designed so nothing gets missed. You can fill them out together with us or take them home and send them back. We do as many meetings as you need. Some couples want one efficient session; others want to refine until the day before. Both are normal.</p><p>When the night actually starts, the planning shows. The most common refrain in our reviews, by a wide margin, is the dance floor staying full. &ldquo;Never empty.&rdquo; &ldquo;Packed all night.&rdquo; &ldquo;Everyone on the floor including the elderly and the husbands who never dance.&rdquo; That\'s not luck. It\'s the DJ reading the room in real time and the MC keeping the energy steady between formal moments. We play music for your guests, not a generic wedding playlist. Lisa from December 2024 put it best: &ldquo;I was so back and forth about the sax player but DO IT. Everyone loved it.&rdquo;</p><p>What couples tell us after the wedding, more than anything else, is that they didn\'t expect us to actually listen. Lisa Marie in 2025 wrote that her very shy husband didn\'t want a regular grand entrance, and the team simply respected that, no pushback, no upsell. Stephanie in early 2026 wrote that between John as DJ, PJ as MC, and Matt and Zach on the photobooth, every part of the night was covered by a real person who cared. Katie\'s review from late 2025 captures it in one line: Anderson &ldquo;really nailed exactly the vibe we wanted.&rdquo; The &ldquo;no pressure to upgrade&rdquo; line shows up across multiple reviews. Couples come for a DJ and stay because it doesn\'t feel transactional.</p><p>Forty years on Long Island means we know your venue. Every active Recommended Vendor partnership we have is on our venues page: Crest Hollow, Flowerfield, Fox Hollow, Sunken Meadow Pavilion, Watermill, Land\'s End, Lombardi\'s On The Bay, Villa Lombardis, Danford\'s, Hilton Garden Inn, Irish Coffee Pub, Port Jeff Country Club, Brecknock Hall. Beyond those, we\'ve worked just about every room from the North Shore down to the East End. We know the load-in doors, the maître d\'s, the rooms where the dance floor reads small until the sax player hits cocktail hour. If your venue isn\'t on the page, ask. Odds are we\'ve been there.</p><p>Tell us your date. We\'ll send back options that fit your budget, no upsell, no pressure. The conversation starts with a name and a number and goes wherever you want it to go.</p>',
+    longBody: '<p>We\'ve been a Long Island family business since 1985, and weddings have always been our specialty. By the time your day arrives, the planning is done, the timeline is locked, and the team knows exactly what you want. Tommy\'s sons run the weekend operation, and the team underneath them mixes 20+ year veterans with newer talent learning the trade. The team is growing. Whether your venue is Watermill or Irish Coffee Pub, the same family standard shows up. The DJ and MC who run your night will have your timeline memorized, your must-plays loaded, your do-not-plays clear, and the introduction your shy husband actually wants already rehearsed.</p><p>The planning lead-up is real, not a formality. You sit down with us at the Selden showroom or the Melville office, whichever\'s closer. Zoom works too if neither fits, though we prefer in person. We walk through every moment together: the ceremony music, cocktail hour, grand entrance, parent dances, the must-plays, the do-not-plays. The 2026 Wedding Protocol, the Ceremony Sheet, the Music Selections library, the Photo Montage and Party Games forms are all on our forms page, designed so nothing gets missed. You can fill them out together with us or take them home and send them back. We do as many meetings as you need. Some couples want one efficient session; others want to refine until the day before. Both are normal.</p><p>When the night actually starts, the planning shows. The most common refrain in our reviews, by a wide margin, is the dance floor staying full. &ldquo;Never empty.&rdquo; &ldquo;Packed all night.&rdquo; &ldquo;Everyone on the floor including the elderly and the husbands who never dance.&rdquo; That\'s not luck. It\'s the DJ reading the room in real time and the MC keeping the energy steady between formal moments. We play music for your guests, not a generic wedding playlist. Lisa Marie from December 2025 put it best: &ldquo;I was so back and forth about the sax player but DO IT!!! Everyone loved it.&rdquo;</p><p>What couples tell us after the wedding, more than anything else, is that they didn\'t expect us to actually listen. Lisa Marie in 2025 wrote that her very shy husband didn\'t want a regular grand entrance, and the team simply respected that, no pushback, no upsell. Stephanie in early 2026 wrote that between John as DJ, PJ as MC, and Matt and Zach on the photobooth, every part of the night was covered by a real person who cared. Katie\'s review from late 2025 captures it in one line: Anderson &ldquo;really nailed exactly the vibe we wanted.&rdquo; The &ldquo;no pressure to upgrade&rdquo; line shows up across multiple reviews. Couples come for a DJ and stay because it doesn\'t feel transactional.</p><p>Forty years on Long Island means we know your venue. Every active Recommended Vendor partnership we have is on our venues page: Crest Hollow, Flowerfield, Fox Hollow, Sunken Meadow Pavilion, Watermill, Land\'s End, Lombardi\'s On The Bay, Villa Lombardis, Danford\'s, Hilton Garden Inn, Irish Coffee Pub, Port Jeff Country Club, Brecknock Hall. Beyond those, we\'ve worked just about every room from the North Shore down to the East End. We know the load-in doors, the maître d\'s, the rooms where the dance floor reads small until the sax player hits cocktail hour. If your venue isn\'t on the page, ask. Odds are we\'ve been there.</p><p>Tell us your date. We\'ll send back options that fit your budget, no upsell, no pressure. The conversation starts with a name and a number and goes wherever you want it to go.</p>',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/Dvq15l_PFgk', caption: 'A Tommy\'s Tunes wedding, start to finish.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'A full wedding demo, filmed at Sunken Meadow.' },
@@ -301,7 +301,7 @@ window.SERVICES_DATA = [
     metaTitle: 'Live jazz trio on Long Island · Tommy\'s Tunes',
     metaDescription: 'Live jazz trio for cocktail hour and dinner at Long Island weddings and events. We build the lineup around the sound you want, from classic to romantic.',
     photo: '/assets/images/services/live-music/jazz-trio/jazz_trio_pf.jpg',
-    longBody: '<p>A three-piece live combo for cocktail hour or a seated dinner. The thing a trio does that a bigger band can\'t is fill a room without taking it over, so people can still hear each other across a table while the music works underneath.</p><p>We build the lineup around the sound you want instead of sending the same three players to every job. Sax, guitar and bass is the classic version, warm and easy, and it\'s what most couples picture when they say jazz trio. Trade the bass for piano and percussion and you get noticeably more drive, which is the right call when cocktail hour is its own party rather than the wait before dinner. Piano, percussion and violin goes the other direction, softer and more romantic, and it\'s what we usually suggest for an outdoor cocktail hour or a tented reception where there\'s nothing for the sound to bounce off.</p><p>Three pieces isn\'t always the answer. A jazz duo carries a small room or a shorter cocktail hour without crowding it, and we\'ve put a quartet in a ballroom where a trio would have disappeared. If you aren\'t sure, tell us the room and the headcount and we\'ll tell you honestly which one you need. We\'d rather send two players who fit than three who don\'t.</p><p>Here\'s the part that\'s hard to get when you book a trio on its own: the handoff. Live music has to end and the DJ has to start, and that transition is where a cocktail hour either flows or stalls. Our musicians and our DJs work for the same company, run off the same timeline, and share the same sound system. No second contract, no second point of contact, and nobody standing around at 6:40 wondering whose cue it is.</p><p>Repertoire is standards by default, the Sinatra and Ella end of it, with room to go wherever you want. If there\'s a song that matters to you, send it over and we\'ll work it out for whichever lineup you\'ve picked.</p><p>We\'ve played cocktail hours at country clubs on the North Shore, ballrooms across Suffolk, and backyards with a tent and a generator. The lineup changes with the room. Tell us the venue and the hour you want covered, and we\'ll put the right three people in it.</p>',
+    longBody: 'A three-piece live jazz combo for cocktail hour or a seated dinner, the kind of music that fills the room without taking it over. We build the trio around the sound you want: sax, guitar, and bass for a classic jazz feel, piano, percussion, and sax when you want more energy, or piano, percussion, and violin for something softer and more romantic. Tell us the vibe and we set the lineup to match.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/M-TbIs-KV4I', caption: 'The jazz trio, live.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/SpwfnduiWsA', caption: 'Sax, guitar, and bass through a full set.' },
@@ -434,7 +434,7 @@ window.SERVICES_DATA = [
   {
     slug: '360-booth',
     metaTitle: '360 photo booth rental · Long Island',
-    metaDescription: 'Thirty seconds of spinning video sent straight to your guests\' phones. The booth people queue for at Long Island Sweet 16s, mitzvahs and weddings.',
+    metaDescription: 'Thirty seconds of spinning video sent straight to your guests\' phones. One of our most-requested add-ons for Long Island weddings and parties.',
     category: 'Photo Booths',
     name: '360 booth',
     shortDesc: 'Thirty seconds of video, sent directly to your phone.',
@@ -493,8 +493,8 @@ window.SERVICES_DATA = [
   /* --- Lighting --- */
   {
     slug: 'basic-lights',
-    metaTitle: 'Basic uplighting and dance floor lights · Long Island',
-    metaDescription: 'Two lights on stands giving clean, even coverage of the floor. The simplest lighting we run, included in our entry package or added to any other room.',
+    metaTitle: 'Basic dance floor lights · Long Island',
+    metaDescription: 'Two lights on stands giving clean, even coverage of the floor. The simplest lighting we run, for a polished Long Island room.',
     category: 'Intelligent Lighting',
     name: 'Basic lights',
     shortDesc: 'Two lights on stands. Clean, even coverage.',
@@ -533,7 +533,7 @@ window.SERVICES_DATA = [
   {
     slug: 'uplighting',
     metaTitle: 'Wedding uplighting on Long Island · Tommy\'s Tunes',
-    metaDescription: 'Color-changing wall lights that wash the room in your palette. The cheapest change that makes the biggest difference to how a room photographs.',
+    metaDescription: 'Color-changing wall lights that wash the room in your palette. One of the highest-impact visual upgrades for any ballroom, and it shows in photos.',
     category: 'Intelligent Lighting',
     name: 'Uplighting',
     shortDesc: 'Color-changing wall lights that wash the room in your palette.',
@@ -612,7 +612,7 @@ window.SERVICES_DATA = [
   {
     slug: 'mr-mrs-letters',
     metaTitle: 'MR & MRS marquee letters rental · Long Island',
-    metaDescription: 'Forty-five inch illuminated MR & MRS letters for the dais or the dance floor. The backdrop every guest photographs at a Long Island wedding.',
+    metaDescription: 'Forty-five inch illuminated MR & MRS letters for the dais or the dance floor. A built-in photo backdrop for your Long Island wedding.',
     category: 'Intelligent Lighting',
     name: 'MR & MRS marquee letters',
     shortDesc: '45-inch illuminated "MR & MRS" letters for the dais or the dance floor.',
@@ -628,7 +628,7 @@ window.SERVICES_DATA = [
   {
     slug: '16-letters',
     metaTitle: '16 marquee letters for Sweet 16s · Long Island',
-    metaDescription: 'Forty-five inch illuminated 16 letters for a Long Island Sweet 16 or Quinceanera. The photo backdrop the birthday girl\'s friends line up for.',
+    metaDescription: 'Forty-five inch illuminated 16 letters for a Long Island Sweet 16 or Quinceanera. A bright, photo-friendly centerpiece that needs no extra staging.',
     category: 'Intelligent Lighting',
     name: '16 marquee letters',
     shortDesc: '45-inch illuminated "16" for Sweet 16s and Quinceañeras.',
@@ -696,7 +696,7 @@ window.SERVICES_DATA = [
   {
     slug: 'dancing-on-cloud',
     metaTitle: 'Dancing on a cloud for the first dance · Long Island',
-    metaDescription: 'Low-lying dry-ice fog that makes the first dance look like it is happening on a cloud. The most photographed thirty seconds of a Long Island wedding.',
+    metaDescription: 'Low-lying dry-ice fog that makes the first dance look like it is happening on a cloud. It sits at floor level and photographs extremely well.',
     category: 'Photo, Video & Effects',
     name: 'Dancing on a cloud',
     shortDesc: 'Low-lying dry-ice fog for the first dance.',
@@ -728,7 +728,7 @@ window.SERVICES_DATA = [
   {
     slug: 'cold-sparklers',
     metaTitle: 'Indoor cold sparklers · Long Island weddings',
-    metaDescription: 'Indoor-safe sparkler fountains run by a certified technician, for the entrance, the first dance or the last song. Venue-approved across Long Island.',
+    metaDescription: 'Indoor-safe sparkler fountains run by a certified technician, for the entrance, the first dance or the last song. Check with your venue first.',
     category: 'Photo, Video & Effects',
     name: 'Cold sparklers',
     shortDesc: 'Indoor-safe sparkler effects with a certified technician.',

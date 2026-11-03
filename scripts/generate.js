@@ -129,6 +129,71 @@ function servicePathFor(slug) {
   return EVENT_URLS[slug] ? EVENT_URLS[slug] + '/' : 'service/' + slug + '/';
 }
 
+/* ---------------- landing page format ---------------- */
+
+let LANDING = { services: {}, packages: {}, people: {} };
+let REVIEWS = [];
+const landingWarnings = [];
+
+/* A quote must be a verbatim piece of a real review. The attribution is built
+   from that review, never typed by hand. If it is not found the card is left
+   out and the build reports it, rather than showing an unverifiable quote. */
+function lpReview(review, label) {
+  if (!review) return '';
+  const q = review.quote.toLowerCase();
+  const found = REVIEWS.find((r) => (r.review_text || '').toLowerCase().includes(q));
+  if (!found) { landingWarnings.push(`${label}: quote not found in reviews`); return ''; }
+  const shown = review.quote.charAt(0).toUpperCase() + review.quote.slice(1);
+  const who = [shortName(found.name), review.note || formatEvent(found.event_type).toLowerCase(), formatDate(found.date)].filter(Boolean).join(', ');
+  return `<figure class="lp-review">
+          ${review.general ? '<p class="lp-review-label">About Tommy&#39;s Tunes</p>' : ''}<div class="lp-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>${escapeHTML(shown)}</blockquote>
+          <figcaption>${escapeHTML(who)} &middot; ${escapeHTML(found.source)}</figcaption>
+          <p class="lp-trust">40+ years on Long Island &middot; ${REVIEWS.length} reviews</p>
+        </figure>`;
+}
+
+function lpQuestions(list) {
+  if (!list || !list.length) return '';
+  let costDone = false;
+  const items = list.map(([q, a]) => {
+    const isCost = !costDone && /how much/i.test(q);
+    if (isCost) costDone = true;
+    return `<details class="lp-q"${isCost ? ' id="cost"' : ''}><summary>${q}</summary><p>${a}</p></details>`;
+  }).join('\n          ');
+  return `<section class="section section-tinted" data-toc="Questions">
+      <div class="container">
+        <div class="section-head">
+          <span class="overline">Good to know</span>
+          <h2>Your questions, <em>answered.</em></h2>
+        </div>
+        <div class="lp-qs">
+          ${items}
+        </div>
+      </div>
+    </section>`;
+}
+
+function lpOverview(paras) {
+  return (paras || []).map((t) => `<p>${t}</p>`).join('');
+}
+
+/* The overview, the headline and the questions are finished HTML, so the
+   render script must not replace them: the slot attribute comes off here. */
+function applyLanding(html, entry, r, label) {
+  const e = entry || {};
+  html = html.replace('<!--LP:HEADLINE-->', e.headline || escapeHTML(r.name));
+  html = html.replace('<!--LP:REVIEW-->', lpReview(e.review, label));
+  html = html.replace('<!--LP:QUESTIONS-->', lpQuestions(e.questions));
+  if (!e.review) html = html.replace('class="lp-copy"', 'class="lp-copy lp-copy--solo"');
+  const photo = r.photo && !/coming-soon/.test(r.photo) ? r.photo : '';
+  html = photo
+    ? html.replace('data-slot="hero-photo" role="img"',
+        `data-slot="hero-photo" role="img" aria-label="${escapeHTML(r.name)}" style="background-image:url('${escapeHTML(photo)}');${escapeHTML(r.photoStyle || '')}"`)
+    : html.replace(/\s*<div class="lp-media"[^>]*><\/div>/, '');
+  return html;
+}
+
 /* ---------------- detail pages ---------------- */
 
 function genPersons(tpl, data) {
@@ -141,7 +206,9 @@ function genPersons(tpl, data) {
     let html = setMeta(tpl, { title, description: desc, url });
     html = setBodySlug(html, r.slug);
     html = fillSlot(html, 'kicker', 'The team');
-    html = fillSlot(html, 'name', escapeHTML(r.name));
+    const lp = LANDING.people[r.slug] || {};
+    html = html.replace('<!--LP:HEADLINE-->', lp.headline || escapeHTML(r.name));
+    html = html.replace('<!--LP:REVIEW-->', lpReview(lp.review, 'person ' + r.slug));
     html = fillSlot(html, 'role', escapeHTML(r.role || ''));
     html = fillSlot(html, 'bio', escapeHTML(r.bio || ''));
     writeFile('person/' + r.slug + '/index.html', html);
@@ -158,10 +225,12 @@ function genServices(tpl, data) {
     const url = SITE + '/' + sub;
     let html = setMeta(tpl, { title, description: desc, url });
     html = setBodySlug(html, r.slug);
-    html = fillSlot(html, 'kicker', escapeHTML(r.category || 'Services'));
-    html = fillSlot(html, 'name', escapeHTML(r.name));
-    html = fillSlot(html, 'role', escapeHTML(r.shortDesc || ''));
-    html = fillSlot(html, 'bio', r.longBody || escapeHTML(r.shortDesc || '')); // longBody is HTML
+    const lp = LANDING.services[r.slug];
+    html = applyLanding(html, lp, r, 'service ' + r.slug);
+    html = fillSlot(html, 'kicker', escapeHTML(isEvent ? 'Events' : (r.category || 'Services'))).replace('data-slot="kicker"', '');
+    html = fillSlot(html, 'role', (lp && lp.role) || escapeHTML(r.shortDesc || '')).replace('data-slot="role"', '');
+    const body = lp && lp.overview ? lpOverview(lp.overview) : (r.longBody || escapeHTML(r.shortDesc || ''));
+    html = fillSlot(html, 'bio', body).replace('data-slot="bio"', 'data-bio');
     if (r.included && r.included.length) html = fillSlot(html, 'included', includedList(r.included));
     writeFile(sub + 'index.html', html);
     sitemapUrls.push({ loc: url, priority: isEvent ? '0.9' : '0.6', changefreq: 'monthly' });
@@ -177,10 +246,12 @@ function genPackages(tpl, data) {
     const url = SITE + '/package/' + r.slug + '/';
     let html = setMeta(tpl, { title, description: desc, url });
     html = setBodySlug(html, r.slug);
+    const lp = LANDING.packages[r.slug];
+    html = applyLanding(html, lp, r, 'package ' + r.slug);
     html = fillSlot(html, 'kicker', 'Packages');
-    html = fillSlot(html, 'name', escapeHTML(r.name));
     html = fillSlot(html, 'role', escapeHTML(r.tagline || ''));
-    html = fillSlot(html, 'bio', escapeHTML(r.longBody || '')); // package longBody is plain text
+    const body = lp && lp.overview ? lpOverview(lp.overview) : escapeHTML(r.longBody || '');
+    html = fillSlot(html, 'bio', body).replace('data-slot="bio"', 'data-bio');
     if (r.included && r.included.length) html = fillSlot(html, 'included', includedList(r.included));
     writeFile('package/' + r.slug + '/index.html', html);
     sitemapUrls.push({ loc: url, priority: '0.6', changefreq: 'monthly' });
@@ -272,6 +343,8 @@ function main() {
   const services = loadWindow('js/data/services-data.js').SERVICES_DATA || [];
   const packages = loadWindow('js/data/packages-data.js').PACKAGES_DATA || [];
   const reviews = loadWindow('js/data/reviews-data.js').REVIEWS_DATA || [];
+  REVIEWS = reviews;
+  LANDING = loadWindow('js/data/landing-data.js').LANDING_DATA || LANDING;
 
   const personTpl = fs.readFileSync(path.join(ROOT, 'templates/person.html'), 'utf8');
   const serviceTpl = fs.readFileSync(path.join(ROOT, 'templates/service.html'), 'utf8');
@@ -284,6 +357,7 @@ function main() {
   genReviews(reviewsTpl, reviews);
   buildSitemap();
 
+  landingWarnings.forEach((w) => console.warn('[landing] ' + w));
   console.log(
     `Generated ${team.length} people, ${services.length} services, ` +
     `${packages.length} packages, ${reviews.length} reviews. ` +

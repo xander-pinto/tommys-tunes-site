@@ -31,7 +31,7 @@ window.PACKAGES_DATA = [
     name: 'Deluxe Entertainment',
     tagline: 'The Long Island wedding standard. DJ on the music, MC working the room.',
     photo: '/assets/images/packages/deluxe/deluxe_pf.jpg',
-    longBody: 'The most-booked package on Long Island. Two named talent, a DJ focused entirely on the music, and a dedicated MC working the room and the timeline. The split lets each person do one job well, which is the difference you feel on the dance floor.',
+    longBody: 'Our most-booked package. Two named talent, a DJ focused entirely on the music, and a dedicated MC working the room and the timeline. The split lets each person do one job well, which is the difference you feel on the dance floor.',
     included: [
       '4 hours of music & entertainment',
       '2-man team: DJ + MC in professional attire',
@@ -45,7 +45,7 @@ window.PACKAGES_DATA = [
   {
     slug: 'super-deluxe',
     metaTitle: 'Super Deluxe wedding package · Long Island',
-    metaDescription: 'The same team from ceremony through last dance, with the illuminated DJ booth. Our most-booked Long Island wedding package. Check your date.',
+    metaDescription: 'The same team from ceremony through last dance, with the illuminated DJ booth. Ceremony music and cocktail hour included. Check your date.',
     pairsWith: ['mac-towers', 'mirror-booth', 'saxophonist', 'uplighting', 'phone-booth', 'dance-floor'],
     name: 'Super Deluxe Entertainment',
     tagline: 'Same team from ceremony through last dance, with the illuminated DJ booth.',

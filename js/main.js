@@ -946,7 +946,7 @@ function showFormSuccess(form, data) {
    The Netlify form name stays "check-your-date" on purpose. Netlify binds
    submissions to that name and detects it by parsing static HTML at build,
    so renaming it would split the inbox and need a new detection stub. A
-   hidden `form_variant` field is added to every submission instead, so the
+   hidden `form_variant` field travels with every submission instead, so the
    two eras can be told apart in the CSV and the change can actually be
    judged on conversion rather than opinion. */
 
@@ -1033,14 +1033,8 @@ function applyFormVariant() {
     });
   }
 
-  document.querySelectorAll('form[name="check-your-date"]').forEach((form) => {
-    if (form.querySelector('[name="form_variant"]')) return;
-    const tag = document.createElement('input');
-    tag.type = 'hidden';
-    tag.name = 'form_variant';
-    tag.value = FORM_VARIANT;
-    form.appendChild(tag);
-  });
+  /* Declared in the static form so Netlify registers the field at build. */
+  document.querySelectorAll('[name="form_variant"]').forEach((tag) => { tag.value = FORM_VARIANT; });
 }
 
 /* --- Boot --- */

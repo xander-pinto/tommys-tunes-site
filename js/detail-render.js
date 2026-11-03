@@ -125,10 +125,12 @@
   var BIO_VISIBLE_PARAS = 2;
 
   function foldLongBio() {
-    const bio = document.querySelector('[data-slot="bio"]');
+    const bio = document.querySelector('[data-bio]');
     if (!bio) return;
     const paras = [...bio.children].filter((el) => el.tagName === 'P');
-    if (paras.length <= BIO_VISIBLE_PARAS + 1) return;
+    /* Four short paragraphs is the sales copy and stays open. Only the long
+       event-page essays fold. */
+    if (paras.length <= 4) return;
     paras[0].classList.add('bio-lead');
     const rest = paras.slice(BIO_VISIBLE_PARAS);
     const wrap = document.createElement('div');
@@ -147,6 +149,14 @@
     });
     wrap.after(btn);
   }
+
+  /* "How much does it cost?" under the hero opens that answer, not just scrolls. */
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest && e.target.closest('a[href="#cost"]');
+    if (!link) return;
+    const target = document.getElementById('cost');
+    if (target) target.open = true;
+  });
 
   function renderOneDemo(demo) {
     if (!demo || !demo.url) return '';
@@ -482,7 +492,6 @@
   }
 
   function renderPerson(record) {
-    document.title = `${record.name} · Tommy's Tunes`;
     setText('[data-slot="kicker"]', 'The team');
     setText('[data-slot="name"]', record.name);
     setText('[data-slot="role"]', record.role || '');
@@ -622,7 +631,6 @@
   }
 
   function renderService(record) {
-    document.title = `${record.name} · Tommy's Tunes`;
     setText('[data-slot="kicker"]', record.category || 'Services');
     setText('[data-slot="name"]', record.name);
     setText('[data-slot="role"]', record.shortDesc || '');
@@ -651,7 +659,6 @@
   }
 
   function renderPackage(record) {
-    document.title = `${record.name} · Tommy's Tunes`;
     setText('[data-slot="kicker"]', 'Packages');
     setText('[data-slot="name"]', record.name);
     setText('[data-slot="role"]', record.tagline || '');

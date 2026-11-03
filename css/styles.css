@@ -4937,54 +4937,97 @@ body.has-solid-nav .nav {
   gap: var(--sp-4);
 }
 
-/* --- Detail hero: a CTA and proof, not just a label --------------------
-   The homepage hero sells (headline, lead, two buttons, three stats). The
-   detail hero only labelled: a category, a name, one italic line and
-   nothing to click. That matters because 35% of impressions land on these
-   pages cold and never see the homepage, so this screen is the whole
-   first impression.
-
-   Same classes as the homepage stats so the two cannot drift apart
-   visually; only the alignment and the top margin change, because this
-   hero is bottom-aligned and left-aligned where the homepage is centred. */
-.detail-hero-actions {
-  margin-top: var(--sp-5);
+/* --- Landing page format: services, packages, event types, people --------
+   Every one of these pages may be the only page a visitor ever sees. The
+   photo gets its own frame with nothing on top of it, and the pitch, the
+   button and a real review sit under it on the first screen. The frame height
+   comes from the window so the button stays above the fold on a laptop. */
+.lp-hero {
+  background: var(--warm-white);
+  color: var(--near-black);
+  padding: calc(var(--nav-height) + 20px) 0 var(--sp-5);
 }
-
-.detail-hero-stats {
-  margin-top: var(--sp-6);
-  /* The homepage centres its stats with margin-inline:auto at 900px up,
-     which here pushed them 300px right of the headline they belong under. */
-  margin-inline: 0;
-  /* 680, not 520: three columns of 520 give each label ~160px and "Years on
-     Long Island" wrapped to two lines and collided with the row beneath. */
-  max-width: 680px;
-  padding-top: var(--sp-4);
+.lp-media {
+  width: min(1120px, calc(100% - 80px));
+  height: clamp(340px, calc(100vh - 396px), 560px);
+  margin: 0 auto var(--sp-5);
+  border-radius: var(--r-lg);
+  background-color: var(--near-black);
+  background-size: cover;
+  background-position: center 18%;
+  background-repeat: no-repeat;
 }
-
-.detail-hero-stats .hero-stat {
-  align-items: flex-start;
+.lp-copy {
+  width: min(1120px, calc(100% - 80px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--sp-7);
+  align-items: start;
 }
-
-.detail-hero-stats .hero-stat-num {
-  font-size: var(--fs-h4);
+.lp-copy--solo { grid-template-columns: 1fr; }
+.lp-hero h1 {
+  font-size: clamp(1.9rem, 1.3rem + 1.7vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: var(--sp-1) 0 var(--sp-2);
 }
-
-/* The portrait-photo variant reserves the right-hand side for the panel,
-   so the stats sit in the remaining column rather than running under it. */
-.detail-hero--tall-photo .detail-hero-stats {
-  max-width: 520px;
+.lp-hero h1 em { color: var(--royal-blue); }
+.lp-role { color: var(--text-on-light-soft); margin: 0 0 var(--sp-4); }
+.lp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4); }
+.lp-cost { color: var(--royal-blue); font-size: var(--fs-sm); text-underline-offset: 3px; }
+.lp-review {
+  margin: 0;
+  padding: var(--sp-5);
+  background: #fff;
+  border: 1px solid rgba(26, 26, 31, 0.08);
+  border-radius: var(--r-md);
 }
-
-@media (max-width: 599px) {
-  /* Three columns of stats under a wrapped headline is a squeeze on a
-     phone, and the button is the thing we actually want pressed. */
-  .detail-hero-stats {
-    gap: var(--sp-3);
-    margin-top: var(--sp-5);
-  }
-
-  .detail-hero-stats .hero-stat-label {
-    letter-spacing: 0.06em;
-  }
+.lp-review-label {
+  margin: 0 0 var(--sp-2);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-on-light-soft);
+}
+.lp-stars { color: var(--royal-blue); letter-spacing: 0.12em; font-size: var(--fs-sm); }
+.lp-review blockquote {
+  margin: var(--sp-2) 0;
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  line-height: 1.4;
+}
+.lp-review figcaption,
+.lp-trust { font-size: var(--fs-xs); color: var(--text-on-light-soft); }
+.lp-trust { margin: var(--sp-2) 0 0; }
+.lp-overview p { margin: 0 0 var(--sp-4); }
+.lp-overview p:last-child { margin-bottom: 0; }
+.lp-qs { max-width: 760px; margin: 0 auto; }
+.lp-q {
+  background: #fff;
+  border: 1px solid rgba(26, 26, 31, 0.08);
+  border-radius: var(--r-md);
+  margin-bottom: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  scroll-margin-top: 170px;
+}
+.lp-q summary { cursor: pointer; font-family: var(--font-serif); font-size: var(--fs-md); }
+.lp-q p { margin: var(--sp-3) 0 0; color: var(--text-on-light-soft); }
+/* People: a portrait does not belong in a wide frame, so it sits beside the pitch. */
+.lp-person {
+  width: min(1120px, calc(100% - 80px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+  gap: var(--sp-7);
+  align-items: center;
+}
+.lp-hero--person .profile-portrait { width: 100%; }
+.lp-person-main .lp-review { margin-top: var(--sp-5); }
+@media (max-width: 799px) {
+  .lp-hero { padding-top: calc(var(--nav-height) + 8px); }
+  .lp-media, .lp-copy, .lp-person { width: calc(100% - 40px); }
+  .lp-media { height: auto; aspect-ratio: 16 / 10; }
+  .lp-copy, .lp-person { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .lp-hero--person .profile-portrait { max-width: 260px; margin: 0 auto; }
 }

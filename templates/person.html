@@ -33,23 +33,26 @@
   }
   </script>
 </head>
-<body data-detail-type="person">
+<body class="has-solid-nav" data-detail-type="person">
 
   <div data-component="nav"></div>
 
   <div data-slot="detail-root">
 
     <!-- DETAIL HERO (profile) -->
-    <section class="detail-hero detail-hero--profile">
-      <div class="starfield"></div>
-      <div class="container detail-hero-content">
+    <section class="lp-hero lp-hero--person">
+      <div class="lp-person">
         <div class="profile-portrait">
           <img data-slot="hero-img" alt="">
         </div>
-        <div class="profile-meta">
+        <div class="lp-person-main">
           <span class="kicker" data-slot="kicker">The team</span>
-          <h1 data-slot="name">&nbsp;</h1>
-          <p class="detail-hero-role" data-slot="role"></p>
+          <h1><!--LP:HEADLINE--></h1>
+          <p class="lp-role" data-slot="role"></p>
+          <div class="lp-actions">
+            <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+          </div>
+          <!--LP:REVIEW-->
         </div>
       </div>
     </section>

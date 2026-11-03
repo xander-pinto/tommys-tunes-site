@@ -33,46 +33,26 @@
   }
   </script>
 </head>
-<body data-detail-type="package">
+<body class="has-solid-nav" data-detail-type="package">
 
   <div data-component="nav"></div>
 
   <div data-slot="detail-root">
 
     <!-- DETAIL HERO -->
-    <section class="detail-hero">
-      <div class="starfield"></div>
-      <div class="detail-hero-photo" data-slot="hero-photo" aria-hidden="true"></div>
-      <div class="detail-hero-overlay" aria-hidden="true"></div>
-      <div class="container detail-hero-content">
-        <span class="kicker" data-slot="kicker">Packages</span>
-        <h1 data-slot="name">&nbsp;</h1>
-        <p class="detail-hero-role" data-slot="role"></p>
-
-        <!-- EDIT: Landing-page proof. 35% of site impressions arrive on a
-             /service/, /package/ or event page straight from Google and never
-             see the homepage, so the one thing those visitors know about us
-             has to be on this screen. Same classes as the homepage hero, so
-             the two stay visually identical; only the alignment differs.
-             Keep these three in sync with the homepage hero stats. -->
-        <div class="detail-hero-actions">
-          <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
-        </div>
-
-        <div class="hero-stats detail-hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-num">40+</div>
-            <div class="hero-stat-label">Years on Long Island</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">30+</div>
-            <div class="hero-stat-label">Performers</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">2026&ndash;28</div>
-            <div class="hero-stat-label">Now booking</div>
+    <section class="lp-hero">
+      <div class="lp-media" data-slot="hero-photo" role="img"></div>
+      <div class="lp-copy">
+        <div class="lp-pitch">
+          <span class="kicker" data-slot="kicker">Packages</span>
+          <h1><!--LP:HEADLINE--></h1>
+          <p class="lp-role" data-slot="role"></p>
+          <div class="lp-actions">
+            <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
+            <a class="lp-cost" href="#cost">How much does it cost?</a>
           </div>
         </div>
+        <!--LP:REVIEW-->
       </div>
     </section>
 
@@ -84,9 +64,11 @@
     <!-- LONG DESCRIPTION -->
     <section class="section section-light" data-toc="Overview">
       <div class="container detail-body">
-        <p class="lead" data-slot="bio"></p>
+        <div class="lead lp-overview" data-slot="bio"></div>
       </div>
     </section>
+
+    <!--LP:QUESTIONS-->
 
     <!-- WHAT'S INCLUDED -->
     <section class="section section-tinted" data-slot="included-section" data-toc="Included">
