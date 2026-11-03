@@ -927,10 +927,101 @@ function showFormSuccess(form, data) {
 }
 
 
+/* --- Front-desk form variant -------------------------------------------
+   Upper management asked (Nov 2026) for the CTA to read "Let's Make An
+   Appointment" and for the form to drop to six fields plus the scheduler.
+   Xander disagrees with the change and wants the original on standby, so
+   this is a switch rather than a rewrite.
+
+   FLIP IT BACK: set FORM_VARIANT to 'check-your-date'. That is the whole
+   revert. No markup is deleted, no Netlify form is renamed, and nothing
+   else in the file needs touching.
+
+   The requested field list turned out to be a strict subset of the form we
+   already had, so the variant works by removing fields from the original
+   rather than by maintaining a second copy. Three pages carry a copy of
+   this form (the modal component, the homepage closer, and the contact
+   page) and one pass handles all three.
+
+   The Netlify form name stays "check-your-date" on purpose. Netlify binds
+   submissions to that name and detects it by parsing static HTML at build,
+   so renaming it would split the inbox and need a new detection stub. A
+   hidden `form_variant` field is added to every submission instead, so the
+   two eras can be told apart in the CSV and the change can actually be
+   judged on conversion rather than opinion. */
+
+const FORM_VARIANT = 'appointment';
+
+const FORM_VARIANTS = {
+  'check-your-date': {
+    cta: 'Check your date',
+    heading: 'Check your date.',
+    drop: [],
+  },
+  appointment: {
+    cta: "Let's Make An Appointment",
+    /* The nav gets one word. At full length the button is 245px against the
+       old 140, which pushed the phone number's right edge to 1495 on a 1440
+       screen and clipped it to "631-732-". The phone is a conversion path,
+       so it does not get sacrificed to a label. Measured at 1440: "Make An
+       Appointment" still overflows at 1458 and "Book Appointment" lands at
+       1433, seven pixels clear, which is not enough to trust across fonts
+       and zoom levels. "Appointment" is 144px, within four of the button
+       this replaced, so the nav keeps the spacing it was designed with. */
+    ctaNav: 'Appointment',
+    heading: "Let's make an appointment.",
+    /* Each entry says which control to find and how much to take with it.
+       `field` lifts the whole .field wrapper, which is right for a label and
+       its input. `check` takes only the one checkbox row, because
+       no_date_yet shares a .field with the event date we are keeping. */
+    drop: [
+      { name: 'contact_method', scope: 'field' },
+      { name: 'no_date_yet', scope: 'check' },
+      { name: 'venue', scope: 'field' },
+      /* notes stays. Xander asked for it back: it is the only field that
+         tells us what the night actually is before we call. */
+    ],
+  },
+};
+
+function applyFormVariant() {
+  const v = FORM_VARIANTS[FORM_VARIANT];
+  if (!v) return;
+
+  document.querySelectorAll('[data-open-modal]').forEach((el) => {
+    if (el.children.length) return;
+    el.textContent = el.classList.contains('nav-cta') ? (v.ctaNav || v.cta) : v.cta;
+  });
+  document.querySelectorAll('[data-form-heading]').forEach((el) => {
+    el.textContent = v.heading;
+  });
+
+  v.drop.forEach(({ name, scope }) => {
+    document.querySelectorAll(`[name="${name}"]`).forEach((input) => {
+      const wrap = scope === 'check'
+        ? input.closest('label.field-checkbox')
+        : input.closest('.field');
+      /* Drop required with the element. A hidden-but-required control blocks
+         submission with a validation message the user cannot see or reach. */
+      if (wrap) { wrap.remove(); } else { input.removeAttribute('required'); input.remove(); }
+    });
+  });
+
+  document.querySelectorAll('form[name="check-your-date"]').forEach((form) => {
+    if (form.querySelector('[name="form_variant"]')) return;
+    const tag = document.createElement('input');
+    tag.type = 'hidden';
+    tag.name = 'form_variant';
+    tag.value = FORM_VARIANT;
+    form.appendChild(tag);
+  });
+}
+
 /* --- Boot --- */
 
 document.addEventListener('DOMContentLoaded', async () => {
   await loadComponents();
+  applyFormVariant();
   setupNav();
   setupModal();
   setupLightbox();
