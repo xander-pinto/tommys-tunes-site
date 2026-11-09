@@ -4957,6 +4957,23 @@ body.has-solid-nav .nav {
   background-position: center 18%;
   background-repeat: no-repeat;
 }
+/* Tall, squarish or small photos: shown whole, centred, over a blurred and
+   darkened copy of the same photo so the frame never looks empty. */
+.lp-media--fit { position: relative; overflow: hidden; isolation: isolate; }
+.lp-media--fit::before,
+.lp-media--fit::after {
+  content: '';
+  position: absolute;
+  background-image: var(--photo);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.lp-media--fit::before {
+  inset: -40px;
+  background-size: cover;
+  filter: blur(32px) brightness(0.5) saturate(1.1);
+}
+.lp-media--fit::after { inset: 0; background-size: contain; }
 .lp-copy {
   width: min(1120px, calc(100% - 80px));
   margin: 0 auto;

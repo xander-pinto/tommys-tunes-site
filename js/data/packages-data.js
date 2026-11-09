@@ -68,6 +68,7 @@ window.PACKAGES_DATA = [
     name: 'Premiere Entertainment',
     tagline: 'When you want the room to look as good as it sounds.',
     photo: '/assets/images/packages/premiere/premeire_pf.jpg',
+    photoStyle: 'background-position: center 48%;', // aim the hero strip at the booth and lights
     longBody: 'Adds full intelligent lighting and a dedicated lighting tech. Two Martin Mac 250 moving lights mounted on illuminated truss towers, the level of production you see at a club night, programmed to follow the wedding timeline instead of fighting it.',
     included: [
       '5 hours of music & entertainment',
@@ -87,9 +88,8 @@ window.PACKAGES_DATA = [
     name: 'Supreme Entertainment',
     tagline: 'Adds live event photography on screens throughout the night.',
     photo: '/assets/images/packages/supreme/supreme_pf.jpg',
-    // Wide room shot: the booth and the two TV towers sit small in the
-    // middle with a lot of ceiling above. Zoom in on the setup instead.
-    photoStyle: 'background-size: 143%; background-position: 42% 100%;',
+    // Wide room shot: aim the hero strip at the booth and TV towers, not the ceiling.
+    photoStyle: 'background-position: center 75%;',
     longBody: 'Layers Zap Shots, our live event photography, on top of the Premiere production. A pro photographer works the crowd while two 60-inch LCD TVs show the photos as they happen. Guests see themselves on screen within minutes.',
     included: [
       '5 hours of music & entertainment',
@@ -115,6 +115,7 @@ window.PACKAGES_DATA = [
     name: 'Grand Entertainment',
     tagline: 'The full production, plus a live sax or percussionist on the reception.',
     photo: '/assets/images/packages/grand/grand_pf.jpg',
+    photoStyle: 'background-position: center 42%;', // aim the hero strip at the booth, drums and TVs
     longBody: 'This is the works. Everything in Supreme, and then a live musician on top of it, your pick of a saxophonist or a percussionist riffing over the DJ while the floor goes off. Five of our people run the room: the DJ, the MC, a photographer putting live shots up on the screens, a tech keeping the lights and TVs moving, and the musician. The whole space is lit, every part of the production is firing at once, and the energy is the kind guests are still texting you about weeks later. If you want your night to feel like the best show in town, this is the tier.',
     included: [
       '5 hours of music & entertainment',

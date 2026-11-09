@@ -187,11 +187,31 @@ function applyLanding(html, entry, r, label) {
   html = html.replace('<!--LP:QUESTIONS-->', lpQuestions(e.questions));
   if (!e.review) html = html.replace('class="lp-copy"', 'class="lp-copy lp-copy--solo"');
   const photo = r.photo && !/coming-soon/.test(r.photo) ? r.photo : '';
-  html = photo
-    ? html.replace('data-slot="hero-photo" role="img"',
-        `data-slot="hero-photo" role="img" aria-label="${escapeHTML(r.name)}" style="background-image:url('${escapeHTML(photo)}');${escapeHTML(r.photoStyle || '')}"`)
-    : html.replace(/\s*<div class="lp-media"[^>]*><\/div>/, '');
-  return html;
+  if (!photo) return html.replace(/\s*<div class="lp-media"[^>]*><\/div>/, '');
+  // The hero frame is a wide strip (about 2.8:1 on a laptop). A tall, squarish
+  // or small photo cropped to fill it loses its subject and gets stretched, so
+  // those are shown whole over a blurred copy of themselves instead.
+  const size = imageSize(photo);
+  const fit = r.photoFit ?? (size && (size.w / size.h < 1.4 || size.w < 1000));
+  const url = escapeHTML(photo);
+  return html.replace('class="lp-media" data-slot="hero-photo" role="img"', fit
+    ? `class="lp-media lp-media--fit" data-slot="hero-photo" role="img" aria-label="${escapeHTML(r.name)}" style="--photo:url('${url}')"`
+    : `class="lp-media" data-slot="hero-photo" role="img" aria-label="${escapeHTML(r.name)}" style="background-image:url('${url}');${escapeHTML(r.photoStyle || '')}"`);
+}
+
+// Pixel size of a JPEG or PNG under the site root, read from its header.
+function imageSize(webPath) {
+  let b;
+  try { b = fs.readFileSync(path.join(ROOT, webPath)); } catch { return null; }
+  if (b[0] === 0x89 && b[1] === 0x50) return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+  for (let i = 2; i < b.length - 9;) {
+    if (b[i] !== 0xFF) { i++; continue; }
+    const m = b[i + 1];
+    if (m >= 0xC0 && m <= 0xCF && m !== 0xC4 && m !== 0xC8 && m !== 0xCC)
+      return { h: b.readUInt16BE(i + 5), w: b.readUInt16BE(i + 7) };
+    i += 2 + b.readUInt16BE(i + 2);
+  }
+  return null;
 }
 
 /* ---------------- detail pages ---------------- */

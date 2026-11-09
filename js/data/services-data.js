@@ -226,6 +226,7 @@ window.SERVICES_DATA = [
     name: 'Steel drum (1-pc or 3-pc)',
     shortDesc: 'Solo player or full reggae trio. Outdoor cocktail favorite.',
     photo: '/assets/images/services/live-music/steel-drum/steel_drum_pf.jpg',
+    photoFit: true, // his face and the drum don't both fit a cropped strip; show the whole photo
     longBody: 'Solo steel pan player or a full three-piece reggae trio. The default outdoor-cocktail-hour pick when you want guests to stop and notice the music.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/nDOaX2yBOUM', caption: 'A steel drummer through cocktail hour.' },
@@ -280,6 +281,7 @@ window.SERVICES_DATA = [
     name: 'String duo, trio, or quartet',
     shortDesc: 'Classical strings for ceremony or formal cocktail hour.',
     photo: '/assets/images/services/live-music/string-quartet/string_duo_trio_quartet_pf.jpg',
+    photoStyle: 'background-position: center 0%;', // keep the players' heads in the hero strip
     longBody: 'Classical strings for the ceremony or a more formal cocktail hour, the most traditional live sound we offer. Book it as a duo, a trio, or a full quartet depending on the room and the budget. Popular pairings include a guitar and cello duo for something warm and intimate, or a guitar, cello, and violin trio when you want a fuller sound carrying down the aisle.',
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/MUqtXqlYR7o', caption: 'Contemporary pop, played on strings.' },
@@ -331,6 +333,7 @@ window.SERVICES_DATA = [
     name: 'Afterparty DJ',
     shortDesc: 'A DJ for a separate afterparty room or venue.',
     photo: '/assets/images/services/live-music/afterparty-dj/afterparty_dj_pf.jpg',
+    photoStyle: 'background-position: center 70%;', // faces down to the decks
     longBody: 'A dedicated DJ for the afterparty, for when the night isn\'t over at the end of the reception. Whether the crowd moves to a hotel suite, a bar, or a back room at the venue, you get a fresh setup and fresh energy without leaning on a phone and a Bluetooth speaker.',
     demo: null,
     gallery: [],
@@ -538,6 +541,7 @@ window.SERVICES_DATA = [
     name: 'Uplighting',
     shortDesc: 'Color-changing wall lights that wash the room in your palette.',
     photo: '/assets/images/services/lights/uplighting/uplighting_pf.jpg',
+    photoStyle: 'background-position: center 45%;', // the couple and the lit room
     longBody: 'Uplighting is placed along the perimeter of the room and washes the walls and ceiling with color. It can be held at a single tone for a formal, composed atmosphere or shifted through multiple colors as the event progresses. It is one of the highest-impact visual upgrades available for any ballroom, and it shows clearly in photos and video.',
     demo: null,
     gallery: [],
@@ -565,6 +569,7 @@ window.SERVICES_DATA = [
     name: 'Illuminated dance stages',
     shortDesc: '2-by-2 lit platforms, great for first-dance focal points.',
     photo: '/assets/images/services/lights/dance-stages/dance_stages_pf.jpg',
+    photoStyle: 'background-position: center 60%;', // the people on the stage
     longBody: 'Tommy\'s Tunes offers illuminated dance stages that light up from below with color-changing LED panels. They give the dance floor a clear boundary, look strong in photos and video, and create a visual focal point that keeps guests oriented toward the center of the room. Available as a standalone add-on.',
     demo: null,
     gallery: [
@@ -600,6 +605,7 @@ window.SERVICES_DATA = [
     name: 'LOVE marquee letters',
     shortDesc: '45-inch illuminated "LOVE" letters. A natural backdrop all night.',
     photo: '/assets/images/services/lights/love-letters/love_letters_pf.jpg',
+    photoStyle: 'background-position: center 43%;', // both faces, letters slightly trimmed
     longBody: 'Forty-five-inch illuminated marquee letters spelling LOVE, in a white LED casing about four feet tall. One of the most-booked decor add-ons for Long Island wedding receptions. They photograph well without any extra staging and give guests a natural backdrop throughout the night. Prefer a warmer look? We also offer a Rustic LOVE with a weathered finish, a natural fit for barn spaces, vineyard venues, and any event with an organic feel. It pairs beautifully with a flowerwall backdrop.',
     demo: null,
     gallery: [
@@ -617,6 +623,7 @@ window.SERVICES_DATA = [
     name: 'MR & MRS marquee letters',
     shortDesc: '45-inch illuminated "MR & MRS" letters for the dais or the dance floor.',
     photo: '/assets/images/services/lights/mr-mrs-letters/mr_mrs_letters_pf.jpg',
+    photoStyle: 'background-position: center 65%;', // the couple and the letters
     longBody: 'Forty-five-inch illuminated MR &amp; MRS marquee letters in a white LED casing, about four feet tall. Place them at the dais table, along the perimeter, or anywhere you want them visible. They photograph well on their own and give guests a built-in backdrop all night.',
     demo: null,
     gallery: [
@@ -633,6 +640,7 @@ window.SERVICES_DATA = [
     name: '16 marquee letters',
     shortDesc: '45-inch illuminated "16" for Sweet 16s and Quinceañeras.',
     photo: '/assets/images/services/lights/16-letters/16_letters_pf.jpg',
+    photoFit: true, // her face and the numbers don't both fit a cropped strip; show the whole photo
     longBody: 'Forty-five-inch illuminated marquee numbers spelling 16, in a white LED casing built for Sweet 16s and Quinceañeras. A bright, photo-friendly centerpiece that needs no extra staging. We can also build custom LED letters for any name or word, confirmed with you in advance.',
     demo: null,
     gallery: [
