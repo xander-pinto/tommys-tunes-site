@@ -216,9 +216,9 @@ window.TEAM_DATA = [
     bio: 'Bilingual English and Spanish, and surgical behind the decks. Anderson mixes clean, keeps the energy high, and reads a crowd with the kind of presence you can\'t teach. He\'s been doing this a long time and he\'s as reliable as they come, which is exactly why he\'s a go-to for weddings and Quinceañeras that move between two languages all night.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/5vw9sdANqAg', caption: 'MCing in English and Spanish.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/oqZ0QnOVRf8?start=29', caption: 'DJing a prom.' },
       { type: 'youtube', url: 'https://www.youtube.com/embed/eWjwECUgGqY', caption: 'A prom demo with MC Joe Cip.' },
-      { type: 'youtube', url: 'https://www.youtube.com/embed/5vw9sdANqAg', caption: 'MCing in English and Spanish.' },
     ],
     gallery: [
       '/assets/images/team/djs/anderson/anderson_behind_booth.jpg',

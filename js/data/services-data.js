@@ -50,6 +50,16 @@ window.SERVICES_DATA = [
   {
     slug: 'weddings',
     crew: 'all-performers',
+    // TikToks: these six lead in this order, then the rest newest first.
+    tiktokPins: [
+      '7701840486775983373', // A full night at the Watermill (the suit and tie edit)
+      '7686646219065642253', // Joe Cip. running the introductions
+      '7694000109209636110', // The kind of reception you keep replaying
+      '7662160015976959245', // Tuned In, volume one
+      '7699268832589876494', // Mike setting the stage for the newlyweds
+      '7667019507885559053', // Mario Kart on the ballroom screens
+    ],
+    tiktokSort: 'recent',
     pairsWith: ['phone-booth', 'mirror-booth', 'dance-floor', 'saxophonist', 'dancing-on-cloud', 'cold-sparklers'],
     category: 'Specialty',
     name: 'Weddings',

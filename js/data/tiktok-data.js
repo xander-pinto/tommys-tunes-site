@@ -15,8 +15,9 @@
    `views` is a snapshot for our own prioritising, not shown on the site.
    `shelved` means Xander looked at it and said no. Leave those alone; they are
    kept so nobody re-proposes them later.
-   `pinned` forces a clip to the top of its page ahead of the view ordering, for
-   the ones we want seen first regardless of how they performed.
+   `pinned` forces a clip to the top ahead of the view ordering, for the ones we
+   want seen first regardless of how they performed. `pinned: true` pins it on
+   every page it is tagged to; `pinned: ['slug']` pins it on those pages only.
    ============================================================ */
 
 window.TIKTOK_DATA = [
@@ -91,6 +92,7 @@ window.TIKTOK_DATA = [
     views: '555',
     people: [],
     services: ['dancing-on-cloud'],
+    pinned: ['dancing-on-cloud'],
   },
   {
     id: '7680700134480432397',
@@ -124,7 +126,8 @@ window.TIKTOK_DATA = [
     id: '7675475125017349389',
     caption: 'The groom picked her up and the room lost it.',
     views: '2875',
-    people: [],
+    people: ['anderson'],
+    pinned: ['anderson'],
     services: ['weddings'],
   },
   {
@@ -169,7 +172,7 @@ window.TIKTOK_DATA = [
   { id: '7605356801718013198', caption: 'Come see us.', views: '2436', people: [], services: [], shelved: 'cut' },
   { id: '7663610999899000077', caption: 'Leo commanding a room.', views: '2161', people: ['leo'], services: [] },
   { id: '7593097754964938039', caption: 'An average night at Fox Hollow.', views: '1917', people: [], services: ['weddings'] },
-  { id: '7656924865210993933', caption: 'A fairytale wedding, on the cloud and under the sparklers.', views: '1663', people: [], services: ['dancing-on-cloud', 'cold-sparklers', 'weddings'] },
+  { id: '7656924865210993933', caption: 'A fairytale wedding, on the cloud and under the sparklers.', views: '1663', people: [], services: ['dancing-on-cloud', 'cold-sparklers', 'weddings'], pinned: ['dancing-on-cloud'] },
   { id: '7671705166009109774', caption: 'Mike N. calling everyone in around the couple.', views: '1632', people: ['mike-n'], services: ['weddings'] },
   { id: '7520665663581523230', caption: 'Northport senior prom.', views: '1594', people: [], services: [], shelved: 'prom, cut' },
   { id: '7585332914641030431', caption: 'A first dance in the middle of the cloud.', views: '1571', people: [], services: ['dancing-on-cloud'] },
@@ -191,12 +194,12 @@ window.TIKTOK_DATA = [
   { id: '7666174659041201421', caption: 'Mario Kart at your wedding. Would you.', views: '926', people: [], services: [], shelved: 'duplicate Mario Kart, cut' },
   { id: '7665122898163633421', caption: 'The top five Joe Cip. moments.', views: '879', people: [], services: [], shelved: 'silly, not right for the site' },
   { id: '7669902160271789326', caption: 'Joe Cip. sending his love out to the floor.', views: '845', people: ['joe-cip'], services: [] },
-  { id: '7662160015976959245', caption: 'Tuned In, volume one. Joe Cip. on the mic, Rich on the decks, the cloud and the sparklers.', views: '838', people: ['joe-cip', 'richie'], services: ['weddings', 'dancing-on-cloud', 'cold-sparklers'], pinned: true },
+  { id: '7662160015976959245', caption: 'Tuned In, volume one. Joe Cip. on the mic, Rich on the decks, the cloud and the sparklers.', views: '838', people: ['joe-cip', 'richie'], services: ['weddings', 'dancing-on-cloud', 'cold-sparklers'], pinned: ['richie', 'cold-sparklers'] },
   { id: '7668843051317546254', caption: 'Rich cooking again.', views: '755', people: ['richie'], services: [] },
   { id: '7665522418781392141', caption: 'Take us to the promised land, Joe.', views: '755', people: ['joe-cip'], services: [] },
   { id: '7668372544231116045', caption: 'Whose grandpa has this much swag.', views: '750', people: [], services: [], shelved: 'grandpa swag, cut' },
   { id: '7617972366638894350', caption: 'Kerrie and Stephen, married in March.', views: '750', people: [], services: ['weddings'] },
-  { id: '7657310431563812110', caption: 'Live drums over the set.', views: '736', people: ['joe-i'], services: ['percussionist'] },
+  { id: '7657310431563812110', caption: 'Live drums over the set.', views: '736', people: ['joe-i'], services: ['percussionist'], pinned: ['percussionist'] },
   { id: '7661775586720976142', caption: 'Weddings bring out the best in us.', views: '728', people: [], services: ['weddings'] },
   { id: '7659907676972911886', caption: 'A Taylor Swift moment that gave the room chills.', views: '708', people: [], services: ['weddings'] },
   { id: '7669205277471771918', caption: 'Everybody\'s favorite DJ at it again.', views: '675', people: ['richie'], services: [] },
@@ -208,7 +211,7 @@ window.TIKTOK_DATA = [
   { id: '7659548167490243853', caption: 'Fourth of July weekend, flags and all.', views: '580', people: [], services: ['weddings'] },
   { id: '7659180980359499022', caption: 'Live drums on the funk soul brother.', views: '566', people: ['joe-i'], services: ['percussionist'] },
   { id: '7663884871793675534', caption: 'Serious hands on the drums.', views: '548', people: ['joe-i'], services: ['percussionist'] },
-  { id: '7664729434099911950', caption: 'Tuned In, volume two.', views: '466', people: [], services: ['weddings'], pinned: true },
+  { id: '7664729434099911950', caption: 'Tuned In, volume two.', views: '466', people: [], services: ['weddings'] },
   { id: '7662914765227937038', caption: 'We found John Summit\'s biggest fan at a wedding.', views: '417', people: [], services: ['weddings'] },
   { id: '7660286292332219661', caption: 'Tag that guy.', views: '415', people: [], services: ['weddings'] },
   { id: '7651328322592443661', caption: 'Knicks fans at a wedding during the finals.', views: '387', people: [], services: [], shelved: 'Knicks clip, quality is too poor' },
@@ -220,13 +223,13 @@ window.TIKTOK_DATA = [
   { id: '7684444976968699150', caption: 'Born just in time to cut the mozzarella.', views: '4478', people: [], services: ['weddings'] },
   { id: '7686984150724775181', caption: 'Leo on intros, and a bouquet caught like a football.', views: '2370', people: ['leo'], services: ['weddings'] },
   { id: '7685507295568006414', caption: 'Mike on the mic, Rich on the decks.', views: '2329', people: ['mike', 'richie'], services: ['weddings'] },
-  { id: '7684810501431266573', caption: 'Rich doing what he does behind the booth.', views: '2002', people: ['richie'], services: [] },
-  { id: '7686646219065642253', caption: 'Joe Cip. running the introductions.', views: '1622', people: ['joe-cip'], services: ['weddings'] },
+  { id: '7684810501431266573', caption: 'Rich doing what he does behind the booth.', views: '2002', people: [], services: [], shelved: 'Xander pulled it from Rich\'s page' },
+  { id: '7686646219065642253', caption: 'Joe Cip. running the introductions.', views: '1622', people: ['joe-cip'], services: ['weddings'], pinned: ['joe-cip'] },
   { id: '7685058414761790734', caption: 'Curtis on the sax, trading off with the mic.', views: '1419', people: ['curtis'], services: ['weddings', 'saxophonist'] },
   { id: '7683893069061590286', caption: 'A slow one, sung with feeling.', views: '1266', people: [], services: [], shelved: 'Xander passed on it' },
   { id: '7685778370226933006', caption: 'A Jets chant at a wedding, pushups and all.', views: '797', people: [], services: ['weddings'] },
   { id: '7687307160304258318', caption: 'Leo leading the Footloose line dance.', views: '658', people: ['leo'], services: ['weddings'] },
-  { id: '7687654499120401677', caption: 'A first dance on the cloud.', views: '616', people: [], services: ['weddings', 'dancing-on-cloud'] },
+  { id: '7687654499120401677', caption: 'A first dance on the cloud.', views: '616', people: [], services: ['weddings', 'dancing-on-cloud'], pinned: ['dancing-on-cloud'] },
   { id: '7686248739379399950', caption: 'Mike N. on intros, and the flowers got spiked.', views: '543', people: ['mike-n'], services: ['weddings'] },
   { id: '7685889245600419086', caption: 'When the song you grew up on comes on.', views: '417', people: [], services: [], shelved: 'Xander passed on it' },
   { id: '7687996919435545869', caption: 'Joe Cip. on the mic for a reception people swear is staged.', views: '2', people: ['joe-cip'], services: ['weddings'] },
@@ -237,7 +240,7 @@ window.TIKTOK_DATA = [
   { id: '7689668261520215310', caption: 'Leo on the mic, and the shoes came off.', views: '2969', people: ['leo'], services: ['weddings'] },
   { id: '7689887658453093645', caption: 'Joe Cip. on a wedding classic.', views: '2519', people: ['joe-cip'], services: ['weddings'] },
   { id: '7690283553145343245', caption: 'Leo singing a piece of it himself.', views: '1845', people: ['leo'], services: ['weddings'] },
-  { id: '7688812641141165326', caption: 'Joe Cip. spinning through an introduction.', views: '735', people: ['joe-cip'], services: ['weddings', 'dance-floor'] },
+  { id: '7688812641141165326', caption: 'Joe Cip. spinning through an introduction.', views: '735', people: ['joe-cip'], services: ['weddings', 'dance-floor'], pinned: ['joe-cip'] },
   { id: '7689167609094229261', caption: 'Curtis on the sax, out over the floor.', views: '697', people: ['curtis'], services: ['weddings', 'dance-floor'] },
   { id: '7688524244094962958', caption: 'A bride and groom having a blast.', views: '669', people: [], services: ['weddings'] },
   /* --- Fifth pass 2026-10-12: everything posted since the fourth pass, 13
@@ -254,7 +257,7 @@ window.TIKTOK_DATA = [
   { id: '7693234516789366030', caption: 'Leo on the mic for the entrance.', views: '1124', people: ['leo'], services: [] },
   { id: '7693729799893683469', caption: 'Hitting every note.', views: '1269', people: [], services: ['weddings'] },
   { id: '7694000109209636110', caption: 'The kind of reception you keep replaying.', views: '1055', people: ['pat', 'richie', 'joe-cip'], services: ['percussionist', 'weddings'] },
-  { id: '7694449733930208526', caption: 'A ten out of ten night, start to finish.', views: '4281', people: ['pat', 'richie', 'joe-cip'], services: ['percussionist', 'weddings'] },
+  { id: '7694449733930208526', caption: 'A ten out of ten night, start to finish.', views: '4281', people: ['pat', 'richie', 'joe-cip'], services: ['percussionist', 'weddings'], pinned: ['joe-cip'] },
   { id: '7695059815692815629', caption: 'Clean mixes from Dom.', views: '522', people: ['dominick'], services: [] },
   { id: '7695552203465035022', caption: 'Curtis on the sax.', views: '356', people: ['curtis'], services: [] },
   /* --- Sixth pass 2026-10-27: everything posted since the fifth pass, 11 clips
@@ -263,7 +266,7 @@ window.TIKTOK_DATA = [
      Curtis shows up on five of these; where Xander named him without also
      asking for the sax service, he's tagged as a person only. Sources were all
      native 9:16, so the posters are straight resizes with no crop. --- */
-  { id: '7699268832589876494', caption: 'Mike setting the stage for the newlyweds.', views: '7027', people: ['mike'], services: ['weddings'], pinned: true },
+  { id: '7699268832589876494', caption: 'Mike setting the stage for the newlyweds.', views: '7027', people: ['mike'], services: ['weddings'], pinned: ['mike'] },
   { id: '7696668379653967118', caption: 'Mr. Brightside, never a miss.', views: '2714', people: [], services: ['weddings'] },
   { id: '7695905838518619406', caption: 'Leo on the mic, Curtis on the sax.', views: '1867', people: ['leo', 'curtis'], services: ['weddings'] },
   { id: '7699617600455707918', caption: 'Mike leading the cheers, Curtis on the sax.', views: '1478', people: ['mike', 'curtis'], services: [] },

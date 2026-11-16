@@ -298,12 +298,25 @@
      "Related videos" panel, and this also keeps TikTok's scripts and cookies
      off the page for anyone who never presses play. Posters are self-hosted
      because TikTok's thumbnail URLs are signed and expire within days. */
+  // `pinned: true` leads on every page the clip is tagged to; a list of slugs
+  // (`pinned: ['dancing-on-cloud']`) leads only on those pages.
+  function isPinned(clip, slug) {
+    return clip.pinned === true || (Array.isArray(clip.pinned) && clip.pinned.includes(slug)) ? 1 : 0;
+  }
+
   function renderTikToks(record, field) {
     const all = Array.isArray(window.TIKTOK_DATA) ? window.TIKTOK_DATA : [];
+    // A page can set its own lead clips (`tiktokPins`, in order) and sort the
+    // rest newest first (`tiktokSort: 'recent'`); clip ids grow over time.
+    const pins = Array.isArray(record.tiktokPins) ? record.tiktokPins : [];
+    const pinRank = (c) => (pins.includes(c.id) ? pins.indexOf(c.id) : pins.length);
     const picks = all
       .filter((c) => Array.isArray(c[field]) && c[field].includes(record.slug))
-      .sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0)
-                   || viewCount(b.views) - viewCount(a.views));
+      .sort((a, b) => pinRank(a) - pinRank(b)
+                   || isPinned(b, record.slug) - isPinned(a, record.slug)
+                   || (record.tiktokSort === 'recent'
+                       ? (BigInt(b.id) > BigInt(a.id) ? 1 : -1)
+                       : viewCount(b.views) - viewCount(a.views)));
     if (!picks.length) {
       hideSection('[data-slot="tiktok-section"]');
       return;
