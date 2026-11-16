@@ -284,4 +284,20 @@ window.TIKTOK_DATA = [
   { id: '7701840486775983373', caption: 'A full night at the Watermill, first entrance to last song.', views: '589', people: [], services: ['weddings'] },
   { id: '7703316830697360654', caption: 'PJ on the mic, and the foam sticks turned it into a concert.', views: '498', people: ['pj'], services: [] },
   { id: '7702255036939717902', caption: 'A wedding guestbook built out of Lego, one mini-fig per guest.', views: '6291', people: [], services: [], shelved: 'Xander passed on it' },
+  /* --- Eighth pass 2026-11-16: thirteen clips from Nov 2 to Nov 15. Captions on
+     the account name the crew; "MC Jo..." on the Vanderbilt entrance was cut off
+     and Xander confirmed Joe Cip. Three passed on. --- */
+  { id: '7708565725291547917', caption: 'PJ on the mic and a sea of glow sticks, with the bride in the middle of it.', views: '574', people: ['pj'], services: [] },
+  { id: '7708121592517135630', caption: 'A night at Gatsby on the Ocean, Jones Beach.', views: '321', people: [], services: [], shelved: 'Xander passed on it' },
+  { id: '7707809295986871566', caption: 'Curtis on the sax over a little John Summit.', views: '789', people: ['curtis'], services: [] },
+  { id: '7707454417108258062', caption: 'Joe Cip. asks the room what song, and every hand goes up.', views: '1044', people: ['joe-cip'], services: [] },
+  { id: '7707064062890233102', caption: 'The couple to "Unwritten" at Sunken Meadow.', views: '7716', people: [], services: [], shelved: 'Xander passed on it' },
+  { id: '7706728007670566158', caption: 'Konstantine goes from hip-hop to reggaeton without losing the floor.', views: '1166', people: ['konstantine'], services: [] },
+  { id: '7706381207461825806', caption: 'A bride living her pop star moment.', views: '1440', people: [], services: ['weddings'] },
+  { id: '7705960734596943117', caption: 'Konstantine on the late-night set: glow sticks, the girls up on the stage, a dance circle.', views: '1039', people: ['konstantine'], services: ['weddings'] },
+  { id: '7705461545660058894', caption: 'Matching suits, a big entrance, and the bridesmaids answering back.', views: '3379', people: ['joe-cip'], services: ['weddings'] },
+  { id: '7704848826489769230', caption: 'Curtis takes the sax into the crowd while Mike gets the hands up.', views: '665', people: ['curtis', 'mike'], services: [] },
+  { id: '7704468506892422413', caption: 'Mike N. builds up the wedding party, then the newlyweds walk out.', views: '12.5K', people: ['mike-n'], services: [] },
+  { id: '7704094381057248525', caption: 'Rich lines it up and the whole floor takes off.', views: '1611', people: ['richie'], services: [] },
+  { id: '7703715702607219982', caption: 'A bride and her dad with a dance they practiced in secret.', views: '3555', people: [], services: [], shelved: 'Xander passed on it' },
 ];
