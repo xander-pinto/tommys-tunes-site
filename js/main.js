@@ -797,8 +797,12 @@ function setupAppointmentValidation() {
   document.addEventListener('submit', (e) => {
     const form = e.target;
     if (!form || !form.querySelector) return;
+    /* The check-your-date form asks with a checkbox; the appointment variant
+       replaces it with a hidden appointment_requested=yes. A hidden input has
+       no .checked, so testing only that let time-less requests through. */
     const box = form.querySelector('input[name="appointment_requested"]');
-    if (!box || !box.checked) return;
+    const wanted = box && (box.type === 'checkbox' ? box.checked : box.value === 'yes');
+    if (!wanted) return;
     const timeInput = form.querySelector('[data-appt-times-input]');
     const err = form.querySelector('[data-appt-error]');
     if (timeInput && !timeInput.value.trim()) {
