@@ -28,6 +28,7 @@ const EVENT_URLS = {
   'mitzvahs': 'bar-bat-mitzvah-dj',
   'corporate': 'corporate-event-dj',
   'other-events': 'other-events',
+  'live-music': 'live-wedding-music-long-island',
 };
 
 /* Static (already server-rendered) pages, for the sitemap. */
@@ -247,7 +248,7 @@ function genServices(tpl, data) {
     html = setBodySlug(html, r.slug);
     const lp = LANDING.services[r.slug];
     html = applyLanding(html, lp, r, 'service ' + r.slug);
-    html = fillSlot(html, 'kicker', escapeHTML(isEvent ? 'Events' : (r.category || 'Services'))).replace('data-slot="kicker"', '');
+    html = fillSlot(html, 'kicker', escapeHTML(r.kicker || (isEvent ? 'Events' : (r.category || 'Services')))).replace('data-slot="kicker"', '');
     html = fillSlot(html, 'role', (lp && lp.role) || escapeHTML(r.shortDesc || '')).replace('data-slot="role"', '');
     const body = lp && lp.overview ? lpOverview(lp.overview) : (r.longBody || escapeHTML(r.shortDesc || ''));
     html = fillSlot(html, 'bio', body).replace('data-slot="bio"', 'data-bio');

@@ -147,6 +147,31 @@ window.SERVICES_DATA = [
 
   /* --- Live Music --- */
   {
+    // Hub for the "live wedding music long island" searches that appeared after
+    // the Nov 2026 rebuild. Links out to every live-music add-on.
+    slug: 'live-music',
+    kicker: 'Live music',
+    category: 'Live Music',
+    name: 'Live wedding music',
+    shortDesc: 'Strings, piano, sax, steel drum, guitar and percussion, added to your night.',
+    metaTitle: 'Live wedding music on Long Island · Tommy\'s Tunes',
+    metaDescription: 'Live musicians for your Long Island wedding: strings and piano for the ceremony, jazz and steel drum for cocktail hour, sax and percussion over the DJ.',
+    photo: '/assets/images/services/live-music/saxophonist/saxophonist_pf.jpg',
+    crew: ['curtis', 'mark', 'mark-s', 'andrew', 'marino', 'pat', 'joe-i', 'scott', 'melody', 'luciano', 'will', 'drew', 'john'],
+    pairsWith: ['saxophonist', 'string-quartet', 'jazz-trio', 'percussionist', 'steel-drum', 'pianist'],
+    // TikToks: every clip tagged to a live-music service or a musician.
+    tiktokFrom: ['saxophonist', 'percussionist', 'steel-drum', 'electric-violinist', 'string-quartet', 'jazz-trio', 'pianist', 'vocalist', 'guitarist-vocalist', 'curtis', 'mark', 'mark-s', 'pat', 'joe-i'],
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/wypeTqYD-BA', caption: 'Violin and cello through a ceremony.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/O5N2y_D_URg', caption: 'Sax, right in the crowd.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/fkCTcd3bbhs?start=4', caption: 'Drums over the DJ set.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/FjwJpxXiGNc', caption: 'Steel drum, a full solo set at Land\u2019s End.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/SpwfnduiWsA', caption: 'Jazz trio: sax, guitar and bass.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/pEnF3ufyOJA', caption: 'Scott on the piano.' },
+    ],
+    gallery: [],
+  },
+  {
     slug: 'saxophonist',
     metaTitle: 'Wedding saxophonist on Long Island · Tommy\'s Tunes',
     metaDescription: 'Live sax over the DJ for cocktail hour or the reception. The Long Island wedding favorite, booked as an add-on to any package. Tell us your date.',

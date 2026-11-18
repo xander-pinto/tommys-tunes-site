@@ -311,7 +311,10 @@
     const pins = Array.isArray(record.tiktokPins) ? record.tiktokPins : [];
     const pinRank = (c) => (pins.includes(c.id) ? pins.indexOf(c.id) : pins.length);
     const picks = all
-      .filter((c) => Array.isArray(c[field]) && c[field].includes(record.slug))
+      // `tiktokFrom` lets a hub page gather every clip tagged to the services
+      // or people it covers, without re-tagging each clip.
+      .filter((c) => (Array.isArray(c[field]) && c[field].includes(record.slug))
+        || (record.tiktokFrom || []).some((sl) => (c.services || []).includes(sl) || (c.people || []).includes(sl)))
       .sort((a, b) => pinRank(a) - pinRank(b)
                    || isPinned(b, record.slug) - isPinned(a, record.slug)
                    || (record.tiktokSort === 'recent'
@@ -541,6 +544,7 @@
     'mitzvahs': '/bar-bat-mitzvah-dj/',
     'corporate': '/corporate-event-dj/',
     'other-events': '/other-events/',
+    'live-music': '/live-wedding-music-long-island/',
   };
 
   function renderRelated(record) {

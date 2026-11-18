@@ -85,6 +85,28 @@ const services = {
     ],
   },
 
+  'live-music': {
+    headline: 'Live wedding music on Long Island, <em>played with your DJ.</em>',
+    role: 'Strings, piano, sax, steel drum, guitar and percussion, for the ceremony, cocktail hour and reception.',
+    review: { quote: 'His team of DJ, percussionist, string quartet and saxophonist were all incredible and helped to set the mood for the wedding.' },
+    overview: [
+      "Live music and a DJ are not an either-or. Every musician on this page is added to your night with us, and you can pair them with any package. Pick one moment to make live, or build the whole day around it. We match the right musician to your venue and the feel you want.",
+      "<strong>For the ceremony,</strong> the usual picks are <a href=\"/service/string-quartet/\">classical strings</a> as a duo, trio or quartet, a <a href=\"/service/pianist/\">pianist</a>, or a <a href=\"/service/guitarist-vocalist/\">guitarist who sings</a>. One couple wrote that the violinist and cello “were an elegant touch during the ceremony and cocktail hour.”",
+      "<strong>For cocktail hour,</strong> it is about setting a mood while guests mingle. A <a href=\"/service/jazz-trio/\">jazz trio</a> or <a href=\"/service/jazz-guitarist/\">jazz guitarist</a> keeps it relaxed, a <a href=\"/service/pianist/\">pianist</a> suits a ballroom, and a <a href=\"/service/steel-drum/\">steel drum</a>, solo or as a full reggae trio, is an outdoor favorite. Another couple called the steel drum at Lands End “a perfect touch.”",
+      "<strong>For the reception,</strong> the live player works with the DJ instead of replacing it. A <a href=\"/service/saxophonist/\">saxophonist</a>, <a href=\"/service/percussionist/\">percussionist</a> or <a href=\"/service/electric-violinist/\">electric violinist</a> plays over the DJ's music, so you keep every song you love and add a performer on top. A <a href=\"/service/vocalist/\">vocalist</a> can give a first dance a real voice. As one couple put it: “If your on the fence about adding a percussionist, DO IT!”",
+      "If you want a live musician built in, our <a href=\"/package/grand/\">Grand package</a> includes your choice of a sax player or a percussionist for the reception. Otherwise, add any of these to the package you pick. Tell us your date and which moments you want live, and we will put the options together.",
+    ],
+    questions: [
+      ['Can we have live music and a DJ at the same wedding?', 'Yes. Strings, piano, guitar or steel drum can cover the ceremony and cocktail hour, and a saxophonist, percussionist or electric violinist can play over the DJ during the reception. You can add live music to any package.'],
+      ['Do the musicians play along with the DJ?', 'At the reception, yes. The sax, percussion and electric violin play over the DJ’s music, so the songs stay exactly as you know them with a live performer on top.'],
+      ['Can we book a musician just for the ceremony or cocktail hour?', 'Yes. Couples often book strings, a pianist or a guitarist just for the ceremony and cocktail hour, then hand off to the DJ for the reception.'],
+      ['What live music works best for a wedding ceremony?', 'Classical strings are the traditional choice, as a duo, trio or quartet. A pianist or a guitarist who sings are the other common options. Tell us about your venue and we will suggest the right fit.'],
+      ['Do you book full wedding bands?', 'No. We book live musicians who play alongside your DJ: a saxophonist, percussionist or electric violinist at the reception, and strings, piano or guitar earlier in the day. You get live energy plus every song exactly as recorded.'],
+      ['Which package includes a live musician?', 'The Grand package includes your choice of a live sax player or a percussionist for the reception. Any other package can add live music on top.'],
+      ['How much does live wedding music cost?', QUOTE],
+    ],
+  },
+
   /* --- Live music --- */
   'saxophonist': {
     headline: 'Wedding saxophonist, <em>live on your dance floor.</em>',
