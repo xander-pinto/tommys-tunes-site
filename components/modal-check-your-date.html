@@ -8,7 +8,7 @@
   <div class="modal-panel">
 
     <button type="button" class="modal-close" aria-label="Close" data-close-modal="true">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
         <path d="M18 6 6 18M6 6l12 12"/>
       </svg>
     </button>
@@ -18,7 +18,6 @@
 
     <form name="check-your-date" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="check-your-date">
-      <input type="hidden" name="form_variant" value="check-your-date">
       <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 
       <div class="field">
@@ -37,24 +36,12 @@
         </div>
       </div>
 
-      <div class="field">
-        <label>Best way to reach you</label>
-        <div class="contact-pref">
-          <label class="field-checkbox"><input type="radio" name="contact_method" value="Call" required><span>Call</span></label>
-          <label class="field-checkbox"><input type="radio" name="contact_method" value="Text"><span>Text</span></label>
-          <label class="field-checkbox"><input type="radio" name="contact_method" value="Email"><span>Email</span></label>
-        </div>
-      </div>
 
 
       <div class="field-row">
         <div class="field">
           <label for="cyd-date">Event date</label>
           <input type="date" id="cyd-date" name="event_date">
-          <label class="field-checkbox">
-            <input type="checkbox" id="cyd-no-date" name="no_date_yet" value="yes">
-            <span>I don't know my date yet</span>
-          </label>
         </div>
         <div class="field">
           <label for="cyd-type">Event type</label>
@@ -72,10 +59,6 @@
         </div>
       </div>
 
-      <div class="field">
-        <label for="cyd-venue">Venue or town (optional)</label>
-        <input type="text" id="cyd-venue" name="venue">
-      </div>
 
       <div class="field">
         <label for="cyd-referral">How did you hear about us?</label>
@@ -110,10 +93,6 @@
            calendar limited to that location's open days; clicking a day shows
            one-hour slots. A rep confirms every request by phone. -->
       <div class="appt-invite">
-        <label class="field-checkbox appt-invite-check">
-          <input type="checkbox" id="cyd-appt" name="appointment_requested" value="yes">
-          <span>I&rsquo;d like to book an appointment</span>
-        </label>
         <p class="appt-invite-note">Sit down with us in person. It is the fastest way to get a real quote for your night.</p>
       </div>
 

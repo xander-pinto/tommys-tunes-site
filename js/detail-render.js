@@ -620,7 +620,7 @@
 
     const card = (p) => `
       <a class="related-card" href="/person/${escapeHTML(p.slug)}/">
-        <span class="related-card-photo"${p.photo ? ` style="background-image:url('${escapeHTML(p.photo)}')"` : ''} aria-hidden="true"></span>
+        <span class="related-card-photo"${p.photo ? ` style="background-image:url('${escapeHTML(p.thumb || p.photo)}')"` : ''} aria-hidden="true"></span>
         <span class="related-card-name">${escapeHTML(p.name)}</span>
         <span class="related-card-desc">${escapeHTML(p.role || '')}</span>
       </a>`;

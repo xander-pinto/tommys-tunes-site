@@ -21,11 +21,9 @@
   <meta property="og:url" content="https://tommystunes.com/team.html">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="/css/styles.css">
 
@@ -82,6 +80,7 @@
 <body class="has-solid-nav">
 
   <div data-component="nav"></div>
+  <main id="main">
 
   <!-- PAGE HERO -->
   <!-- FULL ROSTER BY CATEGORY -->
@@ -107,24 +106,24 @@
         <div class="roster-category-heading">Management</div>
         <div class="team-grid">
           <a class="card-link team-card" href="/person/tommy-masino/">
-            <div class="team-card-photo"><img src="/assets/images/about/tommy.JPG" alt="Tommy Masino" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/about/tommy-600w.jpg" alt="Tommy Masino" loading="lazy"></div>
             <div class="team-card-name">Tommy Masino</div>
             <div class="team-card-role">Founder</div>
           </a>
           <a class="card-link team-card" href="/person/joe-masino/">
-            <div class="team-card-photo"><img src="/assets/images/team/management/joe-masino/joe_masino_pf.jpg" alt="Joe Masino" loading="lazy" style="object-position: center top;">
+            <div class="team-card-photo"><img width="600" height="899" src="/assets/images/team/management/joe-masino/joe_masino_pf-600w.jpg" alt="Joe Masino" loading="lazy" style="object-position: center top;">
             </div>
             <div class="team-card-name">Joe Masino</div>
             <div class="team-card-role">Director of Sales</div>
           </a>
           <a class="card-link team-card" href="/person/tj-masino/">
-            <div class="team-card-photo"><img src="/assets/images/team/management/tj-masino/Tj_Masino_pf.jpg" alt="TJ Masino" loading="lazy" style="transform: scale(1.15);">
+            <div class="team-card-photo"><img width="600" height="706" src="/assets/images/team/management/tj-masino/Tj_Masino_pf-600w.jpg" alt="TJ Masino" loading="lazy" style="transform: scale(1.15);">
             </div>
             <div class="team-card-name">TJ Masino</div>
             <div class="team-card-role">Director of Operations</div>
           </a>
           <a class="card-link team-card" href="/person/dom-masino/">
-            <div class="team-card-photo"><img src="/assets/images/team/management/dom-masino/dom_masino_pf.jpg" alt="Dom Masino" loading="lazy">
+            <div class="team-card-photo"><img width="600" height="746" src="/assets/images/team/management/dom-masino/dom_masino_pf-600w.jpg" alt="Dom Masino" loading="lazy">
             </div>
             <div class="team-card-name">Dom Masino</div>
             <div class="team-card-role">Director of Client Relations</div>
@@ -137,17 +136,17 @@
         <div class="roster-category-heading">MCs</div>
         <div class="team-grid">
           <a class="card-link team-card" href="/person/pj/">
-            <div class="team-card-photo"><img src="/assets/images/team/mcs/pj/pj_pf.jpg" alt="PJ" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="901" src="/assets/images/team/mcs/pj/pj_pf-600w.jpg" alt="PJ" loading="lazy"></div>
             <div class="team-card-name">PJ</div>
             <div class="team-card-role">MC</div>
           </a>
           <a class="card-link team-card" href="/person/joe-cip/">
-            <div class="team-card-photo"><img src="/assets/images/team/mcs/joe-cip/joe_cip_pf.jpg" alt="Joe Cip." loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="399" src="/assets/images/team/mcs/joe-cip/joe_cip_pf-600w.jpg" alt="Joe Cip." loading="lazy"></div>
             <div class="team-card-name">Joe</div>
             <div class="team-card-role">MC &middot; DJ</div>
           </a>
           <a class="card-link team-card" href="/person/mike/">
-            <div class="team-card-photo"><img src="/assets/images/team/mcs/mike/mike_pf.jpg" alt="Mike" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="826" src="/assets/images/team/mcs/mike/mike_pf-600w.jpg" alt="Mike" loading="lazy"></div>
             <div class="team-card-name">Mike</div>
             <div class="team-card-role">MC</div>
           </a>
@@ -157,18 +156,18 @@
             <div class="team-card-role">MC &middot; DJ &middot; EN/ES</div>
           </a>
           <a class="card-link team-card" href="/person/mike-n/">
-            <div class="team-card-photo"><img src="/assets/images/team/mcs/mike-n/mike_n_pf.jpg" alt="Mike N." loading="lazy" style="transform: scale(1.6) translateY(12%); object-position: center 8%;"></div>
+            <div class="team-card-photo"><img width="600" height="956" src="/assets/images/team/mcs/mike-n/mike_n_pf-600w.jpg" alt="Mike N." loading="lazy" style="transform: scale(1.6) translateY(12%); object-position: center 8%;"></div>
             <div class="team-card-name">Mike N.</div>
             <div class="team-card-role">MC</div>
           </a>
           <a class="card-link team-card" href="/person/joe-costa/">
-            <div class="team-card-photo"><img src="/assets/images/team/mcs/joe-costa/joe_costa_pf.JPG" alt="Joe Costa" loading="lazy">
+            <div class="team-card-photo"><img width="600" height="399" src="/assets/images/team/mcs/joe-costa/joe_costa_pf-600w.jpg" alt="Joe Costa" loading="lazy">
             </div>
             <div class="team-card-name">Joe C.</div>
             <div class="team-card-role">MC</div>
           </a>
           <a class="card-link team-card" href="/person/david/">
-            <div class="team-card-photo"><img src="/assets/images/team/mcs/david/david_on_mic.jpg" alt="David" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="776" src="/assets/images/team/mcs/david/david_on_mic-600w.jpg" alt="David" loading="lazy"></div>
             <div class="team-card-name">David</div>
             <div class="team-card-role">MC</div>
           </a>
@@ -179,12 +178,12 @@
             <div class="team-card-role">MC</div>
           </a>
           <a class="card-link team-card" href="/person/yianni/">
-            <div class="team-card-photo"><img src="/assets/images/team/mcs/yianni/yianni_pf.jpg" alt="Yianni" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="597" src="/assets/images/team/mcs/yianni/yianni_pf-600w.jpg" alt="Yianni" loading="lazy"></div>
             <div class="team-card-name">Yianni</div>
             <div class="team-card-role">MC &middot; EN/GR</div>
           </a>
           <a class="card-link team-card" href="/person/max/">
-            <div class="team-card-photo"><img src="/assets/images/team/mcs/max/max_pf.jpg" alt="Max" loading="lazy" style="object-position: center 20%;"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/mcs/max/max_pf-600w.jpg" alt="Max" loading="lazy" style="object-position: center 20%;"></div>
             <div class="team-card-name">Max</div>
             <div class="team-card-role">MC</div>
           </a>
@@ -196,52 +195,52 @@
         <div class="roster-category-heading">DJs</div>
         <div class="team-grid">
           <a class="card-link team-card" href="/person/richie/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/richie/rich_pf.JPG" alt="Rich" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="900" src="/assets/images/team/djs/richie/rich_pf-600w.jpg" alt="Rich" loading="lazy"></div>
             <div class="team-card-name">Rich</div>
             <div class="team-card-role">DJ</div>
           </a>
           <a class="card-link team-card" href="/person/dominick/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/dominick/dom_pf.JPG" alt="Dominick" loading="lazy">
+            <div class="team-card-photo"><img width="600" height="399" src="/assets/images/team/djs/dominick/dom_pf-600w.jpg" alt="Dominick" loading="lazy">
             </div>
             <div class="team-card-name">Dominick</div>
             <div class="team-card-role">DJ</div>
           </a>
           <a class="card-link team-card" href="/person/anderson/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/anderson/anderson_pf.jpg" alt="Anderson" loading="lazy">
+            <div class="team-card-photo"><img width="600" height="899" src="/assets/images/team/djs/anderson/anderson_pf-600w.jpg" alt="Anderson" loading="lazy">
             </div>
             <div class="team-card-name">Anderson</div>
             <div class="team-card-role">DJ &middot; MC &middot; EN/ES</div>
           </a>
           <a class="card-link team-card" href="/person/jon/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/jon/jon_pf.jpg" alt="Jon Avelli" loading="lazy"
+            <div class="team-card-photo"><img width="600" height="899" src="/assets/images/team/djs/jon/jon_pf-600w.jpg" alt="Jon Avelli" loading="lazy"
                 style="object-position: center 20%;"></div>
             <div class="team-card-name">Jon</div>
             <div class="team-card-role">DJ &middot; MC</div>
           </a>
           <a class="card-link team-card" href="/person/steven/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/steven/steven_pf.jpg" alt="Steven" loading="lazy"></div>
+            <div class="team-card-photo"><img width="436" height="436" src="/assets/images/team/djs/steven/steven_pf.jpg" alt="Steven" loading="lazy"></div>
             <div class="team-card-name">Steven</div>
             <div class="team-card-role">DJ</div>
           </a>
           <a class="card-link team-card" href="/person/konstantine/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/konstantine/Konstantine_pf.jpg" alt="Konstantine"
+            <div class="team-card-photo"><img width="600" height="796" src="/assets/images/team/djs/konstantine/Konstantine_pf-600w.jpg" alt="Konstantine"
                 loading="lazy"></div>
             <div class="team-card-name">Konstantine</div>
             <div class="team-card-role">DJ</div>
           </a>
           <a class="card-link team-card" href="/person/johnny-munroe/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/johnny-munroe/johnny_pf.jpg" alt="Johnny" loading="lazy"
+            <div class="team-card-photo"><img width="600" height="798" src="/assets/images/team/djs/johnny-munroe/johnny_pf-600w.jpg" alt="Johnny" loading="lazy"
                 style="transform: scale(1.2);"></div>
             <div class="team-card-name">Johnny</div>
             <div class="team-card-role">DJ</div>
           </a>
           <a class="card-link team-card" href="/person/ruben/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/ruben/ruben_pf.jpg" alt="Ruben" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="598" src="/assets/images/team/djs/ruben/ruben_pf-600w.jpg" alt="Ruben" loading="lazy"></div>
             <div class="team-card-name">Ruben</div>
             <div class="team-card-role">DJ &middot; EN/ES</div>
           </a>
           <a class="card-link team-card" href="/person/gio/">
-            <div class="team-card-photo"><img src="/assets/images/team/djs/gio/gio_pf.jpg" alt="Gio" loading="lazy" style="object-position: center 25%;"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/djs/gio/gio_pf-600w.jpg" alt="Gio" loading="lazy" style="object-position: center 25%;"></div>
             <div class="team-card-name">Gio</div>
             <div class="team-card-role">DJ &middot; EN/ES</div>
           </a>
@@ -253,68 +252,68 @@
         <div class="roster-category-heading">Live musicians</div>
         <div class="team-grid">
           <a class="card-link team-card" href="/person/mark/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/mark/mark_livemusician_pf.jpg" alt="Mark" loading="lazy"
+            <div class="team-card-photo"><img width="600" height="400" src="/assets/images/team/live-musicians/mark/mark_livemusician_pf-600w.jpg" alt="Mark" loading="lazy"
                 style="transform: scale(1.2);"></div>
             <div class="team-card-name">Mark</div>
             <div class="team-card-role">Saxophonist</div>
           </a>
           <a class="card-link team-card" href="/person/curtis/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/curtis/curtis_pf.jpg" alt="Curtis" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="697" src="/assets/images/team/live-musicians/curtis/curtis_pf-600w.jpg" alt="Curtis" loading="lazy"></div>
             <div class="team-card-name">Curtis</div>
             <div class="team-card-role">Saxophonist</div>
           </a>
           <a class="card-link team-card" href="/person/mark-s/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_pf.jpg" alt="Mark S." loading="lazy" style="object-position: center top;"></div>
+            <div class="team-card-photo"><img width="600" height="850" src="/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_pf-600w.jpg" alt="Mark S." loading="lazy" style="object-position: center top;"></div>
             <div class="team-card-name">Mark S.</div>
             <div class="team-card-role">Saxophonist</div>
           </a>
           <a class="card-link team-card" href="/person/andrew/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="Andrew" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="Andrew" loading="lazy"></div>
             <div class="team-card-name">Andrew</div>
             <div class="team-card-role">Saxophonist</div>
           </a>
           <a class="card-link team-card" href="/person/marino/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/marino/marino_pf.jpg" alt="Marino" loading="lazy" style="transform: scale(1.2) translateY(4%); object-position: 35% 15%;"></div>
+            <div class="team-card-photo"><img width="600" height="338" src="/assets/images/team/live-musicians/marino/marino_pf-600w.jpg" alt="Marino" loading="lazy" style="transform: scale(1.2) translateY(4%); object-position: 35% 15%;"></div>
             <div class="team-card-name">Marino</div>
             <div class="team-card-role">Saxophonist</div>
           </a>
           <a class="card-link team-card" href="/person/pat/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/pat/pat_pf.jpg" alt="Pat" loading="lazy"></div>
+            <div class="team-card-photo"><img width="577" height="721" src="/assets/images/team/live-musicians/pat/pat_pf.jpg" alt="Pat" loading="lazy"></div>
             <div class="team-card-name">Pat</div>
             <div class="team-card-role">Percussionist</div>
           </a>
           <a class="card-link team-card" href="/person/joe-i/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/joe-i/joei_cooking.jpg" alt="Joe I." loading="lazy" style="transform: scale(1.4); object-position: 54% 25%;"></div>
+            <div class="team-card-photo"><img width="600" height="401" src="/assets/images/team/live-musicians/joe-i/joei_cooking-600w.jpg" alt="Joe I." loading="lazy" style="transform: scale(1.4); object-position: 54% 25%;"></div>
             <div class="team-card-name">Joe I.</div>
             <div class="team-card-role">Percussionist</div>
           </a>
           <a class="card-link team-card" href="/person/drew/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/drew/drew_pf.jpg" alt="Drew" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="750" src="/assets/images/team/live-musicians/drew/drew_pf-600w.jpg" alt="Drew" loading="lazy"></div>
             <div class="team-card-name">Drew</div>
             <div class="team-card-role">Percussionist</div>
           </a>
           <a class="card-link team-card" href="/person/will/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/will/will_drumming.jpg" alt="Will" loading="lazy" style="transform: scale(1.5) translateY(13%); object-position: center 5%;"></div>
+            <div class="team-card-photo"><img width="600" height="399" src="/assets/images/team/live-musicians/will/will_drumming-600w.jpg" alt="Will" loading="lazy" style="transform: scale(1.5) translateY(13%); object-position: center 5%;"></div>
             <div class="team-card-name">Will</div>
             <div class="team-card-role">Percussionist</div>
           </a>
           <a class="card-link team-card" href="/person/john/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="John" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="John" loading="lazy"></div>
             <div class="team-card-name">John</div>
             <div class="team-card-role">Percussionist</div>
           </a>
           <a class="card-link team-card" href="/person/melody/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/melody/melody_pf.jpg" alt="Melody" loading="lazy" style="object-position: center 30%;"></div>
+            <div class="team-card-photo"><img width="600" height="899" src="/assets/images/team/live-musicians/melody/melody_pf-600w.jpg" alt="Melody" loading="lazy" style="object-position: center 30%;"></div>
             <div class="team-card-name">Melody</div>
             <div class="team-card-role">Guitarist &middot; Vocalist</div>
           </a>
           <a class="card-link team-card" href="/person/luciano/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="Luciano" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="Luciano" loading="lazy"></div>
             <div class="team-card-name">Luciano</div>
             <div class="team-card-role">Guitarist</div>
           </a>
           <a class="card-link team-card" href="/person/scott/">
-            <div class="team-card-photo"><img src="/assets/images/team/live-musicians/scott/scott_pf.jpg" alt="Scott" loading="lazy" style="object-position: center top;"></div>
+            <div class="team-card-photo"><img width="600" height="722" src="/assets/images/team/live-musicians/scott/scott_pf-600w.jpg" alt="Scott" loading="lazy" style="object-position: center top;"></div>
             <div class="team-card-name">Scott</div>
             <div class="team-card-role">Pianist</div>
           </a>
@@ -326,17 +325,17 @@
         <div class="roster-category-heading">Zap Shot photographers</div>
         <div class="team-grid">
           <a class="card-link team-card" href="/person/robert/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="Robert" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="Robert" loading="lazy"></div>
             <div class="team-card-name">Robert</div>
             <div class="team-card-role">Photographer</div>
           </a>
           <a class="card-link team-card" href="/person/dan-k/">
-            <div class="team-card-photo"><img src="/assets/images/team/photographers/dan-k/dan_k_pf.jpg" alt="Dan K" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="796" src="/assets/images/team/photographers/dan-k/dan_k_pf-600w.jpg" alt="Dan K" loading="lazy"></div>
             <div class="team-card-name">Dan K.</div>
             <div class="team-card-role">Photographer</div>
           </a>
           <a class="card-link team-card" href="/person/steve/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="Steve" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="Steve" loading="lazy"></div>
             <div class="team-card-name">Steve</div>
             <div class="team-card-role">Photographer</div>
           </a>
@@ -348,13 +347,13 @@
         <div class="roster-category-heading">Dancers</div>
         <div class="team-grid">
           <a class="card-link team-card" href="/person/shad/">
-            <div class="team-card-photo"><img src="/assets/images/team/specialty/shad/shad_pf.jpg" alt="Shad" loading="lazy"
+            <div class="team-card-photo"><img width="600" height="902" src="/assets/images/team/specialty/shad/shad_pf-600w.jpg" alt="Shad" loading="lazy"
                 style="object-position: center top;"></div>
             <div class="team-card-name">Shad</div>
             <div class="team-card-role">Dancer</div>
           </a>
           <a class="card-link team-card" href="/person/sally/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="Sally" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="Sally" loading="lazy"></div>
             <div class="team-card-name">Sally</div>
             <div class="team-card-role">Dancer</div>
           </a>
@@ -366,42 +365,42 @@
         <div class="roster-category-heading">Technicians</div>
         <div class="team-grid">
           <a class="card-link team-card" href="/person/chris/">
-            <div class="team-card-photo"><img src="/assets/images/team/technicians/chris/chris_pf.jpeg" alt="Chris" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="800" src="/assets/images/team/technicians/chris/chris_pf-600w.jpg" alt="Chris" loading="lazy"></div>
             <div class="team-card-name">Chris</div>
             <div class="team-card-role">Technician</div>
           </a>
           <a class="card-link team-card" href="/person/blake/">
-            <div class="team-card-photo"><img src="/assets/images/team/technicians/blake/blake_pf.jpg" alt="Blake" loading="lazy" style="transform: scale(1.15); object-position: 60% 35%;"></div>
+            <div class="team-card-photo"><img width="600" height="399" src="/assets/images/team/technicians/blake/blake_pf-600w.jpg" alt="Blake" loading="lazy" style="transform: scale(1.15); object-position: 60% 35%;"></div>
             <div class="team-card-name">Blake</div>
             <div class="team-card-role">Technician</div>
           </a>
           <a class="card-link team-card" href="/person/goose/">
-            <div class="team-card-photo"><img src="/assets/images/team/technicians/goose/goose_pf.jpg" alt="Goose" loading="lazy" style="object-position: center top;"></div>
+            <div class="team-card-photo"><img width="600" height="800" src="/assets/images/team/technicians/goose/goose_pf-600w.jpg" alt="Goose" loading="lazy" style="object-position: center top;"></div>
             <div class="team-card-name">Goose</div>
             <div class="team-card-role">Technician</div>
           </a>
           <a class="card-link team-card" href="/person/jesse/">
-            <div class="team-card-photo"><img src="/assets/images/team/technicians/jesse/jesse_pf.jpg" alt="Jesse" loading="lazy" style="object-position: center top;"></div>
+            <div class="team-card-photo"><img width="600" height="800" src="/assets/images/team/technicians/jesse/jesse_pf-600w.jpg" alt="Jesse" loading="lazy" style="object-position: center top;"></div>
             <div class="team-card-name">Jesse</div>
             <div class="team-card-role">Technician</div>
           </a>
           <a class="card-link team-card" href="/person/xander/">
-            <div class="team-card-photo"><img src="/assets/images/team/technicians/xander/xander_pf.jpg" alt="Xander" loading="lazy" style="transform: scale(2.1) translateY(-6%); object-position: center 28%;"></div>
+            <div class="team-card-photo"><img width="600" height="800" src="/assets/images/team/technicians/xander/xander_pf-600w.jpg" alt="Xander" loading="lazy" style="transform: scale(2.1) translateY(-6%); object-position: center 28%;"></div>
             <div class="team-card-name">Xander</div>
             <div class="team-card-role">Technician</div>
           </a>
           <a class="card-link team-card" href="/person/matt-a/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="Matt A." loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="Matt A." loading="lazy"></div>
             <div class="team-card-name">Matt A.</div>
             <div class="team-card-role">Technician</div>
           </a>
           <a class="card-link team-card" href="/person/robbie/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="Robbie" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="Robbie" loading="lazy"></div>
             <div class="team-card-name">Robbie</div>
             <div class="team-card-role">Technician</div>
           </a>
           <a class="card-link team-card" href="/person/danny/">
-            <div class="team-card-photo"><img src="/assets/images/team/empty_image.jpg" alt="Danny" loading="lazy"></div>
+            <div class="team-card-photo"><img width="600" height="600" src="/assets/images/team/empty_image-600w.jpg" alt="Danny" loading="lazy"></div>
             <div class="team-card-name">Danny</div>
             <div class="team-card-role">Technician</div>
           </a>
@@ -413,7 +412,7 @@
         <div class="roster-category-heading">Specialty</div>
         <div class="team-grid">
           <a class="card-link team-card" href="/person/lilly/">
-            <div class="team-card-photo"><img src="/assets/images/team/specialty/lilly/lilly_pf.jpg" alt="Lilly" loading="lazy" style="transform: scale(1.6); object-position: center 20%;"></div>
+            <div class="team-card-photo"><img width="600" height="798" src="/assets/images/team/specialty/lilly/lilly_pf-600w.jpg" alt="Lilly" loading="lazy" style="transform: scale(1.6); object-position: center 20%;"></div>
             <div class="team-card-name">Lilly</div>
             <div class="team-card-role">Mascot</div>
           </a>
@@ -448,6 +447,7 @@
     <div data-component="awards"></div>
   </section>
 
+  </main>
   <div data-component="footer"></div>
   <div data-component="modal"></div>
 

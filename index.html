@@ -25,12 +25,13 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <!-- Hero still: preloaded because it is a CSS background the browser would otherwise find late. Same 900px split as .hero-bg-video. -->
+  <link rel="preload" as="image" href="/assets/videos/hero-still-2026-10.jpg" media="(min-width: 900px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/videos/hero-still-tall-2026-10.jpg" media="(max-width: 899px)" fetchpriority="high">
   <link rel="stylesheet" href="/css/styles.css">
 
   <!-- LocalBusiness schema.
@@ -156,6 +157,7 @@
 <body>
 
   <div data-component="nav"></div>
+  <main id="main">
 
   <!-- ============================================================
        ACT 1 — DARK CINEMATIC HERO
@@ -189,7 +191,7 @@
       <div class="kicker">Long Island · Since 1985</div>
       <h1 class="display">Packed dance floors <em>since 1985.</em></h1>
       <p class="lead">40+ years of weddings, Sweet 16s, Quinceañeras, mitzvahs, and corporate events across Long
-        Island. Real DJs. Real reels. Real reviews.</p>
+        Island. Every DJ, clip and review on this site is real.</p>
 
       <div class="hero-ctas">
         <button type="button" class="btn btn-primary" data-open-modal="true">Check your date</button>
@@ -232,7 +234,7 @@
       <div class="section-head">
         <span class="overline">What it looks like</span>
         <h2>This could be <em>your party.</em></h2>
-        <p>Every one of these is a real Long Island night. No stock photography, no staged smiles.</p>
+        <p>Every one of these is a real Long Island night. We don't use stock photos.</p>
       </div>
 
       <div class="text-center">
@@ -242,40 +244,40 @@
 
     <div class="fun-strip">
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/confetti.jpg" alt="Guest celebrating under a confetti shower on the dance floor" loading="lazy">
+          <img width="600" height="398" src="/assets/images/showcase/thumbs/confetti.jpg" alt="Guest celebrating under a confetti shower on the dance floor" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-08.jpg" alt="Groom lifted by his friends in the middle of the dance floor" loading="lazy">
+          <img width="600" height="399" src="/assets/images/showcase/thumbs/event-08.jpg" alt="Groom lifted by his friends in the middle of the dance floor" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-22.jpg" alt="Guests laughing and dancing together late in the night" loading="lazy">
+          <img width="600" height="397" src="/assets/images/showcase/thumbs/event-22.jpg" alt="Guests laughing and dancing together late in the night" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-25.jpg" alt="Bandleader and a guest cracking up on the floor" loading="lazy">
+          <img width="600" height="398" src="/assets/images/showcase/thumbs/event-25.jpg" alt="Bandleader and a guest cracking up on the floor" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-07.jpg" alt="A packed floor with every hand in the air" loading="lazy">
+          <img width="600" height="399" src="/assets/images/showcase/thumbs/event-07.jpg" alt="A packed floor with every hand in the air" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-31.jpg" alt="Wedding party dancing shoulder to shoulder" loading="lazy">
+          <img width="600" height="399" src="/assets/images/showcase/thumbs/event-31.jpg" alt="Wedding party dancing shoulder to shoulder" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-16.jpg" alt="Guests jumping with their arms up under the lights" loading="lazy">
+          <img width="600" height="399" src="/assets/images/showcase/thumbs/event-16.jpg" alt="Guests jumping with their arms up under the lights" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-33.jpg" alt="Crowd dancing with glow sticks" loading="lazy">
+          <img width="600" height="400" src="/assets/images/showcase/thumbs/event-33.jpg" alt="Crowd dancing with glow sticks" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-36.jpg" alt="Live sax player in the middle of the crowd with two guests" loading="lazy">
+          <img width="600" height="398" src="/assets/images/showcase/thumbs/event-36.jpg" alt="Live sax player in the middle of the crowd with two guests" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-30.jpg" alt="Two guests mid-celebration, arms around each other" loading="lazy">
+          <img width="600" height="401" src="/assets/images/showcase/thumbs/event-30.jpg" alt="Two guests mid-celebration, arms around each other" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-23.jpg" alt="Guest spinning on the dance floor, hair flying" loading="lazy">
+          <img width="600" height="399" src="/assets/images/showcase/thumbs/event-23.jpg" alt="Guest spinning on the dance floor, hair flying" loading="lazy">
         </a>
         <a class="fun-tile" href="/showcase.html#gallery">
-          <img src="/assets/images/showcase/thumbs/event-32.jpg" alt="Bride lifted in a chair while the room cheers" loading="lazy">
+          <img width="600" height="398" src="/assets/images/showcase/thumbs/event-32.jpg" alt="Bride lifted in a chair while the room cheers" loading="lazy">
         </a>
     </div>
   </section>
@@ -315,7 +317,7 @@
           <div class="card-photo" style="background-image: url('/assets/images/services/events/mitzvahs/mitzvahs_pf.jpg');">
             <div class="card-photo-text">
               <h3>Mitzvahs</h3>
-              <p>The Hora, the candle lighting, the after-party. One team for the whole arc.</p>
+              <p>The Hora, the candle lighting and the after-party, all run by the same team.</p>
             </div>
           </div>
         </a>
@@ -392,7 +394,7 @@
           </blockquote>
         </div>
         <figure class="band-photo">
-          <img src="/assets/images/showcase/IMG_4077.jpg"
+          <img width="1600" height="1066" src="/assets/images/showcase/IMG_4077.jpg"
             alt="Lit LOVE marquee letters in front of an illuminated DJ booth, screens and moving lights" loading="lazy">
         </figure>
       </div>
@@ -486,7 +488,7 @@
         <span class="overline">Awards</span>
         <h2>Thirty-three wins, <em>and counting.</em></h2>
         <figure class="band-photo band-photo--tall">
-          <img src="/assets/images/showcase/event-14.jpg"
+          <img width="1600" height="895" src="/assets/images/showcase/event-14.jpg"
             alt="A bride and groom playing the drums with the band at their reception" loading="lazy">
         </figure>
       </div>
@@ -536,7 +538,7 @@
            to look at, and a showcase is a thing you go and SEE. -->
       <div class="band-split">
         <figure class="band-photo">
-          <img src="/assets/images/showcase/class_tt_pic.jpg"
+          <img width="1600" height="1069" src="/assets/images/showcase/class_tt_pic.jpg"
             alt="The Tommy's Tunes band playing live, sax and drums on stage" loading="lazy">
           <figcaption>Live at a showcase. This is the setup you'll walk into.</figcaption>
         </figure>
@@ -588,12 +590,12 @@
       <div class="closer-split">
         <div class="closer-photos">
           <figure class="band-photo">
-            <img src="/assets/images/showcase/waters edge.jpg"
+            <img width="1295" height="1600" src="/assets/images/showcase/waters edge.jpg"
               alt="A reception room set up and lit before the guests arrive" loading="lazy">
             <figcaption>Built around your room, not a template.</figcaption>
           </figure>
           <figure class="band-photo">
-            <img src="/assets/images/showcase/couple_on_cloud.jpg"
+            <img width="1600" height="1066" src="/assets/images/showcase/couple_on_cloud.jpg"
               alt="A couple's first dance on a cloud of low fog" loading="lazy">
             <figcaption>And then the part everyone remembers.</figcaption>
           </figure>
@@ -604,7 +606,6 @@
           <p data-form-intro>No obligation. We'll confirm we're free and come back with a quote inside one business day.</p>
           <form name="check-your-date" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" style="display:flex; flex-direction:column; gap: var(--sp-4);">
             <input type="hidden" name="form-name" value="check-your-date">
-      <input type="hidden" name="form_variant" value="check-your-date">
             <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
 
             <div class="field">
@@ -623,24 +624,12 @@
               </div>
             </div>
 
-            <div class="field">
-              <label>Best way to reach you</label>
-              <div class="contact-pref">
-                <label class="field-checkbox"><input type="radio" name="contact_method" value="Call" required><span>Call</span></label>
-                <label class="field-checkbox"><input type="radio" name="contact_method" value="Text"><span>Text</span></label>
-                <label class="field-checkbox"><input type="radio" name="contact_method" value="Email"><span>Email</span></label>
-              </div>
-            </div>
 
 
             <div class="field-row">
               <div class="field">
                 <label for="home-date">Event date</label>
                 <input type="date" id="home-date" name="event_date">
-                <label class="field-checkbox">
-                  <input type="checkbox" name="no_date_yet" value="yes" onchange="document.getElementById('home-date').disabled = this.checked; if(this.checked) document.getElementById('home-date').value='';">
-                  <span>I don't know my date yet</span>
-                </label>
               </div>
               <div class="field">
                 <label for="home-type">Event type</label>
@@ -657,10 +646,6 @@
               </div>
             </div>
 
-            <div class="field">
-              <label for="home-venue">Venue or town (optional)</label>
-              <input type="text" id="home-venue" name="venue">
-            </div>
 
             <div class="field">
               <label for="home-referral">How did you hear about us?</label>
@@ -692,10 +677,6 @@
 
             <!-- Appointment request — keep in sync with the modal form. -->
             <div class="appt-invite">
-              <label class="field-checkbox appt-invite-check">
-                <input type="checkbox" id="home-appt" name="appointment_requested" value="yes">
-                <span>I&rsquo;d like to book an appointment</span>
-              </label>
               <p class="appt-invite-note">Sit down with us in person. It is the fastest way to get a real quote for your night.</p>
             </div>
 
@@ -755,6 +736,7 @@
     <div data-component="awards"></div>
   </section>
 
+  </main>
   <div data-component="footer"></div>
   <div data-component="modal"></div>
 

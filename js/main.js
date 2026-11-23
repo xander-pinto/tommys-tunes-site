@@ -98,6 +98,16 @@ function setupNav() {
 }
 
 
+/* --- Dialog helper: while a popup is open, everything else on the page is
+   `inert`, so Tab cannot wander behind it and screen readers stay inside. --- */
+function setPageInert(except, on) {
+  Array.from(document.body.children).forEach((el) => {
+    if (el === except || el.tagName === 'SCRIPT') return;
+    if (on) el.setAttribute('inert', ''); else el.removeAttribute('inert');
+  });
+}
+
+
 /* --- Modal: Check your date --- */
 
 function setupModal() {
@@ -111,14 +121,21 @@ function setupModal() {
     modal.hidden = false;
     modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
-    const firstField = modal.querySelector('input, select, textarea, button');
-    if (firstField) setTimeout(() => firstField.focus(), 60);
+    setPageInert(modal, true);
+    /* On a phone, focusing the first field pops the keyboard over the form
+       before anyone has read it, so touch screens start on the close button. */
+    const fine = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+    const target = fine
+      ? modal.querySelector('form input:not([type="hidden"]):not([name="bot-field"]), form select, form textarea')
+      : modal.querySelector('.modal-close');
+    if (target) setTimeout(() => target.focus(), 60);
   };
 
   const close = () => {
     modal.classList.remove('is-open');
     modal.hidden = true;
     document.body.style.overflow = '';
+    setPageInert(modal, false);
     if (lastFocused) lastFocused.focus();
   };
 
@@ -158,9 +175,12 @@ function setupLightbox() {
     lb = document.createElement('div');
     lb.id = 'lightbox';
     lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Photo');
     lb.innerHTML = `
       <button type="button" class="lightbox-close" aria-label="Close">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
       <img class="lightbox-img" src="" alt="">
     `;
@@ -170,17 +190,25 @@ function setupLightbox() {
   const img = lb.querySelector('.lightbox-img');
   const closeBtn = lb.querySelector('.lightbox-close');
 
+  let lastFocused = null;
+
   const open = (src, alt) => {
+    lastFocused = document.activeElement;
     img.src = src;
     img.alt = alt || '';
     lb.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    setPageInert(lb, true);
+    closeBtn.focus();
   };
 
   const close = () => {
+    if (!lb.classList.contains('is-open')) return;
     lb.classList.remove('is-open');
     document.body.style.overflow = '';
     img.src = '';
+    setPageInert(lb, false);
+    if (lastFocused) lastFocused.focus();
   };
 
   document.addEventListener('click', (e) => {
@@ -371,7 +399,7 @@ function renderFeaturedTalent() {
       const href = p.slug ? `/person/${encodeURIComponent(p.slug)}/` : null;
       const card = `
         <div class="team-card-photo" aria-hidden="true">
-          <img src="${p.photo}" alt="" loading="lazy" onerror="this.style.display='none'">
+          <img src="${p.thumb || p.photo}" alt="" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="team-card-name">${p.name}</div>
         <div class="team-card-role">${p.role}</div>
@@ -797,11 +825,11 @@ function setupAppointmentValidation() {
   document.addEventListener('submit', (e) => {
     const form = e.target;
     if (!form || !form.querySelector) return;
-    /* The check-your-date form asks with a checkbox; the appointment variant
-       replaces it with a hidden appointment_requested=yes. A hidden input has
-       no .checked, so testing only that let time-less requests through. */
+    // Appointment form: the scheduler is always open, so it is wanted whenever
+    // it is showing. The standby check-your-date form asks with a checkbox.
     const box = form.querySelector('input[name="appointment_requested"]');
-    const wanted = box && (box.type === 'checkbox' ? box.checked : box.value === 'yes');
+    const fields = form.querySelector('[data-appointment-fields]');
+    const wanted = box ? box.checked : !!(fields && !fields.hidden);
     if (!wanted) return;
     const timeInput = form.querySelector('[data-appt-times-input]');
     const err = form.querySelector('[data-appt-error]');
@@ -947,6 +975,12 @@ function showFormSuccess(form, data) {
    this form (the modal component, the homepage closer, and the contact
    page) and one pass handles all three.
 
+   Nov 2026: the fields the appointment form drops (contact_method,
+   no_date_yet, venue, the appointment checkbox, form_variant) were also
+   taken out of the static HTML, so Netlify's emails stop listing them empty.
+   To bring the check-your-date form back, restore the four files from the
+   git tag `form-standby-check-your-date` and set FORM_VARIANT below.
+
    The Netlify form name stays "check-your-date" on purpose. Netlify binds
    submissions to that name and detects it by parsing static HTML at build,
    so renaming it would split the inbox and need a new detection stub. A
@@ -1025,15 +1059,6 @@ function applyFormVariant() {
     document.querySelectorAll('[data-appointment-fields]').forEach((wrap) => {
       wrap.hidden = false;
       wrap.querySelectorAll('input[name="appointment_location"]').forEach((r) => { r.required = true; });
-    });
-    document.querySelectorAll('form[name="check-your-date"]').forEach((form) => {
-      if (!form.querySelector('[data-appointment-fields]')) return;
-      if (form.querySelector('[name="appointment_requested"]')) return;
-      const flag = document.createElement('input');
-      flag.type = 'hidden';
-      flag.name = 'appointment_requested';
-      flag.value = 'yes';
-      form.appendChild(flag);
     });
   }
 
@@ -1192,6 +1217,26 @@ function setupHeroVideo() {
   const start = () => video.play().catch(() => { /* policy said no; still shows */ });
   if (video.readyState >= 2) start();
   else video.addEventListener('loadeddata', start, { once: true });
+
+  /* WCAG 2.2.2: motion that runs longer than five seconds needs a way to
+     stop it. The button only exists when the video actually plays. */
+  const hero = video.closest('.hero');
+  if (!hero) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'hero-pause';
+  const paint = () => {
+    const paused = video.paused;
+    btn.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
+    btn.innerHTML = paused
+      ? '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'
+      : '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
+  };
+  btn.addEventListener('click', () => { if (video.paused) start(); else video.pause(); });
+  video.addEventListener('play', paint);
+  video.addEventListener('pause', paint);
+  paint();
+  hero.appendChild(btn);
 }
 
 

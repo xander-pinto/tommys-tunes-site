@@ -19,9 +19,9 @@
   <meta property="og:url" content="https://tommystunes.com/packages.html">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/playfair-display-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <link rel="stylesheet" href="/css/styles.css">
 
@@ -38,6 +38,7 @@
 <body class="has-solid-nav">
 
   <div data-component="nav"></div>
+  <main id="main">
 
   <!-- PACKAGES. The page heading sits with the cards instead of in its own
        dark bar, which ran 478px tall to hold 255px of centred text. -->
@@ -135,6 +136,7 @@
     <div data-component="awards"></div>
   </section>
 
+  </main>
   <div data-component="footer"></div>
   <div data-component="modal"></div>
 

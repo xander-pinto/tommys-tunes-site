@@ -195,6 +195,9 @@ function applyLanding(html, entry, r, label) {
   const size = imageSize(photo);
   const fit = r.photoFit ?? (size && (size.w / size.h < 1.4 || size.w < 1000));
   const url = escapeHTML(photo);
+  // The hero is a CSS background, which the browser's preload scanner cannot
+  // see, so announce it in <head> as the page's top-priority image.
+  html = html.replace('</head>', `  <link rel="preload" as="image" href="${url}" fetchpriority="high">\n</head>`);
   return html.replace('class="lp-media" data-slot="hero-photo" role="img"', fit
     ? `class="lp-media lp-media--fit" data-slot="hero-photo" role="img" aria-label="${escapeHTML(r.name)}" style="--photo:url('${url}')"`
     : `class="lp-media" data-slot="hero-photo" role="img" aria-label="${escapeHTML(r.name)}" style="background-image:url('${url}');${escapeHTML(r.photoStyle || '')}"`);
@@ -232,6 +235,15 @@ function genPersons(tpl, data) {
     html = html.replace('<!--LP:REVIEW-->', lpReview(lp.review, 'person ' + r.slug));
     html = fillSlot(html, 'role', escapeHTML(r.role || ''));
     html = fillSlot(html, 'bio', escapeHTML(r.bio || ''));
+    // Bake the portrait into the HTML so it is the page's high-priority image
+    // from the first byte, not something detail-render.js fills in later.
+    if (r.photo) {
+      const size = imageSize(r.photo);
+      const dims = size ? ` width="${size.w}" height="${size.h}"` : '';
+      const style = r.photoStyle ? ` style="${escapeHTML(r.photoStyle)}"` : '';
+      html = html.replace('<img data-slot="hero-img" alt="">',
+        `<img data-slot="hero-img" src="${escapeHTML(r.photo)}" alt="${escapeHTML(r.name + (r.role ? ', ' + r.role : ''))}"${dims} fetchpriority="high"${style}>`);
+    }
     writeFile('person/' + r.slug + '/index.html', html);
     sitemapUrls.push({ loc: url, priority: '0.6', changefreq: 'monthly' });
   });

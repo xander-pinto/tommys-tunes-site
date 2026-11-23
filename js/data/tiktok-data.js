@@ -303,4 +303,13 @@ window.TIKTOK_DATA = [
   { id: '7704468506892422413', caption: 'Mike N. builds up the wedding party, then the newlyweds walk out.', views: '12.5K', people: ['mike-n'], services: [] },
   { id: '7704094381057248525', caption: 'Rich lines it up and the whole floor takes off.', views: '1611', people: ['richie'], services: [] },
   { id: '7703715702607219982', caption: 'A bride and her dad with a dance they practiced in secret.', views: '3555', people: [], services: [], shelved: 'Xander passed on it' },
+  /* --- Ninth pass 2026-11-23: six clips from Nov 16 to Nov 22. Every caption
+     named the venue; the Crest Hollow entrance named no crew and Xander placed
+     it with Mike L. --- */
+  { id: '7711032603414990094', caption: 'Joe Cip. gets a cheeky stanky leg going on the dance floor.', views: '586', people: ['joe-cip'], services: [] },
+  { id: '7710682237913615629', caption: 'The bride and groom turned their wedding into a club.', views: '823', people: [], services: ['weddings'] },
+  { id: '7710040671079435533', caption: 'Anderson takes Keyshia Cole\'s "Love" into Justin Bieber\'s "Baby."', views: '1600', people: ['anderson'], services: [] },
+  { id: '7709657070500384014', caption: 'Joe Cip. takes the mic into the crowd and everyone gets a turn.', views: '1358', people: ['joe-cip'], services: [] },
+  { id: '7709331643395345678', caption: 'Anderson goes from "Somebody That I Used to Know" into Drake\'s "Nokia."', views: '1078', people: ['anderson'], services: [] },
+  { id: '7708936928913149197', caption: 'Mr. and Mrs. for the first time, at Crest Hollow.', views: '3883', people: ['mike'], services: ['weddings'] },
 ];

@@ -25,7 +25,9 @@ window.TEAM_DATA = [
     name: 'PJ',
     role: 'MC',
     photo: '/assets/images/team/mcs/pj/pj_pf.jpg',
-    bio: 'A music teacher by day, which tells you everything about the voice. PJ is clear, warm, and impossible not to like, and the room feels it the second he picks up the mic. He gets a floor rowdy and then goes out and joins it himself, because he can actually move. You don\'t just hear PJ at a party, you feel him. World-class MC.',
+
+    thumb: '/assets/images/team/mcs/pj/pj_pf-600w.jpg',
+    bio: 'PJ teaches music during the week, and you can hear it the second he picks up the mic: clear, warm and easy to like. He gets the floor going, then walks out and dances with it, because he can actually move.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/TXuCrMH1Jaw', caption: 'On the mic at a wedding, with the band.' },
@@ -42,7 +44,9 @@ window.TEAM_DATA = [
     name: 'Joe Cip.',
     role: 'MC · DJ',
     photo: '/assets/images/team/mcs/joe-cip/joe_cip_pf.jpg',
-    bio: 'The best-dressed guy in the room, usually in sunglasses, always with the most energy. Joe Cip has been on the mic since he was fifteen, and after twenty-six years he still treats every party like it\'s the only one that matters. Couples love him because he genuinely cares: he stays on top of the timeline, keeps the night running clean, and brings the kind of enthusiasm a whole room feeds off.',
+
+    thumb: '/assets/images/team/mcs/joe-cip/joe_cip_pf-600w.jpg',
+    bio: 'Joe Cip is usually the best-dressed guy in the room, often in sunglasses. He\'s been on the mic since he was fifteen, twenty-six years now, and he still brings more energy than anyone there. Couples love him because he cares. He stays on top of the timeline, keeps the night moving, and gets the whole room going with him.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'On the mic at Sunken Meadow, 2026.' },
@@ -67,7 +71,9 @@ window.TEAM_DATA = [
     name: 'Mike',
     role: 'MC',
     photo: '/assets/images/team/mcs/mike/mike_pf.jpg',
-    bio: 'Classy and direct, the kind of MC who says what needs saying and nothing more. Mike shows up sharp, runs a tight, well-organized night, and never makes it about himself. A family man at heart, which is probably why families trust him with theirs.',
+
+    thumb: '/assets/images/team/mcs/mike/mike_pf-600w.jpg',
+    bio: 'Mike is classy and direct. He says what needs saying and nothing more, runs a tight, organized night, and never makes it about himself. He\'s a family man, which may be why families trust him with theirs.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/DfGghNZqJNQ', caption: 'On the mic.' },
@@ -87,7 +93,7 @@ window.TEAM_DATA = [
     name: 'Leo',
     role: 'MC · DJ · EN/ES',
     photo: '/assets/images/team/mcs/leo/leo_pf.avif',
-    bio: 'Bilingual English and Spanish, and maybe the most precise MC on the roster. Leo never says too much and never says too little. He lets people have their moments, then steers the room exactly where it needs to go. Serious, warm, thoughtful, and a constant presence on the floor even when he isn\'t the loudest one there. New to Tommy\'s Tunes, but he\'s been doing this a long time, and it shows. The man is a machine.',
+    bio: 'Leo is bilingual in English and Spanish, and maybe the most precise MC on the roster. He never says too much or too little. He lets people have their moments, then steers the room where it needs to go, and he stays out on the floor even when he isn\'t the loudest one there. He\'s new to Tommy\'s Tunes, but he\'s been doing this a long time.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/52CquNBGDPE', caption: 'On the mic and running intros.' },
@@ -100,7 +106,9 @@ window.TEAM_DATA = [
     name: 'Mike N.',
     role: 'MC',
     photo: '/assets/images/team/mcs/mike-n/mike_n_pf.jpg',
-    bio: 'Old school in the best way. Mike is an older Italian gentleman who has been doing this his whole life, and it shows in every word. He\'ll give it to you straight, no fluff, and treat your night like he\'s done a thousand of them, because he has. When you picture a classic Long Island MC, you picture Mike.',
+
+    thumb: '/assets/images/team/mcs/mike-n/mike_n_pf-600w.jpg',
+    bio: 'Mike N. is old school in the best way. He\'s an older Italian gentleman who has done this his whole life, and he\'ll give it to you straight. He treats your night like he\'s done a thousand of them, because he has. When you picture a classic Long Island MC, you\'re picturing Mike.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/coeKryVyKEU', caption: 'On the mic at Larkfield, 2026.' },
@@ -112,7 +120,9 @@ window.TEAM_DATA = [
     name: 'Joe Costa',
     role: 'MC',
     photo: '/assets/images/team/mcs/joe-costa/joe_costa_pf.JPG',
-    bio: 'If you want time-tested, you want Joe. He\'s been on the mic since he was a teenager and has run more parties than he could count, and it shows in how easy he is to be around. Professional, genuinely kind, the guy who\'ll do whatever it takes to make sure your night lands. A veteran in the truest sense.',
+
+    thumb: '/assets/images/team/mcs/joe-costa/joe_costa_pf-600w.jpg',
+    bio: 'Joe has been on the mic since he was a teenager and has run more parties than he can count. You can tell from how easy he is to be around. He\'s professional and kind, and he\'ll do whatever it takes to make your night go right.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/vAmu35AwUrM', caption: 'Demo reel.' },
@@ -127,7 +137,9 @@ window.TEAM_DATA = [
     name: 'David',
     role: 'MC',
     photo: '/assets/images/team/mcs/david/david_on_mic.jpg',
-    bio: 'The young gun, and the one you want when the room is a Sweet 16 or a Mitzvah that needs to move. David lives on the mic, pulling the crowd into the moment and setting up the kind of shots people circle back to for years. High energy, great with people, impossible to miss. He makes it his job to make sure the night never sits still.',
+
+    thumb: '/assets/images/team/mcs/david/david_on_mic-600w.jpg',
+    bio: 'David is the young gun, the one you want when a Sweet 16 or a Mitzvah needs to move. He lives on the mic, pulls the crowd into each moment, and sets up the shots people look back on for years. He makes sure the night never sits still.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/C140WD5h6Gw?start=1', caption: 'Running the introductions at a wedding.' },
@@ -143,7 +155,7 @@ window.TEAM_DATA = [
     name: 'Zach',
     role: 'MC',
     photo: '/assets/images/team/mcs/zach/zach_pf.avif',
-    bio: 'One of the youngest on the roster and one of the most reliable. Zach is confident on the mic and almost obsessive about the timeline, the kind of guy who cares more than anyone else in the room about getting your night right. Smart, professional, and someone you can count on.',
+    bio: 'Zach is one of the youngest on the roster and one of the most reliable. He\'s confident on the mic and close to obsessive about the timeline, and nobody in the room will care more about getting your night right.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/JJzcTUVoZWY', caption: 'Hosting a Sweet 16.' },
@@ -155,7 +167,9 @@ window.TEAM_DATA = [
     name: 'Yianni',
     role: 'MC · EN/GR',
     photo: '/assets/images/team/mcs/yianni/yianni_pf.jpg',
-    bio: 'Bilingual English and Greek, and the natural pick when a wedding leans Greek. Younger, professional, easy to work with. Yianni keeps both sides of the room in the celebration.',
+
+    thumb: '/assets/images/team/mcs/yianni/yianni_pf-600w.jpg',
+    bio: 'Yianni is bilingual in English and Greek, the natural pick when a wedding leans Greek. He\'s young and easy to work with, and he keeps both sides of the room in the celebration.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/bvn6C8LQZMU', caption: 'Doing the introductions.' },
@@ -167,6 +181,8 @@ window.TEAM_DATA = [
     name: 'Max',
     role: 'MC',
     photo: '/assets/images/team/mcs/max/max_pf.jpg',
+
+    thumb: '/assets/images/team/mcs/max/max_pf-600w.jpg',
     bio: 'A likable, fun presence with a clear voice and plenty of parties behind him. Max knows how to work a room when he\'s on the schedule.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -180,7 +196,9 @@ window.TEAM_DATA = [
     name: 'Rich',
     role: 'DJ',
     photo: '/assets/images/team/djs/richie/rich_pf.JPG',
-    bio: '"Everyone\'s favorite DJ," and he\'s earned the title. Rich might be the most requested name on the roster, with high-energy mixes and a music knowledge deep enough to handle any request the floor throws at him. Nobody brings more energy behind the booth. He\'s building a real following, and once you\'ve had a night with Rich, you get why. One of the best DJs on Long Island.',
+
+    thumb: '/assets/images/team/djs/richie/rich_pf-600w.jpg',
+    bio: 'Our TikTok calls him everyone\'s favorite DJ, and he\'s earned it. Rich may be the most requested name on the roster. His mixes run high energy, and he knows enough music to handle whatever the floor asks for. He\'s building a real following, and after one night with him you\'ll see why.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'On the decks at Sunken Meadow, 2026.' },
@@ -198,7 +216,9 @@ window.TEAM_DATA = [
     name: 'Dominick',
     role: 'DJ',
     photo: '/assets/images/team/djs/dominick/dom_pf.JPG',
-    bio: 'Dominick reads a room like nobody else, and it\'s no accident he\'s one of the most requested DJs we have, maybe the most. He\'s been doing this since he was a teenager and treats every job like it\'s the only one that matters. Early, organized, obsessive about detail, right down to whether the wires are tangled. He gets it right because he refuses not to. World class, plain and simple.',
+
+    thumb: '/assets/images/team/djs/dominick/dom_pf-600w.jpg',
+    bio: 'Dominick reads a room as well as anyone, and he\'s one of our most requested DJs. He\'s been doing this since he was a teenager. He shows up early, stays organized and sweats every detail, right down to whether the wires are tangled.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/ew7rP0d43KU', caption: 'Running a full party with MC Mike.' },
@@ -213,7 +233,9 @@ window.TEAM_DATA = [
     name: 'Anderson',
     role: 'DJ · MC · EN/ES',
     photo: '/assets/images/team/djs/anderson/anderson_pf.jpg',
-    bio: 'Bilingual English and Spanish, and surgical behind the decks. Anderson mixes clean, keeps the energy high, and reads a crowd with the kind of presence you can\'t teach. He\'s been doing this a long time and he\'s as reliable as they come, which is exactly why he\'s a go-to for weddings and Quinceañeras that move between two languages all night.',
+
+    thumb: '/assets/images/team/djs/anderson/anderson_pf-600w.jpg',
+    bio: 'Anderson is bilingual in English and Spanish and precise behind the decks. He mixes clean, keeps the energy up and reads a crowd well. He\'s been doing this a long time and he\'s as reliable as they come, which is why he\'s a go-to for weddings and Quinceañeras that move between two languages all night.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/5vw9sdANqAg', caption: 'MCing in English and Spanish.' },
@@ -230,7 +252,9 @@ window.TEAM_DATA = [
     name: 'Jon',
     role: 'DJ · MC',
     photo: '/assets/images/team/djs/jon/jon_pf.jpg',
-    bio: 'Jon mixes like few people can. Smooth, precise, and locked in on the details most people never notice, the kind of DJ where you don\'t catch the transitions because they\'re seamless. He keeps everything organized and every blend clean, reads exactly where the floor wants to go, and takes it there. Couples and crowds feel it even if they can\'t name it. One of the most gifted DJs on the entire roster, and he proves it every single night.',
+
+    thumb: '/assets/images/team/djs/jon/jon_pf-600w.jpg',
+    bio: 'Jon\'s transitions are so smooth you won\'t notice them. He keeps everything organized and every blend clean, and he reads where the floor wants to go before it gets there. Couples feel it even if they can\'t name it.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/1WAMXBaWtM4?start=21', caption: 'DJing a wedding.' },
@@ -259,7 +283,9 @@ window.TEAM_DATA = [
     name: 'Konstantine',
     role: 'DJ',
     photo: '/assets/images/team/djs/konstantine/Konstantine_pf.jpg',
-    bio: 'Konstantine is a club DJ at heart, the guy you\'ll catch spinning bigger rooms and nightlife events with a real following behind him. Bring that energy to a wedding or a party and the floor doesn\'t stand a chance. He keeps it loud, keeps it moving, and genuinely cares about every set. Seriously talented, and a great guy on top of it.',
+
+    thumb: '/assets/images/team/djs/konstantine/Konstantine_pf-600w.jpg',
+    bio: 'Konstantine is a club DJ at heart. You\'ll catch him spinning bigger rooms and nightlife events, with a real following behind him. He brings that energy to weddings and parties, keeps the music loud and moving, and cares about every set.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/YPPfJBD8G3k?start=57', caption: 'On a set.' },
@@ -271,7 +297,9 @@ window.TEAM_DATA = [
     name: 'Johnny Munroe',
     role: 'DJ',
     photo: '/assets/images/team/djs/johnny-munroe/johnny_pf.jpg',
-    bio: 'Johnny is the youngest DJ on the roster, but don\'t let that fool you. He mixes with real technical skill and knows exactly how to lock in a younger crowd. He can pick up the mic when he needs to, and he\'s as friendly and easygoing as they come. A genuinely good guy who cares about every set.',
+
+    thumb: '/assets/images/team/djs/johnny-munroe/johnny_pf-600w.jpg',
+    bio: 'Johnny is the youngest DJ on the roster. He mixes with real technical skill and knows how to lock in a younger crowd. He can pick up the mic when he needs to, and he\'s friendly and easygoing.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [
@@ -284,7 +312,9 @@ window.TEAM_DATA = [
     name: 'Ruben',
     role: 'DJ · EN/ES',
     photo: '/assets/images/team/djs/ruben/ruben_pf.jpg',
-    bio: 'One of the kindest guys on the roster and one of the most experienced. Ruben is bilingual English and Spanish, mixes with a real touch, and genuinely cares about getting your night right. Ask him about watches if you get the chance. He\'s a pleasure to work with, and the years behind him show.',
+
+    thumb: '/assets/images/team/djs/ruben/ruben_pf-600w.jpg',
+    bio: 'Ruben is one of the kindest guys on the roster and one of the most experienced. He\'s bilingual in English and Spanish, mixes with a real touch, and cares about getting your night right. If you get the chance, ask him about watches.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/xqNlj59OCRU', caption: 'On the mic.' },
@@ -296,7 +326,9 @@ window.TEAM_DATA = [
     name: 'Gio',
     role: 'DJ · EN/ES',
     photo: '/assets/images/team/djs/gio/gio_pf.jpg',
-    bio: 'Gio is a DJ first, an MC when the night calls for it, and bilingual English and Spanish either way. He\'s serious about the craft and pours real care into the details, the kind of focus that comes from years behind the decks. He produces his own music too, so his ear runs deeper than most. Quietly excellent at what he does.',
+
+    thumb: '/assets/images/team/djs/gio/gio_pf-600w.jpg',
+    bio: 'Gio is a DJ first, an MC when the night calls for it, and bilingual in English and Spanish either way. He takes the craft seriously and pays close attention to the details. He also produces his own music, so his ear runs deeper than most.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/cE23xYn59LE', caption: 'A wedding at East Wind, with DJ Steven.' },
@@ -308,7 +340,9 @@ window.TEAM_DATA = [
     name: 'Mark',
     role: 'Saxophonist',
     photo: '/assets/images/team/live-musicians/mark/mark_livemusician_pf.jpg',
-    bio: 'Mark is a saxophone player who knows exactly what a live horn does to a room. Drop him into a cocktail hour or up on the floor during the reception and the whole energy lifts. Polished, professional, and seriously good at what he does.',
+
+    thumb: '/assets/images/team/live-musicians/mark/mark_livemusician_pf-600w.jpg',
+    bio: 'Mark is a saxophone player who knows what a live horn does to a room. Put him in a cocktail hour or on the floor during the reception and the energy lifts. He\'s polished and professional.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/gVdgmpTlu0I', caption: 'On the saxophone.' },
@@ -322,7 +356,9 @@ window.TEAM_DATA = [
     name: 'Mark S.',
     role: 'Saxophonist',
     photo: '/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_pf.jpg',
-    bio: 'A high-energy saxophone player and a genuinely nice guy. Mark brings real enthusiasm to a set and has a strong presence on social media.',
+
+    thumb: '/assets/images/team/live-musicians/mark_stuckey/mark_stuckey_pf-600w.jpg',
+    bio: 'Mark is a high-energy saxophone player and a nice guy. He brings real enthusiasm to a set and has a strong following on social media.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/4T8rrU7YS7c', caption: 'Playing right in the crowd.' },
@@ -338,7 +374,9 @@ window.TEAM_DATA = [
     name: 'Curtis',
     role: 'Saxophonist',
     photo: '/assets/images/team/live-musicians/curtis/curtis_pf.jpg',
-    bio: 'Curtis is a saxophone player who turns a set into a show. He\'s known for bold, out-there outfits and for stepping right off the stage to play in the middle of the crowd, dancing with them the whole time. The man brings the party with him. Pure energy, and a blast to watch.',
+
+    thumb: '/assets/images/team/live-musicians/curtis/curtis_pf-600w.jpg',
+    bio: 'Curtis turns a sax set into a show. He\'s known for bold, out-there outfits and for stepping off the stage to play in the middle of the crowd, dancing with them the whole time. He brings the party with him.',
     socials: { instagram: 'https://www.instagram.com/mrsmoothnsaxy/', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'The light-up sax at Sunken Meadow, 2026.' },
@@ -362,6 +400,8 @@ window.TEAM_DATA = [
     name: 'Andrew',
     role: 'Saxophonist',
     photo: '/assets/images/team/empty_image.jpg',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
     bio: 'A saxophone player on the Tommy\'s Tunes roster, ready to add a live horn to your cocktail hour or reception.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -374,6 +414,8 @@ window.TEAM_DATA = [
     name: 'Marino',
     role: 'Saxophonist',
     photo: '/assets/images/team/live-musicians/marino/marino_pf.jpg',
+
+    thumb: '/assets/images/team/live-musicians/marino/marino_pf-600w.jpg',
     bio: 'A saxophone player on the Tommy\'s Tunes roster, bringing a live horn to cocktail hour and reception sets.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -386,7 +428,7 @@ window.TEAM_DATA = [
     name: 'Pat',
     role: 'Percussionist',
     photo: '/assets/images/team/live-musicians/pat/pat_pf.jpg',
-    bio: 'Pat is an old-school percussionist who plays the entire night, not just a song or two. Down to earth, genuinely kind, and a true professional. You feel every beat he adds to the room, and you walk away knowing you got your money\'s worth. Just a great guy to have at your event.',
+    bio: 'Pat is an old-school percussionist, and he plays the entire night instead of a song or two. He\'s down to earth and kind, and you\'ll feel every beat he adds to the room. People walk away knowing they got their money\'s worth.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/PF-G36jukFc', caption: 'On percussion at Sunken Meadow, 2026.' },
@@ -402,7 +444,9 @@ window.TEAM_DATA = [
     name: 'Joe I.',
     role: 'Percussionist',
     photo: '/assets/images/team/live-musicians/joe-i/joei_cooking.jpg',
-    bio: 'Joe is a percussionist who plays with serious energy and even more polish. Put him behind the drums at a reception and the live element hits different. He\'s done countless events, and the experience shows every time.',
+
+    thumb: '/assets/images/team/live-musicians/joe-i/joei_cooking-600w.jpg',
+    bio: 'Joe is a percussionist who plays with serious energy and plenty of polish. He\'s done countless events, and with him behind the drums at a reception, the live element hits harder.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'video', url: '/assets/images/team/live-musicians/joe-i/joe_I_drumming.mp4', caption: 'On the drums.' },
@@ -421,6 +465,8 @@ window.TEAM_DATA = [
     name: 'Drew',
     role: 'Percussionist',
     photo: '/assets/images/team/live-musicians/drew/drew_pf.jpg',
+
+    thumb: '/assets/images/team/live-musicians/drew/drew_pf-600w.jpg',
     bio: 'A percussionist on the Tommy\'s Tunes roster, adding live drums over the DJ for cocktail hour or the reception.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -433,7 +479,9 @@ window.TEAM_DATA = [
     name: 'Will',
     role: 'Percussionist',
     photo: '/assets/images/team/live-musicians/will/will_drumming.jpg',
-    bio: 'Will is one of the younger percussionists on the roster, and a percussion teacher when he\'s not playing events. He\'s got the skill and the ear, he cares about every set, and he keeps getting better. A genuinely nice guy who brings real live energy to the floor.',
+
+    thumb: '/assets/images/team/live-musicians/will/will_drumming-600w.jpg',
+    bio: 'Will is one of the younger percussionists on the roster, and he teaches percussion when he\'s not playing events. He has the skill and the ear, cares about every set, and keeps getting better.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/3Fn_9vQwrHg?start=24', caption: 'On the drum set.' },
@@ -448,6 +496,8 @@ window.TEAM_DATA = [
     name: 'John',
     role: 'Percussionist',
     photo: '/assets/images/team/empty_image.jpg',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
     bio: 'A percussionist on the Tommy\'s Tunes roster, bringing live drums and real energy to the floor.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -460,6 +510,8 @@ window.TEAM_DATA = [
     name: 'Melody',
     role: 'Guitarist · Vocalist',
     photo: '/assets/images/team/live-musicians/melody/melody_pf.jpg',
+
+    thumb: '/assets/images/team/live-musicians/melody/melody_pf-600w.jpg',
     bio: 'A guitarist and vocalist on the Tommy\'s Tunes roster. Melody sings while she plays, a warm acoustic fit for ceremonies, cocktail hours, and dinner sets.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -474,6 +526,8 @@ window.TEAM_DATA = [
     name: 'Luciano',
     role: 'Guitarist',
     photo: '/assets/images/team/empty_image.jpg',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
     bio: 'A jazz guitarist on the Tommy\'s Tunes roster, a relaxed, elegant fit for a ceremony or cocktail hour.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -487,6 +541,8 @@ window.TEAM_DATA = [
     name: 'Scott',
     role: 'Pianist',
     photo: '/assets/images/team/live-musicians/scott/scott_pf.jpg',
+
+    thumb: '/assets/images/team/live-musicians/scott/scott_pf-600w.jpg',
     bio: 'A pianist on the Tommy\'s Tunes roster, a graceful fit for ceremonies, cocktail hours, and dinner sets.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -499,7 +555,9 @@ window.TEAM_DATA = [
     name: 'Robert',
     role: 'Photographer',
     photo: '/assets/images/team/empty_image.jpg',
-    bio: 'Robert is a seriously talented photographer who genuinely loves the craft. He takes his job seriously and it shows in the volume, he\'s shooting all night, capturing every moment most people would miss. Catch him between sets and he\'ll probably want to talk cars. A real eye, and the work ethic to match.',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
+    bio: 'Robert is a photographer who loves the craft. He shoots all night and catches the moments most people miss. If you catch him between sets, he\'ll probably want to talk cars.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -509,7 +567,9 @@ window.TEAM_DATA = [
     name: 'Dan K.',
     role: 'Photographer',
     photo: '/assets/images/team/photographers/dan-k/dan_k_pf.jpg',
-    bio: 'Dan is the kind of photographer who\'s always working the room, camera up, finding the shot. He knows how to position people so everyone looks their best, and he\'s an easy, friendly presence all night. Professional through and through.',
+
+    thumb: '/assets/images/team/photographers/dan-k/dan_k_pf-600w.jpg',
+    bio: 'Dan is always working the room with his camera up, finding the shot. He knows how to position people so everyone looks their best, and he\'s an easy, friendly presence all night.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -519,7 +579,9 @@ window.TEAM_DATA = [
     name: 'Steve',
     role: 'Photographer',
     photo: '/assets/images/team/empty_image.jpg',
-    bio: 'Steve genuinely cares about how your night feels, not just how it looks. He\'s warm, kind-hearted, and always tuned into the moment, which is exactly why his shots land. A good photographer and an even better guy to have around.',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
+    bio: 'Steve cares about how your night feels as much as how it looks. He\'s warm and always tuned into the moment, which is why his shots land.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -529,7 +591,9 @@ window.TEAM_DATA = [
     name: 'Shad',
     role: 'Dancer',
     photo: '/assets/images/team/specialty/shad/shad_pf.jpg',
-    bio: 'Shad is one of our hype dancers, and his whole job is energy. He\'s out on the floor with your guests, pulling people up, keeping the momentum high, and making sure nobody\'s standing on the sidelines. No mic, just pure presence. When a party needs that extra push, a dancer like Shad delivers it.',
+
+    thumb: '/assets/images/team/specialty/shad/shad_pf-600w.jpg',
+    bio: 'Shad is one of our hype dancers, and his job is energy. He\'s out on the floor with your guests, pulling people up and making sure nobody\'s stuck on the sidelines. He doesn\'t use a mic. He just gets the room moving when a party needs a push.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
       { type: 'youtube', url: 'https://www.youtube.com/embed/MlKJWvkBOGQ', caption: 'Dancing with the guests.' },
@@ -547,6 +611,8 @@ window.TEAM_DATA = [
     name: 'Sally',
     role: 'Dancer',
     photo: '/assets/images/team/empty_image.jpg',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
     bio: 'A dancer on the Tommy\'s Tunes roster, out on the floor keeping the energy high and the guests moving.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demos: [
@@ -559,7 +625,9 @@ window.TEAM_DATA = [
     name: 'Tommy Masino',
     role: 'Founder',
     photo: '/assets/images/about/tommy.JPG',
-    bio: 'The voice behind Tommy\'s Tunes since 1985. Tommy started this as a one-man DJ outfit in Selden and built it into one of Long Island\'s longest-running entertainment families. Forty years and thousands of weddings later, he\'s still the heart of the operation. His three sons grew up in the back of the truck and now run the company alongside him.',
+
+    thumb: '/assets/images/about/tommy-600w.jpg',
+    bio: 'Tommy has been the voice behind Tommy\'s Tunes since 1985. He started it as a one-man DJ outfit in Selden and built it into one of Long Island\'s longest-running entertainment families. Forty years and thousands of weddings later, he\'s still at the center of it. His three sons grew up in the back of the truck and now run the company alongside him.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -569,7 +637,9 @@ window.TEAM_DATA = [
     name: 'TJ Masino',
     role: 'Director of Operations',
     photo: '/assets/images/team/management/tj-masino/Tj_Masino_pf.jpg',
-    bio: 'The engine room of Tommy\'s Tunes. TJ figures out who works which event and what gear rides on which truck, week after week. He grew up in the back of the box truck and never really left, and today he\'s the reason the right people and the right equipment show up at the right party, every time.',
+
+    thumb: '/assets/images/team/management/tj-masino/Tj_Masino_pf-600w.jpg',
+    bio: 'TJ figures out who works which event and what gear rides on which truck, week after week. He grew up in the back of the box truck and never really left. When the right people and the right equipment show up at the right party, that\'s TJ\'s work.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -579,6 +649,8 @@ window.TEAM_DATA = [
     name: 'Dom Masino',
     role: 'Director of Client Relations',
     photo: '/assets/images/team/management/dom-masino/dom_masino_pf.jpg',
+
+    thumb: '/assets/images/team/management/dom-masino/dom_masino_pf-600w.jpg',
     bio: 'A little of everything, and usually the first voice you\'ll hear. Dom holds down the front desk, answers the first emails, and pitches in on sales and scheduling wherever he\'s needed. Ask him what he does and the honest answer is "whatever today needs." He grew up in this business and runs it now alongside his dad and brothers.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
@@ -589,6 +661,8 @@ window.TEAM_DATA = [
     name: 'Joe Masino',
     role: 'Director of Sales',
     photo: '/assets/images/team/management/joe-masino/joe_masino_pf.jpg',
+
+    thumb: '/assets/images/team/management/joe-masino/joe_masino_pf-600w.jpg',
     bio: 'The one you\'ll meet first. Joe sits down with couples, walks them through every detail, and runs the showcases. If you\'ve toured the Selden showroom or talked through your wedding, odds are it was Joe across the table. He grew up in the business and now leads sales for the family.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
@@ -599,7 +673,9 @@ window.TEAM_DATA = [
     name: 'Chris',
     role: 'Technician',
     photo: '/assets/images/team/technicians/chris/chris_pf.jpeg',
-    bio: 'Chris is our most experienced technician, ten years deep and able to do all of it: load-ins, lights, sound, photo booths, sparklers, dry ice, the works. A true professional who\'s on top of everything, and he cares a lot more than he lets on. Ruthlessly efficient. Off the clock you\'ll catch him in his blue BMW, probably on his way to flip something for a profit.',
+
+    thumb: '/assets/images/team/technicians/chris/chris_pf-600w.jpg',
+    bio: 'Chris is our most experienced technician. Ten years in, he can do all of it: load-ins, lights, sound, photo booths, sparklers and dry ice. He\'s on top of everything and cares a lot more than he lets on. Off the clock you\'ll catch him in his blue BMW, probably on his way to flip something for a profit.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -609,7 +685,9 @@ window.TEAM_DATA = [
     name: 'Blake',
     role: 'Technician',
     photo: '/assets/images/team/technicians/blake/blake_pf.jpg',
-    bio: 'Blake might be the most energetic technician we\'ve got, six years in and still bringing it every night. He lives for the photo booth, loves getting to know people and making them feel special, and you\'ll probably catch him hopping into a few pictures himself. Always dancing, always laughing, always lifting the room. You feel his presence the second he walks in. Just a good guy who loves a good time.',
+
+    thumb: '/assets/images/team/technicians/blake/blake_pf-600w.jpg',
+    bio: 'Blake might be the most energetic technician we\'ve got. Six years in, he lives for the photo booth, loves getting to know people and making them feel special, and you\'ll probably catch him hopping into a few pictures himself. He\'s always dancing and laughing, and you feel it the second he walks in.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -619,7 +697,9 @@ window.TEAM_DATA = [
     name: 'Goose',
     role: 'Technician',
     photo: '/assets/images/team/technicians/goose/goose_pf.jpg',
-    bio: 'Goose is Dan K.\'s son, in college now and working his way toward photography of his own. He\'s a genuinely nice guy who gives everything his full effort and takes pride in doing the job right. The kind of person you\'re glad to have on the crew.',
+
+    thumb: '/assets/images/team/technicians/goose/goose_pf-600w.jpg',
+    bio: 'Goose is Dan K.\'s son. He\'s in college and working toward photography of his own, and he takes pride in doing the job right.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -629,7 +709,9 @@ window.TEAM_DATA = [
     name: 'Jesse',
     role: 'Technician',
     photo: '/assets/images/team/technicians/jesse/jesse_pf.jpg',
-    bio: 'Jesse is a newer face on the crew, studying music in college and seriously gifted at it. He\'s one of the kindest people you\'ll meet, the kind of guy you instantly know you can rely on. Dependable, easygoing, and a real pleasure to have on the team.',
+
+    thumb: '/assets/images/team/technicians/jesse/jesse_pf-600w.jpg',
+    bio: 'Jesse is a newer face on the crew. He\'s studying music in college and is seriously gifted at it. He\'s one of the kindest people you\'ll meet, and you can rely on him.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -639,6 +721,8 @@ window.TEAM_DATA = [
     name: 'Robbie',
     role: 'Technician',
     photo: '/assets/images/team/empty_image.jpg',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
     bio: 'Robbie is part of the technician crew, handling the load-ins, setups, and gear that make an event run clean from the first guest to the last song.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
@@ -649,6 +733,8 @@ window.TEAM_DATA = [
     name: 'Danny',
     role: 'Technician',
     photo: '/assets/images/team/empty_image.jpg',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
     bio: 'Danny is part of the technician crew, handling the load-ins, setups, and gear that make an event run clean from the first guest to the last song.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
@@ -659,6 +745,8 @@ window.TEAM_DATA = [
     name: 'Matt A.',
     role: 'Technician',
     photo: '/assets/images/team/empty_image.jpg',
+
+    thumb: '/assets/images/team/empty_image-600w.jpg',
     bio: 'Matt A. is part of the technician crew, handling the load-ins, setups, and gear that make an event run clean from the first guest to the last song.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
@@ -669,7 +757,9 @@ window.TEAM_DATA = [
     name: 'Xander',
     role: 'Technician',
     photo: '/assets/images/team/technicians/xander/xander_pf.jpg',
-    bio: 'Xander built this site and runs point on a lot of the media side, you\'ll spot him at events with a gimbal, helping the accounts look as good as the parties feel. Four years in, he\'s second only to Chris in the warehouse and can run just about everything at an event (except dry ice). Fresh off his MBA and headed toward AI engineering, always chasing the next idea, and dialed in on the little details that make a night look right.',
+
+    thumb: '/assets/images/team/technicians/xander/xander_pf-600w.jpg',
+    bio: 'Xander built this site and runs a lot of the media side. You\'ll spot him at events with a gimbal, getting footage that makes the accounts look as good as the parties feel. Four years in, he\'s second only to Chris in the warehouse and can run just about everything at an event except dry ice. He\'s fresh off his MBA, headed toward AI engineering, and always sweating the small details that make a night look right.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
     gallery: [],
@@ -679,6 +769,8 @@ window.TEAM_DATA = [
     name: 'Lilly',
     role: 'Mascot',
     photo: '/assets/images/team/specialty/lilly/lilly_pf.jpg',
+
+    thumb: '/assets/images/team/specialty/lilly/lilly_pf-600w.jpg',
     bio: 'Lilly is the Masino family husky and the unofficial heart of the place. Sweet, well-mannered, and impossible not to love, she turns up at the Selden showroom now and then to say hello. Every family business needs a mascot. Lilly\'s ours.',
     socials: { instagram: '', tiktok: '', youtube: '' },
     demo: null,
