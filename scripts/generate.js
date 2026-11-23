@@ -29,6 +29,7 @@ const EVENT_URLS = {
   'corporate': 'corporate-event-dj',
   'other-events': 'other-events',
   'live-music': 'live-wedding-music-long-island',
+  'photo-booths': 'photo-booth-rental-long-island',
 };
 
 /* Static (already server-rendered) pages, for the sitemap. */

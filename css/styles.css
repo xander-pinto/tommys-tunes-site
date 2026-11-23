@@ -868,13 +868,37 @@ p {
   align-self: flex-start;
 }
 
-@media (min-width: 1024px) {
+/* The full desktop bar (seven links, the CTA, the phone number and the
+   hiring badge beside a 300px logo) needs about 1530px. Measured Nov 2026:
+   at 1024px the CTA and phone sat off-screen, at 1280-1440px the phone or
+   the badge did. So the burger menu covers everything under 1280px, the
+   links tighten up to 1599px, and the badge only joins the bar from 1600px.
+   It stays in the burger menu at every width. */
+@media (min-width: 1280px) {
   .nav-links {
     display: flex;
   }
 
   .nav-burger,
   .nav-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .nav-links {
+    gap: 0;
+  }
+
+  .nav-link {
+    padding-inline: 0.6rem;
+  }
+
+  .nav-cta {
+    margin-left: var(--sp-2);
+  }
+
+  .nav-links .nav-hiring {
     display: none;
   }
 }
@@ -4439,10 +4463,29 @@ body.has-solid-nav .nav {
   display: none;
 }
 
+/* Backdrops held back behind "Show all": .gallery-tile's display:block
+   outranks the browser's [hidden] rule, same as the TikTok cards above. */
+.backdrop-tile[hidden] {
+  display: none;
+}
+
+/* The backdrops section is light, so the count needs the light-section ink. */
+.backdrop-count {
+  font-size: var(--fs-xs);
+  color: var(--text-on-light-soft);
+  letter-spacing: 0.04em;
+}
+
 .tiktok-count {
   font-size: var(--fs-xs);
   color: var(--text-on-dark-soft);
   letter-spacing: 0.04em;
+}
+
+/* The same "2 of 3" count sits under the demo videos, which are on a light
+   section, where the dark-section ink above was close to invisible. */
+.section-light .tiktok-count {
+  color: var(--text-on-light-soft);
 }
 
 .tiktok-follow {

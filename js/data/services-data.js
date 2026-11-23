@@ -390,6 +390,31 @@ window.SERVICES_DATA = [
 
   /* --- Photo Booths --- */
   {
+    // Hub for "photo booth rental long island" (210/mo, KD 2, OpenSEO
+    // 2026-11-23). Before this, seven booth pages split those searches.
+    slug: 'photo-booths',
+    kicker: 'Photo booths',
+    category: 'Photo Booths',
+    name: 'Photo booth rental',
+    shortDesc: 'Mirror, glam, open-air and 360 booths, with an attendant at every one.',
+    metaTitle: 'Photo booth rental on Long Island · Tommy\'s Tunes',
+    metaDescription: 'Mirror, glam, open-air and 360 photo booths for Long Island weddings, Sweet 16s and parties. Attendant, unlimited prints and every photo afterward.',
+    photo: '/assets/images/services/photo-booths/mirror-booth/mirror_booth_pf.jpg',
+    pairsWith: ['mirror-booth', 'glam-booth', 'open-air-booth', '360-booth', 'phone-booth', 'zap-shots'],
+    tiktokFrom: ['mirror-booth', 'glam-booth', 'open-air-booth', '360-booth'],
+    demos: [
+      { type: 'youtube', url: 'https://www.youtube.com/embed/OLjaF3o0lZI', caption: 'How the mirror booth works.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/Cw6IQUR70r4', caption: 'The glam booth in action.' },
+      { type: 'youtube', url: 'https://www.youtube.com/embed/tQyrXNg7uiM', caption: 'The open-air booth in use.' },
+    ],
+    gallery: [
+      '/assets/images/services/photo-booths/mirror-booth/mirror_booth.jpg',
+      '/assets/images/services/photo-booths/open-air-booth/open_air_booth.jpg',
+      '/assets/images/services/photo-booths/open-air-booth/again_open_air.jpg',
+    ],
+    backdrops: BACKDROPS,
+  },
+  {
     slug: 'mirror-booth',
     metaTitle: 'Mirror photo booth rental · Long Island',
     metaDescription: 'Guests print, text or email their photos on the spot. Choose from 28 backdrops. The general-purpose booth for Long Island weddings and parties.',

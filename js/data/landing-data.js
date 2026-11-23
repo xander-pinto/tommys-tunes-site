@@ -300,6 +300,31 @@ const services = {
   },
 
   /* --- Photo booths --- */
+  'photo-booths': {
+    headline: 'Photo booth rental on Long Island, <em>four ways to do it.</em>',
+    role: 'Mirror, glam, open-air and 360 booths for weddings, Sweet 16s and parties.',
+    review: { quote: 'The Photo Booth was a big hit and it worked flawlessly.' },
+    overview: [
+      "We run four photo booths, and each one suits a different crowd. You can rent any of them on its own or add it to a DJ package, whether it is a wedding, a Sweet 16, a birthday or a company party. Here is how to pick.",
+      "<strong>The <a href=\"/service/mirror-booth/\">mirror booth</a></strong> is the general-purpose pick. It prints a 2x6 strip or a 4x6 photo in color or black and white, and guests can text or email their photos straight from the machine. After a birthday party, one host wrote that “Matt worked the mirror photo booth, which my guests all loved!”",
+      "<strong>The <a href=\"/service/glam-booth/\">glam booth</a></strong> is for photos that look styled. It takes a single exposure with the filter applied in-camera, and you get a polished black-and-white 4x6 that reads like a magazine portrait. It photographs well in any lighting.",
+      "<strong>The <a href=\"/service/open-air-booth/\">open-air booth</a></strong> is for groups. The 8x8 backdrop fits large families and full wedding parties, and it prints a 2x6 strip in color or black and white.",
+      "<strong>The <a href=\"/service/360-booth/\">360 booth</a></strong> makes video instead of prints. Guests step onto the platform, the arm rotates around them, and the clip goes straight to their phone. There is no app and no waiting.",
+      "Every booth comes with a professional attendant and props. The mirror, glam and open-air booths also include unlimited prints, a customized photo strip, and a USB or digital link with every picture taken. You choose from 28 backdrops, and a flowerwall is available as an upgrade. Couples mention the attendant in their reviews more than you might expect. One wrote that Chris “had the patience of a saint, making sure everyone had a great experience.”",
+      "If you want your guests' voices as well as their faces, look at the <a href=\"/service/audio-guestbook/\">audio guest book</a>, the <a href=\"/service/phone-booth/\">white phone booth</a> or the <a href=\"/service/video-phone-booth/\">video phone booth</a>. Tell us your date and which booth you are leaning toward, and we will send you a quote.",
+    ],
+    questions: [
+      ['Which photo booth should we pick?', 'The mirror booth if you want one that suits everyone, the glam booth for styled black-and-white portraits, the open-air booth for big group shots, and the 360 booth if your guests would rather take home a video.'],
+      ['Do guests get prints?', 'Yes, unlimited prints from the mirror, glam and open-air booths. The 360 booth makes a video that goes straight to the guest’s phone instead.'],
+      ['Is someone there to run the booth?', 'Yes. Every booth, including the 360, comes with a professional attendant who helps guests all night.'],
+      ['Can we rent a photo booth without a DJ?', 'Yes. You can book any of our booths on its own, or add one to a DJ package.'],
+      ['Do we get copies of all the photos?', 'Yes, on a USB or a digital link with every picture taken.'],
+      ['Can we choose the backdrop?', 'Yes, from 28 designs, from sequins and roses to rustic barn doors to themed prints. A flowerwall backdrop is available as an upgrade.'],
+      ['Can we rent a photo booth for a Sweet 16, birthday or company party?', 'Yes. The booths work at any event we run, not only weddings.'],
+      ['What is the difference between a photo booth and a 360 booth?', 'A photo booth takes still photos and prints them on the spot. A 360 booth records about thirty seconds of video as a camera arm rotates around the guest, then sends it to their phone.'],
+      ['How much does a photo booth rental cost?', QUOTE],
+    ],
+  },
   'mirror-booth': {
     headline: 'Mirror photo booth <em>with prints on the spot.</em>',
     review: { quote: 'Our guests loved the mirror photo booth and the zap photos.' },
@@ -357,6 +382,7 @@ const services = {
       ['How does a 360 booth work?', 'Guests step onto the platform, the arm rotates around them, and the video goes to their phone.'],
       ['Do guests need an app?', 'No. There is no app and no waiting.'],
       ['Who is it good for?', 'It works for every age group.'],
+      ['Is someone there to run it?', 'Yes. A professional attendant runs the 360 booth and helps guests, and props are included.'],
       ['How much does a 360 booth cost?', 'Pricing is on request, because every venue setup is different. Tell us your date and venue and we will send you a quote within one business day.'],
     ],
   },

@@ -86,16 +86,22 @@
     return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
+  const MAX_BACKDROPS = 8;
+
   function renderBackdrops(images) {
     if (!images || !images.length) {
       hideSection('[data-slot="backdrops-section"]');
       return;
     }
+    /* All 28 backdrops ran about four screens on a phone, longer than the
+       rest of the page put together. Lead with eight and keep the rest one
+       press away, the same deal as the demos and TikToks. */
     const html = images
-      .map((src) => {
+      .map((src, i) => {
         const label = backdropLabel(src);
+        const extra = i >= MAX_BACKDROPS ? ' data-backdrop-extra hidden' : '';
         return `
-          <a class="gallery-tile backdrop-tile" href="${escapeHTML(src)}" data-lightbox="${escapeHTML(src)}" title="${escapeHTML(label)}">
+          <a class="gallery-tile backdrop-tile" href="${escapeHTML(src)}" data-lightbox="${escapeHTML(src)}" title="${escapeHTML(label)}"${extra}>
             <img src="${escapeHTML(src)}" alt="${escapeHTML(label)}" loading="lazy" onerror="this.parentElement.style.display='none'">
             <span class="backdrop-label">${escapeHTML(label)}</span>
           </a>
@@ -103,8 +109,34 @@
       })
       .join('');
     setHTML('[data-slot="backdrops"]', html);
+    const grid = document.querySelector('[data-slot="backdrops"]');
+    let more = document.querySelector('[data-backdrop-more-wrap]');
+    const hidden = images.length - MAX_BACKDROPS;
+    if (grid && hidden > 0) {
+      if (!more) {
+        more = document.createElement('p');
+        more.className = 'tiktok-more backdrop-more';
+        more.setAttribute('data-backdrop-more-wrap', '');
+        grid.after(more);
+      }
+      more.innerHTML =
+        `<button type="button" class="btn btn-secondary" data-backdrop-more>Show all ${images.length} backdrops</button>` +
+        `<span class="backdrop-count">${MAX_BACKDROPS} of ${images.length}</span>`;
+      more.hidden = false;
+    } else if (more) {
+      more.hidden = true;
+    }
     showSection('[data-slot="backdrops-section"]');
   }
+
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest && e.target.closest('[data-backdrop-more]');
+    if (!btn) return;
+    document.querySelectorAll('[data-backdrop-extra][hidden]').forEach((el) => { el.hidden = false; });
+    const wrap = btn.closest('[data-backdrop-more-wrap]');
+    if (wrap) wrap.hidden = true;
+  });
 
   /* A YouTube embed costs roughly half a megabyte and a pile of script before
      anyone presses play, and the sax page carries six of them. They now render
@@ -545,6 +577,7 @@
     'corporate': '/corporate-event-dj/',
     'other-events': '/other-events/',
     'live-music': '/live-wedding-music-long-island/',
+    'photo-booths': '/photo-booth-rental-long-island/',
   };
 
   function renderRelated(record) {

@@ -22,6 +22,7 @@
 /corporate-event-dj/
 /other-events/
 /live-wedding-music-long-island/
+/photo-booth-rental-long-island/
 
 # Playwright MCP audit screenshots, local only
 .playwright-mcp/
@@ -33,3 +34,6 @@
 # Research notes and reports, local only, never deployed
 /research_notes/
 /reports/
+
+# Personal Claude Code settings, local only
+.claude/settings.local.json
