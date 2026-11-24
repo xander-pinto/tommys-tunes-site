@@ -60,7 +60,7 @@ window.SERVICES_DATA = [
       '7667019507885559053', // Mario Kart on the ballroom screens
     ],
     tiktokSort: 'recent',
-    pairsWith: ['phone-booth', 'mirror-booth', 'dance-floor', 'saxophonist', 'dancing-on-cloud', 'cold-sparklers'],
+    pairsWith: ['phone-booth', 'photo-booths', 'dance-floor', 'saxophonist', 'dancing-on-cloud', 'cold-sparklers'],
     category: 'Specialty',
     name: 'Weddings',
     shortDesc: 'A family-owned Long Island wedding DJ since 1985.',
@@ -78,7 +78,7 @@ window.SERVICES_DATA = [
   {
     slug: 'sweet-16-quinces',
     crew: ['zach', 'david', 'johnny-munroe', 'anderson'],
-    pairsWith: ['16-letters', 'mirror-booth', 'co2-guns', 'party-dancer', 'dance-floor', 'zap-shots'],
+    pairsWith: ['16-letters', 'photo-booths', 'co2-guns', 'party-dancer', 'dance-floor', 'zap-shots'],
     category: 'Specialty',
     name: 'Sweet 16s & Quinceañeras',
     shortDesc: 'A different room than a wedding. The same family team runs it.',

@@ -5184,3 +5184,76 @@ main:focus { outline: none; }
 .marquee:focus-within .marquee-track {
   animation-play-state: paused;
 }
+
+
+/* --- Services page: "Most popular" tag and the booth comparison card ---
+   Kept at the end of the file so it is not overridden by the base
+   .service-item / .card-photo rules above. */
+.service-item .card-photo {
+  position: relative;
+}
+
+.svc-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border-radius: var(--r-pill);
+  background: var(--royal-blue);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(10, 20, 40, 0.25);
+}
+
+.service-item--compare {
+  border-color: rgba(11, 94, 222, 0.35);
+  background: var(--light-sky);
+}
+
+.service-item-cta {
+  margin-top: auto;
+  padding-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--royal-blue);
+}
+
+/* Under 1300px the grid is two across, so the fifth card would sit alone in
+   half a row. Run it the full width as a banner, photo left, text right. */
+@media (max-width: 1299px) {
+  .svc-layout .service-item--compare {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-rows: auto auto 1fr;
+    column-gap: var(--sp-4);
+    row-gap: 6px;
+    align-items: start;
+  }
+
+  .svc-layout .service-item--compare .card-photo {
+    grid-row: 1 / span 3;
+    margin-bottom: 0;
+    align-self: center;
+  }
+
+  .svc-layout .service-item--compare .service-item-cta {
+    margin-top: 0;
+  }
+}
+
+/* Phone cards are ~136px wide; the full-size tag covered most of the photo. */
+@media (max-width: 599px) {
+  .svc-badge {
+    top: 6px;
+    left: 6px;
+    padding: 4px 7px;
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+  }
+}
