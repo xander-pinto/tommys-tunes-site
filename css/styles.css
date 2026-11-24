@@ -5197,22 +5197,38 @@ main:focus { outline: none; }
   position: absolute;
   top: 10px;
   left: 10px;
-  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px 5px 8px;
   border-radius: var(--r-pill);
   background: var(--royal-blue);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: #fff;
   font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1;
-  box-shadow: 0 2px 8px rgba(10, 20, 40, 0.25);
+  box-shadow: 0 2px 10px rgba(10, 20, 40, 0.3);
 }
 
+.svc-badge-star {
+  flex: none;
+  fill: #FFD34D;
+}
+
+/* A faint blue outline marks these as guides, not add-ons. The light ring
+   outside the border keeps it visible on the light-blue live music band. */
 .service-item--compare {
-  border-color: rgba(11, 94, 222, 0.35);
+  border: 1.5px solid rgba(11, 94, 222, 0.5);
+  box-shadow: 0 0 0 4px rgba(11, 94, 222, 0.07);
   background: var(--light-sky);
+}
+
+.service-item--compare:hover {
+  border-color: rgba(11, 94, 222, 0.8);
 }
 
 .service-item-cta {
@@ -5255,5 +5271,41 @@ main:focus { outline: none; }
     padding: 4px 7px;
     font-size: 9.5px;
     letter-spacing: 0.06em;
+    gap: 4px;
   }
+
+  .svc-badge-star {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+/* --- Services dropdown: "Events" / "Add-ons" group labels (2026-11-24) --- */
+.nav-dropdown-label {
+  display: block;
+  position: relative;
+  z-index: 1;          /* above the ::before glass panel */
+  padding: 0.7rem 0.85rem 0.3rem;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--electric-cyan);
+  opacity: 0.8;
+}
+
+.nav-dropdown-label--split {
+  margin-top: 0.35rem;
+  border-top: 1px solid rgba(49, 170, 239, 0.14);
+}
+
+.nav-sub-label {
+  padding: 0.85rem 0 0.3rem;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--electric-cyan);
+  opacity: 0.8;
 }

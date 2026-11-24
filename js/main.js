@@ -86,8 +86,10 @@ function setupNav() {
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    // Close mobile menu when a link is tapped.
-    nav.querySelectorAll('.nav-mobile a, .nav-mobile button').forEach((el) => {
+    // Close mobile menu when a link is tapped. Not the section chevrons: they
+    // are buttons too, and closing on them meant expanding "Services" shut the
+    // whole menu, so no sub-link was reachable on a phone (found 2026-11-24).
+    nav.querySelectorAll('.nav-mobile a, .nav-mobile button:not(.nav-mobile-toggle)').forEach((el) => {
       el.addEventListener('click', () => {
         nav.classList.remove('is-open');
         burger.setAttribute('aria-expanded', 'false');

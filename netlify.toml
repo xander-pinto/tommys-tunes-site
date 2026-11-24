@@ -30,9 +30,11 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
-# CSS and JS are not fingerprinted, so they get an hour rather than a week.
-# Long enough to skip the round trip on a browsing session, short enough that
-# a deploy reaches people the same morning.
+# CSS and JS get an hour. Since 2026-11-24 the build stamps every link to them
+# with a hash of the file (styles.css?v=...), see fingerprintAssets() in
+# scripts/generate.js, so a deploy that changes a file reaches visitors on
+# their next page load. Before that, new pages arrived with an hour-old
+# stylesheet and rendered half-styled.
 [[headers]]
   for = "/css/*"
   [headers.values]

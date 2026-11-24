@@ -64,13 +64,24 @@ const services = {
     ],
   },
   'corporate': {
-    headline: 'Corporate event DJ and sound, <em>so your speakers land.</em>',
-    review: general('crowd'),
+    headline: 'Corporate event DJ on Long Island, <em>with sound your speeches can count on.</em>',
+    role: 'Company holiday parties, fundraisers, awards dinners and product launches.',
+    review: general('pros'),
+    overview: [
+      "Tommy's Tunes has run corporate events on Long Island for forty years: company holiday parties, fundraisers, awards dinners and product launches. Some nights are essentially dance parties with a few branded moments folded in. Others are mostly seated, with speeches that need to land and music that fades in and out around them. We do both.",
+      "<strong>The sound comes first.</strong> Mic clarity across every table and balanced volume, so the front row hears the CEO and the back row hears the band. No hum, no feedback, no surprises when the awards get handed out. That standard holds whichever DJ or MC is on the night.",
+      "<strong>Planning fits your calendar.</strong> We meet at the Selden showroom, the Melville office, your conference room or over Zoom. Send us your run-of-show or build it with us, and we confirm the gear, the audio plan, the music cues and any custom moments at least a week out. On the day, your team focuses on its own work, not on us.",
+      "<strong>Custom is normal for corporate.</strong> A specific intro mix for an award winner, a brand-coordinated playlist, or an unusual lighting or staging setup can all be worked out in advance. <a href=\"/service/additional-tvs/\">Extra TVs</a> carry sponsor logos and slides, <a href=\"/service/uplighting/\">uplighting</a> sets the room in your colors, and an <a href=\"/service/open-air-booth/\">open-air photo booth</a> fits a whole team in one shot.",
+      "<strong>Any venue works.</strong> Office space, a country club, a hotel ballroom, a restaurant private room, a brewery, a tent on the lawn or a conference center. Tell us the date and the run-of-show, and we will come back with a quote that fits the budget and the brief. No upsell, no pressure.",
+    ],
     questions: [
-      ['What kinds of corporate events do you do?', 'Fundraisers, holiday parties, awards dinners and product launches, from full dance parties to mostly seated nights with speeches.'],
+      ['What kinds of corporate events do you do?', 'Company holiday parties, fundraisers, awards dinners and product launches, from full dance parties to mostly seated nights with speeches.'],
+      ['Do you DJ company holiday parties?', 'Yes. Whether the night is a full dance party or a seated dinner with a few toasts, we set the music and the audio around your run-of-show.'],
+      ['Can you DJ a party at our office?', 'Yes. We set up in office space as well as country clubs, hotel ballrooms, restaurant private rooms, breweries, tents and conference centers.'],
       ['Will people be able to hear the speeches?', 'That is the standard we hold to: mic clarity across every table and balanced volume, so the front row and the back row both hear clearly.'],
       ['Can you work from our run-of-show?', 'Yes. Send us yours or build it with us. We confirm the gear, the music cues and any custom moments at least a week out.'],
-      ['Can you do something custom?', 'Yes. A specific intro mix for an award winner, a brand-coordinated playlist or an unusual lighting setup can all be worked out with you in advance.'],
+      ['Can you show our logo or slides?', 'Yes. Extra 60\", 65\" or 75\" TVs can be placed around the room for sponsor logos and slides.'],
+      ['Where do we meet to plan it?', 'At the Selden showroom, the Melville office, your conference room or over Zoom, whatever fits your team.'],
       ['How much does a corporate event DJ cost?', 'Tell us the date and the run-of-show, and we will come back with a quote that fits the budget and the brief.'],
     ],
   },
@@ -78,7 +89,7 @@ const services = {
     headline: 'If you have a party, <em>we will do it.</em>',
     review: { quote: "Tommy's Tunes did an awesome job at my Birthday Celebration!" },
     questions: [
-      ['What kinds of parties do you do?', 'Communions, graduations, milestone birthdays, anniversaries, retirement parties, holiday gatherings, vow renewals, proms, engagement parties, reunions and block parties.'],
+      ['What kinds of parties do you do?', 'Communions, graduations, milestone birthdays, anniversaries, retirement parties, holiday gatherings, vow renewals, proms, engagement parties, reunions and block parties. For a company holiday party or another work event, see our <a href="/corporate-event-dj/">corporate events page</a>.'],
       ['Is my party too small?', 'No. The setup scales to your event, so a backyard 80th birthday does not get the same gear as a 400-guest holiday party, and you should not pay for what you do not need.'],
       ['What can you bring?', 'Music, an MC, lighting, a photo booth, or any combination. We figure out what your night actually requires.'],
       ['How much does it cost?', 'We build a quote around your event. Tell us the day, the guest count and a few sentences about the party, and we will come back with options that fit your budget.'],
@@ -110,7 +121,7 @@ const services = {
   /* --- Live music --- */
   'saxophonist': {
     headline: 'Wedding saxophonist, <em>live on your dance floor.</em>',
-    review: { quote: 'Our favorite part was having a live saxophonist-Curtis. He blew everyone away with his skills and personality.' },
+    review: { quote: 'Do yourself a favor and get the sax player it is 100% worth it' },
     overview: [
       "A DJ fills the dance floor. A live saxophonist gives the whole room something to watch. Your player performs over the DJ's music, so you get the songs you love with a live performer on top of them. It's why live sax is the Long Island wedding favorite.",
       "It works two ways. At cocktail hour, sax can run as a standalone instrumental act. At the reception, it comes in as an energy boost during the biggest dance moments of the night.",
@@ -305,7 +316,7 @@ const services = {
     role: 'Mirror, glam, open-air and 360 booths for weddings, Sweet 16s and parties.',
     review: { quote: 'The Photo Booth was a big hit and it worked flawlessly.' },
     overview: [
-      "We run four photo booths, and each one suits a different crowd. You can rent any of them on its own or add it to a DJ package, whether it is a wedding, a Sweet 16, a birthday or a company party. Here is how to pick.",
+      "We run four photo booths, and each one suits a different crowd. You can rent any of them on its own or add it to a DJ package, whether it is a wedding, a Sweet 16, a birthday or a <a href=\"/corporate-event-dj/\">company party</a>. Here is how to pick.",
       "<strong>The <a href=\"/service/mirror-booth/\">mirror booth</a></strong> is the general-purpose pick. It prints a 2x6 strip or a 4x6 photo in color or black and white, and guests can text or email their photos straight from the machine. After a birthday party, one host wrote that “Matt worked the mirror photo booth, which my guests all loved!”",
       "<strong>The <a href=\"/service/glam-booth/\">glam booth</a></strong> is for photos that look styled. It takes a single exposure with the filter applied in-camera, and you get a polished black-and-white 4x6 that reads like a magazine portrait. It photographs well in any lighting.",
       "<strong>The <a href=\"/service/open-air-booth/\">open-air booth</a></strong> is for groups. The 8x8 backdrop fits large families and full wedding parties, and it prints a 2x6 strip in color or black and white.",
@@ -327,7 +338,7 @@ const services = {
   },
   'mirror-booth': {
     headline: 'Mirror photo booth <em>with prints on the spot.</em>',
-    review: { quote: 'Our guests loved the mirror photo booth and the zap photos.' },
+    review: { quote: 'Everyone loved the photo mirror they had.' },
     overview: [
       "The Magic Mirror is the newest option in our lineup. It prints a 2x6 or 4x6 in color or black and white, and guests can also have their photos texted or emailed directly from the machine.",
       "It draws a crowd, moves quickly and keeps people engaged throughout the night. Choose from 28 backdrop designs, from sequins and roses to rustic barn doors to themed prints, with flowerwall backdrops available as an upgrade.",
@@ -390,7 +401,7 @@ const services = {
   /* --- Audio and phone booths --- */
   'audio-guestbook': {
     headline: 'An audio guest book <em>you will actually go back to.</em>',
-    review: { quote: 'We also used the audio guest book which our guests said was a great touch.' },
+    review: { quote: 'we get to hear our voicemails whenever we want on a mini record player they provided to us!' },
     overview: [
       "We set up a vintage-style rotary phone at your event. Guests pick it up at any point in the night and record a message. There is no app, no login and no friction for your guests.",
       "Messages range from heartfelt to genuinely funny, and most couples come back to them long after the wedding.",

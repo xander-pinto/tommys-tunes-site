@@ -343,6 +343,11 @@ function reviewCard(r) {
       </article>`;
 }
 
+/* Structured-data review count, from the review data rather than typed in. */
+function setReviewCount(html, n) {
+  return html.replace(/("reviewCount":\s*")\d+(")/g, `$1${n}$2`);
+}
+
 function genReviews(tpl, data) {
   const cards = data.map(reviewCard).join('') + '\n    ';
   let html = setMeta(tpl, {
@@ -351,8 +356,16 @@ function genReviews(tpl, data) {
     url: SITE + '/reviews/',
   });
   html = fillByAttr(html, 'data-reviews-grid', cards);
-  html = fillByAttr(html, 'data-reviews-counter', `Showing all ${data.length} reviews`);
+  html = fillByAttr(html, 'data-reviews-counter', `Showing ${data.length} reviews`);
+  html = setReviewCount(html, data.length);
   writeFile('reviews/index.html', html);
+
+  // The homepage carries the same AggregateRating. It was hand-typed as 250
+  // and went stale the day new reviews were added, so keep it in step here.
+  const homeFile = path.join(ROOT, 'index.html');
+  const home = fs.readFileSync(homeFile, 'utf8');
+  const nextHome = setReviewCount(home, data.length);
+  if (nextHome !== home) fs.writeFileSync(homeFile, nextHome);
   sitemapUrls.push({ loc: SITE + '/reviews/', priority: '0.8', changefreq: 'weekly' });
 }
 
@@ -368,6 +381,57 @@ function buildSitemap() {
   ).join('\n\n');
   writeFile('sitemap.xml',
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n\n${body}\n\n</urlset>\n`);
+}
+
+/* ---------------- asset fingerprints ----------------
+   /css and /js are cached for an hour, but pages are not. So after a deploy,
+   anyone who had visited in the last hour got the new HTML with the old
+   stylesheet: on 2026-11-24 the new "Popular" tags showed as plain text and
+   the new cards had no styling. Stamping every local stylesheet and script
+   link with a hash of the file (styles.css?v=3f9a2c1b0d) makes a changed file
+   a new URL, so browsers fetch it at once and keep the cache when it hasn't
+   changed.
+
+   Runs on Netlify builds only (NETLIFY=true), or locally with FINGERPRINT=1,
+   so working copies don't churn on every CSS edit. Idempotent: an existing
+   ?v= is replaced, never doubled. */
+
+const SKIP_DIRS = new Set(['node_modules', '.git', '.playwright-mcp', '.claude', '.netlify', 'templates', 'reports', 'scripts']);
+const assetHashes = {};
+
+function assetHash(rel) {
+  if (!(rel in assetHashes)) {
+    const file = path.join(ROOT, rel);
+    assetHashes[rel] = fs.existsSync(file)
+      ? require('crypto').createHash('sha1').update(fs.readFileSync(file)).digest('hex').slice(0, 10)
+      : null;
+  }
+  return assetHashes[rel];
+}
+
+function htmlFiles(dir, out = []) {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      if (!SKIP_DIRS.has(entry.name)) htmlFiles(path.join(dir, entry.name), out);
+    } else if (entry.name.endsWith('.html')) {
+      out.push(path.join(dir, entry.name));
+    }
+  }
+  return out;
+}
+
+function fingerprintAssets() {
+  const ref = /((?:href|src)=")(\/(?:css|js)\/[^"?#]+\.(?:css|js))(?:\?v=[0-9a-f]+)?"/g;
+  let pages = 0;
+  for (const file of htmlFiles(ROOT)) {
+    const html = fs.readFileSync(file, 'utf8');
+    const next = html.replace(ref, (m, attr, url) => {
+      const h = assetHash(url.slice(1));
+      return h ? `${attr}${url}?v=${h}"` : m;
+    });
+    if (next !== html) { fs.writeFileSync(file, next); pages++; }
+  }
+  console.log(`Fingerprinted css/js links on ${pages} pages.`);
 }
 
 /* ---------------- run ---------------- */
@@ -397,6 +461,8 @@ function main() {
     `${packages.length} packages, ${reviews.length} reviews. ` +
     `Sitemap: ${STATIC_PAGES.length + sitemapUrls.length} URLs.`
   );
+
+  if (process.env.NETLIFY === 'true' || process.env.FINGERPRINT === '1') fingerprintAssets();
 }
 
 main();
