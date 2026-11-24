@@ -155,6 +155,13 @@
               </div>
 
 
+              <!-- Requested by the owner, Nov 2026. Named event_location, not venue: the appointment
+                   variant in js/main.js strips any field named "venue" on load. -->
+              <div class="field">
+                <label for="page-location">Where's the event?</label>
+                <input type="text" id="page-location" name="event_location" required autocomplete="off" placeholder="Venue name or town">
+              </div>
+
               <div class="field">
                 <label for="page-referral">How did you hear about us?</label>
                 <!-- EDIT: Referral sources — keep these in sync with the modal form. -->
